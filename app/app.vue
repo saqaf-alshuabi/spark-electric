@@ -1,6 +1,7 @@
 <template>
   <NuxtRouteAnnouncer />
   <NuxtLayout>
-    <NuxtPage />
+    <!-- <NuxtPage /> -->
+    <SharedLogo />
   </NuxtLayout>
 </template>
