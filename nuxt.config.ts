@@ -5,4 +5,12 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/image', '@nuxt/fonts'],
   css: ['~/assets/css/main.css'],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ar',
+        dir: 'rtl',
+      },
+    },
+  },
 })
