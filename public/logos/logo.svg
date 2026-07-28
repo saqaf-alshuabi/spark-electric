@@ -1,17 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <!-- Exact AT monogram: zinc #27272A + amber #F59E0B, transparent bg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="142.5 94.5 243 307" fill="none">
   <g stroke-linecap="round" stroke-linejoin="miter">
-    <!-- A left leg -->
     <path d="M156 388 L256 108" stroke="#27272A" stroke-width="26"/>
-    <!-- Shared stem (A right + T) -->
     <path d="M256 108 L256 388" stroke="#27272A" stroke-width="26"/>
-    <!-- T top bar to the right -->
     <path d="M256 108 L372 108" stroke="#27272A" stroke-width="26"/>
-    <!-- Amber crossbar left -->
     <path d="M188 268 L236 268" stroke="#F59E0B" stroke-width="20"/>
-    <!-- Amber crossbar right -->
     <path d="M276 268 L324 268" stroke="#F59E0B" stroke-width="20"/>
-    <!-- Amber lightning bolt between segments -->
     <path d="M266 246 L248 270 L258 270 L246 290 L270 262 L258 262 Z" fill="#F59E0B"/>
   </g>
 </svg>
