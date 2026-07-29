@@ -20,6 +20,8 @@
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.92",
     "eslint": "^10.8.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0"

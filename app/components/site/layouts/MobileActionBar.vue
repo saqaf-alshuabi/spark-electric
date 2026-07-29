@@ -1,6 +1,6 @@
 <template>
   <UButton
-    icon="i-heroicons-chat-bubble-bottom-center-text"
+    icon="menu"
     label="واتساب"
     variant="outline"
     size="md"
