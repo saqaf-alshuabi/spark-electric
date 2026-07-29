@@ -24,4 +24,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  fonts: {
+    families: [{
+      name: 'Lateef',
+      provider: 'google',
+      subsets: ['arabic'],
+    }],
+  },
 });
