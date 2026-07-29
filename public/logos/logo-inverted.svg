@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8.8 9.8 31.4 22.4" fill="none">
+  <!-- Inverted colors: light letters + primary accent -->
+  <g stroke="oklch(92% 0 none)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 30 L24 12"/>
+    <path d="M24 12 L24 30"/>
+    <path d="M24 12 H38"/>
+  </g>
+  <path d="M15.5 22.5 H21" stroke="#F59E0B" stroke-width="3.1" stroke-linecap="round"/>
+  <path d="M26 19.5 L23.8 22.8 H25.2 L23.5 25.8 L27 22.2 H25.5 Z" fill="#F59E0B"/>
+</svg>

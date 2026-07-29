@@ -7,7 +7,7 @@
     <img
       src="/logos/logo.svg"
       alt="شعار ابو تيم الكهربائي"
-      class="h-12 w-auto"
+      class="h-8 w-auto shrink-0"
     >
     <span>أبو تيم الكهربائي</span>
   </NuxtLink>
