@@ -13,6 +13,7 @@ import { navItems } from '@/shared/data/site';
         icon="i-heroicons-chat-bubble-bottom-center-text"
         label="واتساب"
         variant="ghost"
+        class="hidden lg:inline-flex"
       />
     </template>
     <template #body>
@@ -22,4 +23,5 @@ import { navItems } from '@/shared/data/site';
       />
     </template>
   </UHeader>
+  <SiteLayoutsMobileActionBar />
 </template>
