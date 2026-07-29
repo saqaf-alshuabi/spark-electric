@@ -1,8 +1,8 @@
 export interface SiteSettings {
-    name: string;
+  name: string;
 }
-export interface NavItem{
-    label: string;
-    to: string;
-    icon?: string;
+export interface NavItem {
+  label: string;
+  to: string;
+  icon?: string;
 }
