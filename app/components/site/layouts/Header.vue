@@ -12,10 +12,12 @@ import { navItems } from '@/shared/data/site';
     <UNavigationMenu :items="navItems" />
     <template #right>
       <UButton
-        icon="i-heroicons-chat-bubble-bottom-center-text"
+        icon="i-simple-icons-whatsapp"
         label="واتساب"
         variant="ghost"
         class="hidden lg:inline-flex"
+        :to="`https://wa.me/9647700000000`"
+        target="_blank"
       />
     </template>
     <template #body>
