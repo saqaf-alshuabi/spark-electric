@@ -7,6 +7,19 @@ import { navItems } from '@/shared/data/site';
     <template #title>
       <SharedLogo />
     </template>
-    <UHeaderNav :items="navItems" />
+    <UNavigationMenu :items="navItems" />
+    <template #right>
+      <UButton
+        icon="i-heroicons-chat-bubble-bottom-center-text"
+        label="واتساب"
+        variant="ghost"
+      />
+    </template>
+    <template #body>
+      <UNavigationMenu
+        :items="navItems"
+        orientation="vertical"
+      />
+    </template>
   </UHeader>
 </template>

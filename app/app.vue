@@ -1,5 +1,8 @@
 <template>
-  <UApp>
+  <UApp
+    dir="rtl"
+    lang="ar"
+  >
     <NuxtRouteAnnouncer />
     <NuxtLayout>
       <NuxtPage />

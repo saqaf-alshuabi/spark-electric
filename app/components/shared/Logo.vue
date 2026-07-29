@@ -7,8 +7,8 @@
     <img
       src="/logos/logo.svg"
       alt="شعار ابو تيم الكهربائي"
-      class="w-8"
+      class="h-12 w-auto"
     >
-    <span class="text-2xl font-bold">ابو تيم الكهربائي</span>
+    <span>أبو تيم الكهربائي</span>
   </NuxtLink>
 </template>
