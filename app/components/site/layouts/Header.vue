@@ -4,8 +4,10 @@ import { navItems } from '@/shared/data/site';
 
 <template>
   <UHeader>
-    <template #title>
-      <SharedLogo />
+    <template
+      #title
+    >
+      <SharedLogo class="h-6 w-auto" />
     </template>
     <UNavigationMenu :items="navItems" />
     <template #right>
