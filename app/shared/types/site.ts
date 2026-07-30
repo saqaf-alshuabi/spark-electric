@@ -6,3 +6,10 @@ export interface NavItem {
   to: string;
   icon?: string;
 }
+export interface SocialLink {
+  'label'?: string;
+  'to': string;
+  'icon': string;
+  'target'?: string;
+  'aria-label'?: string;
+}

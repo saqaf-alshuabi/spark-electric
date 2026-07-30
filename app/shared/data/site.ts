@@ -1,4 +1,4 @@
-import type { NavItem } from '../types/site';
+import type { NavItem, SocialLink } from '../types/site';
 
 export const navItems: NavItem[] = [
   {
@@ -8,6 +8,27 @@ export const navItems: NavItem[] = [
   {
     label: 'خدماتنا',
     to: '/services',
+  },
+
+];
+export const socialLinks: SocialLink[] = [
+  {
+    'aria-label': 'تابعنا على سناب شات',
+    'to': 'https://snapchat.com/add/yourusername',
+    'icon': 'i-simple-icons-snapchat',
+    'target': '_blank',
+  },
+  {
+    'aria-label': 'تابعنا على انستقرام',
+    'to': 'https://www.instagram.com/yourusername',
+    'icon': 'i-simple-icons-instagram',
+    'target': '_blank',
+  },
+  {
+    'aria-label': 'تابعنا على تيك توك',
+    'to': 'https://www.tiktok.com/@yourusername',
+    'icon': 'i-simple-icons-tiktok',
+    'target': '_blank',
   },
 
 ];

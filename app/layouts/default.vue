@@ -4,6 +4,6 @@
     <UMain>
       <slot />
     </UMain>
+    <SiteLayoutsFooter />
   </div>
-  <!-- <SiteFooter /> -->
 </template>
