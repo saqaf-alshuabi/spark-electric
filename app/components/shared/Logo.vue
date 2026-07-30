@@ -5,7 +5,7 @@
     aria-label="أبو تيم الكهربائي"
   >
     <img
-      src="/logos/logo.svg"
+      src="/images/logos/logo.svg"
       alt="تيم — أبو تيم الكهربائي"
       class="h-7 w-auto shrink-0 object-contain"
     >
