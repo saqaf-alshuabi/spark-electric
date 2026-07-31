@@ -45,4 +45,11 @@ export default defineNuxtConfig({
     },
     ],
   },
+  icon: {
+    clientBundle: {
+      scan: {
+        globInclude: ['app/**/*.{vue,ts}'],
+      },
+    },
+  },
 });

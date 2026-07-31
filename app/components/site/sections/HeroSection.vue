@@ -5,8 +5,7 @@
       <div class="flex  gap-2">
         <UIcon
           name="i-heroicons-map-pin"
-          variant="outline"
-          title="مكة وضواحيها"
+          class="size-2"
         />
         <span class="text-sm text-muted">مكة وضواحيها</span>
       </div>
