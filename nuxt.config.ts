@@ -37,6 +37,12 @@ export default defineNuxtConfig({
       name: 'Lateef',
       provider: 'google',
       subsets: ['arabic'],
-    }],
+    },
+    {
+      name: 'Alexandria',
+      provider: 'google',
+      subsets: ['arabic'],
+    },
+    ],
   },
 });

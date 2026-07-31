@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+@theme {
+  --font-heading: 'Lateef', sans-serif;
+  --font-body: 'Alexandria', sans-serif;
+}
 @layer base {
   h1 {
     @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl text-highlighted font-bold tracking-tight leading-snug;
@@ -18,3 +22,9 @@
   }
 
 }
+ h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+} 
+p {
+  font-family: var(--font-body);
+} 
