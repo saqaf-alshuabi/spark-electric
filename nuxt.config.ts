@@ -33,16 +33,14 @@ export default defineNuxtConfig({
     },
   },
   fonts: {
-    families: [{
-      name: 'Lateef',
-      provider: 'google',
-      subsets: ['arabic'],
-    },
-    {
-      name: 'Alexandria',
-      provider: 'google',
-      subsets: ['arabic'],
-    },
+    families: [
+      {
+        name: 'Vazirmatn',
+        provider: 'google',
+        subsets: ['arabic'],
+        weights: [400, 500, 600, 700],
+        global: true,
+      },
     ],
   },
   icon: {
