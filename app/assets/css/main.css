@@ -8,9 +8,17 @@
 }
 
 @layer base {
+  html {
+    @apply antialiased;
+  }
+
   body {
     font-family: var(--font-body);
-    @apply text-base font-normal text-default antialiased;
+    @apply text-base font-normal text-default;
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-highlighted;
   }
 
   h1,
@@ -18,7 +26,7 @@
   h3,
   h4 {
     font-family: var(--font-heading);
-    @apply text-highlighted tracking-tight;
+    @apply text-highlighted tracking-tight text-balance;
   }
 
   h1 {
@@ -39,6 +47,34 @@
 
   p {
     font-family: var(--font-body);
-    @apply text-sm sm:text-base font-normal text-muted leading-relaxed;
+    @apply text-sm sm:text-base font-normal text-muted leading-relaxed text-pretty;
+  }
+
+  strong {
+    @apply font-semibold text-highlighted;
+  }
+
+  small {
+    @apply text-xs sm:text-sm text-muted;
+  }
+}
+
+@layer components {
+  /* Vertical rhythm for page sections */
+  .section-y {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Stack gaps: related content */
+  .stack-sm {
+    @apply flex flex-col gap-3;
+  }
+
+  .stack-md {
+    @apply flex flex-col gap-6 md:gap-8;
+  }
+
+  .stack-lg {
+    @apply flex flex-col gap-8 md:gap-10;
   }
 }
