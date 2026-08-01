@@ -18,6 +18,10 @@ logs
 .fleet
 .idea
 
+# Windows reserved device name (created accidentally by shell redirects)
+/nul
+/NUL
+
 # Local env files
 .env
 .env.*
