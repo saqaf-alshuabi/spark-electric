@@ -1,29 +1,22 @@
-<script setup>
-const props = defineProps({
-  icon: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-  class: {
-    type: String,
-    required: false,
-    default: 'size-6 text-primary',
-  },
+<script setup lang="ts">
+withDefaults(defineProps<{
+  icon: string;
+  title: string;
+  iconClass?: string;
+}>(), {
+  iconClass: 'size-4 sm:size-5',
 });
 </script>
 
 <template>
-  <div class="flex items-center gap-2">
+  <div class="flex items-start gap-2 min-w-0">
     <UIcon
-      :name="props.icon"
-      :class="props.class"
+      :name="icon"
+      class="mt-0.5 shrink-0 text-primary"
+      :class="iconClass"
     />
-    <span class="text-sm text-Dimmed">
-      {{ props.title }}
+    <span class="text-xs sm:text-sm text-muted leading-snug">
+      {{ title }}
     </span>
   </div>
 </template>

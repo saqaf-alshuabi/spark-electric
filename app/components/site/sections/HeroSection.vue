@@ -1,25 +1,17 @@
 <template>
-  <section class="py-16 md:py-20 lg:py-24 ">
+  <section class="py-16 md:py-20 lg:py-24">
     <UContainer>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 lg:gap-32">
-        <div class="flex flex-col  gap-8 md:gap-16 lg:gap-24">
-          <h1 class="text-center md:text-right">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-24">
+        <div class="flex flex-col items-center gap-8 md:items-start md:gap-10">
+          <h1 class="max-w-xs text-center sm:max-w-sm md:max-w-md md:text-start">
             فني كهرباء مباني ومنازل
-            <div>
+            <span class="mt-1 block">
               في
               <span class="text-primary">مكة وضواحيها</span>
-            </div>
+            </span>
           </h1>
-          <div class="grid grid-cols-2  gap-4">
-            <SharedFeatureBadge
-              icon="i-heroicons-clock"
-              title="خدمة 24 ساعة"
-            />
-            <SharedFeatureBadge
-              icon="i-heroicons-exclamation-triangle"
-              title="استجابة فورية للطوارئ"
-            />
-          </div>
+
+          <SiteHomeServiceBadge class="w-full" />
         </div>
       </div>
     </UContainer>

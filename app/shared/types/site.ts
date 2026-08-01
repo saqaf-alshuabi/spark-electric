@@ -13,3 +13,9 @@ export interface SocialLink {
   'target'?: string;
   'aria-label'?: string;
 }
+
+export interface FeatureBadgeItem {
+  icon: string;
+  title: string;
+  iconClass?: string;
+}
