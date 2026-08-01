@@ -45,9 +45,17 @@ export default defineNuxtConfig({
   },
   icon: {
     clientBundle: {
+      // Auto-scan templates + TS data files
       scan: {
         globInclude: ['app/**/*.{vue,ts}'],
       },
+      // Icons from shared/data can be missed after HMR — keep them explicit
+      icons: [
+        'heroicons:clock',
+        'heroicons:exclamation-triangle',
+        'heroicons:bolt',
+        'heroicons:currency-dollar',
+      ],
     },
   },
 });

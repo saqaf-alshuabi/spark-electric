@@ -5,9 +5,11 @@ const { site } = useAppConfig();
 <template>
   <section class="section-y">
     <UContainer>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-24">
-        <div class="stack-lg items-center md:items-start">
-          <h1 class="max-w-xs text-center sm:max-w-sm md:max-w-md md:text-start">
+      <!-- gap-8 = same major rhythm between copy and media -->
+      <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
+        <!-- Related group: title + badges -->
+        <div class="content-w mx-auto stack-md items-center md:mx-0 md:items-start">
+          <h1 class="text-center md:text-start">
             {{ site.tagline }}
             <span class="mt-1 block">
               في
@@ -17,6 +19,8 @@ const { site } = useAppConfig();
 
           <SiteHomeServiceBadge class="w-full" />
         </div>
+
+        <SiteSectionsCardService />
       </div>
     </UContainer>
   </section>
