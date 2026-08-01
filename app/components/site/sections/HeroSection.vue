@@ -16,8 +16,8 @@
               title="خدمة 24 ساعة"
             />
             <SharedFeatureBadge
-              icon="i-heroicons-clock"
-              title="خدمة 24 ساعة"
+              icon="i-heroicons-exclamation-triangle"
+              title="استجابة فورية للطوارئ"
             />
           </div>
         </div>
