@@ -27,5 +27,4 @@ import { navItems } from '@/shared/data/site';
       />
     </template>
   </UHeader>
-  <SiteLayoutsMobileActionBar />
 </template>

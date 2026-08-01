@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div class="flex min-h-dvh flex-col">
     <SiteLayoutsHeader />
-    <UMain>
+
+    <UMain class="flex-1 pb-24 lg:pb-0">
       <slot />
     </UMain>
+
     <SiteLayoutsFooter />
+    <SiteLayoutsMobileActionBar />
   </div>
 </template>
