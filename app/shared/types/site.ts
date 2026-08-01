@@ -1,5 +1,10 @@
 export interface SiteSettings {
   name: string;
+  fullName: string;
+  tagline: string;
+  city: string;
+  copyright: string;
+  logo: string;
 }
 export interface NavItem {
   label: string;
