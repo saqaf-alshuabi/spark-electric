@@ -1,4 +1,4 @@
-import type { FeatureBadgeItem, NavItem, SocialLink } from '../types/site';
+import type { FeatureBadgeItem, NavItem, ServiceSlide, SocialLink } from '../types/site';
 
 export const navItems: NavItem[] = [
   {
@@ -49,5 +49,33 @@ export const serviceBadges: FeatureBadgeItem[] = [
   {
     icon: 'i-heroicons-currency-dollar',
     title: 'تسعير واضح قبل بدء التنفيذ',
+  },
+];
+
+export const electricalNetworkSlides: ServiceSlide[] = [
+  {
+    src: '/images/services/electrical-networks-breaker-panel.png',
+    alt: 'تأسيس وصيانة لوحات التوزيع الكهربائية',
+    caption: 'تأسيس وتشطيب وصيانة الشبكات الكهربائية',
+  },
+  {
+    src: '/images/services/electrical-networks-cable-wiring.png',
+    alt: 'تمديد وربط الكابلات الكهربائية',
+    caption: 'تمديد وربط الكابلات باحترافية',
+  },
+  {
+    src: '/images/services/electrical-networks-conduit.png',
+    alt: 'تمديد مواسير وقنوات الكهرباء',
+    caption: 'تأسيس مواسير وقنوات الكهرباء',
+  },
+  {
+    src: '/images/services/electrical-networks-switches.png',
+    alt: 'تركيب المفاتيح والأفياش',
+    caption: 'تركيب المفاتيح والأفياش بدقة',
+  },
+  {
+    src: '/images/services/electrical-networks-multimeter.png',
+    alt: 'فحص وتشخيص الأعطال الكهربائية',
+    caption: 'فحص وتشخيص الأعطال بدقة',
   },
 ];

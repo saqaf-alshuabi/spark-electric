@@ -24,3 +24,9 @@ export interface FeatureBadgeItem {
   title: string;
   iconClass?: string;
 }
+
+export interface ServiceSlide {
+  src: string;
+  alt: string;
+  caption: string;
+}
