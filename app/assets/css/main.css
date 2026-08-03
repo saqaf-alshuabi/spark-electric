@@ -46,7 +46,6 @@
   }
 
   p {
-    font-family: var(--font-body);
     @apply text-sm sm:text-base font-normal text-muted leading-relaxed text-pretty;
   }
 
