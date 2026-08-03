@@ -15,7 +15,7 @@ const { site } = useAppConfig();
         </h1>
         <SiteHomeServiceBadge class="w-full " />
       </div>
-      <SiteSectionsCardService class="bg-neutral  rounded-xl" />
+      <SiteSectionsCardService />
     </UContainer>
   </section>
   <section class="section-y bg-neutral-200">

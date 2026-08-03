@@ -61,12 +61,12 @@ export const electricalNetworkSlides: ServiceSlide[] = [
   {
     src: '/images/services/electrical-networks-cable-wiring.png',
     alt: 'تمديد وربط الكابلات الكهربائية',
-    caption: 'تمديد وربط الكابلات باحترافية',
+    caption: 'تركيب الثريات والنجف',
   },
   {
     src: '/images/services/electrical-networks-conduit.png',
     alt: 'تمديد مواسير وقنوات الكهرباء',
-    caption: 'تأسيس مواسير وقنوات الكهرباء',
+    caption: 'تركيب الكشافات والليدات الديكورية ',
   },
   {
     src: '/images/services/electrical-networks-switches.png',
@@ -76,6 +76,6 @@ export const electricalNetworkSlides: ServiceSlide[] = [
   {
     src: '/images/services/electrical-networks-multimeter.png',
     alt: 'فحص وتشخيص الأعطال الكهربائية',
-    caption: 'فحص وتشخيص الأعطال بدقة',
+    caption: 'تركيب انظمة الاتركوم وسماعات السقف الجبسية',
   },
 ];

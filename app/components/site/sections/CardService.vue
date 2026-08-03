@@ -11,7 +11,7 @@ const slide = electricalNetworkSlides[0]!;
       :alt="slide.alt"
       class="size-full object-contain"
     />
-    <p class="caption text-center">
+    <p class="caption-sm text-center">
       {{ slide.caption }}
     </p>
   </div>
