@@ -54,7 +54,7 @@ export const serviceBadges: FeatureBadgeItem[] = [
 
 export const electricalNetworkSlides: ServiceSlide[] = [
   {
-    src: '/images/services/electrical-networks-breaker-panel.png',
+    src: '/images/services/intercom-cable-connect.png',
     alt: 'تأسيس وصيانة لوحات التوزيع الكهربائية',
     caption: 'تأسيس وتشطيب وصيانة الشبكات الكهربائية',
   },

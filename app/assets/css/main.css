@@ -30,7 +30,7 @@
   }
 
   h1 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug text-pretty md:text-balance;
   }
 
   h2 {
@@ -65,7 +65,7 @@
   }
 
   .content-w {
-    @apply w-full max-w-xs sm:max-w-sm md:max-w-md;
+    @apply w-full max-w-xs sm:max-w-sm md:max-w-md ;
   }
   .stack-sm {
     @apply flex flex-col gap-3;
