@@ -16,3 +16,4 @@ overrides:
   '@emnapi/runtime': ^2.0.0-alpha.3
   '@tiptap/core': 3.29.2
   '@tiptap/pm': 3.29.2
+  cac: ^6.7.14

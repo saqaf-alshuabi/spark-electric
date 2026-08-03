@@ -20,6 +20,12 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL,
+    name: 'أبو تيم الكهربائي',
+    description: 'فني كهرباء مباني ومنازل في مكة وضواحيها — تأسيس، صيانة، وإصلاح أعطال طارئة.',
+    defaultLocale: 'ar',
+  },
   compatibilityDate: '2025-07-15',
   eslint: {
     config: {
