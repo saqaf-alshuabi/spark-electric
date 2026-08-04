@@ -90,4 +90,88 @@
   .caption-lg {
     @apply text-base sm:text-lg font-medium text-highlighted leading-snug text-pretty;
   }
+
+  /* Slide carousel — <Transition name="slide-image"> on images */
+  @keyframes slide-image-leave {
+    0% {
+      transform: translateX(0) scale(1, 1);
+      filter: blur(0);
+      opacity: 1;
+    }
+
+    28% {
+      transform: translateX(1.25rem) scale(1.03, 1);
+      filter: blur(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(-2.75rem) scale(1.16, 1.07);
+      filter: blur(12px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-image-enter {
+    0% {
+      transform: translateX(2rem) scale(0.97, 1);
+      filter: blur(8px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0) scale(1, 1);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-caption-fade {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .slide-image-leave-active {
+    animation: slide-image-leave 0.7s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+    transform-origin: center center;
+    z-index: 1;
+  }
+
+  .slide-image-enter-active {
+    animation: slide-image-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 0;
+  }
+
+  .slide-caption-leave-active {
+    animation: slide-caption-fade 0.35s ease forwards;
+  }
+
+  .slide-caption-enter-active {
+    transition: opacity 0.45s ease 0.15s;
+  }
+
+  .slide-caption-enter-from {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slide-image-leave-active,
+    .slide-image-enter-active,
+    .slide-caption-leave-active,
+    .slide-caption-enter-active {
+      animation: none;
+      transition: none;
+    }
+
+    .slide-image-enter-from,
+    .slide-caption-enter-from {
+      opacity: 1;
+    }
+  }
 }
+
