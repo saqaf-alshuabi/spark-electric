@@ -52,30 +52,50 @@ export const serviceBadges: FeatureBadgeItem[] = [
   },
 ];
 
-export const electricalNetworkSlides: ServiceSlide[] = [
+export const serviceSlides: ServiceSlide[] = [
   {
-    src: '/images/services/intercom-cable-connect.png',
-    alt: 'تأسيس وصيانة لوحات التوزيع الكهربائية',
-    caption: 'تأسيس وتشطيب وصيانة الشبكات الكهربائية',
+    src: '/images/services/electrical-networks-breaker-panel.png',
+    alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+    caption: 'تأسيس وتشطيب الشبكات الكهربائية',
   },
   {
-    src: '/images/services/electrical-networks-cable-wiring.png',
-    alt: 'تمديد وربط الكابلات الكهربائية',
+    src: '/images/services/lighting-install-chandelier-nocap.png',
+    alt: 'تركيب الثريات والنجف',
     caption: 'تركيب الثريات والنجف',
   },
   {
     src: '/images/services/electrical-networks-conduit.png',
     alt: 'تمديد مواسير وقنوات الكهرباء',
-    caption: 'تركيب الكشافات والليدات الديكورية ',
+    caption: 'تمديد المواسير والقنوات',
+  },
+  {
+    src: '/images/services/intercom-video-intercom.png',
+    alt: 'تركيب نظام انتركوم مرئي',
+    caption: 'تركيب أنظمة الانتركوم',
   },
   {
     src: '/images/services/electrical-networks-switches.png',
     alt: 'تركيب المفاتيح والأفياش',
-    caption: 'تركيب المفاتيح والأفياش بدقة',
+    caption: 'تركيب المفاتيح والأفياش',
+  },
+  {
+    src: '/images/services/decorative-led-ceiling-corner.png',
+    alt: 'تركيب ليدات ديكورية في السقف',
+    caption: 'تركيب الليدات الديكورية',
+  },
+  {
+    src: '/images/services/electrical-networks-cable-wiring.png',
+    alt: 'تمديد وربط الكابلات الكهربائية',
+    caption: 'تمديد وربط الكابلات',
+  },
+  {
+    src: '/images/services/lighting-install-spotlights.png',
+    alt: 'تركيب الكشافات والسبوت لايت',
+    caption: 'تركيب الكشافات والسبوت',
   },
   {
     src: '/images/services/electrical-networks-multimeter.png',
     alt: 'فحص وتشخيص الأعطال الكهربائية',
-    caption: 'تركيب انظمة الاتركوم وسماعات السقف الجبسية',
+    caption: 'فحص وتشخيص الأعطال',
   },
 ];

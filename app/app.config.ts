@@ -15,6 +15,8 @@ export default defineAppConfig({
     icons: {
       menu: 'i-heroicons-bars-2',
       close: 'i-heroicons-x-mark',
+      arrowLeft: 'i-heroicons-arrow-left',
+      arrowRight: 'i-heroicons-arrow-right',
     },
   },
 });

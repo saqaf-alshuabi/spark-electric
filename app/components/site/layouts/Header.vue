@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { navItems } from '@/shared/data/site';
+
+const { site } = useAppConfig();
 </script>
 
 <template>
-  <UHeader>
+  <UHeader
+    :title="site.fullName"
+    to="/"
+  >
     <template
       #title
     >

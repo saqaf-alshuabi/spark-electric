@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { electricalNetworkSlides } from '@/shared/data/site';
+import { serviceSlides } from '@/shared/data/site';
 
 const activeIndex = ref(0);
 
 useIntervalFn(() => {
-  activeIndex.value = (activeIndex.value + 1) % electricalNetworkSlides.length;
+  activeIndex.value = (activeIndex.value + 1) % serviceSlides.length;
 }, 4000);
 </script>
 
 <template>
-  <div class="content-w mx-auto stack-sm items-center md:mx-0">
+  <div class="mx-auto w-full max-w-lg stack-sm items-center md:mx-0 md:max-w-none">
     <div class="relative aspect-4/3 w-full overflow-hidden">
       <Transition
         name="slide-image"
         mode="out-in"
       >
         <NuxtImg
-          :key="electricalNetworkSlides[activeIndex]!.src"
-          :src="electricalNetworkSlides[activeIndex]!.src"
-          :alt="electricalNetworkSlides[activeIndex]!.alt"
+          :key="serviceSlides[activeIndex]!.src"
+          :src="serviceSlides[activeIndex]!.src"
+          :alt="serviceSlides[activeIndex]!.alt"
           class="absolute inset-0 size-full object-contain"
-          sizes="320px sm:384px md:448px"
+          sizes="384px sm:448px md:560px lg:640px"
         />
       </Transition>
     </div>
@@ -30,10 +30,10 @@ useIntervalFn(() => {
       mode="out-in"
     >
       <p
-        :key="electricalNetworkSlides[activeIndex]!.caption"
+        :key="serviceSlides[activeIndex]!.caption"
         class="caption-sm text-center"
       >
-        {{ electricalNetworkSlides[activeIndex]!.caption }}
+        {{ serviceSlides[activeIndex]!.caption }}
       </p>
     </Transition>
 
@@ -43,7 +43,7 @@ useIntervalFn(() => {
       aria-label="معرض أعمال الكهرباء"
     >
       <button
-        v-for="(slide, index) in electricalNetworkSlides"
+        v-for="(slide, index) in serviceSlides"
         :key="slide.src"
         type="button"
         role="tab"

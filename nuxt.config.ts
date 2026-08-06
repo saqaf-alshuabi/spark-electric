@@ -2,7 +2,13 @@
 export default defineNuxtConfig({
 
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/image', '@nuxt/fonts', '@vueuse/nuxt', '@nuxt/hints', '@nuxtjs/seo'],
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   app: {
     head: {
       htmlAttrs: {
@@ -61,6 +67,10 @@ export default defineNuxtConfig({
         'heroicons:exclamation-triangle',
         'heroicons:bolt',
         'heroicons:currency-dollar',
+        'heroicons:arrow-left',
+        'heroicons:arrow-right',
+        'heroicons:bars-2',
+        'heroicons:x-mark',
       ],
     },
   },
