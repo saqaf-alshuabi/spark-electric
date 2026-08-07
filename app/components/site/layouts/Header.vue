@@ -2,6 +2,7 @@
 import { navItems } from '@/shared/data/site';
 
 const { site } = useAppConfig();
+const whatsappUrl = `https://wa.me/${site.phone}`;
 </script>
 
 <template>
@@ -21,8 +22,9 @@ const { site } = useAppConfig();
         label="واتساب"
         variant="ghost"
         class="hidden lg:inline-flex"
-        :to="`https://wa.me/9647700000000`"
+        :to="whatsappUrl"
         target="_blank"
+        rel="noopener noreferrer"
       />
     </template>
     <template #body>

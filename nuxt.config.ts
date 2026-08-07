@@ -75,6 +75,7 @@ export default defineNuxtConfig({
         'heroicons:sparkles',
         'heroicons:video-camera',
         'heroicons:wrench-screwdriver',
+        'heroicons:phone',
       ],
     },
   },

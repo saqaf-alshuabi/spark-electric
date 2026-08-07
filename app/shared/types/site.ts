@@ -5,6 +5,8 @@ export interface SiteSettings {
   city: string;
   copyright: string;
   logo: string;
+  /** International digits only, no + (e.g. 9665XXXXXXXX) */
+  phone: string;
 }
 export interface NavItem {
   label: string;

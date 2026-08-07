@@ -3,5 +3,6 @@
     <SiteSectionsHeroSection />
     <SiteSectionsServicesSection />
     <SiteSectionsWhyChooseUsSection />
+    <SiteSectionsCtaSection />
   </div>
 </template>

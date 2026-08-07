@@ -6,6 +6,8 @@ export default defineAppConfig({
     city: 'مكة وضواحيها',
     copyright: `${new Date().getFullYear()} جميع الحقوق محفوظة`,
     logo: '/images/logos/logo.svg',
+
+    phone: '967738271423',
   },
   ui: {
     colors: {
