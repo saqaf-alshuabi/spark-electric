@@ -1,4 +1,4 @@
-import type { FeatureBadgeItem, NavItem, ServiceSlide, SocialLink } from '../types/site';
+import type { FeatureBadgeItem, HomeServiceItem, NavItem, ServiceSlide, SocialLink } from '../types/site';
 
 export const navItems: NavItem[] = [
   {
@@ -49,6 +49,34 @@ export const serviceBadges: FeatureBadgeItem[] = [
   {
     icon: 'i-heroicons-currency-dollar',
     title: 'تسعير واضح قبل بدء التنفيذ',
+  },
+];
+
+export const homeServices: HomeServiceItem[] = [
+  {
+    icon: 'i-heroicons-bolt',
+    title: 'شبكات وتأسيس',
+    to: '/services',
+  },
+  {
+    icon: 'i-heroicons-light-bulb',
+    title: 'إنارة وثريات',
+    to: '/services',
+  },
+  {
+    icon: 'i-heroicons-sparkles',
+    title: 'ليدات ديكورية',
+    to: '/services',
+  },
+  {
+    icon: 'i-heroicons-video-camera',
+    title: 'انتركوم',
+    to: '/services',
+  },
+  {
+    icon: 'i-heroicons-wrench-screwdriver',
+    title: 'فحص أعطال',
+    to: '/services',
   },
 ];
 

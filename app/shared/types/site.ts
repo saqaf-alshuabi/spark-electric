@@ -30,3 +30,9 @@ export interface ServiceSlide {
   alt: string;
   caption: string;
 }
+
+export interface HomeServiceItem {
+  icon: string;
+  title: string;
+  to: string;
+}

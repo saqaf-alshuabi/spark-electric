@@ -18,17 +18,4 @@ const { site } = useAppConfig();
       <SiteSectionsCardService />
     </UContainer>
   </section>
-  <section class="section-y bg-neutral-200">
-    <UContainer>
-      <h2 class="text-center">
-        خدماتنا
-      </h2>
-      <p class="text-center">
-        نقدم خدمات الكهرباء المنزلية والتجارية والصناعية
-      </p>
-      <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
-        <div class="content-w mx-auto stack-md items-center md:mx-0 md:items-start" />
-      </div>
-    </UContainer>
-  </section>
 </template>

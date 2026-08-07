@@ -1,3 +1,6 @@
 <template>
-  <SiteSectionsHeroSection />
+  <div>
+    <SiteSectionsHeroSection />
+    <SiteSectionsServicesSection />
+  </div>
 </template>
