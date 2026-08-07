@@ -38,9 +38,10 @@ export default defineNuxtConfig({
       stylistic: {
         quotes: 'single',
         indent: 2,
-        semi: true,
-        arrowParens: true,
+        semi: false,
+        arrowParens: false,
         commaDangle: 'always-multiline',
+        blockSpacing: true,
       },
     },
   },
@@ -79,4 +80,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-});
+})

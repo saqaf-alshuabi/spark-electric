@@ -1,11 +1,11 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
-  icon: string;
-  title: string;
-  iconClass?: string;
+  icon: string
+  title: string
+  iconClass?: string
 }>(), {
   iconClass: 'size-4 sm:size-5',
-});
+})
 </script>
 
 <template>

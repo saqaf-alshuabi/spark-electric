@@ -1,4 +1,4 @@
-import type { FeatureBadgeItem, HomeServiceItem, NavItem, ServiceSlide, SocialLink, WhyChooseUsItem } from '../types/site';
+import type { FeatureBadgeItem, HomeServiceItem, NavItem, ServiceSlide, SocialLink, WhyChooseUsItem } from '../types/site'
 
 export const navItems: NavItem[] = [
   {
@@ -10,7 +10,7 @@ export const navItems: NavItem[] = [
     to: '/services',
   },
 
-];
+]
 export const socialLinks: SocialLink[] = [
   {
     'aria-label': 'تابعنا على سناب شات',
@@ -31,7 +31,7 @@ export const socialLinks: SocialLink[] = [
     'target': '_blank',
   },
 
-];
+]
 
 export const serviceBadges: FeatureBadgeItem[] = [
   {
@@ -50,7 +50,7 @@ export const serviceBadges: FeatureBadgeItem[] = [
     icon: 'i-heroicons-currency-dollar',
     title: 'تسعير واضح قبل بدء التنفيذ',
   },
-];
+]
 
 export const whyChooseUs: WhyChooseUsItem[] = [
   {
@@ -69,7 +69,7 @@ export const whyChooseUs: WhyChooseUsItem[] = [
     title: 'تسعير واضح',
     description: 'تعرف التكلفة قبل ما نبدأ التنفيذ.',
   },
-];
+]
 
 export const homeServices: HomeServiceItem[] = [
   {
@@ -97,7 +97,7 @@ export const homeServices: HomeServiceItem[] = [
     title: 'فحص أعطال',
     to: '/services',
   },
-];
+]
 
 export const serviceSlides: ServiceSlide[] = [
   {
@@ -145,4 +145,4 @@ export const serviceSlides: ServiceSlide[] = [
     alt: 'فحص وتشخيص الأعطال الكهربائية',
     caption: 'فحص وتشخيص الأعطال',
   },
-];
+]

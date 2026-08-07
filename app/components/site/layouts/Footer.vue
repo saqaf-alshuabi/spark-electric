@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { socialLinks, navItems } from '@/shared/data/site';
+import { socialLinks, navItems } from '@/shared/data/site'
 
-const { site } = useAppConfig();
+const { site } = useAppConfig()
 </script>
 
 <template>

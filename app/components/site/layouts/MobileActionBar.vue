@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { site } = useAppConfig();
-const whatsappUrl = `https://wa.me/${site.phone}`;
+const { site } = useAppConfig()
+const whatsappUrl = `https://wa.me/${site.phone}`
 </script>
 
 <template>

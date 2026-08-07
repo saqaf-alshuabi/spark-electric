@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { serviceSlides } from '@/shared/data/site';
+import { serviceSlides } from '@/shared/data/site'
 
-const activeIndex = ref(0);
+const activeIndex = ref(0)
 
 useIntervalFn(() => {
-  activeIndex.value = (activeIndex.value + 1) % serviceSlides.length;
-}, 4000);
+  activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
+}, 4000)
 </script>
 
 <template>

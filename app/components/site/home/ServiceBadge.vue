@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { serviceBadges } from '@/shared/data/site';
+import { serviceBadges } from '@/shared/data/site'
 </script>
 
 <template>
