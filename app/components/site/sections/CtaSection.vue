@@ -31,7 +31,7 @@ const phoneUrl = `tel:+${site.phone}`
           label="اتصال"
           icon="i-heroicons-phone"
           variant="outline"
-          size="lg"
+          size="md"
         />
       </div>
     </UContainer>
