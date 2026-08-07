@@ -38,7 +38,6 @@ export interface HomeServiceItem {
 }
 
 export interface WhyChooseUsItem {
-  icon: string;
   title: string;
   description: string;
 }

@@ -20,18 +20,12 @@ import { whyChooseUs } from '@/shared/data/site';
           :key="item.title"
           class="stack-sm rounded-lg bg-muted/60 px-4 py-5 sm:px-5"
         >
-          <UIcon
-            :name="item.icon"
-            class="size-7 text-primary sm:size-8"
-          />
-          <div class="stack-sm">
-            <h3>
-              {{ item.title }}
-            </h3>
-            <p>
-              {{ item.description }}
-            </p>
-          </div>
+          <h3>
+            {{ item.title }}
+          </h3>
+          <p>
+            {{ item.description }}
+          </p>
         </li>
       </ul>
     </UContainer>
