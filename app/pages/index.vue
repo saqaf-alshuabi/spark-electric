@@ -2,5 +2,6 @@
   <div>
     <SiteSectionsHeroSection />
     <SiteSectionsServicesSection />
+    <SiteSectionsWhyChooseUsSection />
   </div>
 </template>
