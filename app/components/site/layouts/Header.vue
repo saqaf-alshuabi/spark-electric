@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { navItems } from '@/shared/data/site'
+import { navItems } from '@/shared/data'
 
 const { site, ui } = useAppConfig()
 const whatsappUrl = `https://wa.me/${site.phone}`

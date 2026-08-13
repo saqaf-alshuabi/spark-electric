@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { serviceSlides } from '@/shared/data/site'
+import { serviceSlides } from '@/shared/data'
 
 const activeIndex = ref(0)
 

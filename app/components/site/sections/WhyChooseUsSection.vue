@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { whyChooseUs } from '@/shared/data/site'
+import { whyChooseUs } from '@/shared/data'
 </script>
 
 <template>

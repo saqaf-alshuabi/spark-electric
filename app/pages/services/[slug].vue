@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getServiceBySlug } from '@/shared/data/site'
+import { getServiceBySlug } from '@/shared/data'
 
 const route = useRoute()
 const { site, ui } = useAppConfig()

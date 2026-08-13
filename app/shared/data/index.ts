@@ -1,0 +1,6 @@
+export { navItems } from './nav'
+export { socialLinks } from './social'
+export { serviceBadges } from './badges'
+export { whyChooseUs } from './why-choose-us'
+export { services, homeServices, getServiceBySlug } from './services'
+export { serviceSlides } from './services/slides'

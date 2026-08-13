@@ -43,7 +43,7 @@ const isActive = (slug: string) => activeSlug.value === slug
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
-            class="group -mx-3 flex items-start gap-4 rounded-lg px-3 py-6 transition-colors"
+            class="group flex items-start gap-4 rounded-lg px-3 py-6 transition-colors"
             :class="isActive(service.slug)
               ? 'bg-muted/40 text-highlighted'
               : 'text-muted hover:bg-muted/25 hover:text-highlighted'"

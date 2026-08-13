@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { services } from '@/shared/data/site'
+import { services } from '@/shared/data'
 
 const { site } = useAppConfig()
 
