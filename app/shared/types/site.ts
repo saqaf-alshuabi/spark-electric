@@ -33,6 +33,19 @@ export interface ServiceSlide {
   caption: string
 }
 
+export interface ServiceItem {
+  slug: string
+  icon: string
+  title: string
+  description: string
+  /** Short points shown on the services listing */
+  highlights: string[]
+  /** Longer copy for the service detail page (SEO) */
+  body: string
+  image: string
+  imageAlt: string
+}
+
 export interface HomeServiceItem {
   icon: string
   title: string

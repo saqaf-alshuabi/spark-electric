@@ -32,6 +32,9 @@ export default defineNuxtConfig({
     description: 'فني كهرباء مباني ومنازل في مكة وضواحيها — تأسيس، صيانة، وإصلاح أعطال طارئة.',
     defaultLocale: 'ar',
   },
+  experimental: {
+    viewTransition: true,
+  },
   compatibilityDate: '2025-07-15',
   eslint: {
     config: {
@@ -77,7 +80,9 @@ export default defineNuxtConfig({
         'heroicons:video-camera',
         'heroicons:wrench-screwdriver',
         'heroicons:phone',
+        'heroicons:check',
       ],
+
     },
   },
 })

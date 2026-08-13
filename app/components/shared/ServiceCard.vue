@@ -9,10 +9,7 @@ defineProps<{
 <template>
   <NuxtLink
     :to="to"
-    class="stack-sm items-center rounded-lg bg-default/60
-     px-3 py-5 text-center transition-colors hover:bg-default
-      active:bg-accented focus-visible:outline-none focus-visible:ring-1
-      focus-visible:ring-primary/60"
+    class="stack-sm focus-ring items-center rounded-lg bg-default/60 px-3 py-5 text-center transition-colors hover:bg-default active:bg-accented"
   >
     <UIcon
       :name="icon"

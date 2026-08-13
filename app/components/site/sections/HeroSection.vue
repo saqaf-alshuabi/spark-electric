@@ -11,6 +11,7 @@ const { site } = useAppConfig()
           <span class="mt-1 block">
             في
             <span class="text-primary">{{ site.city }}</span>
+            وضواحيها
           </span>
         </h1>
         <SiteHomeServiceBadge class="w-full " />
