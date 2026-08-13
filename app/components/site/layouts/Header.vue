@@ -10,9 +10,7 @@ const whatsappUrl = `https://wa.me/${site.phone}`
     :title="site.fullName"
     to="/"
   >
-    <template
-      #title
-    >
+    <template #title>
       <SharedLogo class="h-6 w-auto" />
     </template>
     <UNavigationMenu :items="navItems" />

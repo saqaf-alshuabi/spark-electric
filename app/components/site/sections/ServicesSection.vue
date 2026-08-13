@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { homeServices } from '@/shared/data/site'
+
+const { ui } = useAppConfig()
 </script>
 
 <template>
@@ -27,7 +29,7 @@ import { homeServices } from '@/shared/data/site'
         to="/services"
         label="عرض كل الخدمات"
         variant="soft"
-        trailing-icon="i-heroicons-arrow-left"
+        :trailing-icon="ui.icons.arrowLeft"
       />
     </UContainer>
   </section>

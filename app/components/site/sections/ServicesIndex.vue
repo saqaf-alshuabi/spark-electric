@@ -1,21 +1,27 @@
 <script setup lang="ts">
 import type { ServiceItem } from '@/shared/types/site'
 
-const props = defineProps<{
+const {
+  services,
+  title,
+  description,
+} = defineProps<{
   services: ServiceItem[]
   title: string
   description: string
 }>()
 
-const activeSlug = ref(props.services[0]?.slug ?? '')
+const activeSlug = ref(services[0]?.slug ?? '')
 
 const activeService = computed(() =>
-  props.services.find(service => service.slug === activeSlug.value) ?? props.services[0],
+  services.find(service => service.slug === activeSlug.value) ?? services[0],
 )
 
-function setActive(slug: string) {
+const setActive = (slug: string) => {
   activeSlug.value = slug
 }
+
+const isActive = (slug: string) => activeSlug.value === slug
 </script>
 
 <template>
@@ -38,7 +44,7 @@ function setActive(slug: string) {
           <NuxtLink
             :to="`/services/${service.slug}`"
             class="group -mx-3 flex items-start gap-4 rounded-lg px-3 py-6 transition-colors"
-            :class="activeSlug === service.slug
+            :class="isActive(service.slug)
               ? 'bg-muted/40 text-highlighted'
               : 'text-muted hover:bg-muted/25 hover:text-highlighted'"
             @mouseenter="setActive(service.slug)"
@@ -50,16 +56,16 @@ function setActive(slug: string) {
 
             <div class="min-w-0 flex-1 stack-sm">
               <div class="flex items-center justify-between gap-3">
-                <h3 :class="activeSlug === service.slug ? 'text-highlighted' : ''">
+                <h3 :class="{ 'text-highlighted': isActive(service.slug) }">
                   {{ service.title }}
                 </h3>
                 <SharedLinkArrow
                   reveal="hover"
-                  :active="activeSlug === service.slug"
+                  :active="isActive(service.slug)"
                 />
               </div>
 
-              <template v-if="activeSlug === service.slug">
+              <template v-if="isActive(service.slug)">
                 <p>
                   {{ service.description }}
                 </p>

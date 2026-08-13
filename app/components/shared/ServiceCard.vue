@@ -1,5 +1,9 @@
 <script setup lang="ts">
-defineProps<{
+const {
+  icon,
+  title,
+  to,
+} = defineProps<{
   icon: string
   title: string
   to: string

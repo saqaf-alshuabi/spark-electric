@@ -11,13 +11,13 @@ const colorClass = {
   highlighted: 'bg-highlighted',
 } as const
 
-withDefaults(defineProps<{
+const {
+  size = 'xs',
+  color = 'primary',
+} = defineProps<{
   size?: keyof typeof sizeClass
   color?: keyof typeof colorClass
-}>(), {
-  size: 'xs',
-  color: 'primary',
-})
+}>()
 </script>
 
 <template>

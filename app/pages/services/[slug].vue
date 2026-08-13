@@ -2,7 +2,7 @@
 import { getServiceBySlug } from '@/shared/data/site'
 
 const route = useRoute()
-const { site } = useAppConfig()
+const { site, ui } = useAppConfig()
 
 const service = getServiceBySlug(String(route.params.slug))
 
@@ -49,7 +49,7 @@ useSeoMeta({
               class="flex items-center gap-2 text-sm text-highlighted sm:text-base"
             >
               <UIcon
-                name="i-heroicons-check"
+                :name="ui.icons.check"
                 class="size-5 shrink-0 text-primary"
               />
               {{ item }}
@@ -65,7 +65,7 @@ useSeoMeta({
               to="/services"
               label="كل الخدمات"
               variant="soft"
-              trailing-icon="i-heroicons-arrow-left"
+              :trailing-icon="ui.icons.arrowLeft"
             />
           </div>
         </div>

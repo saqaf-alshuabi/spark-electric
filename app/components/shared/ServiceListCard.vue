@@ -1,5 +1,12 @@
 <script setup lang="ts">
-defineProps<{
+const {
+  title,
+  description,
+  highlights,
+  image,
+  imageAlt,
+  to,
+} = defineProps<{
   title: string
   description: string
   highlights: string[]

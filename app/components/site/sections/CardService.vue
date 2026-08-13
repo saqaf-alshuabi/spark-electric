@@ -3,22 +3,28 @@ import { serviceSlides } from '@/shared/data/site'
 
 const activeIndex = ref(0)
 
+const activeSlide = computed(() => serviceSlides[activeIndex.value]!)
+
 useIntervalFn(() => {
   activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
 }, 4000)
+
+const goToSlide = (index: number) => {
+  activeIndex.value = index
+}
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-lg stack-sm items-center md:mx-0 md:max-w-none">
+  <div class="mx-auto stack-sm w-full max-w-lg items-center md:mx-0 md:max-w-none">
     <div class="relative aspect-4/3 w-full overflow-hidden">
       <Transition
         name="slide-image"
         mode="out-in"
       >
         <NuxtImg
-          :key="serviceSlides[activeIndex]!.src"
-          :src="serviceSlides[activeIndex]!.src"
-          :alt="serviceSlides[activeIndex]!.alt"
+          :key="activeSlide.src"
+          :src="activeSlide.src"
+          :alt="activeSlide.alt"
           class="absolute inset-0 size-full object-contain"
           sizes="384px sm:448px md:560px lg:640px"
         />
@@ -30,10 +36,10 @@ useIntervalFn(() => {
       mode="out-in"
     >
       <p
-        :key="serviceSlides[activeIndex]!.caption"
+        :key="activeSlide.caption"
         class="caption-sm text-center"
       >
-        {{ serviceSlides[activeIndex]!.caption }}
+        {{ activeSlide.caption }}
       </p>
     </Transition>
 
@@ -51,7 +57,7 @@ useIntervalFn(() => {
         :class="index === activeIndex ? 'w-5 bg-primary' : 'w-1.5 bg-muted/40 hover:bg-muted/60'"
         :aria-selected="index === activeIndex"
         :aria-label="slide.caption"
-        @click="activeIndex = index"
+        @click="goToSlide(index)"
       />
     </div>
   </div>
