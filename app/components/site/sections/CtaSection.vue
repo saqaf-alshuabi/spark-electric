@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { site } = useAppConfig()
+const { site, ui } = useAppConfig()
 
 const whatsappUrl = `https://wa.me/${site.phone}`
 const phoneUrl = `tel:+${site.phone}`
@@ -23,13 +23,13 @@ const phoneUrl = `tel:+${site.phone}`
           target="_blank"
           rel="noopener noreferrer"
           label="واتساب"
-          icon="i-simple-icons-whatsapp"
+          :icon="ui.icons.whatsapp"
           size="lg"
         />
         <UButton
           :to="phoneUrl"
           label="اتصال"
-          icon="i-heroicons-phone"
+          :icon="ui.icons.phone"
           variant="outline"
           size="md"
         />

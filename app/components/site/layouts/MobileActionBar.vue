@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { site } = useAppConfig()
+const { site, ui } = useAppConfig()
 const whatsappUrl = `https://wa.me/${site.phone}`
 </script>
 
 <template>
   <UButton
-    icon="i-simple-icons-whatsapp"
+    :icon="ui.icons.whatsapp"
     label="واتساب"
     variant="outline"
     size="lg"

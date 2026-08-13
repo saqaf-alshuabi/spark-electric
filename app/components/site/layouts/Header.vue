@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { navItems } from '@/shared/data/site'
 
-const { site } = useAppConfig()
+const { site, ui } = useAppConfig()
 const whatsappUrl = `https://wa.me/${site.phone}`
 </script>
 
@@ -18,7 +18,7 @@ const whatsappUrl = `https://wa.me/${site.phone}`
     <UNavigationMenu :items="navItems" />
     <template #right>
       <UButton
-        icon="i-simple-icons-whatsapp"
+        :icon="ui.icons.whatsapp"
         label="واتساب"
         variant="ghost"
         class="hidden lg:inline-flex"

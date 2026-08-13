@@ -19,6 +19,8 @@ export default defineAppConfig({
       close: 'i-heroicons-x-mark',
       arrowLeft: 'i-heroicons-arrow-left',
       arrowRight: 'i-heroicons-arrow-right',
+      whatsapp: 'i-simple-icons-whatsapp',
+      phone: 'i-heroicons-phone',
     },
   },
 })
