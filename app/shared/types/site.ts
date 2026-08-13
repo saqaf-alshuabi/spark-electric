@@ -30,22 +30,27 @@ export interface FeatureBadgeItem {
 export interface ServiceSlide {
   src: string
   alt: string
-  caption: string
+  caption?: string
 }
 
-export interface ServiceItem {
+//  Service summary for the services index page
+export interface ServiceSummary {
   slug: string
-  icon: string
   title: string
   description: string
-  /** Short points shown on the services listing */
   highlights: string[]
-  /** Longer copy for the service detail page (SEO) */
-  body: string
   image: string
   imageAlt: string
 }
 
+//  Service detail for the service detail page
+export interface ServiceDetail extends ServiceSummary {
+  icon: string
+  body: string
+  gallery: ServiceSlide[]
+}
+
+// For the home page services section
 export interface HomeServiceItem {
   icon: string
   title: string

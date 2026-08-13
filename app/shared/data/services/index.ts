@@ -1,6 +1,6 @@
-import type { ServiceItem, HomeServiceItem } from '../../types/site'
+import type { ServiceDetail, HomeServiceItem, ServiceSummary } from '../../types/site'
 
-export const services: ServiceItem[] = [
+export const services: ServiceDetail[] = [
   {
     slug: 'electrical-networks',
     icon: 'i-heroicons-bolt',
@@ -14,6 +14,20 @@ export const services: ServiceItem[] = [
     body: 'نؤسّس ونشطب الشبكات الكهربائية: لوحات التوزيع، التمديدات، المواسير، والمفاتيح والأفياش. شغل بمعايير سلامة واضحة وتسعير مفهوم قبل التنفيذ.',
     image: '/images/services/electrical-networks-breaker-panel.png',
     imageAlt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+    gallery: [
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+    ],
   },
   {
     slug: 'lighting',
@@ -28,7 +42,22 @@ export const services: ServiceItem[] = [
     body: 'نركب الثريات والنجف والسبوت والكشافات بتثبيت آمن وتوزيع إضاءة صحيح، مع تشطيب مرتب من غير فوضى أسلاك أو عيوب ظاهرة.',
     image: '/images/services/lighting-install-chandelier-nocap.png',
     imageAlt: 'تركيب الثريات والنجف',
+    gallery: [
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+    ],
   },
+
   {
     slug: 'decorative-led',
     icon: 'i-heroicons-sparkles',
@@ -42,6 +71,20 @@ export const services: ServiceItem[] = [
     body: 'نركب الليدات الديكورية والإنارة المخفية بتشطيب مرتب وإضاءة متوازنة تضيف لمسة حديثة للمكان بدون تعقيد.',
     image: '/images/services/decorative-led-ceiling-corner.png',
     imageAlt: 'تركيب ليدات ديكورية وإنارة مخفية',
+    gallery: [
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+    ],
   },
   {
     slug: 'intercom',
@@ -56,6 +99,20 @@ export const services: ServiceItem[] = [
     body: 'نركب ونضبط أنظمة الانتركوم المرئي والوحدات الجدارية وسماعات السقف، مع توصيل وتشغيل واضح وسهل للاستخدام اليومي.',
     image: '/images/services/intercom-video-intercom.png',
     imageAlt: 'تركيب نظام انتركوم مرئي',
+    gallery: [
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+    ],
   },
   {
     slug: 'fault-diagnosis',
@@ -70,6 +127,20 @@ export const services: ServiceItem[] = [
     body: 'نفحص أعطال الكهرباء ونشخّص السبب قبل الإصلاح: انقطاع، التماسات، سخونة أفياش، ومشاكل اللوحات — مع استجابة سريعة للطوارئ وتسعير واضح.',
     image: '/images/services/electrical-networks-multimeter.png',
     imageAlt: 'فحص وتشخيص أعطال الكهرباء',
+    gallery: [
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+      {
+        src: '/images/services/electrical-networks-breaker-panel.png',
+        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+      },
+    ],
   },
 ]
 
@@ -78,6 +149,8 @@ export const homeServices: HomeServiceItem[] = services.map(({ icon, title, slug
   title,
   to: `/services/${slug}`,
 }))
+
+export const serviceSummaries: ServiceSummary[] = services.map(({ body, gallery, icon, ...rest }) => rest)
 
 export function getServiceBySlug(slug: string) {
   return services.find(service => service.slug === slug)
