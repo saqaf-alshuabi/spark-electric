@@ -3,13 +3,8 @@ import { serviceSummaries } from '@/shared/data'
 
 const { site } = useAppConfig()
 
-const pageTitle = `خدمات الكهرباء في ${site.city}`
-const pageDescription = 'تأسيس، إنارة، انتركوم، وفحص أعطال للمنازل والمباني — بتسعير واضح قبل التنفيذ.'
-
-useSeoMeta({
-  title: pageTitle,
-  description: `كهربائي منازل ومباني في ${site.city} وضواحيها: تأسيس شبكات، إنارة وثريات، ليدات، انتركوم، وفحص أعطال.`,
-})
+const title = `خدمات الكهرباء في ${site.city}`
+const description = 'تأسيس، إنارة، انتركوم، وفحص أعطال للمنازل والمباني — بتسعير واضح قبل التنفيذ'
 </script>
 
 <template>
@@ -18,10 +13,10 @@ useSeoMeta({
       <!-- Mobile / tablet header -->
       <div class="mx-auto stack-sm max-w-2xl text-center lg:hidden">
         <h1>
-          {{ pageTitle }}
+          {{ title }}
         </h1>
         <p>
-          {{ pageDescription }}
+          {{ description }}
         </p>
       </div>
 
@@ -45,8 +40,8 @@ useSeoMeta({
       <!-- Desktop: title + index + preview as one composition -->
       <SiteSectionsServicesIndex
         :services="serviceSummaries"
-        :title="pageTitle"
-        :description="pageDescription"
+        :title="title"
+        :description="description"
       />
     </UContainer>
   </section>

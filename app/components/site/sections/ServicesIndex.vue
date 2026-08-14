@@ -12,16 +12,13 @@ const {
 }>()
 
 const activeSlug = ref(services[0]?.slug ?? '')
-
-const activeService = computed(() =>
-  services.find(service => service.slug === activeSlug.value) ?? services[0],
-)
-
-const setActive = (slug: string) => {
-  activeSlug.value = slug
-}
-
+const activeService = computed(() => services.find(service => service.slug === activeSlug.value) ?? services[0])
+const setActive = (slug: string) => activeSlug.value = slug
 const isActive = (slug: string) => activeSlug.value === slug
+const linkClass = (slug: string) =>
+  isActive(slug)
+    ? 'bg-muted/40 text-highlighted'
+    : 'text-muted hover:bg-muted/25 hover:text-highlighted'
 </script>
 
 <template>
@@ -44,9 +41,7 @@ const isActive = (slug: string) => activeSlug.value === slug
           <NuxtLink
             :to="`/services/${service.slug}`"
             class="group flex items-start gap-4 rounded-lg px-3 py-6 transition-colors"
-            :class="isActive(service.slug)
-              ? 'bg-muted/40 text-highlighted'
-              : 'text-muted hover:bg-muted/25 hover:text-highlighted'"
+            :class="linkClass(service.slug)"
             @mouseenter="setActive(service.slug)"
             @focus="setActive(service.slug)"
           >

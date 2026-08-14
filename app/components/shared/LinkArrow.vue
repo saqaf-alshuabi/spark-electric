@@ -32,7 +32,7 @@ const revealClass = computed(() =>
     : 'opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100',
 )
 
-const icon = computed(() => iconName ?? ui.icons.arrowLeft)
+const icon = iconName ?? ui.icons.arrowLeft
 </script>
 
 <template>

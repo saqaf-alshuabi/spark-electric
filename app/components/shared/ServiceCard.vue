@@ -1,13 +1,7 @@
 <script setup lang="ts">
-const {
-  icon,
-  title,
-  to,
-} = defineProps<{
-  icon: string
-  title: string
-  to: string
-}>()
+import type { HomeServiceItem } from '@/shared/types/site'
+
+defineProps<HomeServiceItem>()
 </script>
 
 <template>
