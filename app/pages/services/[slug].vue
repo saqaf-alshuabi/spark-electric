@@ -8,15 +8,10 @@ const service = getServiceBySlug(String(route.params.slug))
 
 if (!service) {
   throw createError({
-    statusCode: 404,
+    status: 404,
     statusMessage: 'الخدمة غير موجودة',
   })
 }
-
-useSeoMeta({
-  title: `${service.title} في ${site.city}`,
-  description: `${service.description} خدمة كهرباء في ${site.city} وضواحيها.`,
-})
 </script>
 
 <template>
