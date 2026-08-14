@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL,
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     name: 'أبو تيم الكهربائي',
     description: 'فني كهرباء مباني ومنازل في مكة وضواحيها — تأسيس، صيانة، وإصلاح أعطال طارئة.',
     defaultLocale: 'ar',
@@ -84,5 +84,10 @@ export default defineNuxtConfig({
       ],
 
     },
+  },
+  // Avoid DevTools RPC timeouts until OG templates are added (defineOgImage).
+  // Re-enable when wiring share previews: ogImage: { enabled: true }
+  ogImage: {
+    enabled: false,
   },
 })
