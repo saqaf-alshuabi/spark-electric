@@ -4,14 +4,7 @@ import { getServiceBySlug } from '@/shared/data'
 const route = useRoute()
 const { site, ui } = useAppConfig()
 
-const service = getServiceBySlug(String(route.params.slug))
-
-if (!service) {
-  throw createError({
-    status: 404,
-    statusMessage: 'الخدمة غير موجودة',
-  })
-}
+const service = getServiceBySlug(String(route.params.slug)) ?? notFound('الخدمة غير موجودة')
 </script>
 
 <template>
