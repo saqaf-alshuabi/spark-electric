@@ -5,6 +5,11 @@ const route = useRoute()
 const { site, ui } = useAppConfig()
 
 const service = getServiceBySlug(String(route.params.slug)) ?? notFound('الخدمة غير موجودة')
+
+const contactUrl = computed(() => {
+  const text = `السلام عليكم، أبغى استفسر عن خدمة: ${service.title}`
+  return `https://wa.me/${site.phone}?text=${encodeURIComponent(text)}`
+})
 </script>
 
 <template>
@@ -16,7 +21,7 @@ const service = getServiceBySlug(String(route.params.slug)) ?? notFound('الخ�
             <NuxtImg
               :src="service.image"
               :alt="service.imageAlt"
-              class="size-full object-cover"
+              class="size-full object-contain"
               sizes="100vw md:50vw"
             />
           </div>
@@ -65,10 +70,17 @@ const service = getServiceBySlug(String(route.params.slug)) ?? notFound('الخ�
           </ul>
 
           <p>
-            متوفر في {{ site.city }} وضواحيها — تواصل معنا للمعاينة أو الطوارئ.
+            خدمة {{ service.title }} في {{ site.city }} وضواحيها — تسعير واضح قبل التنفيذ.
           </p>
 
           <div class="flex flex-wrap gap-3">
+            <UButton
+              :to="contactUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              label="استفسر الآن"
+              :icon="ui.icons.whatsapp"
+            />
             <UButton
               to="/services"
               label="كل الخدمات"
