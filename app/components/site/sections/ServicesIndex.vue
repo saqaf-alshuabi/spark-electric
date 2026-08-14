@@ -1,28 +1,17 @@
 <script setup lang="ts">
 import type { ServiceSummary } from '@/shared/types/site'
 
-const {
-  services,
-  title,
-  description,
-} = defineProps<{
-  services: ServiceSummary[]
-  title: string
-  description: string
-}>()
+const { services, title, description } = defineProps<{ services: ServiceSummary[], title: string, description: string }>()
 
 const activeSlug = ref(services[0]?.slug ?? '')
-const activeService = computed(() => services.find(service => service.slug === activeSlug.value) ?? services[0])
 const setActive = (slug: string) => activeSlug.value = slug
 const isActive = (slug: string) => activeSlug.value === slug
-const linkClass = (slug: string) =>
-  isActive(slug)
-    ? 'bg-muted/40 text-highlighted'
-    : 'text-muted hover:bg-muted/25 hover:text-highlighted'
+const activeService = computed(() => services.find(service => service.slug === activeSlug.value) ?? services[0])
+const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlighted' : 'text-muted hover:bg-muted/25 hover:text-highlighted'
 </script>
 
 <template>
-  <div class="hidden items-start gap-10 lg:grid lg:grid-cols-12 xl:gap-12">
+  <div class="hidden items-start gap-10 lg:grid lg:grid-cols-12 xl:gap-12 ">
     <div class="stack-lg min-w-0 lg:col-span-7">
       <div class="stack-sm max-w-xl">
         <h1>
@@ -40,7 +29,7 @@ const linkClass = (slug: string) =>
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
-            class="group flex items-start gap-4 rounded-lg px-3 py-6 transition-colors"
+            class="group flex items-start gap-4 rounded-lg px-3 py-6 transition-colors focus-ring"
             :class="linkClass(service.slug)"
             @mouseenter="setActive(service.slug)"
             @focus="setActive(service.slug)"
@@ -51,7 +40,9 @@ const linkClass = (slug: string) =>
 
             <div class="min-w-0 flex-1 stack-sm">
               <div class="flex items-center justify-between gap-3">
-                <h3 :class="{ 'text-highlighted': isActive(service.slug) }">
+                <h3
+                  :class="{ 'text-muted': !isActive(service.slug) }"
+                >
                   {{ service.title }}
                 </h3>
                 <SharedLinkArrow
@@ -81,7 +72,7 @@ const linkClass = (slug: string) =>
       </ol>
     </div>
 
-    <div class="sticky top-28 lg:col-span-5">
+    <div class="sticky top-28 lg:col-span-5 ">
       <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
         <Transition
           name="slide-image"
