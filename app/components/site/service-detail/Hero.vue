@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { ServiceDetail } from '~/shared/types/site'
+
 const { site, ui } = useAppConfig()
-const { service } = useServiceDetail()
+defineProps<{ service: ServiceDetail }>()
 </script>
 
 <template>
