@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { ServiceItem } from '@/shared/types/site'
+import type { ServiceSummary } from '@/shared/types/site'
 
 const {
   services,
   title,
   description,
 } = defineProps<{
-  services: ServiceItem[]
+  services: ServiceSummary[]
   title: string
   description: string
 }>()

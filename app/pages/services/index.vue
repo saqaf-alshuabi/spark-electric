@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { services } from '@/shared/data'
+import { serviceSummaries } from '@/shared/data'
 
 const { site } = useAppConfig()
 
@@ -28,7 +28,7 @@ useSeoMeta({
       <!-- Mobile / tablet: photo cards -->
       <ul class="grid w-full list-none grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:hidden">
         <li
-          v-for="service in services"
+          v-for="service in serviceSummaries"
           :key="service.slug"
         >
           <SharedServiceListCard
@@ -44,7 +44,7 @@ useSeoMeta({
 
       <!-- Desktop: title + index + preview as one composition -->
       <SiteSectionsServicesIndex
-        :services="services"
+        :services="serviceSummaries"
         :title="pageTitle"
         :description="pageDescription"
       />

@@ -1,6 +1,24 @@
-import type { ServiceDetail, HomeServiceItem, ServiceSummary } from '../../types/site'
+import type {
+  HomeServiceItem,
+  ServiceDetail,
+  ServiceDraft,
+  ServiceSummary,
+} from '../../types/site'
 
-export const services: ServiceDetail[] = [
+function withCover(draft: ServiceDraft): ServiceDetail {
+  const cover = draft.gallery[0]
+  if (!cover) {
+    throw new Error(`Service "${draft.slug}" needs at least one gallery image`)
+  }
+
+  return {
+    ...draft,
+    image: cover.src,
+    imageAlt: cover.alt,
+  }
+}
+
+const serviceDrafts: ServiceDraft[] = [
   {
     slug: 'electrical-networks',
     icon: 'i-heroicons-bolt',
@@ -12,20 +30,22 @@ export const services: ServiceDetail[] = [
       'مفاتيح وأفياش',
     ],
     body: 'نؤسّس ونشطب الشبكات الكهربائية: لوحات التوزيع، التمديدات، المواسير، والمفاتيح والأفياش. شغل بمعايير سلامة واضحة وتسعير مفهوم قبل التنفيذ.',
-    image: '/images/services/electrical-networks-breaker-panel.png',
-    imageAlt: 'تأسيس وصيانة لوحة توزيع كهربائية',
     gallery: [
       {
         src: '/images/services/electrical-networks-breaker-panel.png',
         alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/electrical-networks-conduit.png',
+        alt: 'تمديد مواسير وقنوات الكهرباء',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/electrical-networks-switches.png',
+        alt: 'تركيب المفاتيح والأفياش',
+      },
+      {
+        src: '/images/services/electrical-networks-cable-wiring.png',
+        alt: 'تمديد وربط الكابلات الكهربائية',
       },
     ],
   },
@@ -40,24 +60,25 @@ export const services: ServiceDetail[] = [
       'إضاءة معلقة',
     ],
     body: 'نركب الثريات والنجف والسبوت والكشافات بتثبيت آمن وتوزيع إضاءة صحيح، مع تشطيب مرتب من غير فوضى أسلاك أو عيوب ظاهرة.',
-    image: '/images/services/lighting-install-chandelier-nocap.png',
-    imageAlt: 'تركيب الثريات والنجف',
     gallery: [
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/lighting-install-chandelier-nocap.png',
+        alt: 'تركيب الثريات والنجف',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/lighting-install-spotlights.png',
+        alt: 'تركيب الكشافات والسبوت لايت',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/lighting-install-pendant.png',
+        alt: 'تركيب إضاءة معلقة',
+      },
+      {
+        src: '/images/services/lighting-install-chandelier.png',
+        alt: 'تركيب نجفة بإضاءة كاملة',
       },
     ],
   },
-
   {
     slug: 'decorative-led',
     icon: 'i-heroicons-sparkles',
@@ -69,20 +90,14 @@ export const services: ServiceDetail[] = [
       'إضاءة ديكور',
     ],
     body: 'نركب الليدات الديكورية والإنارة المخفية بتشطيب مرتب وإضاءة متوازنة تضيف لمسة حديثة للمكان بدون تعقيد.',
-    image: '/images/services/decorative-led-ceiling-corner.png',
-    imageAlt: 'تركيب ليدات ديكورية وإنارة مخفية',
     gallery: [
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/decorative-led-ceiling-corner.png',
+        alt: 'تركيب ليدات ديكورية وإنارة مخفية',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
-      },
-      {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/decorative-led-ladder-cove.png',
+        alt: 'تركيب إنارة مخفية في السقف',
       },
     ],
   },
@@ -97,20 +112,18 @@ export const services: ServiceDetail[] = [
       'سماعات سقف',
     ],
     body: 'نركب ونضبط أنظمة الانتركوم المرئي والوحدات الجدارية وسماعات السقف، مع توصيل وتشغيل واضح وسهل للاستخدام اليومي.',
-    image: '/images/services/intercom-video-intercom.png',
-    imageAlt: 'تركيب نظام انتركوم مرئي',
     gallery: [
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/intercom-video-intercom.png',
+        alt: 'تركيب نظام انتركوم مرئي',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/intercom-wall-panel.png',
+        alt: 'وحدة انتركوم جدارية',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/intercom-cable-connect.png',
+        alt: 'توصيل كابلات الانتركوم',
       },
     ],
   },
@@ -125,24 +138,31 @@ export const services: ServiceDetail[] = [
       'طوارئ سريعة',
     ],
     body: 'نفحص أعطال الكهرباء ونشخّص السبب قبل الإصلاح: انقطاع، التماسات، سخونة أفياش، ومشاكل اللوحات — مع استجابة سريعة للطوارئ وتسعير واضح.',
-    image: '/images/services/electrical-networks-multimeter.png',
-    imageAlt: 'فحص وتشخيص أعطال الكهرباء',
     gallery: [
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        src: '/images/services/electrical-networks-multimeter.png',
+        alt: 'فحص وتشخيص أعطال الكهرباء',
       },
       {
         src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
-      },
-      {
-        src: '/images/services/electrical-networks-breaker-panel.png',
-        alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
+        alt: 'فحص لوحة التوزيع والقواطع',
       },
     ],
   },
 ]
+
+export const services: ServiceDetail[] = serviceDrafts.map(withCover)
+
+export const serviceSummaries: ServiceSummary[] = services.map(
+  ({ slug, title, description, highlights, image, imageAlt }) => ({
+    slug,
+    title,
+    description,
+    highlights,
+    image,
+    imageAlt,
+  }),
+)
 
 export const homeServices: HomeServiceItem[] = services.map(({ icon, title, slug }) => ({
   icon,
@@ -150,8 +170,6 @@ export const homeServices: HomeServiceItem[] = services.map(({ icon, title, slug
   to: `/services/${slug}`,
 }))
 
-export const serviceSummaries: ServiceSummary[] = services.map(({ body, gallery, icon, ...rest }) => rest)
-
-export function getServiceBySlug(slug: string) {
+export function getServiceBySlug(slug: string): ServiceDetail | undefined {
   return services.find(service => service.slug === slug)
 }

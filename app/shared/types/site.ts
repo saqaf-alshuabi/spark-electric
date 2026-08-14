@@ -8,11 +8,13 @@ export interface SiteSettings {
   /** International digits only, no + (e.g. 9665XXXXXXXX) */
   phone: string
 }
+
 export interface NavItem {
   label: string
   to: string
   icon?: string
 }
+
 export interface SocialLink {
   'label'?: string
   'to': string
@@ -33,7 +35,7 @@ export interface ServiceSlide {
   caption?: string
 }
 
-//  Service summary for the services index page
+/** Listing card / index preview (cover derived from gallery[0]) */
 export interface ServiceSummary {
   slug: string
   title: string
@@ -43,14 +45,16 @@ export interface ServiceSummary {
   imageAlt: string
 }
 
-//  Service detail for the service detail page
+/** Full service — gallery[0] is the cover image */
 export interface ServiceDetail extends ServiceSummary {
   icon: string
   body: string
   gallery: ServiceSlide[]
 }
 
-// For the home page services section
+/** Draft before cover fields are derived */
+export type ServiceDraft = Omit<ServiceDetail, 'image' | 'imageAlt'>
+
 export interface HomeServiceItem {
   icon: string
   title: string

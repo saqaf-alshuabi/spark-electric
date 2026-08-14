@@ -23,13 +23,33 @@ useSeoMeta({
   <section class="section-y">
     <UContainer class="stack-md">
       <div class="mx-auto grid w-full max-w-5xl grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12">
-        <div class="aspect-4/3 overflow-hidden rounded-lg bg-muted/40 md:sticky md:top-28">
-          <NuxtImg
-            :src="service.image"
-            :alt="service.imageAlt"
-            class="size-full object-cover"
-            sizes="100vw md:50vw"
-          />
+        <div class="stack-sm md:sticky md:top-28">
+          <div class="aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
+            <NuxtImg
+              :src="service.image"
+              :alt="service.imageAlt"
+              class="size-full object-cover"
+              sizes="100vw md:50vw"
+            />
+          </div>
+
+          <ul
+            v-if="service.gallery.length > 1"
+            class="grid list-none grid-cols-3 gap-2"
+          >
+            <li
+              v-for="shot in service.gallery.slice(1)"
+              :key="shot.src"
+              class="aspect-square overflow-hidden rounded-md bg-muted/40"
+            >
+              <NuxtImg
+                :src="shot.src"
+                :alt="shot.alt"
+                class="size-full object-cover"
+                sizes="120px"
+              />
+            </li>
+          </ul>
         </div>
 
         <div class="stack-md">
