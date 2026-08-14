@@ -34,4 +34,6 @@
   @utility focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60;
   }
-  
+  @utility mono-nums {
+    @apply font-mono tabular-nums text-sm;
+  }

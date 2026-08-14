@@ -34,7 +34,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
             @mouseenter="setActive(service.slug)"
             @focus="setActive(service.slug)"
           >
-            <span class="mt-1 w-8 shrink-0 font-mono text-sm tabular-nums text-primary/80">
+            <span class="mt-1 w-8 shrink-0 mono-nums text-primary/80">
               {{ String(index + 1).padStart(2, '0') }}
             </span>
 
