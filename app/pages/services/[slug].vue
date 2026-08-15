@@ -7,6 +7,7 @@ const { service } = useServiceDetail()
     <SiteServiceDetailHero
       :service="service"
     />
+    <SiteServiceDetailHowWeWork />
     <SiteSectionsCtaSection />
   </div>
 </template>
