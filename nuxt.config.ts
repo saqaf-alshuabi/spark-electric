@@ -36,6 +36,12 @@ export default defineNuxtConfig({
     viewTransition: true,
   },
   compatibilityDate: '2025-07-15',
+  // Allow Cloudflare quick tunnels (preview links change each run)
+  vite: {
+    server: {
+      allowedHosts: ['.trycloudflare.com'],
+    },
+  },
   eslint: {
     config: {
       stylistic: {
