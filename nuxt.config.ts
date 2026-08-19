@@ -35,7 +35,7 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true,
   },
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2026-08-19',
   // Allow Cloudflare quick tunnels (preview links change each run)
   vite: {
     server: {
@@ -91,8 +91,7 @@ export default defineNuxtConfig({
 
     },
   },
-  // Avoid DevTools RPC timeouts until OG templates are added (defineOgImage).
-  // Re-enable when wiring share previews: ogImage: { enabled: true }
+  // Re-enable after the site is complete: ogImage: { enabled: true } + defineOgImage
   ogImage: {
     enabled: false,
   },
