@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { service } = useServiceDetail()
+definePageMeta({
+  hideMobileActionBar: true,
+})
 </script>
 
 <template>

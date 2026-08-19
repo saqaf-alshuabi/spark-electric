@@ -4,14 +4,14 @@ import { serviceSummaries } from '@/shared/data'
 const { site } = useAppConfig()
 
 const title = `خدمات الكهرباء في ${site.city}`
-const description = 'تأسيس، إنارة، انتركوم، وفحص أعطال للمنازل والمباني — بتسعير واضح قبل التنفيذ'
+const description = 'تأسيس، صيانة، وإصلاح أعطال للمنازل والمباني.'
 </script>
 
 <template>
   <section class="section-y">
     <UContainer class="stack-md">
       <!-- Mobile / tablet header -->
-      <div class="mx-auto stack-sm max-w-2xl text-center lg:hidden">
+      <div class="mx-auto stack-sm text-center lg:hidden">
         <h1>
           {{ title }}
         </h1>

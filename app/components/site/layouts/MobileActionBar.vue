@@ -1,10 +1,12 @@
 <script setup lang="ts">
 const { site, ui } = useAppConfig()
+const route = useRoute()
 const whatsappUrl = `https://wa.me/${site.phone}`
 </script>
 
 <template>
   <UButton
+    v-if="!route.meta.hideMobileActionBar"
     :icon="ui.icons.whatsapp"
     label="واتساب"
     variant="outline"

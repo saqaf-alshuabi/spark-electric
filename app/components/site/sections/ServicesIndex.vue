@@ -13,7 +13,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
 <template>
   <div class="hidden items-start gap-10 lg:grid lg:grid-cols-12 xl:gap-12 ">
     <div class="stack-lg min-w-0 lg:col-span-7">
-      <div class="stack-sm max-w-xl">
+      <div class="stack-sm ">
         <h1>
           {{ title }}
         </h1>
