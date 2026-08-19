@@ -29,7 +29,7 @@ useIntersectionObserver(
 
       <ol
         ref="listRef"
-        class="relative list-none"
+        class="relative"
         :class="visible ? 'how-steps--in' : 'how-steps'"
       >
         <li

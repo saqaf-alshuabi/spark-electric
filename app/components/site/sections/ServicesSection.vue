@@ -16,7 +16,7 @@ const { ui } = useAppConfig()
         </p>
       </div>
 
-      <ul class="grid w-full list-none grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
+      <ul class="grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
         <li
           v-for="service in homeServices"
           :key="service.title"

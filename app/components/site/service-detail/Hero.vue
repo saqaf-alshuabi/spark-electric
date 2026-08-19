@@ -20,7 +20,7 @@ defineProps<{ service: ServiceDetail }>()
 
         <ul
           v-if="service.gallery.length > 1"
-          class="grid list-none grid-cols-3 gap-2"
+          class="grid grid-cols-3 gap-2"
         >
           <li
             v-for="shot in service.gallery.slice(1)"
@@ -37,7 +37,7 @@ defineProps<{ service: ServiceDetail }>()
         </ul>
       </div>
 
-      <div class="stack-md content-w">
+      <div class="stack-md ">
         <div class="stack-sm">
           <h1>
             {{ service.title }}
@@ -47,7 +47,7 @@ defineProps<{ service: ServiceDetail }>()
           </p>
         </div>
 
-        <ul class="stack-sm list-none">
+        <ul class="stack-sm">
           <li
             v-for="item in service.highlights"
             :key="item"

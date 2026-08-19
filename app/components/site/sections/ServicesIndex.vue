@@ -22,7 +22,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
         </p>
       </div>
 
-      <ol class="list-none divide-y divide-muted/50">
+      <ol class="divide-y divide-muted/50">
         <li
           v-for="(service, index) in services"
           :key="service.slug"

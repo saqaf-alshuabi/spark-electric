@@ -14,7 +14,7 @@ import { whyChooseUs } from '@/shared/data'
         </p>
       </div>
 
-      <ul class="grid w-full list-none grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+      <ul class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
         <li
           v-for="item in whyChooseUs"
           :key="item.title"

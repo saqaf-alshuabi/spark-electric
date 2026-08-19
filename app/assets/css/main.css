@@ -57,6 +57,11 @@
   small {
     @apply text-xs sm:text-sm text-muted;
   }
+
+  ul,
+  ol {
+    @apply list-none;
+  }
 }
 
 /* Vue <Transition name="slide-image|slide-caption"> — not utilities */
