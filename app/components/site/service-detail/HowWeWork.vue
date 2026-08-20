@@ -1,24 +1,11 @@
 <script setup lang="ts">
 import { howWeWorkSteps } from '@/shared/data'
-
-const listRef = ref<HTMLElement | null>(null)
-const visible = ref(false)
-
-useIntersectionObserver(
-  listRef,
-  ([entry]) => {
-    if (entry?.isIntersecting) {
-      visible.value = true
-    }
-  },
-  { threshold: 0.2 },
-)
 </script>
 
 <template>
   <section class="section-y bg-muted">
-    <UContainer class="stack-md mx-auto max-w-2xl">
-      <div class="stack-sm text-center">
+    <UContainer class="stack-md items-center">
+      <div class="stack-sm items-center text-center">
         <h2>
           كيف نشتغل؟
         </h2>
@@ -27,30 +14,25 @@ useIntersectionObserver(
         </p>
       </div>
 
-      <ol
-        ref="listRef"
-        class="relative"
-        :class="visible ? 'how-steps--in' : 'how-steps'"
-      >
+      <ol class="relative w-full mx-auto md:max-w-2xl">
         <li
           v-for="(step, index) in howWeWorkSteps"
           :key="step.title"
-          class="how-step relative flex gap-4 pb-8 last:pb-0 sm:gap-5"
-          :style="{ '--i': index }"
+          class="relative flex gap-4 pb-8 last:pb-0"
         >
           <div
             v-if="index < howWeWorkSteps.length - 1"
-            class="absolute start-4 top-10 bottom-0 w-px bg-accented sm:start-5"
+            class="absolute start-5 top-10 bottom-0 w-px bg-accented"
             aria-hidden="true"
           />
 
           <div
-            class="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-inverted sm:size-10 sm:text-base"
+            class="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-inverted"
           >
             <span class="mono-nums">{{ index + 1 }}</span>
           </div>
 
-          <div class="stack-sm min-w-0 flex-1 pt-0.5 sm:pt-1.5">
+          <div class="stack-sm min-w-0 flex-1">
             <h3>
               {{ step.title }}
             </h3>
@@ -63,28 +45,3 @@ useIntersectionObserver(
     </UContainer>
   </section>
 </template>
-
-<style scoped>
-.how-steps .how-step {
-  opacity: 0;
-  transform: translateY(0.75rem);
-}
-
-.how-steps--in .how-step {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity 0.45s ease,
-    transform 0.45s ease;
-  transition-delay: calc(var(--i) * 90ms);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .how-steps .how-step,
-  .how-steps--in .how-step {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-</style>

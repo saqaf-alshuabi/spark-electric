@@ -61,7 +61,7 @@ const selectImage = (index: number) => {
         </ul>
       </div>
 
-      <div class="stack-md ">
+      <div class="stack-md">
         <div class="stack-sm">
           <h1>
             {{ service.title }}
