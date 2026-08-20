@@ -1,31 +1,44 @@
 <script setup lang="ts">
 import type { ServiceDetail } from '~/shared/types/site'
 
-const { site, ui } = useAppConfig()
 const { service } = defineProps<{ service: ServiceDetail }>()
+const { site, ui } = useAppConfig()
 const images = ref([...service.gallery])
 
-const selectImage = (index: number) => {
-  const next = images.value[index]
-  if (!next || !images.value[0] || index === 0) return
+const canSwap = (index: number) =>
+  index > 0 && index < images.value.length
 
-  const temp = images.value[0]
-  images.value[0] = next
-  images.value[index] = temp
+const selectImage = (index: number) => {
+  if (!canSwap(index)) return
+
+  const big = images.value[0]
+  const next = images.value[index]
+  if (!big || !next) return
+
+  document.startViewTransition(() => {
+    images.value[0] = next
+    images.value[index] = big
+  })
 }
 </script>
 
 <template>
   <section class="section-y">
-    <UContainer class="grid  grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12  ">
-      <div class="stack-sm md:sticky md:top-28">
+    <UContainer class="grid  grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12">
+      <div class="stack-sm">
         <div class="aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
-          <NuxtImg
-            :src="images[0]?.src"
-            :alt="images[0]?.alt"
-            class="size-full object-contain"
-            sizes="100vw md:50vw"
-          />
+          <Transition
+            name="slide-image"
+            mode="out-in"
+          >
+            <NuxtImg
+              :key="images[0]?.src"
+              :src="images[0]?.src"
+              :alt="images[0]?.alt"
+              class="size-full object-contain"
+              sizes="100vw md:50vw"
+            />
+          </transition>
         </div>
 
         <ul
@@ -35,7 +48,7 @@ const selectImage = (index: number) => {
           <li
             v-for="(shot, index) in images.slice(1)"
             :key="shot.src"
-            class="aspect-square overflow-hidden rounded-md bg-muted/40"
+            class="aspect-square overflow-hidden rounded-md bg-muted/40 cursor-pointer focus-ring"
             @click="selectImage(index + 1)"
           >
             <NuxtImg
@@ -62,7 +75,7 @@ const selectImage = (index: number) => {
           <li
             v-for="item in service.highlights"
             :key="item"
-            class="flex items-center gap-2 text-sm text-highlighted sm:text-base"
+            class="flex items-center gap-2 text-sm text-highlighted sm:text-base "
           >
             <UIcon
               :name="ui.icons.check"
