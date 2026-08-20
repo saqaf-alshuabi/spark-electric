@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <SiteSectionsHeroSection />
-    <SiteSectionsServicesSection />
-    <SiteSectionsWhyChooseUsSection />
-    <SiteSectionsCtaSection />
-  </div>
+  <SiteSectionsHeroSection />
+  <SiteSectionsServicesSection />
+  <SiteSectionsWhyChooseUsSection />
+  <SiteSectionsCtaSection />
 </template>

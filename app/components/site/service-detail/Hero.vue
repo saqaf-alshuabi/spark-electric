@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ServiceDetail } from '~/shared/types/site'
 
+const { whatsappUrl } = useContact()
 const { service } = defineProps<{ service: ServiceDetail }>()
 const { site, ui } = useAppConfig()
 const images = ref([...service.gallery])
@@ -91,7 +92,7 @@ const selectImage = (index: number) => {
 
         <div class="flex flex-wrap gap-3 ">
           <UButton
-            to=""
+            :to="whatsappUrl"
             target="_blank"
             rel="noopener noreferrer"
             label="استفسر الآن"

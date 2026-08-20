@@ -6,11 +6,9 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <SiteServiceDetailHero
-      :service="service"
-    />
-    <SiteServiceDetailHowWeWork />
-    <SiteSectionsCtaSection />
-  </div>
+  <SiteServiceDetailHero
+    :service="service"
+  />
+  <SiteServiceDetailHowWeWork />
+  <SiteSectionsCtaSection />
 </template>

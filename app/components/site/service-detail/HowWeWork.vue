@@ -18,11 +18,10 @@ import { howWeWorkSteps } from '@/shared/data'
         <li
           v-for="(step, index) in howWeWorkSteps"
           :key="step.title"
-          class="relative flex gap-4 pb-8 last:pb-0"
+          class="group relative flex gap-4 pb-8 last:pb-0"
         >
           <div
-            v-if="index < howWeWorkSteps.length - 1"
-            class="absolute start-5 top-10 bottom-0 w-px bg-accented"
+            class="absolute start-5 top-10 bottom-0 w-px bg-accented group-last:hidden"
             aria-hidden="true"
           />
 

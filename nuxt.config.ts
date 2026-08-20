@@ -15,6 +15,7 @@ export default defineNuxtConfig({
         lang: 'ar',
         dir: 'rtl',
       },
+      viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
       link: [
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/logos/favicon-32.png?v=2' },
         { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/images/logos/favicon-48.png?v=2' },

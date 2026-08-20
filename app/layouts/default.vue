@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-dvh flex-col pb-24 lg:pb-0">
+  <div class="flex min-h-dvh flex-col">
     <SiteLayoutsHeader />
     <UMain class="flex-1">
       <slot />
