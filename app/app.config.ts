@@ -23,6 +23,11 @@ export default defineAppConfig({
       whatsapp: 'i-simple-icons-whatsapp',
       phone: 'i-heroicons-phone',
     },
+    header: {
+      slots: {
+        root: 'h-[calc(var(--ui-header-height)+env(safe-area-inset-top,0px))] pt-[env(safe-area-inset-top,0px)]',
+      },
+    },
 
   },
 })
