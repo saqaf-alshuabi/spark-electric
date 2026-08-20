@@ -2,7 +2,17 @@
 import type { ServiceDetail } from '~/shared/types/site'
 
 const { site, ui } = useAppConfig()
-defineProps<{ service: ServiceDetail }>()
+const { service } = defineProps<{ service: ServiceDetail }>()
+const images = ref([...service.gallery])
+
+const selectImage = (index: number) => {
+  const next = images.value[index]
+  if (!next || !images.value[0] || index === 0) return
+
+  const temp = images.value[0]
+  images.value[0] = next
+  images.value[index] = temp
+}
 </script>
 
 <template>
@@ -11,21 +21,22 @@ defineProps<{ service: ServiceDetail }>()
       <div class="stack-sm md:sticky md:top-28">
         <div class="aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
           <NuxtImg
-            :src="service.image"
-            :alt="service.imageAlt"
+            :src="images[0]?.src"
+            :alt="images[0]?.alt"
             class="size-full object-contain"
             sizes="100vw md:50vw"
           />
         </div>
 
         <ul
-          v-if="service.gallery.length > 1"
+          v-if="images.length > 1"
           class="grid grid-cols-3 gap-2"
         >
           <li
-            v-for="shot in service.gallery.slice(1)"
+            v-for="(shot, index) in images.slice(1)"
             :key="shot.src"
             class="aspect-square overflow-hidden rounded-md bg-muted/40"
+            @click="selectImage(index + 1)"
           >
             <NuxtImg
               :src="shot.src"
