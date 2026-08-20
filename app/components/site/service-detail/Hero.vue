@@ -31,7 +31,7 @@ defineProps<{ service: ServiceDetail }>()
               :src="shot.src"
               :alt="shot.alt"
               class="size-full object-cover"
-              sizes="120px"
+              sizes="280px"
             />
           </li>
         </ul>
