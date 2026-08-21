@@ -1,39 +1,39 @@
 
 @utility section-y {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-12 md:py-16 lg:py-20
   }
   
   @utility content-w {
-    @apply w-full max-w-xs sm:max-w-sm md:max-w-md;
+    @apply w-full max-w-sm sm:max-w-md md:max-w-lg
   }
   
   @utility stack-sm {
-    @apply flex flex-col gap-3;
+    @apply flex flex-col gap-3
   }
   
   @utility stack-md {
-    @apply flex flex-col gap-6;
+    @apply flex flex-col gap-6
   }
   
   @utility stack-lg {
-    @apply flex flex-col gap-8;
+    @apply flex flex-col gap-8
   }
   
   @utility caption {
-    @apply text-sm sm:text-base font-medium text-highlighted leading-snug text-pretty;
+    @apply text-sm sm:text-base font-medium text-highlighted leading-snug text-pretty
   }
   
   @utility caption-sm {
-    @apply text-xs sm:text-sm font-normal text-muted leading-snug text-pretty;
+    @apply text-xs sm:text-sm font-normal text-muted leading-snug text-pretty
   }
   
   @utility caption-lg {
-    @apply text-base sm:text-lg font-medium text-highlighted leading-snug text-pretty;
+    @apply text-base sm:text-lg font-medium text-highlighted leading-snug text-pretty
   }
   
   @utility focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60;
+      @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60
   }
   @utility mono-nums {
-    @apply font-mono tabular-nums text-sm;
+    @apply font-mono tabular-nums text-sm
   }
