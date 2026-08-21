@@ -16,10 +16,8 @@ const selectImage = (index: number) => {
   const next = images.value[index]
   if (!big || !next) return
 
-  document.startViewTransition(() => {
-    images.value[0] = next
-    images.value[index] = big
-  })
+  images.value[0] = next
+  images.value[index] = big
 }
 </script>
 
