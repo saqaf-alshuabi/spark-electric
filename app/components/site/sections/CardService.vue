@@ -7,7 +7,7 @@ const activeSlide = computed(() => serviceSlides[activeIndex.value]!)
 
 useIntervalFn(() => {
   activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
-}, 4000)
+}, 5500)
 
 const goToSlide = (index: number) => {
   activeIndex.value = index
@@ -15,48 +15,40 @@ const goToSlide = (index: number) => {
 </script>
 
 <template>
-  <div class="mx-auto stack-sm w-full max-w-md items-center">
-    <div class="relative w-full">
-      <div class="relative aspect-3/2 w-full overflow-hidden">
-        <Transition
-          name="slide-image"
-          mode="out-in"
-        >
-          <NuxtImg
-            :key="activeSlide.src"
-            :src="activeSlide.src"
-            :alt="activeSlide.alt"
-            class="absolute inset-0 size-full object-cover brightness-[0.92] saturate-[0.88]"
-            sizes="320px sm:384px md:448px"
-          />
-        </Transition>
-
-        <div
-          class="pointer-events-none absolute inset-0 bg-linear-to-t from-default via-default/25 to-default/45"
-          aria-hidden="true"
-        />
-        <div
-          class="pointer-events-none absolute inset-y-0 start-0 w-1/4 bg-linear-to-e from-default to-transparent"
-          aria-hidden="true"
-        />
-        <div
-          class="pointer-events-none absolute inset-y-0 end-0 w-1/4 bg-linear-to-s from-default to-transparent"
-          aria-hidden="true"
-        />
-      </div>
-
+  <div class="stack-sm w-full items-center md:mx-auto md:max-w-md">
+    <div
+      class="relative aspect-3/2 w-[calc(100%+2rem)] overflow-hidden -mx-4 rounded-none sm:w-[calc(100%+3rem)] sm:-mx-6 md:mx-0 md:w-full md:rounded-xl"
+    >
       <Transition
-        name="slide-caption"
+        name="soft-image"
         mode="out-in"
       >
-        <p
-          :key="activeSlide.caption"
-          class="caption-sm relative z-10 -mt-8 text-center"
-        >
-          {{ activeSlide.caption }}
-        </p>
+        <NuxtImg
+          :key="activeSlide.src"
+          :src="activeSlide.src"
+          :alt="activeSlide.alt"
+          class="absolute inset-0 size-full object-cover"
+          sizes="100vw md:448px"
+        />
       </Transition>
+
+      <div
+        class="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-default to-transparent"
+        aria-hidden="true"
+      />
     </div>
+
+    <Transition
+      name="soft-caption"
+      mode="out-in"
+    >
+      <p
+        :key="activeSlide.caption"
+        class="caption-sm relative z-10 -mt-6 px-4 text-center md:px-0"
+      >
+        {{ activeSlide.caption }}
+      </p>
+    </Transition>
 
     <div
       class="flex justify-center gap-1.5"

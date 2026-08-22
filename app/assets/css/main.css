@@ -132,17 +132,44 @@
   opacity: 0;
 }
 
+/* Home hero soft crossfade — calm for real photos */
+.soft-image-enter-active,
+.soft-image-leave-active {
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.soft-image-enter-from,
+.soft-image-leave-to {
+  opacity: 0;
+}
+
+.soft-caption-enter-active,
+.soft-caption-leave-active {
+  transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.soft-caption-enter-from,
+.soft-caption-leave-to {
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .slide-image-leave-active,
   .slide-image-enter-active,
   .slide-caption-leave-active,
-  .slide-caption-enter-active {
+  .slide-caption-enter-active,
+  .soft-image-enter-active,
+  .soft-image-leave-active,
+  .soft-caption-enter-active,
+  .soft-caption-leave-active {
     animation: none;
     transition: none;
   }
 
   .slide-image-enter-from,
-  .slide-caption-enter-from {
+  .slide-caption-enter-from,
+  .soft-image-enter-from,
+  .soft-caption-enter-from {
     opacity: 1;
   }
 }
