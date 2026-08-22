@@ -26,11 +26,11 @@ export const serviceSlides: ServiceSlide[] = [
   //   alt: 'تركيب المفاتيح والأفياش',
   //   caption: 'تركيب المفاتيح والأفياش',
   // },
-  // {
-  //   src: '/images/services/decorative-led-ceiling-corner.png',
-  //   alt: 'تركيب ليدات ديكورية في السقف',
-  //   caption: 'تركيب الليدات الديكورية',
-  // },
+  {
+    src: '/images/services/decorative-led-ceiling-corner.jpg',
+    alt: 'تركيب ليدات ديكورية في السقف',
+    caption: 'تركيب الليدات الديكورية',
+  },
   // {
   //   src: '/images/services/electrical-networks-cable-wiring.png',
   //   alt: 'تمديد وربط الكابلات الكهربائية',
