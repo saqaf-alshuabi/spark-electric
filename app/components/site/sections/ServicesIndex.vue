@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ServiceSummary } from '@/shared/types/site'
-import { motionStagger } from '@/utils/motion'
 
 const { services, title, description } = defineProps<{ services: ServiceSummary[], title: string, description: string }>()
 
@@ -24,11 +23,10 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
       </div>
 
       <ol class="divide-y divide-muted/50">
-        <SharedReveal
+        <li
           v-for="(service, index) in services"
           :key="service.slug"
-          tag="li"
-          :delay="motionStagger(index)"
+          v-motion-reveal
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
@@ -71,7 +69,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
               </template>
             </div>
           </NuxtLink>
-        </SharedReveal>
+        </li>
       </ol>
     </div>
 

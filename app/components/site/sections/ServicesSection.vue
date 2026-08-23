@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { homeServices } from '@/shared/data'
-import { MOTION_DELAY, motionStagger } from '@/utils/motion'
 
 const { ui } = useAppConfig()
 </script>
@@ -9,37 +8,32 @@ const { ui } = useAppConfig()
   <section class="section-y bg-muted">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
-        <SharedReveal :delay="MOTION_DELAY.heading">
-          <h2>
-            خدماتنا
-          </h2>
-        </SharedReveal>
-        <SharedReveal :delay="MOTION_DELAY.copy">
-          <p>
-            نقدم خدمات الكهرباء المنزلية والتجارية
-          </p>
-        </SharedReveal>
+        <h2 v-motion-reveal>
+          خدماتنا
+        </h2>
+        <p v-motion-reveal>
+          نقدم خدمات الكهرباء المنزلية والتجارية
+        </p>
       </div>
 
       <ul class="grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
-        <SharedReveal
-          v-for="(service, index) in homeServices"
+        <li
+          v-for="service in homeServices"
           :key="service.title"
-          tag="li"
-          :delay="motionStagger(index)"
+          v-motion-reveal
         >
           <SharedServiceCard v-bind="service" />
-        </SharedReveal>
+        </li>
       </ul>
 
-      <SharedReveal :delay="motionStagger(homeServices.length)">
+      <div v-motion-reveal>
         <UButton
           to="/services"
           label="عرض كل الخدمات"
           variant="soft"
           :trailing-icon="ui.icons.arrowLeft"
         />
-      </SharedReveal>
+      </div>
     </UContainer>
   </section>
 </template>

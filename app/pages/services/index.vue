@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { serviceSummaries } from '@/shared/data'
-import { motionStagger } from '@/utils/motion'
 
 const { site } = useAppConfig()
 
@@ -23,11 +22,10 @@ const description = 'تأسيس، صيانة، وإصلاح أعطال للمن�
 
       <!-- Mobile / tablet: photo cards -->
       <ul class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:hidden">
-        <SharedReveal
-          v-for="(service, index) in serviceSummaries"
+        <li
+          v-for="service in serviceSummaries"
           :key="service.slug"
-          tag="li"
-          :delay="motionStagger(index)"
+          v-motion-reveal
         >
           <SharedServiceListCard
             :title="service.title"
@@ -37,7 +35,7 @@ const description = 'تأسيس، صيانة، وإصلاح أعطال للمن�
             :image-alt="service.imageAlt"
             :to="`/services/${service.slug}`"
           />
-        </SharedReveal>
+        </li>
       </ul>
 
       <!-- Desktop: title + index + preview as one composition -->

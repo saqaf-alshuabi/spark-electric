@@ -1,3 +1,17 @@
+const revealIn = {
+  opacity: 0,
+  y: 20,
+}
+
+const revealShown = {
+  opacity: 1,
+  y: 0,
+  transition: {
+    duration: 900,
+    ease: [0.16, 1, 0.3, 1],
+  },
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
@@ -7,6 +21,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
     '@nuxt/hints',
     '@nuxtjs/seo',
   ],
@@ -103,5 +118,24 @@ export default defineNuxtConfig({
   // Re-enable after the site is complete: ogImage: { enabled: true } + defineOgImage
   ogImage: {
     enabled: false,
+  },
+  motion: {
+    excludePresets: true,
+    directives: {
+      reveal: {
+        initial: revealIn,
+        visibleOnce: revealShown,
+      },
+      'reveal-card': {
+        initial: revealIn,
+        visibleOnce: revealShown,
+        hovered: {
+          y: -4,
+          transition: {
+            duration: 300,
+          },
+        },
+      },
+    },
   },
 })
