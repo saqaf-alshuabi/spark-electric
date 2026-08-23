@@ -7,18 +7,15 @@ const { whatsappUrl, phoneUrl } = useContact()
   <section class="section-y bg-muted">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
-        <h2 v-motion-reveal>
+        <h2 class="reveal">
           تحتاج كهربائي في مكة؟
         </h2>
-        <p v-motion-reveal>
+        <p class="reveal">
           تواصل معنا الآن لتشخيص سريع وتسعير واضح
         </p>
       </div>
 
-      <div
-        v-motion-reveal
-        class="flex flex-wrap items-center justify-center gap-3"
-      >
+      <div class="reveal flex flex-wrap items-center justify-center gap-3">
         <UButton
           :to="whatsappUrl"
           target="_blank"

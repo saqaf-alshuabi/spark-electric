@@ -26,7 +26,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
         <li
           v-for="(service, index) in services"
           :key="service.slug"
-          v-motion-reveal
+          class="reveal"
         >
           <NuxtLink
             :to="`/services/${service.slug}`"

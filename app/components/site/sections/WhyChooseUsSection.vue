@@ -6,10 +6,10 @@ import { whyChooseUs } from '@/shared/data'
   <section class="section-y">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
-        <h2 v-motion-reveal>
+        <h2 class="reveal">
           لماذا تختارنا؟
         </h2>
-        <p v-motion-reveal>
+        <p class="reveal">
           ثقة ووضوح في كل خطوة من التشخيص حتى التنفيذ
         </p>
       </div>
@@ -18,8 +18,7 @@ import { whyChooseUs } from '@/shared/data'
         <li
           v-for="item in whyChooseUs"
           :key="item.title"
-          v-motion-reveal-card
-          class="stack-sm rounded-lg bg-muted/60 px-4 py-5 sm:px-5"
+          class="reveal stack-sm rounded-lg bg-muted/60 px-4 py-5 transition-transform duration-300 hover:-translate-y-1 sm:px-5"
         >
           <h3>
             {{ item.title }}

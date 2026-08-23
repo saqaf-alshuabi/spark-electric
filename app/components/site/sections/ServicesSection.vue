@@ -8,10 +8,10 @@ const { ui } = useAppConfig()
   <section class="section-y bg-muted">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
-        <h2 v-motion-reveal>
+        <h2 class="reveal">
           خدماتنا
         </h2>
-        <p v-motion-reveal>
+        <p class="reveal">
           نقدم خدمات الكهرباء المنزلية والتجارية
         </p>
       </div>
@@ -20,13 +20,13 @@ const { ui } = useAppConfig()
         <li
           v-for="service in homeServices"
           :key="service.title"
-          v-motion-reveal
+          class="reveal"
         >
           <SharedServiceCard v-bind="service" />
         </li>
       </ul>
 
-      <div v-motion-reveal>
+      <div class="reveal">
         <UButton
           to="/services"
           label="عرض كل الخدمات"

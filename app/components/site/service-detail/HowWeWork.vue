@@ -6,10 +6,10 @@ import { howWeWorkSteps } from '@/shared/data'
   <section class="section-y bg-muted">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
-        <h2 v-motion-reveal>
+        <h2 class="reveal">
           كيف نشتغل؟
         </h2>
-        <p v-motion-reveal>
+        <p class="reveal">
           ثلاث خطوات واضحة من الاستفسار حتى التسليم
         </p>
       </div>
@@ -18,8 +18,7 @@ import { howWeWorkSteps } from '@/shared/data'
         <li
           v-for="(step, index) in howWeWorkSteps"
           :key="step.title"
-          v-motion-reveal
-          class="group relative flex gap-4 pb-8 last:pb-0"
+          class="reveal group relative flex gap-4 pb-8 last:pb-0"
         >
           <div
             class="absolute start-5 top-10 bottom-0 w-px bg-accented group-last:hidden"

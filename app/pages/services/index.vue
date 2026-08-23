@@ -25,7 +25,7 @@ const description = 'تأسيس، صيانة، وإصلاح أعطال للمن�
         <li
           v-for="service in serviceSummaries"
           :key="service.slug"
-          v-motion-reveal
+          class="reveal"
         >
           <SharedServiceListCard
             :title="service.title"

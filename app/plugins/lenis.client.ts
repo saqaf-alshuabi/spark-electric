@@ -10,19 +10,33 @@ export default defineNuxtPlugin(() => {
 
   const lenis = new Lenis({
     autoRaf: true,
-    lerp: 0.08,
-    smoothWheel: true,
+    anchors: true,
+    lerp: 0.12,
     syncTouch: false,
-    touchMultiplier: 1.2,
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
+    allowNestedScroll: true,
+    stopInertiaOnNavigate: true,
+    respectReducedMotion: true,
   })
+
+  let isPopState = false
+  const onPopState = () => {
+    isPopState = true
+  }
+
+  window.addEventListener('popstate', onPopState)
 
   const router = useRouter()
   const stopRouterHook = router.afterEach((to, from) => {
-    if (to.path !== from.path) {
-      lenis.scrollTo(0, { immediate: true })
+    if (to.path === from.path) {
+      return
     }
+
+    if (isPopState) {
+      isPopState = false
+      return
+    }
+
+    lenis.scrollTo(0, { immediate: true })
   })
 
   let destroyed = false
@@ -34,6 +48,7 @@ export default defineNuxtPlugin(() => {
 
     destroyed = true
     stopRouterHook()
+    window.removeEventListener('popstate', onPopState)
     motionQuery.removeEventListener('change', onMotionPreferenceChange)
     window.removeEventListener('pagehide', cleanup)
     lenis.destroy()
@@ -51,7 +66,6 @@ export default defineNuxtPlugin(() => {
     import.meta.hot.dispose(cleanup)
   }
 
-  // RuntimeNuxtHooks has no app:unmounted — clean up on page hide / HMR instead
   window.addEventListener('pagehide', cleanup)
 
   return {
