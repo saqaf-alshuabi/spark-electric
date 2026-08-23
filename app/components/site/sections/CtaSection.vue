@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { MOTION_DELAY } from '@/utils/motion'
+
 const { ui } = useAppConfig()
 const { whatsappUrl, phoneUrl } = useContact()
 </script>
@@ -7,15 +9,22 @@ const { whatsappUrl, phoneUrl } = useContact()
   <section class="section-y bg-muted">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
-        <h2>
-          تحتاج كهربائي في مكة؟
-        </h2>
-        <p>
-          تواصل معنا الآن لتشخيص سريع وتسعير واضح
-        </p>
+        <SharedReveal :delay="MOTION_DELAY.heading">
+          <h2>
+            تحتاج كهربائي في مكة؟
+          </h2>
+        </SharedReveal>
+        <SharedReveal :delay="MOTION_DELAY.copy">
+          <p>
+            تواصل معنا الآن لتشخيص سريع وتسعير واضح
+          </p>
+        </SharedReveal>
       </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-3">
+      <SharedReveal
+        :delay="MOTION_DELAY.cta"
+        class="flex flex-wrap items-center justify-center gap-3"
+      >
         <UButton
           :to="whatsappUrl"
           target="_blank"
@@ -31,7 +40,7 @@ const { whatsappUrl, phoneUrl } = useContact()
           variant="outline"
           size="md"
         />
-      </div>
+      </SharedReveal>
     </UContainer>
   </section>
 </template>

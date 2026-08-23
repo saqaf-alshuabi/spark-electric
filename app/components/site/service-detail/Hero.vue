@@ -37,7 +37,7 @@ const selectImage = (index: number) => {
               class="size-full object-contain"
               sizes="100vw md:50vw"
             />
-          </transition>
+          </Transition>
         </div>
 
         <ul

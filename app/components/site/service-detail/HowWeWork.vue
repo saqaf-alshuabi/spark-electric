@@ -1,23 +1,30 @@
 <script setup lang="ts">
 import { howWeWorkSteps } from '@/shared/data'
+import { MOTION_DELAY, motionStagger } from '@/utils/motion'
 </script>
 
 <template>
   <section class="section-y bg-muted">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
-        <h2>
-          كيف نشتغل؟
-        </h2>
-        <p>
-          ثلاث خطوات واضحة من الاستفسار حتى التسليم
-        </p>
+        <SharedReveal :delay="MOTION_DELAY.heading">
+          <h2>
+            كيف نشتغل؟
+          </h2>
+        </SharedReveal>
+        <SharedReveal :delay="MOTION_DELAY.copy">
+          <p>
+            ثلاث خطوات واضحة من الاستفسار حتى التسليم
+          </p>
+        </SharedReveal>
       </div>
 
       <ol class="relative w-full mx-auto md:max-w-2xl">
-        <li
+        <SharedReveal
           v-for="(step, index) in howWeWorkSteps"
           :key="step.title"
+          tag="li"
+          :delay="motionStagger(index)"
           class="group relative flex gap-4 pb-8 last:pb-0"
         >
           <div
@@ -39,7 +46,7 @@ import { howWeWorkSteps } from '@/shared/data'
               {{ step.description }}
             </p>
           </div>
-        </li>
+        </SharedReveal>
       </ol>
     </UContainer>
   </section>
