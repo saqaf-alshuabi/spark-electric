@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { serviceSummaries } from '@/shared/data'
-
-const { site } = useAppConfig()
+import { serviceSummaries, site } from '@/shared/data'
 
 const title = `خدمات الكهرباء في ${site.city}`
 const description = 'تأسيس، صيانة، وإصلاح أعطال للمنازل والمباني.'

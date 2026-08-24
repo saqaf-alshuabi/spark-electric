@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { navItems } from '@/shared/data'
+import { navItems, site } from '@/shared/data'
 
 const { ui } = useAppConfig()
 const { whatsappUrl } = useContact()
 </script>
 
 <template>
-  <UHeader to="/">
+  <UHeader
+    :title="site.name"
+    to="/"
+  >
     <template #title>
       <SharedLogo />
     </template>

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import type { ServiceDetail } from '~/shared/types/site'
+import { site } from '@/shared/data'
 
 const { whatsappUrl } = useContact()
 const { service } = defineProps<{ service: ServiceDetail }>()
-const { site, ui } = useAppConfig()
+const { ui } = useAppConfig()
 const images = ref([...service.gallery])
 
 const canSwap = (index: number) =>

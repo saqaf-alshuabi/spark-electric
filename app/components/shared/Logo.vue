@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { site } = useAppConfig()
+import { site } from '@/shared/data'
 </script>
 
 <template>
   <NuxtImg
     :src="site.logo"
-    :alt="site.fullName"
+    :alt="site.name"
     width="81"
     height="32"
     sizes="81px"

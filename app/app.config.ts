@@ -1,13 +1,4 @@
 export default defineAppConfig({
-  site: {
-    name: 'تيم',
-    fullName: 'أبو تيم الكهربائي',
-    tagline: 'فني كهرباء مباني ومنازل',
-    city: 'مكة',
-    copyright: `${new Date().getFullYear()} جميع الحقوق محفوظة`,
-    logo: '/images/logos/logo.png',
-    phone: '967738271423',
-  },
   ui: {
     colors: {
       primary: 'amber',
@@ -27,6 +18,5 @@ export default defineAppConfig({
         root: 'h-[calc(var(--ui-header-height)+env(safe-area-inset-top,0px))] pt-[env(safe-area-inset-top,0px)]',
       },
     },
-
   },
 })

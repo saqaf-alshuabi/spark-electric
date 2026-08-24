@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { site } = useAppConfig()
+import { site } from '@/shared/data'
 </script>
 
 <template>
