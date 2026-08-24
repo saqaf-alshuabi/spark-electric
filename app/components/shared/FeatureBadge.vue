@@ -11,10 +11,10 @@ const {
 </script>
 
 <template>
-  <div class="flex min-w-0 items-start gap-2">
+  <div class="flex items-center gap-2">
     <UIcon
       :name="icon"
-      class="mt-0.5 shrink-0 text-primary"
+      class="shrink-0 text-primary"
       :class="iconClass"
     />
     <span class="text-xs leading-snug text-muted sm:text-sm">

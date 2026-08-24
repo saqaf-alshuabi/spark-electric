@@ -3,18 +3,18 @@ import type { FeatureBadgeItem } from '../types/site'
 export const serviceBadges: FeatureBadgeItem[] = [
   {
     icon: 'i-heroicons-clock',
-    title: 'استجابة طوارئ على مدار الساعة',
+    title: 'نجي للطوارئ في أي وقت',
   },
   {
     icon: 'i-heroicons-exclamation-triangle',
-    title: 'تشخيص دقيق للأعطال والالتماسات',
+    title: 'نحدد العطل قبل ما نصلح',
   },
   {
     icon: 'i-heroicons-bolt',
-    title: 'تأسيس وصيانة كهربائية بمعايير عالية',
+    title: 'تأسيس وصيانة شغلها مرتب',
   },
   {
     icon: 'i-heroicons-currency-dollar',
-    title: 'تسعير واضح قبل بدء التنفيذ',
+    title: 'تعرف السعر قبل ما نبدأ',
   },
 ]
