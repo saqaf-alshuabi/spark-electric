@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import { navItems } from '@/shared/data'
 
-const { site, ui } = useAppConfig()
+const { ui } = useAppConfig()
 const { whatsappUrl } = useContact()
 </script>
 
 <template>
-  <UHeader
-    :title="site.fullName"
-    to="/"
-  >
+  <UHeader to="/">
     <template #title>
-      <SharedLogo class="h-6 w-auto" />
+      <SharedLogo />
     </template>
+
     <UNavigationMenu :items="navItems" />
     <template #right>
       <UButton
@@ -25,6 +23,7 @@ const { whatsappUrl } = useContact()
         rel="noopener noreferrer"
       />
     </template>
+
     <template #body>
       <UNavigationMenu
         :items="navItems"

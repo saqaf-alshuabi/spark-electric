@@ -5,8 +5,7 @@ export default defineAppConfig({
     tagline: 'فني كهرباء مباني ومنازل',
     city: 'مكة',
     copyright: `${new Date().getFullYear()} جميع الحقوق محفوظة`,
-    logo: '/images/logos/logo.svg',
-
+    logo: '/images/logos/logo.png',
     phone: '967738271423',
   },
   ui: {
