@@ -2,48 +2,23 @@ import type { ServiceSlide } from '../../types/site'
 
 export const serviceSlides: ServiceSlide[] = [
   {
-    src: '/images/services/electrical-networks-breaker-panel.jpg',
-    alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
-    caption: 'تأسيس وتشطيب الشبكات الكهربائية',
+    src: '/images/services/networks-breaker-panel.jpg',
+    alt: 'لوحة قواطع بعد التأسيس، الأسلاك مرتبة',
+    caption: 'اللوحة بعد التأسيس تطلع مرتبة',
   },
   {
-    src: '/images/services/lighting-install-chandelier-nocap.jpg',
-    alt: 'تركيب الثريات والنجف',
-    caption: 'تركيب الثريات والنجف',
+    src: '/images/services/lighting-crystal-chandelier.jpg',
+    alt: 'نجفة كريستال في سقف حديث',
+    caption: 'نركب النجف بثبات، والشغل نظيف',
   },
-  // {
-  //   src: '/images/services/electrical-networks-conduit.png',
-  //   alt: 'تمديد مواسير وقنوات الكهرباء',
-  //   caption: 'تمديد المواسير والقنوات',
-  // },
-  // {
-  //   src: '/images/services/intercom-video-intercom.png',
-  //   alt: 'تركيب نظام انتركوم مرئي',
-  //   caption: 'تركيب أنظمة الانتركوم',
-  // },
-  // {
-  //   src: '/images/services/electrical-networks-switches.png',
-  //   alt: 'تركيب المفاتيح والأفياش',
-  //   caption: 'تركيب المفاتيح والأفياش',
-  // },
   {
-    src: '/images/services/decorative-led-ceiling-corner.jpg',
-    alt: 'تركيب ليدات ديكورية في السقف',
-    caption: 'تركيب الليدات الديكورية',
+    src: '/images/services/intercom-outdoor-panel2.jpg',
+    alt: 'انتركوم مرئي على جدار الباب',
+    caption: 'انتركوم مرئي، تشوف مين على الباب',
   },
-  // {
-  //   src: '/images/services/electrical-networks-cable-wiring.png',
-  //   alt: 'تمديد وربط الكابلات الكهربائية',
-  //   caption: 'تمديد وربط الكابلات',
-  // },
-  // {
-  //   src: '/images/services/lighting-install-spotlights.png',
-  //   alt: 'تركيب الكشافات والسبوت لايت',
-  //   caption: 'تركيب الكشافات والسبوت',
-  // },
-  // {
-  //   src: '/images/services/electrical-networks-multimeter.png',
-  //   alt: 'فحص وتشخيص الأعطال الكهربائية',
-  //   caption: 'فحص وتشخيص الأعطال',
-  // },
+  {
+    src: '/images/services/led-cross-tracks.jpg',
+    alt: 'سقف بليدات هندسية وإنارة مخفية بالسلاكات',
+    caption: 'ليدات مخفية بالسلاكات، تعطي شكل حديث',
+  },
 ]

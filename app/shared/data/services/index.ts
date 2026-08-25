@@ -32,19 +32,19 @@ const serviceDrafts: ServiceDraft[] = [
     body: 'نؤسّس ونشطب الشبكات الكهربائية: لوحات التوزيع، التمديدات، المواسير، والمفاتيح والأفياش. شغل بمعايير سلامة واضحة وتسعير مفهوم قبل التنفيذ.',
     gallery: [
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
+        src: '/images/services/networks-breaker-panel.jpg',
         alt: 'تأسيس وصيانة لوحة توزيع كهربائية',
       },
       {
-        src: '/images/services/electrical-networks-conduit.png',
+        src: '/images/services/networks-ceiling-conduit.jpg',
         alt: 'تمديد مواسير وقنوات الكهرباء',
       },
       {
-        src: '/images/services/electrical-networks-switches.png',
-        alt: 'تركيب المفاتيح والأفياش',
+        src: '/images/services/networks-laser-outlets.jpg',
+        alt: 'تأسيس نقاط المفاتيح والأفياش',
       },
       {
-        src: '/images/services/electrical-networks-cable-wiring.png',
+        src: '/images/services/networks-corridor-conduits.jpg',
         alt: 'تمديد وربط الكابلات الكهربائية',
       },
     ],
@@ -62,19 +62,19 @@ const serviceDrafts: ServiceDraft[] = [
     body: 'نركب الثريات والنجف والسبوت والكشافات بتثبيت آمن وتوزيع إضاءة صحيح، مع تشطيب مرتب من غير فوضى أسلاك أو عيوب ظاهرة.',
     gallery: [
       {
-        src: '/images/services/lighting-install-chandelier-nocap.png',
+        src: '/images/services/lighting-crystal-chandelier.jpg',
         alt: 'تركيب الثريات والنجف',
       },
       {
-        src: '/images/services/lighting-install-spotlights.png',
+        src: '/images/services/lighting-downlight-grid.jpg',
         alt: 'تركيب الكشافات والسبوت لايت',
       },
       {
-        src: '/images/services/lighting-install-pendant.png',
+        src: '/images/services/lighting-glass-rods.jpg',
         alt: 'تركيب إضاءة معلقة',
       },
       {
-        src: '/images/services/lighting-install-chandelier.png',
+        src: '/images/services/lighting-petal-chandelier.jpg',
         alt: 'تركيب نجفة بإضاءة كاملة',
       },
     ],
@@ -92,12 +92,20 @@ const serviceDrafts: ServiceDraft[] = [
     body: 'نركب الليدات الديكورية والإنارة المخفية بتشطيب مرتب وإضاءة متوازنة تضيف لمسة حديثة للمكان بدون تعقيد.',
     gallery: [
       {
-        src: '/images/services/decorative-led-ceiling-corner.png',
+        src: '/images/services/led-geometric-ceiling.jpg',
         alt: 'تركيب ليدات ديكورية وإنارة مخفية',
       },
       {
-        src: '/images/services/decorative-led-ladder-cove.png',
+        src: '/images/services/led-tiered-ceiling.jpg',
         alt: 'تركيب إنارة مخفية في السقف',
+      },
+      {
+        src: '/images/services/led-v-ceiling.jpg',
+        alt: 'تركيب ليدات هندسية في السقف',
+      },
+      {
+        src: '/images/services/led-kitchen-cabinets.jpg',
+        alt: 'تركيب إنارة مخفية للمطابخ والخزائن',
       },
     ],
   },
@@ -114,15 +122,15 @@ const serviceDrafts: ServiceDraft[] = [
     body: 'نركب ونضبط أنظمة الانتركوم المرئي والوحدات الجدارية وسماعات السقف، مع توصيل وتشغيل واضح وسهل للاستخدام اليومي.',
     gallery: [
       {
-        src: '/images/services/intercom-video-intercom.png',
+        src: '/images/services/intercom-outdoor-panel.jpg',
         alt: 'تركيب نظام انتركوم مرئي',
       },
       {
-        src: '/images/services/intercom-wall-panel.png',
+        src: '/images/services/intercom-indoor-panel.jpg',
         alt: 'وحدة انتركوم جدارية',
       },
       {
-        src: '/images/services/intercom-cable-connect.png',
+        src: '/images/services/intercom-keypad-wiring.jpg',
         alt: 'توصيل كابلات الانتركوم',
       },
     ],
@@ -140,11 +148,11 @@ const serviceDrafts: ServiceDraft[] = [
     body: 'نفحص أعطال الكهرباء ونشخّص السبب قبل الإصلاح: انقطاع، التماسات، سخونة أفياش، ومشاكل اللوحات — مع استجابة سريعة للطوارئ وتسعير واضح.',
     gallery: [
       {
-        src: '/images/services/electrical-networks-multimeter.png',
+        src: '/images/services/networks-breaker-panel.jpg',
         alt: 'فحص وتشخيص أعطال الكهرباء',
       },
       {
-        src: '/images/services/electrical-networks-breaker-panel.png',
+        src: '/images/services/networks-conduit-panel.jpg',
         alt: 'فحص لوحة التوزيع والقواطع',
       },
     ],
