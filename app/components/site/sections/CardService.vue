@@ -22,9 +22,7 @@ const goToSlide = (index: number) => {
 
 <template>
   <div class="stack-sm w-full items-center md:mx-auto md:max-w-md">
-    <div
-      class="relative aspect-3/2 w-[calc(100%+2rem)] overflow-hidden -mx-4 rounded-none sm:w-[calc(100%+3rem)] sm:-mx-6 md:mx-0 md:w-full md:rounded-xl"
-    >
+    <div class="relative aspect-4/3 w-full overflow-hidden rounded-lg bg-muted/40">
       <Transition
         name="soft-image"
         mode="out-in"
@@ -37,11 +35,6 @@ const goToSlide = (index: number) => {
           sizes="100vw md:448px"
         />
       </Transition>
-
-      <div
-        class="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-default to-transparent"
-        aria-hidden="true"
-      />
     </div>
 
     <Transition
@@ -50,7 +43,7 @@ const goToSlide = (index: number) => {
     >
       <p
         :key="activeSlide.caption"
-        class="caption relative z-10 -mt-6 px-4 text-center md:px-0"
+        class="caption text-center"
       >
         {{ activeSlide.caption }}
       </p>
