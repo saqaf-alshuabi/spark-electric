@@ -23,13 +23,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'electrical-networks',
     icon: 'i-heroicons-bolt',
     title: 'تأسيس كهرباء',
-    description: 'تشوف النور بعد التشطيب، والجدران ما تكسّرت.',
+    description: 'نمدد البيت قبل الدهان. لوحة وأفياش وكل نقطة.',
     highlights: [
       'لوحة مرتّبة',
       'أفياش الغرف',
       'تمديد مخفي',
     ],
-    body: 'نمشي التمديد في السقف والجدران ونرتب اللوحة. تسكن بيتك والنور شغال، والأسلاك مو باينة.',
+    body: 'نأسس مع البناء. تخلّص التشطيب وتشغّل النور، وما نكسّر.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',
@@ -53,13 +53,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'lighting',
     icon: 'i-heroicons-light-bulb',
     title: 'إنارة وثريات',
-    description: 'الغرفة منوّرة، والثريا بمكانها الصح.',
+    description: 'نركّب ثريا وسبوت. الغرفة تنور كلها.',
     highlights: [
       'ثريا السقف',
       'سبوتات الغرفة',
       'سقف نظيف',
     ],
-    body: 'نركّب الثريا ونوزع السبوتات على مساحة الغرفة. تدخل والنور واصل، والسقف مرتب.',
+    body: 'نركّب الثريا في مكانها ونوزع السبوتات. السقف يطلع نظيف.',
     gallery: [
       {
         src: '/images/services/lighting-crystal-chandelier.jpg',
@@ -83,13 +83,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'decorative-led',
     icon: 'i-heroicons-sparkles',
     title: 'ليد مخفي',
-    description: 'تشوف النور، ما تشوف الليد.',
+    description: 'ليد جوا السلاكة وتحت الخزائن. النور باين، والليد مو باين.',
     highlights: [
       'سلاكة السقف',
       'خزائن المطبخ',
       'طبقات الجبس',
     ],
-    body: 'نركّب الليد جوا السلاكة أو تحت الخزائن. السقف يطلع أنظف.',
+    body: 'نركّب الليد جوا السلاكة أو تحت الخزانة. السقف يطلع أنظف.',
     gallery: [
       {
         src: '/images/services/led-geometric-ceiling.jpg',
@@ -113,13 +113,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'intercom',
     icon: 'i-heroicons-video-camera',
     title: 'انتركوم',
-    description: 'تشوف مين طق الباب، وتفتح وأنت مكانك.',
+    description: 'كاميرا على الباب وشاشة جوا. تشوف مين جاي وتفتح.',
     highlights: [
       'كاميرا برا',
       'شاشة جوا',
       'صوت وصورة',
     ],
-    body: 'نركّب الجهاز عند الباب ونوصل الشاشة لجوا. تسولف مع اللي برا وتفتح له الباب وأنت مرتاح.',
+    body: 'نركّب الجهاز برا والشاشة جوا. تسولف وتفتح من مكانك.',
     gallery: [
       {
         src: '/images/services/intercom-outdoor-panel.jpg',
@@ -139,13 +139,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'air-conditioning',
     icon: 'i-heroicons-home-modern',
     title: 'تأسيس تكييف',
-    description: 'السبليت والمركزي يتركب بعدين، والجدران ما تخرب.',
+    description: 'نأسس السبليت والمركزي مع البناء. النحاس والدكت جاهزين.',
     highlights: [
       'سبليت ومركزي',
       'نحاس ودكت',
       'تصريف الموية',
     ],
-    body: 'نمشي النحاس والدكت وقت التأسيس، ونترك الفتحات على مقاسها. يجي السبليت أو المركزي بعدين على نظافة.',
+    body: 'نمشي النحاس والدكت وقت التأسيس. الوحدة تركب بعدين من غير تكسير.',
     gallery: [
       {
         src: '/images/services/ac-outdoor-rough-in.jpg',
@@ -169,13 +169,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'fault-diagnosis',
     icon: 'i-heroicons-wrench-screwdriver',
     title: 'إصلاح أعطال',
-    description: 'نعرف وين المشكلة، وتعرف السعر قبل لا نصلح.',
+    description: 'نفحص العطل ونقولك السعر، بعدين نصلح.',
     highlights: [
       'انقطاع النور',
       'حرارة الأفياش',
       'فصل القاطع',
     ],
-    body: 'نفحص لك من اللوحة لين نقطة العطل. نعلمك إيش المشكلة وكم السعر، قبل ما نغيّر أي قطعة.',
+    body: 'نفحص من اللوحة لين النقطة. تعرف السبب والسعر قبل لا نغيّر شي.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',

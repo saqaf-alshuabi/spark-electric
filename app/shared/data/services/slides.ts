@@ -9,12 +9,12 @@ export const serviceSlides: ServiceSlide[] = [
   {
     src: '/images/services/lighting-crystal-chandelier.jpg',
     alt: 'نجفة كريستال في سقف حديث',
-    caption: 'نجفة ثابتة، والنور يملأ المكان',
+    caption: 'الثريا ثابتة، والغرفة تنور',
   },
   {
     src: '/images/services/led-cross-tracks.jpg',
     alt: 'سقف بليدات مخفية بالسلاكات',
-    caption: 'السقف ينور بهدوء، وشكله يطلع جديد',
+    caption: 'السقف ينور هادي، وشكله يطلع جديد',
   },
   {
     src: '/images/services/intercom-outdoor-panel.jpg',
