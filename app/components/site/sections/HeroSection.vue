@@ -14,7 +14,6 @@ import { site } from '@/shared/data'
             وضواحيها
           </span>
         </h1>
-        <SiteHomeServiceBadge />
       </div>
       <SiteSectionsCardService />
     </UContainer>

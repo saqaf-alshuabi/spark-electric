@@ -7,18 +7,18 @@ import { whyChooseUs } from '@/shared/data'
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
         <h2 class="reveal">
-          لماذا تختارنا؟
+          ليش تختارنا؟
         </h2>
         <p class="reveal">
-          ثقة ووضوح في كل خطوة من التشخيص حتى التنفيذ
+          هذي اللي تهمك قبل الشغل
         </p>
       </div>
 
-      <ul class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+      <ul class="grid w-full grid-cols-1 gap-3 md:grid-cols-2 md:gap-4">
         <li
           v-for="item in whyChooseUs"
           :key="item.title"
-          class="reveal stack-sm rounded-lg bg-muted/60 px-4 py-5 transition-transform duration-300 hover:-translate-y-1 sm:px-5"
+          class="reveal stack-sm rounded-lg bg-muted/50 px-4 py-5 md:px-5"
         >
           <h3>
             {{ item.title }}

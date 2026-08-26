@@ -2,19 +2,19 @@ import type { WhyChooseUsItem } from '../types/site'
 
 export const whyChooseUs: WhyChooseUsItem[] = [
   {
-    title: 'استجابة سريعة',
-    description: 'نصل للطوارئ في أقرب وقت ممكن على مدار الساعة.',
+    title: 'طوارئ أي وقت',
+    description: 'نجي إذا فيه عطل، في أي وقت.',
   },
   {
-    title: 'تشخيص دقيق',
-    description: 'نفحص العطل بوضوح قبل أي إصلاح أو تعديل.',
+    title: 'نفحص قبل ما نصلح',
+    description: 'نقولك وين العطل وإيش السبب، بعدين نصلح.',
   },
   {
-    title: 'شغل بمعايير سلامة',
-    description: 'تأسيس وصيانة بتشطيب مرتب ومعايير عالية.',
+    title: 'السعر قبل ما نبدأ',
+    description: 'نتفق على السعر قبل أي شغل.',
   },
   {
-    title: 'تسعير واضح',
-    description: 'تعرف التكلفة قبل ما نبدأ التنفيذ.',
+    title: 'السؤال مجاني',
+    description: 'تسأل ونوضح لك الوضع، بدون فلوس.',
   },
 ]

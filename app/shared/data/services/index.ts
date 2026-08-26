@@ -53,13 +53,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'lighting',
     icon: 'i-heroicons-light-bulb',
     title: 'إنارة وثريات',
-    description: 'نركب النجف والثريا، والسبوت يتوزع على السقف.',
+    description: 'نركب النجفة والثريا، والسبوت يتوزع على السقف.',
     highlights: [
       'ثريات ونجف',
       'سبوت وكشافات',
-      'تركيب نظيف من تحت',
+      'التركيب ما يبين من تحت',
     ],
-    body: 'الثريا تثبت، والسبوت يتوزع. الأسلاك ما تبين من تحت.',
+    body: 'نثبت الثريا، والسبوت يتوزع على السقف. الأسلاك ما تبين من تحت.',
     gallery: [
       {
         src: '/images/services/lighting-crystal-chandelier.jpg',
@@ -83,13 +83,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'decorative-led',
     icon: 'i-heroicons-sparkles',
     title: 'ليدات ديكورية',
-    description: 'ليدات مخفية تغيّر السقف، والنور يطلع هادي.',
+    description: 'ليدات مخفية تغيّر شكل السقف، والنور يكون هادي.',
     highlights: [
       'إنارة مخفية',
       'ليدات بالسلاكات',
       'مطابخ وخزائن',
     ],
-    body: 'نركبها في السلاكات أو الجبس. النور يطلع هادي وواضح.',
+    body: 'نركبها في السلاكات أو الجبس. النور هادي وواضح.',
     gallery: [
       {
         src: '/images/services/led-geometric-ceiling.jpg',
@@ -113,13 +113,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'intercom',
     icon: 'i-heroicons-video-camera',
     title: 'انتركوم',
-    description: 'كاميرا على الباب، ووحدة داخل البيت.',
+    description: 'كاميرا على الباب، ووحدة جوا البيت.',
     highlights: [
       'كاميرا على الباب',
-      'وحدة داخل البيت',
-      'تكلم الزاير',
+      'وحدة جوا البيت',
+      'تكلم اللي بالباب',
     ],
-    body: 'نركب انتركوم مرئي على الباب ووحدة جوه. تشوف الزاير وتكلمه قبل ما تفتح.',
+    body: 'نركب انتركوم مرئي على الباب ووحدة جوا. تشوف مين بالباب وتكلمه قبل ما تفتح.',
     gallery: [
       {
         src: '/images/services/intercom-outdoor-panel.jpg',
@@ -145,7 +145,7 @@ const serviceDrafts: ServiceDraft[] = [
       'نحاس ومواسير',
       'قبل ما تجي الوحدة',
     ],
-    body: 'نأسس المكيف من بدري: الفتحات، النحاس، والمواسير. الوحدة تجي بعدين.',
+    body: 'نأسس المكيف بدري: الفتحات، النحاس، والمواسير. الوحدة تجي بعدين.',
     gallery: [
       {
         src: '/images/services/ac-outdoor-rough-in.jpg',
@@ -169,13 +169,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'fault-diagnosis',
     icon: 'i-heroicons-wrench-screwdriver',
     title: 'فحص أعطال',
-    description: 'الكهرباء قطعت؟ نقولك وين العطل قبل ما نصلح.',
+    description: 'الكهرباء قطعت؟ نقول لك وين العطل قبل ما نصلح.',
     highlights: [
       'انقطاع والتماس',
       'فحص اللوحة',
       'نجي للطوارئ',
     ],
-    body: 'نفحص، نقولك وين العطل، وبعدين نصلح. لو طارئة، نجي.',
+    body: 'نفحص، نقول لك وين العطل، وبعدين نصلح. لو فيه طارئ، نجي.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',

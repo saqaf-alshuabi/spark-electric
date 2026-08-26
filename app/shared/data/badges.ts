@@ -3,7 +3,7 @@ import type { FeatureBadgeItem } from '../types/site'
 export const serviceBadges: FeatureBadgeItem[] = [
   {
     icon: 'i-heroicons-clock',
-    title: 'نجي للطوارئ',
+    title: 'طوارئ أي وقت',
   },
   {
     icon: 'i-heroicons-exclamation-triangle',
@@ -11,10 +11,10 @@ export const serviceBadges: FeatureBadgeItem[] = [
   },
   {
     icon: 'i-heroicons-bolt',
-    title: 'شغل نظيف',
+    title: 'شغل مرتب',
   },
   {
     icon: 'i-heroicons-currency-dollar',
-    title: 'نتفق على السعر',
+    title: 'السعر قبل نبدأ',
   },
 ]
