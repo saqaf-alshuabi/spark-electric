@@ -81,7 +81,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
             :key="activeService.slug"
             :src="activeService.image"
             :alt="activeService.imageAlt"
-            class="absolute inset-0 size-full object-contain p-3"
+            class="absolute inset-0 size-full object-cover"
             sizes="480px lg:560px"
           />
         </Transition>

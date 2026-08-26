@@ -25,7 +25,7 @@ const selectImage = (index: number) => {
   <section class="section-y">
     <UContainer class="grid  grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12">
       <div class="stack-sm">
-        <div class="aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
+        <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
           <Transition
             name="slide-image"
             mode="out-in"
@@ -34,7 +34,7 @@ const selectImage = (index: number) => {
               :key="images[0]?.src"
               :src="images[0]?.src"
               :alt="images[0]?.alt"
-              class="size-full object-contain"
+              class="absolute inset-0 size-full object-cover"
               sizes="100vw md:50vw"
             />
           </Transition>

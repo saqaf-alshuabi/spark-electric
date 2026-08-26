@@ -21,11 +21,11 @@ const {
     :to="to"
     class="group stack-sm focus-ring h-full rounded-lg bg-muted/50 p-3 transition-colors hover:bg-muted active:bg-accented sm:p-4"
   >
-    <div class="aspect-16/10 overflow-hidden rounded-md bg-default/40">
+    <div class="relative aspect-16/10 overflow-hidden rounded-md bg-default/40">
       <NuxtImg
         :src="image"
         :alt="imageAlt"
-        class="size-full object-contain transition-transform duration-500 group-hover:scale-[1.03] group-active:scale-[1.02]"
+        class="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03] group-active:scale-[1.02]"
         sizes="100vw md:50vw"
       />
     </div>
