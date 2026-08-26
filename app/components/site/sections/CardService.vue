@@ -2,12 +2,18 @@
 import { serviceSlides } from '@/shared/data'
 
 const activeIndex = ref(0)
+const prefersReducedMotion = usePreferredReducedMotion()
 
 const activeSlide = computed(() => serviceSlides[activeIndex.value]!)
 
-useIntervalFn(() => {
+const { pause, resume } = useIntervalFn(() => {
   activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
 }, 5500)
+
+watchImmediate(prefersReducedMotion, (value) => {
+  if (value === 'reduce') pause()
+  else resume()
+})
 
 const goToSlide = (index: number) => {
   activeIndex.value = index
@@ -44,7 +50,7 @@ const goToSlide = (index: number) => {
     >
       <p
         :key="activeSlide.caption"
-        class="caption-sm relative z-10 -mt-6 px-4 text-center md:px-0"
+        class="caption relative z-10 -mt-6 px-4 text-center md:px-0"
       >
         {{ activeSlide.caption }}
       </p>
@@ -60,12 +66,16 @@ const goToSlide = (index: number) => {
         :key="slide.src"
         type="button"
         role="tab"
-        class="h-1.5 rounded-full transition-all duration-300"
-        :class="index === activeIndex ? 'w-5 bg-primary' : 'w-1.5 bg-muted/40 hover:bg-muted/60'"
+        class="flex size-8 items-center justify-center"
         :aria-selected="index === activeIndex"
         :aria-label="slide.caption"
         @click="goToSlide(index)"
-      />
+      >
+        <span
+          class="h-1.5 rounded-full transition-all duration-300"
+          :class="index === activeIndex ? 'w-5 bg-primary' : 'w-1.5 bg-muted/40'"
+        />
+      </button>
     </div>
   </div>
 </template>

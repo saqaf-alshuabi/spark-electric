@@ -3,22 +3,27 @@ import type { ServiceSlide } from '../../types/site'
 export const serviceSlides: ServiceSlide[] = [
   {
     src: '/images/services/networks-breaker-panel.jpg',
-    alt: 'لوحة قواطع بعد التأسيس، الأسلاك مرتبة',
-    caption: 'اللوحة بعد التأسيس تطلع مرتبة',
+    alt: 'لوحة قواطع بعد تأسيس الشبكة',
+    caption: 'نمدد الشبكة من اللوحة لين الأفياش',
   },
   {
     src: '/images/services/lighting-crystal-chandelier.jpg',
     alt: 'نجفة كريستال في سقف حديث',
-    caption: 'نركب النجف بثبات، والشغل نظيف',
+    caption: 'نجفة ثابتة، والنور يملأ المكان',
   },
   {
-    src: '/images/services/intercom-outdoor-panel2.jpg',
+    src: '/images/services/intercom-outdoor-panel.jpg',
     alt: 'انتركوم مرئي على جدار الباب',
-    caption: 'انتركوم مرئي، تشوف مين على الباب',
+    caption: 'تشوف مين جاي قبل ما تفتح',
   },
   {
     src: '/images/services/led-cross-tracks.jpg',
-    alt: 'سقف بليدات هندسية وإنارة مخفية بالسلاكات',
-    caption: 'ليدات مخفية بالسلاكات، تعطي شكل حديث',
+    alt: 'سقف بليدات مخفية بالسلاكات',
+    caption: 'السقف ينور بهدوء، وشكله يطلع جديد',
+  },
+  {
+    src: '/images/services/ac-outdoor-rough-in.jpg',
+    alt: 'مواسير المكيف خارجة من الجدار وقت التأسيس',
+    caption: 'نأسس المكيف من برة، والمواسير جاهزة',
   },
 ]
