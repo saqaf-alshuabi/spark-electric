@@ -23,17 +23,17 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'electrical-networks',
     icon: 'i-heroicons-bolt',
     title: 'شبكات وتأسيس',
-    description: 'البيت يتأسس من اللوحة إلى الأفياش، والشغل يطلع مرتب.',
+    description: 'من اللوحة لين كل فيشة، في البيت أو المحل.',
     highlights: [
-      'لوحة مرتبة',
-      'تمديد نظيف',
+      'لوحة وقواطع',
+      'تمديد سقف وجدران',
       'أفياش ومفاتيح',
     ],
-    body: 'نبدأ من اللوحة ونمشي التمديد في السقف والجدران. المواسير والكابلات والأفياش كل واحد في مكانه. بعد التشطيب ما تشوف فوضى أسلاك.',
+    body: 'نبدأ من اللوحة ونمشي التمديد في السقف والجدران. بعد التشطيب ما تشوف أسلاك طالعة.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',
-        alt: 'لوحة قواطع بعد التأسيس، الأسلاك مرتبة',
+        alt: 'لوحة قواطع بعد تأسيس الشبكة',
       },
       {
         src: '/images/services/networks-ceiling-conduit.jpg',
@@ -53,13 +53,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'lighting',
     icon: 'i-heroicons-light-bulb',
     title: 'إنارة وثريات',
-    description: 'نجف وثريات يثبتون نظيف، والإضاءة تتوزع صح.',
+    description: 'نركب النجف والثريا، والسبوت يتوزع على السقف.',
     highlights: [
       'ثريات ونجف',
       'سبوت وكشافات',
-      'من غير فوضى أسلاك',
+      'تركيب نظيف من تحت',
     ],
-    body: 'نركب النجف والثريا بثبات، والسبوت يتوزع على السقف. الشغل نظيف من تحت، ما فيه أسلاك باينة.',
+    body: 'الثريا تثبت، والسبوت يتوزع. الأسلاك ما تبين من تحت.',
     gallery: [
       {
         src: '/images/services/lighting-crystal-chandelier.jpg',
@@ -83,13 +83,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'decorative-led',
     icon: 'i-heroicons-sparkles',
     title: 'ليدات ديكورية',
-    description: 'إنارة مخفية تغيّر شكل السقف، من غير تعقيد.',
+    description: 'ليدات مخفية تغيّر السقف، والنور يطلع هادي.',
     highlights: [
       'إنارة مخفية',
-      'ليدات أسقف',
-      'إضاءة هادية',
+      'ليدات بالسلاكات',
+      'مطابخ وخزائن',
     ],
-    body: 'الليدات المخفية تغيّر شكل السقف من غير ما تثقله. نركبها مرتبة، والإضاءة تطلع هادية وواضحة.',
+    body: 'نركبها في السلاكات أو الجبس. النور يطلع هادي وواضح.',
     gallery: [
       {
         src: '/images/services/led-geometric-ceiling.jpg',
@@ -100,8 +100,8 @@ const serviceDrafts: ServiceDraft[] = [
         alt: 'إنارة مخفية في سقف طبقات',
       },
       {
-        src: '/images/services/led-v-ceiling.jpg',
-        alt: 'ليدات هندسية في السقف',
+        src: '/images/services/led-cross-tracks.jpg',
+        alt: 'سقف بليدات مخفية بالسلاكات',
       },
       {
         src: '/images/services/led-kitchen-cabinets.jpg',
@@ -113,13 +113,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'intercom',
     icon: 'i-heroicons-video-camera',
     title: 'انتركوم',
-    description: 'تشوف مين على الباب قبل ما تفتح.',
+    description: 'كاميرا على الباب، ووحدة داخل البيت.',
     highlights: [
       'كاميرا على الباب',
       'وحدة داخل البيت',
-      'سهل الاستخدام',
+      'تكلم الزاير',
     ],
-    body: 'نركب انتركوم مرئي على الباب، ووحدة داخل البيت. تشوف الزاير وتكلمه، والاستخدام يومي وبسيط.',
+    body: 'نركب انتركوم مرئي على الباب ووحدة جوه. تشوف الزاير وتكلمه قبل ما تفتح.',
     gallery: [
       {
         src: '/images/services/intercom-outdoor-panel.jpg',
@@ -136,20 +136,50 @@ const serviceDrafts: ServiceDraft[] = [
     ],
   },
   {
+    slug: 'air-conditioning',
+    icon: 'i-heroicons-home-modern',
+    title: 'تأسيس مكيفات',
+    description: 'الفتحات والنحاس جاهزة قبل ما تجي الوحدة.',
+    highlights: [
+      'فتحات الجدار',
+      'نحاس ومواسير',
+      'قبل ما تجي الوحدة',
+    ],
+    body: 'نأسس المكيف من بدري: الفتحات، النحاس، والمواسير. الوحدة تجي بعدين.',
+    gallery: [
+      {
+        src: '/images/services/ac-outdoor-rough-in.jpg',
+        alt: 'مواسير المكيف خارجة من الجدار وقت التأسيس',
+      },
+      {
+        src: '/images/services/ac-copper-lines.jpg',
+        alt: 'تمديد نحاس المكيف',
+      },
+      {
+        src: '/images/services/ac-wall-piping.jpg',
+        alt: 'مواسير المكيف في الجدار',
+      },
+      {
+        src: '/images/services/ac-ceiling-pipes.jpg',
+        alt: 'تمديد مواسير المكيف في السقف',
+      },
+    ],
+  },
+  {
     slug: 'fault-diagnosis',
     icon: 'i-heroicons-wrench-screwdriver',
     title: 'فحص أعطال',
-    description: 'الكهرباء قطعت أو في التماس؟ نحدد السبب قبل ما نصلح.',
+    description: 'الكهرباء قطعت؟ نقولك وين العطل قبل ما نصلح.',
     highlights: [
       'انقطاع والتماس',
       'فحص اللوحة',
       'نجي للطوارئ',
     ],
-    body: 'ما نبدّل قطع على طول. نفحص، نقولك وين العطل، وبعدين نصلح. لو طارئة، نجي.',
+    body: 'نفحص، نقولك وين العطل، وبعدين نصلح. لو طارئة، نجي.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',
-        alt: 'فحص لوحة الكهرباء بعد العطل',
+        alt: 'فحص لوحة الكهرباء',
       },
       {
         src: '/images/services/networks-conduit-panel.jpg',

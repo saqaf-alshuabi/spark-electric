@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ServiceDetail } from '~/shared/types/site'
-import { site } from '@/shared/data'
 
 const { whatsappUrl } = useContact()
 const { service } = defineProps<{ service: ServiceDetail }>()
@@ -85,16 +84,12 @@ const selectImage = (index: number) => {
           </li>
         </ul>
 
-        <p>
-          خدمة {{ service.title }} في {{ site.city }} وضواحيها — تسعير واضح قبل التنفيذ.
-        </p>
-
         <div class="flex flex-wrap gap-3 ">
           <UButton
             :to="whatsappUrl"
             target="_blank"
             rel="noopener noreferrer"
-            label="استفسر الآن"
+            label="واتساب"
             :icon="ui.icons.whatsapp"
           />
           <UButton

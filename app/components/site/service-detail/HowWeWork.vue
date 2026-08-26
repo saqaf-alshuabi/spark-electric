@@ -10,7 +10,7 @@ import { howWeWorkSteps } from '@/shared/data'
           كيف نشتغل؟
         </h2>
         <p class="reveal">
-          ثلاث خطوات واضحة من الاستفسار حتى التسليم
+          من الرسالة لين التسليم
         </p>
       </div>
 

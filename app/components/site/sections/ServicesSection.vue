@@ -12,11 +12,11 @@ const { ui } = useAppConfig()
           خدماتنا
         </h2>
         <p class="reveal">
-          نقدم خدمات الكهرباء المنزلية والتجارية
+          تأسيس، إنارة، تكييف — للبيت والمحل
         </p>
       </div>
 
-      <ul class="grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
+      <ul class="grid w-full grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
         <li
           v-for="service in homeServices"
           :key="service.title"
@@ -29,7 +29,7 @@ const { ui } = useAppConfig()
       <div class="reveal">
         <UButton
           to="/services"
-          label="عرض كل الخدمات"
+          label="كل الخدمات"
           variant="soft"
           :trailing-icon="ui.icons.arrowLeft"
         />

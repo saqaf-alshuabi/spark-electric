@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { serviceSummaries, site } from '@/shared/data'
 
-const title = `خدمات الكهرباء في ${site.city}`
-const description = 'تأسيس، صيانة، وإصلاح أعطال للمنازل والمباني.'
+const title = 'خدماتنا'
+
+useSeoMeta({
+  title: `كهربائي في ${site.city}`,
+  description: 'تأسيس، إنارة، تكييف، وانتركوم. للبيت والمحل.',
+})
 </script>
 
 <template>
@@ -13,9 +17,6 @@ const description = 'تأسيس، صيانة، وإصلاح أعطال للمن�
         <h1>
           {{ title }}
         </h1>
-        <p>
-          {{ description }}
-        </p>
       </div>
 
       <!-- Mobile / tablet: photo cards -->
@@ -40,10 +41,7 @@ const description = 'تأسيس، صيانة، وإصلاح أعطال للمن�
       <SiteSectionsServicesIndex
         :services="serviceSummaries"
         :title="title"
-        :description="description"
       />
     </UContainer>
   </section>
-
-  <SiteSectionsCtaSection />
 </template>

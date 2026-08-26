@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ServiceSummary } from '@/shared/types/site'
 
-const { services, title, description } = defineProps<{ services: ServiceSummary[], title: string, description: string }>()
+const { services, title } = defineProps<{ services: ServiceSummary[], title: string }>()
 
 const activeSlug = ref(services[0]?.slug ?? '')
 const setActive = (slug: string) => activeSlug.value = slug
@@ -17,9 +17,6 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
         <h1>
           {{ title }}
         </h1>
-        <p>
-          {{ description }}
-        </p>
       </div>
 
       <ol class="divide-y divide-muted/50">

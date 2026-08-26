@@ -2,15 +2,15 @@ import type { ProcessStep } from '../types/site'
 
 export const howWeWorkSteps: ProcessStep[] = [
   {
-    title: 'استفسر واتساب',
-    description: 'قل لنا وش تحتاج — نرد بسرعة ونرتب المعاينة أو الموعد.',
+    title: 'كلمنا واتساب',
+    description: 'قل وش تبي. نرد عليك ونرتب متى نجي.',
   },
   {
-    title: 'تسعير واضح',
-    description: 'نشرح التشخيص والتكلفة قبل ما نبدأ أي شغل.',
+    title: 'نتفق على السعر',
+    description: 'نشرح العطل والتكلفة قبل أي شغل.',
   },
   {
-    title: 'تنفيذ وتسليم',
-    description: 'ننفّذ بمعايير سلامة وتشطيب مرتب، ثم نسلّم الشغل.',
+    title: 'نخلّص ونسلّم',
+    description: 'نشتغل، نسلّم، وتفك من الموضوع.',
   },
 ]

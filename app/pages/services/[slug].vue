@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { site } from '@/shared/data'
+
 const { service } = useServiceDetail()
-definePageMeta({
-  hideMobileActionBar: true,
+
+useSeoMeta({
+  title: `${service.title} في ${site.city}`,
+  description: `${service.description} كهربائي في ${site.city} وضواحيها.`,
 })
 </script>
 
@@ -10,5 +14,4 @@ definePageMeta({
     :service="service"
   />
   <SiteServiceDetailHowWeWork />
-  <SiteSectionsCtaSection />
 </template>
