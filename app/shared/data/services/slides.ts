@@ -12,14 +12,14 @@ export const serviceSlides: ServiceSlide[] = [
     caption: 'نجفة ثابتة، والنور يملأ المكان',
   },
   {
-    src: '/images/services/intercom-outdoor-panel.jpg',
-    alt: 'انتركوم مرئي على جدار الباب',
-    caption: 'تشوف مين جاي قبل ما تفتح',
-  },
-  {
     src: '/images/services/led-cross-tracks.jpg',
     alt: 'سقف بليدات مخفية بالسلاكات',
     caption: 'السقف ينور بهدوء، وشكله يطلع جديد',
+  },
+  {
+    src: '/images/services/intercom-outdoor-panel.jpg',
+    alt: 'انتركوم مرئي على جدار الباب',
+    caption: 'تشوف مين جاي قبل ما تفتح',
   },
   {
     src: '/images/services/ac-outdoor-rough-in.jpg',

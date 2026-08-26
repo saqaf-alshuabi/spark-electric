@@ -57,7 +57,7 @@ const goToSlide = (index: number) => {
     </Transition>
 
     <div
-      class="flex justify-center gap-1.5"
+      class="flex justify-center gap-0.5"
       role="tablist"
       aria-label="معرض أعمال الكهرباء"
     >
@@ -66,14 +66,14 @@ const goToSlide = (index: number) => {
         :key="slide.src"
         type="button"
         role="tab"
-        class="flex size-8 items-center justify-center"
+        class="flex size-6 items-center justify-center"
         :aria-selected="index === activeIndex"
         :aria-label="slide.caption"
         @click="goToSlide(index)"
       >
         <span
-          class="h-1.5 rounded-full transition-all duration-300"
-          :class="index === activeIndex ? 'w-5 bg-primary' : 'w-1.5 bg-muted/40'"
+          class="h-1 rounded-full transition-all duration-300"
+          :class="index === activeIndex ? 'w-4 bg-primary' : 'w-1 bg-muted/40'"
         />
       </button>
     </div>
