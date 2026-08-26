@@ -3,20 +3,23 @@
 @import './utilities.css';
 
 @theme {
-  --font-sans: 'Vazirmatn', sans-serif;
-  --font-heading: 'Vazirmatn', sans-serif;
-  --font-body: 'Vazirmatn', sans-serif;
+  --font-sans: 'IBM Plex Sans Arabic', sans-serif;
+  --font-heading: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 @layer base {
+  :root {
+    --ui-container: 80rem;
+    --ui-header-height: 4rem;
+  }
+
   html {
     @apply antialiased;
     scroll-behavior: auto;
   }
 
   body {
-    font-family: var(--font-body);
-    @apply text-base font-normal text-default;
+    @apply font-sans text-base text-default antialiased;
   }
 
   ::selection {
@@ -32,23 +35,23 @@
   }
 
   h1 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug text-pretty md:text-balance;
+    @apply text-2xl md:text-3xl font-semibold leading-snug text-pretty;
   }
 
   h2 {
-    @apply text-xl sm:text-2xl md:text-3xl font-semibold leading-snug;
+    @apply text-xl md:text-2xl font-semibold leading-snug;
   }
 
   h3 {
-    @apply text-lg sm:text-xl font-medium leading-snug;
+    @apply text-base md:text-lg font-medium leading-snug;
   }
 
   h4 {
-    @apply text-base sm:text-lg font-medium leading-snug;
+    @apply text-base font-medium leading-snug;
   }
 
   p {
-    @apply text-sm sm:text-base font-normal text-muted leading-relaxed text-pretty;
+    @apply text-base font-normal text-muted leading-relaxed text-pretty;
   }
 
   strong {
@@ -56,7 +59,7 @@
   }
 
   small {
-    @apply text-xs sm:text-sm text-muted;
+    @apply text-xs text-muted;
   }
 
   ul,

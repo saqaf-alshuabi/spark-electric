@@ -18,6 +18,7 @@ const { whatsappUrl, phoneUrl } = useContact()
           label="واتساب"
           :icon="ui.icons.whatsapp"
           block
+          size="sm"
         />
         <UButton
           :to="phoneUrl"
@@ -25,6 +26,7 @@ const { whatsappUrl, phoneUrl } = useContact()
           :icon="ui.icons.phone"
           variant="outline"
           block
+          size="sm"
         />
       </div>
     </nav>

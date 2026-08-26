@@ -18,15 +18,15 @@ import { howWeWorkSteps } from '@/shared/data'
         <li
           v-for="(step, index) in howWeWorkSteps"
           :key="step.title"
-          class="reveal group relative flex gap-4 pb-8 last:pb-0"
+          class="reveal group relative flex gap-3 pb-6 last:pb-0 md:gap-4 md:pb-8"
         >
           <div
-            class="absolute start-5 top-10 bottom-0 w-px bg-accented group-last:hidden"
+            class="absolute start-4 top-8 bottom-0 w-px bg-accented group-last:hidden md:start-5 md:top-10"
             aria-hidden="true"
           />
 
           <div
-            class="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-inverted"
+            class="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-inverted md:size-10 md:text-base"
           >
             <span class="mono-nums">{{ index + 1 }}</span>
           </div>

@@ -20,7 +20,7 @@ useSeoMeta({
       </div>
 
       <!-- Mobile / tablet: photo cards -->
-      <ul class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:hidden">
+      <ul class="grid w-full grid-cols-1 gap-3 md:grid-cols-2 md:gap-5 lg:hidden">
         <li
           v-for="service in serviceSummaries"
           :key="service.slug"

@@ -3,18 +3,18 @@ import type { FeatureBadgeItem } from '../types/site'
 export const serviceBadges: FeatureBadgeItem[] = [
   {
     icon: 'i-heroicons-clock',
-    title: 'نجي للطوارئ في أي وقت',
+    title: 'نجي للطوارئ',
   },
   {
     icon: 'i-heroicons-exclamation-triangle',
-    title: 'نحدد العطل قبل ما نصلح',
+    title: 'نفحص قبل نصلح',
   },
   {
     icon: 'i-heroicons-bolt',
-    title: 'تأسيس وصيانة شغلها مرتب',
+    title: 'شغل نظيف',
   },
   {
     icon: 'i-heroicons-currency-dollar',
-    title: 'تعرف السعر قبل ما نبدأ',
+    title: 'نتفق على السعر',
   },
 ]

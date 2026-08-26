@@ -2,7 +2,7 @@
 const {
   icon,
   title,
-  iconClass = 'size-4 sm:size-5',
+  iconClass = 'size-5',
 } = defineProps<{
   icon: string
   title: string
@@ -17,7 +17,7 @@ const {
       class="shrink-0 text-primary"
       :class="iconClass"
     />
-    <span class="text-xs leading-snug text-muted sm:text-sm">
+    <span class="text-sm leading-snug text-muted">
       {{ title }}
     </span>
   </div>

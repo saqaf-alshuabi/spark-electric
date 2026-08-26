@@ -23,9 +23,9 @@ const selectImage = (index: number) => {
 
 <template>
   <section class="section-y">
-    <UContainer class="grid  grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12">
+    <UContainer class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2 lg:gap-12">
       <div class="stack-sm">
-        <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
+        <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40 lg:aspect-4/3">
           <Transition
             name="slide-image"
             mode="out-in"
@@ -35,7 +35,7 @@ const selectImage = (index: number) => {
               :src="images[0]?.src"
               :alt="images[0]?.alt"
               class="absolute inset-0 size-full object-cover"
-              sizes="100vw md:50vw"
+              sizes="100vw lg:50vw"
             />
           </Transition>
         </div>
@@ -74,7 +74,7 @@ const selectImage = (index: number) => {
           <li
             v-for="item in service.highlights"
             :key="item"
-            class="flex items-center gap-2 text-sm text-highlighted sm:text-base "
+            class="flex items-center gap-2 text-sm text-highlighted md:text-base"
           >
             <UIcon
               :name="ui.icons.check"

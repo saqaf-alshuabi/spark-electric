@@ -11,17 +11,14 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
   ],
   devtools: {
-    enabled: true,
-
-    timeline: {
-      enabled: true,
-    },
+    enabled: false,
   },
   app: {
     head: {
       htmlAttrs: {
         lang: 'ar',
         dir: 'rtl',
+        class: 'dark',
       },
       viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
       link: [
@@ -32,6 +29,12 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classSuffix: '',
+    storageKey: 'spark-theme',
+  },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     name: 'أبو تيم الكهربائي',
@@ -63,7 +66,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: 'Vazirmatn',
+        name: 'IBM Plex Sans Arabic',
         provider: 'google',
         subsets: ['arabic'],
         weights: [400, 500, 600, 700],
