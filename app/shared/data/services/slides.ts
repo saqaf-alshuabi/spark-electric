@@ -24,6 +24,6 @@ export const serviceSlides: ServiceSlide[] = [
   {
     src: '/images/services/ac-outdoor-rough-in.jpg',
     alt: 'مواسير المكيف خارجة من الجدار وقت التأسيس',
-    caption: 'نأسس المكيف من برا، والمواسير جاهزة',
+    caption: 'نأسس السبليت والمركزي، والمواسير جاهزة',
   },
 ]
