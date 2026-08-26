@@ -7,7 +7,7 @@ export const serviceBadges: FeatureBadgeItem[] = [
   },
   {
     icon: 'i-heroicons-exclamation-triangle',
-    title: 'نفحص قبل نصلح',
+    title: 'نفحص قبل لا نصلح',
   },
   {
     icon: 'i-heroicons-bolt',

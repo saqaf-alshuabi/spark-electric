@@ -6,15 +6,15 @@ export const whyChooseUs: WhyChooseUsItem[] = [
     description: 'نجي إذا فيه عطل، في أي وقت.',
   },
   {
-    title: 'نفحص قبل ما نصلح',
+    title: 'نفحص قبل لا نصلح',
     description: 'نقولك وين العطل وإيش السبب، بعدين نصلح.',
   },
   {
-    title: 'السعر قبل ما نبدأ',
-    description: 'نتفق على السعر قبل أي شغل.',
+    title: 'السعر قبل لا نبدأ',
+    description: 'نتفق على السعر قبل لا نبدأ.',
   },
   {
     title: 'السؤال مجاني',
-    description: 'تسأل ونوضح لك الوضع، بدون فلوس.',
+    description: 'تسأل ونقولك الوضع، من غير فلوس.',
   },
 ]

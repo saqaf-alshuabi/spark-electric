@@ -5,7 +5,7 @@ const title = 'خدماتنا'
 
 useSeoMeta({
   title: `كهربائي في ${site.city}`,
-  description: 'تأسيس، إنارة، تكييف، وانتركوم. للبيت والمحل.',
+  description: 'تأسيس، إنارة، تكييف، انتركوم، وأعطال. للبيت والمحل.',
 })
 </script>
 

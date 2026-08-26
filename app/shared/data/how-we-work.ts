@@ -7,7 +7,7 @@ export const howWeWorkSteps: ProcessStep[] = [
   },
   {
     title: 'نتفق على السعر',
-    description: 'نوضح العطل والسعر قبل أي شغل.',
+    description: 'نوضح العطل والسعر قبل لا نشتغل.',
   },
   {
     title: 'نخلّص ونسلّم',
