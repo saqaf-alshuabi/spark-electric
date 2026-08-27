@@ -3,13 +3,13 @@ import { site } from '@/shared/data'
 </script>
 
 <template>
-  <NuxtImg
+  <NuxtPicture
     :src="site.logo"
     :alt="site.name"
     width="71"
     height="28"
     sizes="71px"
     class="h-7 w-auto shrink-0"
-    draggable="false"
+    :img-attrs="{ class: 'h-7 w-auto', draggable: 'false' }"
   />
 </template>

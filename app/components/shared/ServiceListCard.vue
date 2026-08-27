@@ -22,10 +22,11 @@ const {
     class="group focus-ring flex h-full flex-col overflow-hidden rounded-lg bg-muted/50 transition-colors hover:bg-muted active:bg-accented"
   >
     <div class="relative aspect-16/10 overflow-hidden bg-muted/40">
-      <NuxtImg
+      <NuxtPicture
         :src="image"
         :alt="imageAlt"
-        class="absolute inset-0 size-full object-cover"
+        class="absolute inset-0 block size-full"
+        :img-attrs="{ class: 'size-full object-cover' }"
         sizes="100vw md:50vw"
       />
     </div>

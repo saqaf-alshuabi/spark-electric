@@ -29,17 +29,17 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  colorMode: {
-    preference: 'dark',
-    fallback: 'dark',
-    classSuffix: '',
-    storageKey: 'spark-theme',
-  },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     name: 'أبو تيم الكهربائي',
     description: 'كهربائي في مكة وضواحيها، تأسيس وإنارة وتكييف للبيت والمحل، ونجي إذا صار عطل',
     defaultLocale: 'ar',
+  },
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classSuffix: '',
+    storageKey: 'spark-theme',
   },
   experimental: {
     viewTransition: true,
@@ -100,6 +100,10 @@ export default defineNuxtConfig({
       ],
 
     },
+  },
+  image: {
+    quality: 90,
+    format: ['avif', 'webp'],
   },
   // Re-enable after the site is complete: ogImage: { enabled: true } + defineOgImage
   ogImage: {

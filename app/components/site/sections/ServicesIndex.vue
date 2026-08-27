@@ -76,12 +76,13 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
           name="slide-image"
           mode="out-in"
         >
-          <NuxtImg
+          <NuxtPicture
             v-if="activeService"
             :key="activeService.slug"
             :src="activeService.image"
             :alt="activeService.imageAlt"
-            class="absolute inset-0 size-full object-cover"
+            class="absolute inset-0 block size-full"
+            :img-attrs="{ class: 'size-full object-cover' }"
             sizes="480px lg:560px"
           />
         </Transition>

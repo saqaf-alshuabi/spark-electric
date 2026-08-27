@@ -27,11 +27,12 @@ const goToSlide = (index: number) => {
         name="soft-image"
         mode="out-in"
       >
-        <NuxtImg
+        <NuxtPicture
           :key="activeSlide.src"
           :src="activeSlide.src"
           :alt="activeSlide.alt"
-          class="absolute inset-0 size-full object-cover"
+          class="absolute inset-0 block size-full"
+          :img-attrs="{ class: 'size-full object-cover' }"
           sizes="100vw lg:448px"
         />
       </Transition>

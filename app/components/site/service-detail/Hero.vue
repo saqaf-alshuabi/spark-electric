@@ -30,11 +30,12 @@ const selectImage = (index: number) => {
             name="slide-image"
             mode="out-in"
           >
-            <NuxtImg
+            <NuxtPicture
               :key="images[0]?.src"
               :src="images[0]?.src"
               :alt="images[0]?.alt"
-              class="absolute inset-0 size-full object-cover"
+              class="absolute inset-0 block size-full"
+              :img-attrs="{ class: 'size-full object-cover' }"
               sizes="100vw md:50vw"
             />
           </Transition>
@@ -50,10 +51,11 @@ const selectImage = (index: number) => {
             class="aspect-square overflow-hidden rounded-md bg-muted/40 cursor-pointer focus-ring"
             @click="selectImage(index + 1)"
           >
-            <NuxtImg
+            <NuxtPicture
               :src="shot.src"
               :alt="shot.alt"
-              class="size-full object-cover"
+              class="block size-full"
+              :img-attrs="{ class: 'size-full object-cover' }"
               sizes="280px"
             />
           </li>
