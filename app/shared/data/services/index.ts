@@ -23,17 +23,17 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'electrical-networks',
     icon: 'i-heroicons-bolt',
     title: 'تأسيس كهرباء',
-    description: 'نمدد البيت قبل الدهان. لوحة وأفياش وكل نقطة.',
+    description: 'التمديد مع البناء، قبل الدهان',
     highlights: [
-      'لوحة مرتّبة',
-      'أفياش الغرف',
-      'تمديد مخفي',
+      'لوحة كاملة',
+      'كل نقطة جاهزة',
+      'بدون تكسير بعدين',
     ],
-    body: 'نأسس مع البناء. تخلّص التشطيب وتشغّل النور، وما نكسّر.',
+    body: 'نمدد اللوحة والأفياش مع البناء. يخلص التشطيب وتشغّل النور.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',
-        alt: 'لوحة قواطع مرتبة بعد التأسيس',
+        alt: 'لوحة قواطع بعد التأسيس',
       },
       {
         src: '/images/services/networks-ceiling-conduit.jpg',
@@ -52,18 +52,18 @@ const serviceDrafts: ServiceDraft[] = [
   {
     slug: 'lighting',
     icon: 'i-heroicons-light-bulb',
-    title: 'إنارة وثريات',
-    description: 'نركّب ثريا وسبوت. الغرفة تنور كلها.',
+    title: 'ثريا وسبوت',
+    description: 'ثريا في مكانها، وسبوت على السقف',
     highlights: [
-      'ثريا السقف',
-      'سبوتات الغرفة',
-      'سقف نظيف',
+      'ثريا ثابتة',
+      'سبوت موزّع',
+      'الغرفة تنور',
     ],
-    body: 'نركّب الثريا في مكانها ونوزع السبوتات. السقف يطلع نظيف.',
+    body: 'مكان الثريا والسبوت يغيّر شكل الغرفة. نركّبها ونوزع النور على السقف.',
     gallery: [
       {
         src: '/images/services/lighting-crystal-chandelier.jpg',
-        alt: 'نجفة كريستال في السقف',
+        alt: 'ثريا كريستال في السقف',
       },
       {
         src: '/images/services/lighting-downlight-grid.jpg',
@@ -71,11 +71,11 @@ const serviceDrafts: ServiceDraft[] = [
       },
       {
         src: '/images/services/lighting-glass-rods.jpg',
-        alt: 'إضاءة معلقة بعد التركيب',
+        alt: 'إضاءة معلّقة بعد التركيب',
       },
       {
         src: '/images/services/lighting-petal-chandelier.jpg',
-        alt: 'ثريا مركبة في السقف',
+        alt: 'ثريا مركّبة في السقف',
       },
     ],
   },
@@ -83,13 +83,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'decorative-led',
     icon: 'i-heroicons-sparkles',
     title: 'ليد مخفي',
-    description: 'ليد جوا السلاكة وتحت الخزائن. النور باين، والليد مو باين.',
+    description: 'الليد جوا السلاكة، النور باين وهو لا',
     highlights: [
       'سلاكة السقف',
-      'خزائن المطبخ',
-      'طبقات الجبس',
+      'تحت الخزائن',
+      'سقف طبقات',
     ],
-    body: 'نركّب الليد جوا السلاكة أو تحت الخزانة. السقف يطلع أنظف.',
+    body: 'نركّب الليد جوا الجبس، في السلاكة أو تحت الخزانة. الخط ينور، والشريط ما يبان.',
     gallery: [
       {
         src: '/images/services/led-geometric-ceiling.jpg',
@@ -97,7 +97,7 @@ const serviceDrafts: ServiceDraft[] = [
       },
       {
         src: '/images/services/led-tiered-ceiling.jpg',
-        alt: 'إنارة مخفية في سقف طبقات',
+        alt: 'ليد مخفي في سقف طبقات',
       },
       {
         src: '/images/services/led-cross-tracks.jpg',
@@ -113,13 +113,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'intercom',
     icon: 'i-heroicons-video-camera',
     title: 'انتركوم',
-    description: 'كاميرا على الباب وشاشة جوا. تشوف مين جاي وتفتح.',
+    description: 'تشوف مين على الباب وتتكلم، من جوا',
     highlights: [
-      'كاميرا برا',
+      'صورة وصوت',
       'شاشة جوا',
-      'صوت وصورة',
+      'تفتح من مكانك',
     ],
-    body: 'نركّب الجهاز برا والشاشة جوا. تسولف وتفتح من مكانك.',
+    body: 'نركّب الجهاز جنب الباب، والشاشة جوا. تشوف اللي برا وتتكلم معه، وتفتح وأنت في مكانك.',
     gallery: [
       {
         src: '/images/services/intercom-outdoor-panel.jpg',
@@ -139,13 +139,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'air-conditioning',
     icon: 'i-heroicons-home-modern',
     title: 'تأسيس تكييف',
-    description: 'نأسس السبليت والمركزي مع البناء. النحاس والدكت جاهزين.',
+    description: 'النحاس والدكت مع البناء',
     highlights: [
-      'سبليت ومركزي',
-      'نحاس ودكت',
+      'سبليت',
+      'مركزي',
       'تصريف الموية',
     ],
-    body: 'نمشي النحاس والدكت وقت التأسيس. الوحدة تركب بعدين من غير تكسير.',
+    body: 'نمشي النحاس والدكت والتصريف وقت التأسيس. الوحدة تركب بعد التشطيب على تمديد جاهز.',
     gallery: [
       {
         src: '/images/services/ac-outdoor-rough-in.jpg',
@@ -169,13 +169,13 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'fault-diagnosis',
     icon: 'i-heroicons-wrench-screwdriver',
     title: 'إصلاح أعطال',
-    description: 'نفحص العطل ونقولك السعر، بعدين نصلح.',
+    description: 'نفحص، نقولك السبب والسعر، بعدين نصلح',
     highlights: [
       'انقطاع النور',
       'حرارة الأفياش',
-      'فصل القاطع',
+      'قاطع يفصل',
     ],
-    body: 'نفحص من اللوحة لين النقطة. تعرف السبب والسعر قبل لا نغيّر شي.',
+    body: 'من اللوحة لين النقطة. تعرف وين العطل وإيش بيكلف، قبل لا نغيّر شي.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',

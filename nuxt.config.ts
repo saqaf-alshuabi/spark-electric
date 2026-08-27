@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     name: 'أبو تيم الكهربائي',
-    description: 'كهربائي في مكة وضواحيها. تأسيس، إنارة، تكييف، انتركوم، وأعطال. نجي للطوارئ، والسعر تعرفه قبل لا نبدأ.',
+    description: 'كهربائي في مكة وضواحيها، تأسيس وإنارة وتكييف للبيت والمحل، ونجي إذا صار عطل',
     defaultLocale: 'ar',
   },
   experimental: {

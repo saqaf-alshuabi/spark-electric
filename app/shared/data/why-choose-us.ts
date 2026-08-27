@@ -2,19 +2,19 @@ import type { WhyChooseUsItem } from '../types/site'
 
 export const whyChooseUs: WhyChooseUsItem[] = [
   {
-    title: 'طوارئ أي وقت',
-    description: 'نجي إذا فيه عطل، في أي وقت.',
+    title: 'نجي إذا صار عطل',
+    description: 'انقطع النور أو فصل القاطع؟ نجي، في مكة وضواحيها',
   },
   {
     title: 'نفحص قبل لا نصلح',
-    description: 'نقولك وين العطل وإيش السبب، بعدين نصلح.',
+    description: 'نقولك وين العطل قبل لا نبدّل قطعة',
   },
   {
     title: 'السعر قبل لا نبدأ',
-    description: 'نتفق على السعر قبل لا نبدأ.',
+    description: 'نتفق على السعر، بعدين نشتغل',
   },
   {
-    title: 'السؤال مجاني',
-    description: 'تسأل ونقولك الوضع، من غير فلوس.',
+    title: 'اسأل على واتساب',
+    description: 'قلي إيش صار، نرد ونرتب متى نجي',
   },
 ]

@@ -15,7 +15,8 @@ import { site } from '@/shared/data'
           </span>
         </h1>
         <p class="hidden text-start lg:block">
-          بيتك يشتغل والنور ثابت. تكلمنا واتساب ونرتب الزيارة.
+          نأسس ونركّب للبيت والمحل
+          وإذا صار عطل، نجي
         </p>
       </div>
       <SiteSectionsCardService />

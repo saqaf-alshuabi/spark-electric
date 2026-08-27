@@ -7,10 +7,10 @@ import { whyChooseUs } from '@/shared/data'
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
         <h2 class="reveal">
-          ليش تختارنا؟
+          اللي يهمك
         </h2>
         <p class="reveal">
-          هذي اللي تهمك قبل الشغل
+          قبل لا نبدأ الشغل
         </p>
       </div>
 

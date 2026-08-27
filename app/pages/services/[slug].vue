@@ -5,7 +5,7 @@ const { service } = useServiceDetail()
 
 useSeoMeta({
   title: `${service.title} في ${site.city}`,
-  description: `${service.description} كهربائي في ${site.city} وضواحيها.`,
+  description: `${service.description} — كهربائي في ${site.city} وضواحيها`,
 })
 </script>
 

@@ -2,15 +2,15 @@ import type { ProcessStep } from '../types/site'
 
 export const howWeWorkSteps: ProcessStep[] = [
   {
-    title: 'كلمنا واتساب',
-    description: 'قلي إيش تبي. نرد عليك ونرتب متى نجي.',
+    title: 'واتساب',
+    description: 'قلي إيش صار، نرتب متى نجي',
   },
   {
-    title: 'نتفق على السعر',
-    description: 'نوضح العطل والسعر قبل لا نشتغل.',
+    title: 'السعر',
+    description: 'نشوف الوضع ونقولك السعر قبل نبدأ',
   },
   {
-    title: 'نخلّص ونسلّم',
-    description: 'نشتغل، نسلّم، وترتاح.',
+    title: 'الشغل',
+    description: 'نخلّص ونسلّم',
   },
 ]

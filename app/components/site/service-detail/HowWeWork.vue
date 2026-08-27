@@ -7,10 +7,10 @@ import { howWeWorkSteps } from '@/shared/data'
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
         <h2 class="reveal">
-          كيف نشتغل؟
+          من واتساب لين التسليم
         </h2>
         <p class="reveal">
-          من الرسالة لين التسليم
+          واتساب، سعر، شغل
         </p>
       </div>
 
