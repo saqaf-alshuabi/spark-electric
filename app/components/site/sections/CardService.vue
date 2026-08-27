@@ -21,8 +21,8 @@ const goToSlide = (index: number) => {
 </script>
 
 <template>
-  <div class="stack-sm w-full items-center lg:mx-auto lg:max-w-md">
-    <div class="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted/40 lg:aspect-4/3">
+  <div class="stack-sm items-center">
+    <div class="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted/40 ">
       <Transition
         name="soft-image"
         mode="out-in"

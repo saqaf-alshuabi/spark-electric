@@ -4,16 +4,19 @@ import { site } from '@/shared/data'
 
 <template>
   <section class="section-y">
-    <UContainer class="grid grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-12">
-      <div class="content-w mx-auto stack-md items-center lg:mx-0 lg:items-start">
-        <h1 class="flex w-full flex-col items-center gap-1 text-wrap-normal lg:items-start lg:text-4xl">
+    <UContainer class="grid grid-cols-1 items-center gap-6 md:grid-cols-2 lg:gap-12">
+      <div class=" mx-auto stack-md items-center md:mx-0 md:items-start">
+        <h1 class="flex w-full flex-col items-center gap-1 text-wrap-normal md:items-start">
           <span>{{ site.name }}</span>
-          <span class="text-sm font-medium text-muted md:text-base">
+          <span class="text-sm font-medium text-muted md:text-lg">
             في
             <span class="text-primary">{{ site.city }}</span>
             وضواحيها
           </span>
         </h1>
+        <p class="hidden text-start lg:block">
+          بيتك يشتغل والنور ثابت. تكلمنا واتساب ونرتب الزيارة.
+        </p>
       </div>
       <SiteSectionsCardService />
     </UContainer>

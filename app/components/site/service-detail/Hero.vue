@@ -23,9 +23,9 @@ const selectImage = (index: number) => {
 
 <template>
   <section class="section-y">
-    <UContainer class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2 lg:gap-12">
-      <div class="stack-sm">
-        <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40 lg:aspect-4/3">
+    <UContainer class="grid grid-cols-1 items-start md:items-center gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
+      <div class="stack-sm order-1 md:order-2">
+        <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40 ">
           <Transition
             name="slide-image"
             mode="out-in"
@@ -35,7 +35,7 @@ const selectImage = (index: number) => {
               :src="images[0]?.src"
               :alt="images[0]?.alt"
               class="absolute inset-0 size-full object-cover"
-              sizes="100vw lg:50vw"
+              sizes="100vw md:50vw"
             />
           </Transition>
         </div>
@@ -60,7 +60,7 @@ const selectImage = (index: number) => {
         </ul>
       </div>
 
-      <div class="stack-md">
+      <div class="stack-md order-2 md:order-1 ">
         <div class="stack-sm">
           <h1>
             {{ service.title }}
