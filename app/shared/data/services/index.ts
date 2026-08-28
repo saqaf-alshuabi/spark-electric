@@ -66,15 +66,15 @@ const serviceDrafts: ServiceDraft[] = [
         alt: 'ثريا كريستال في السقف',
       },
       {
-        src: '/images/services/lighting-downlight-grid.jpg',
-        alt: 'سبوت موزع على السقف',
+        src: '/images/services/lighting-spot-grid.jpg',
+        alt: 'سبوت موزّع على السقف',
       },
       {
-        src: '/images/services/lighting-glass-rods.jpg',
+        src: '/images/services/123.jpg',
         alt: 'إضاءة معلّقة بعد التركيب',
       },
       {
-        src: '/images/services/lighting-petal-chandelier.jpg',
+        src: '/images/services/lighting-glass-cloud.jpg',
         alt: 'ثريا مركّبة في السقف',
       },
     ],
@@ -96,17 +96,19 @@ const serviceDrafts: ServiceDraft[] = [
         alt: 'سقف بليد هندسي مخفي',
       },
       {
+        src: '/images/services/led-ceiling-frame.jpg',
+        alt: 'ليد مستطيل في السقف وقت التركيب',
+      },
+      {
         src: '/images/services/led-tiered-ceiling.jpg',
         alt: 'ليد مخفي في سقف طبقات',
       },
-      {
-        src: '/images/services/led-cross-tracks.jpg',
-        alt: 'سلاكات ليد متقاطعة في السقف',
-      },
+
       {
         src: '/images/services/led-kitchen-cabinets.jpg',
         alt: 'ليد تحت خزائن المطبخ',
       },
+
     ],
   },
   {

@@ -37,7 +37,7 @@ const selectImage = (index: number) => {
               class="absolute inset-0 block size-full"
               :preload="{ fetchPriority: 'high' }"
               loading="eager"
-              :img-attrs="{ class: 'size-full object-cover' }"
+              :img-attrs="{ class: 'size-full object-cover object-center' }"
               sizes="100vw md:50vw"
             />
           </Transition>
