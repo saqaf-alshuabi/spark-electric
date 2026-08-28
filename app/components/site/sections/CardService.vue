@@ -32,6 +32,8 @@ const goToSlide = (index: number) => {
           :src="activeSlide.src"
           :alt="activeSlide.alt"
           class="absolute inset-0 block size-full"
+          :preload="{ fetchPriority: 'high' }"
+          loading="eager"
           :img-attrs="{ class: 'size-full object-cover' }"
           sizes="100vw lg:448px"
         />

@@ -22,7 +22,7 @@ useSeoMeta({
       <!-- Mobile / tablet: photo cards -->
       <ul class="grid w-full grid-cols-1 gap-3 md:grid-cols-2 md:gap-5 lg:hidden">
         <li
-          v-for="service in serviceSummaries"
+          v-for="(service, index) in serviceSummaries"
           :key="service.slug"
           class="reveal"
         >
@@ -33,6 +33,7 @@ useSeoMeta({
             :image="service.image"
             :image-alt="service.imageAlt"
             :to="`/services/${service.slug}`"
+            :priority="index === 0"
           />
         </li>
       </ul>

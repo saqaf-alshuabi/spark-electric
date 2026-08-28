@@ -6,6 +6,7 @@ const {
   image,
   imageAlt,
   to,
+  priority,
 } = defineProps<{
   title: string
   description: string
@@ -13,6 +14,7 @@ const {
   image: string
   imageAlt: string
   to: string
+  priority?: boolean
 }>()
 </script>
 
@@ -26,6 +28,8 @@ const {
         :src="image"
         :alt="imageAlt"
         class="absolute inset-0 block size-full"
+        :preload="priority ? { fetchPriority: 'high' } : false"
+        :loading="priority ? 'eager' : 'lazy'"
         :img-attrs="{ class: 'size-full object-cover' }"
         sizes="100vw md:50vw"
       />

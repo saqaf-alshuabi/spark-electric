@@ -35,6 +35,8 @@ const selectImage = (index: number) => {
               :src="images[0]?.src"
               :alt="images[0]?.alt"
               class="absolute inset-0 block size-full"
+              :preload="{ fetchPriority: 'high' }"
+              loading="eager"
               :img-attrs="{ class: 'size-full object-cover' }"
               sizes="100vw md:50vw"
             />
@@ -55,6 +57,7 @@ const selectImage = (index: number) => {
               :src="shot.src"
               :alt="shot.alt"
               class="block size-full"
+              loading="lazy"
               :img-attrs="{ class: 'size-full object-cover' }"
               sizes="280px"
             />

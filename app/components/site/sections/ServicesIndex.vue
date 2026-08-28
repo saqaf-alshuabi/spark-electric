@@ -82,6 +82,8 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
             :src="activeService.image"
             :alt="activeService.imageAlt"
             class="absolute inset-0 block size-full"
+            preload
+            loading="eager"
             :img-attrs="{ class: 'size-full object-cover' }"
             sizes="480px lg:560px"
           />
