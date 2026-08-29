@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { homeServices } from '@/shared/data'
-
-const { ui } = useAppConfig()
 </script>
 
 <template>
@@ -30,8 +28,8 @@ const { ui } = useAppConfig()
         <UButton
           to="/services"
           label="كل الخدمات"
-          variant="soft"
-          :trailing-icon="ui.icons.arrowLeft"
+          color="neutral"
+          variant="link"
         />
       </div>
     </UContainer>
