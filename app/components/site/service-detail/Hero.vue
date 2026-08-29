@@ -71,23 +71,9 @@ const selectImage = (index: number) => {
             {{ service.title }}
           </h1>
           <p>
-            {{ service.body }}
+            {{ service.description }}
           </p>
         </div>
-
-        <ul class="stack-sm">
-          <li
-            v-for="item in service.highlights"
-            :key="item"
-            class="flex items-center gap-2 text-sm text-highlighted md:text-base"
-          >
-            <UIcon
-              :name="ui.icons.check"
-              class="size-5 shrink-0 text-primary"
-            />
-            {{ item }}
-          </li>
-        </ul>
 
         <div class="flex flex-wrap gap-3 ">
           <UButton

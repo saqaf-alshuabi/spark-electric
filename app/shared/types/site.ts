@@ -29,7 +29,6 @@ export interface ServiceSummary {
   slug: string
   title: string
   description: string
-  highlights: string[]
   image: string
   imageAlt: string
 }
@@ -37,7 +36,6 @@ export interface ServiceSummary {
 /** Full service — gallery[0] is the cover image */
 export interface ServiceDetail extends ServiceSummary {
   icon: string
-  body: string
   gallery: ServiceSlide[]
 }
 

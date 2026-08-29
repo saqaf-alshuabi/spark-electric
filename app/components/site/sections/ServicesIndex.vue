@@ -53,16 +53,6 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
                 <p>
                   {{ service.description }}
                 </p>
-                <ul class="flex flex-wrap gap-x-3 gap-y-1.5 text-sm text-muted">
-                  <li
-                    v-for="item in service.highlights"
-                    :key="item"
-                    class="flex items-center gap-1.5"
-                  >
-                    <SharedBulletDot />
-                    {{ item }}
-                  </li>
-                </ul>
               </template>
             </div>
           </NuxtLink>

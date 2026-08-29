@@ -24,12 +24,6 @@ const serviceDrafts: ServiceDraft[] = [
     icon: 'i-heroicons-bolt',
     title: 'تأسيس كهرباء',
     description: 'التمديد مع البناء، قبل الدهان',
-    highlights: [
-      'لوحة كاملة',
-      'كل نقطة جاهزة',
-      'بدون تكسير بعدين',
-    ],
-    body: 'نمدد اللوحة والأفياش مع البناء. يخلص التشطيب وتشغّل النور.',
     gallery: [
       {
         src: '/images/services/networks-breaker-panel.jpg',
@@ -53,13 +47,7 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'lighting',
     icon: 'i-heroicons-light-bulb',
     title: 'ثريا وسبوت',
-    description: 'ثريا في مكانها، وسبوت على السقف',
-    highlights: [
-      'ثريا ثابتة',
-      'سبوت موزّع',
-      'الغرفة تنور',
-    ],
-    body: 'مكان الثريا والسبوت يغيّر شكل الغرفة. نركّبها ونوزع النور على السقف.',
+    description: 'نركّبها ونوزع النور',
     gallery: [
       {
         src: '/images/services/lighting-crystal-chandelier.jpg',
@@ -83,13 +71,7 @@ const serviceDrafts: ServiceDraft[] = [
     slug: 'decorative-led',
     icon: 'i-heroicons-sparkles',
     title: 'ليد مخفي',
-    description: 'الليد جوا السلاكة، النور باين وهو لا',
-    highlights: [
-      'سلاكة السقف',
-      'تحت الخزائن',
-      'سقف طبقات',
-    ],
-    body: 'نركّب الليد جوا الجبس، في السلاكة أو تحت الخزانة. الخط ينور، والشريط ما يبان.',
+    description: 'النور باين، والشريط ما يبان',
     gallery: [
       {
         src: '/images/services/led-geometric-ceiling.jpg',
@@ -103,25 +85,17 @@ const serviceDrafts: ServiceDraft[] = [
         src: '/images/services/led-tiered-ceiling.jpg',
         alt: 'ليد مخفي في سقف طبقات',
       },
-
       {
         src: '/images/services/led-kitchen-cabinets.jpg',
         alt: 'ليد تحت خزائن المطبخ',
       },
-
     ],
   },
   {
     slug: 'intercom',
     icon: 'i-heroicons-video-camera',
     title: 'انتركوم',
-    description: 'تشوف مين على الباب وتتكلم، من جوا',
-    highlights: [
-      'صورة وصوت',
-      'شاشة جوا',
-      'تفتح من مكانك',
-    ],
-    body: 'نركّب الجهاز جنب الباب، والشاشة جوا. تشوف اللي برا وتتكلم معه، وتفتح وأنت في مكانك.',
+    description: 'تشوف مين عند الباب، من جوا',
     gallery: [
       {
         src: '/images/services/intercom-outdoor-panel.jpg',
@@ -142,12 +116,6 @@ const serviceDrafts: ServiceDraft[] = [
     icon: 'i-heroicons-home-modern',
     title: 'تأسيس تكييف',
     description: 'النحاس والدكت مع البناء',
-    highlights: [
-      'سبليت',
-      'مركزي',
-      'تصريف الموية',
-    ],
-    body: 'نمشي النحاس والدكت والتصريف وقت التأسيس. الوحدة تركب بعد التشطيب على تمديد جاهز.',
     gallery: [
       {
         src: '/images/services/ac-outdoor-rough-in.jpg',
@@ -170,14 +138,8 @@ const serviceDrafts: ServiceDraft[] = [
   {
     slug: 'fault-diagnosis',
     icon: 'i-heroicons-wrench-screwdriver',
-    title: 'إصلاح أعطال',
-    description: 'نفحص، نقولك السبب والسعر، بعدين نصلح',
-    highlights: [
-      'انقطاع النور',
-      'حرارة الأفياش',
-      'قاطع يفصل',
-    ],
-    body: 'من اللوحة لين النقطة. تعرف وين العطل وإيش بيكلف، قبل لا نغيّر شي.',
+    title: 'أعطال',
+    description: 'نفحص ونقولك السبب والسعر، بعدين نصلح',
     gallery: [
       {
         src: '/images/services/fault-wall-outlets.jpg',
@@ -194,11 +156,10 @@ const serviceDrafts: ServiceDraft[] = [
 export const services: ServiceDetail[] = serviceDrafts.map(withCover)
 
 export const serviceSummaries: ServiceSummary[] = services.map(
-  ({ slug, title, description, highlights, image, imageAlt }) => ({
+  ({ slug, title, description, image, imageAlt }) => ({
     slug,
     title,
     description,
-    highlights,
     image,
     imageAlt,
   }),

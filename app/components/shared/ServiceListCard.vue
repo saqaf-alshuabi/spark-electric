@@ -2,7 +2,6 @@
 const {
   title,
   description,
-  highlights,
   image,
   imageAlt,
   to,
@@ -10,7 +9,6 @@ const {
 } = defineProps<{
   title: string
   description: string
-  highlights: string[]
   image: string
   imageAlt: string
   to: string
@@ -43,16 +41,6 @@ const {
         <p class="text-sm">
           {{ description }}
         </p>
-        <ul class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted md:text-sm">
-          <li
-            v-for="item in highlights"
-            :key="item"
-            class="flex items-center gap-1.5"
-          >
-            <SharedBulletDot />
-            {{ item }}
-          </li>
-        </ul>
       </div>
 
       <SharedLinkArrow class="mt-1" />

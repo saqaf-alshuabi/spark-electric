@@ -29,7 +29,6 @@ useSeoMeta({
           <SharedServiceListCard
             :title="service.title"
             :description="service.description"
-            :highlights="service.highlights"
             :image="service.image"
             :image-alt="service.imageAlt"
             :to="`/services/${service.slug}`"
