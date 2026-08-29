@@ -1,7 +1,6 @@
 export interface SiteSettings {
   name: string
   city: string
-  copyright: string
   logo: string
   /** International digits only, no + (e.g. 9665XXXXXXXX) */
   phone: string
@@ -11,14 +10,6 @@ export interface NavItem {
   label: string
   to: string
   icon?: string
-}
-
-export interface SocialLink {
-  'label'?: string
-  'to': string
-  'icon': string
-  'target'?: string
-  'aria-label'?: string
 }
 
 export interface FeatureBadgeItem {

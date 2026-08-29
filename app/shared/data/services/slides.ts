@@ -13,7 +13,7 @@ export const serviceSlides: ServiceSlide[] = [
   },
   {
     src: '/images/services/led-cross-tracks.jpg',
-    alt: 'ليد مخفي في سلاكة السقف',
+    alt: 'ليد خطي في السقف',
     caption: 'ليد جوا السلاكة، النور باين',
   },
   {

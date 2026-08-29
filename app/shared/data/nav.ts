@@ -1,12 +1,8 @@
 import type { NavItem } from '../types/site'
 
-export const navItems: NavItem[] = [
+export const navItems = [
   {
-    label: 'الرئيسية',
-    to: '/',
-  },
-  {
-    label: 'خدماتنا',
+    label: 'خدمات',
     to: '/services',
   },
-]
+] satisfies NavItem[]

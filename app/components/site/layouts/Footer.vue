@@ -1,29 +1,30 @@
 <script setup lang="ts">
-import { navItems, site, socialLinks } from '@/shared/data'
+import { site } from '@/shared/data'
+
+const { ui } = useAppConfig()
+const { whatsappUrl } = useContact()
+const year = new Date().getFullYear()
 </script>
 
 <template>
   <UFooter>
     <template #left>
-      <p class="text-sm text-muted">
-        &copy; {{ site.copyright }}
+      <p class="caption-sm">
+        &copy; {{ year }} {{ site.name }}
       </p>
     </template>
-    <UNavigationMenu
-      :items="navItems"
-      variant="link"
-      color="neutral"
-    />
+
     <template #right>
       <UButton
-        v-for="socialLink in socialLinks"
-        :key="socialLink.to"
-        :icon="socialLink.icon"
-        :to="socialLink.to"
-        :target="socialLink.target"
-        :aria-label="socialLink['aria-label']"
-        variant="link"
+        :icon="ui.icons.whatsapp"
+        aria-label="واتساب"
         color="neutral"
+        variant="link"
+        size="xs"
+        class="hidden lg:inline-flex"
+        :to="whatsappUrl"
+        target="_blank"
+        rel="noopener noreferrer"
       />
     </template>
   </UFooter>

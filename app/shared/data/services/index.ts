@@ -41,7 +41,7 @@ const serviceDrafts: ServiceDraft[] = [
       },
       {
         src: '/images/services/networks-laser-outlets.jpg',
-        alt: 'أفياش ومفاتيح بعد التأسيس',
+        alt: 'علب أفياش على الطوب، مع ليزر التسوية',
       },
       {
         src: '/images/services/networks-corridor-conduits.jpg',
@@ -70,12 +70,12 @@ const serviceDrafts: ServiceDraft[] = [
         alt: 'سبوت موزّع على السقف',
       },
       {
-        src: '/images/services/123.jpg',
-        alt: 'إضاءة معلّقة بعد التركيب',
+        src: '/images/services/lighting-hanging-glass.jpg',
+        alt: 'ثريا زجاج معلّقة من السقف',
       },
       {
         src: '/images/services/lighting-glass-cloud.jpg',
-        alt: 'ثريا مركّبة في السقف',
+        alt: 'ثريا ذهبية بقطع زجاج',
       },
     ],
   },
@@ -132,8 +132,8 @@ const serviceDrafts: ServiceDraft[] = [
         alt: 'شاشة انتركوم داخل البيت',
       },
       {
-        src: '/images/services/intercom-keypad-wiring.jpg',
-        alt: 'توصيل انتركوم وقت التركيب',
+        src: '/images/services/intercom-button-panel.jpg',
+        alt: 'وحدة انتركوم بأزرار على الجدار',
       },
     ],
   },
@@ -155,7 +155,7 @@ const serviceDrafts: ServiceDraft[] = [
       },
       {
         src: '/images/services/ac-copper-lines.jpg',
-        alt: 'تمديد نحاس المكيف',
+        alt: 'مواسير المكيف داخل جدار الطوب',
       },
       {
         src: '/images/services/ac-wall-piping.jpg',
@@ -163,7 +163,7 @@ const serviceDrafts: ServiceDraft[] = [
       },
       {
         src: '/images/services/ac-ceiling-pipes.jpg',
-        alt: 'مواسير المكيف في السقف',
+        alt: 'مواسير المكيف في السقف والجدار',
       },
     ],
   },
@@ -180,12 +180,12 @@ const serviceDrafts: ServiceDraft[] = [
     body: 'من اللوحة لين النقطة. تعرف وين العطل وإيش بيكلف، قبل لا نغيّر شي.',
     gallery: [
       {
-        src: '/images/services/networks-breaker-panel.jpg',
-        alt: 'فحص لوحة الكهرباء',
+        src: '/images/services/fault-wall-outlets.jpg',
+        alt: 'أفياش مكشوفة في الجدار',
       },
       {
-        src: '/images/services/networks-conduit-panel.jpg',
-        alt: 'فحص القواطع والتوصيل',
+        src: '/images/services/networks-breaker-panel.jpg',
+        alt: 'فحص لوحة الكهرباء',
       },
     ],
   },
