@@ -9,7 +9,7 @@ const { ui } = useAppConfig()
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
         <h2 class="reveal">
-          خدماتنا
+          خدمات
         </h2>
         <p class="reveal">
           من التأسيس لين العطل، للبيت والمحل

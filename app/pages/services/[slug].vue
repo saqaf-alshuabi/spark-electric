@@ -10,8 +10,5 @@ useSeoMeta({
 </script>
 
 <template>
-  <SiteServiceDetailHero
-    :service="service"
-  />
-  <SiteServiceDetailHowWeWork />
+  <SiteServiceDetailHero :service="service" />
 </template>

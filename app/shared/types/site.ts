@@ -52,9 +52,3 @@ export interface WhyChooseUsItem {
   title: string
   description: string
 }
-
-export interface ProcessStep {
-  title: string
-  description: string
-  icon?: string
-}

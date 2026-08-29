@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { serviceSummaries, site } from '@/shared/data'
 
-const title = 'خدماتنا'
+const title = 'خدمات'
 
 useSeoMeta({
   title: `كهربائي في ${site.city}`,

@@ -85,9 +85,10 @@ const selectImage = (index: number) => {
           />
           <UButton
             to="/services"
-            label="كل الخدمات"
-            variant="soft"
-            :trailing-icon="ui.icons.arrowLeft"
+            label="خدمات"
+            color="neutral"
+            variant="link"
+            class="lg:hidden"
           />
         </div>
       </div>
