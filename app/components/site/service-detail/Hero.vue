@@ -26,20 +26,21 @@ const selectImage = (index: number) => {
     <UContainer class="grid grid-cols-1 items-start md:items-center gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
       <div class="stack-sm order-1 md:order-2">
         <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40 ">
-          <Transition
-            name="slide-image"
-            mode="out-in"
-          >
-            <NuxtPicture
+          <Transition name="soft-fade">
+            <div
               :key="images[0]?.src"
-              :src="images[0]?.src"
-              :alt="images[0]?.alt"
-              class="absolute inset-0 block size-full"
-              :preload="{ fetchPriority: 'high' }"
-              loading="eager"
-              :img-attrs="{ class: 'size-full object-cover object-center' }"
-              sizes="100vw md:50vw"
-            />
+              class="absolute inset-0 overflow-hidden"
+            >
+              <NuxtPicture
+                :src="images[0]?.src"
+                :alt="images[0]?.alt"
+                class="block size-full"
+                :preload="{ fetchPriority: 'high' }"
+                loading="eager"
+                :img-attrs="{ class: 'size-full object-cover object-center' }"
+                sizes="100vw md:50vw"
+              />
+            </div>
           </Transition>
         </div>
 

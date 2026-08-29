@@ -21,36 +21,29 @@ const goToSlide = (index: number) => {
 </script>
 
 <template>
-  <div class="stack-sm items-center">
-    <div class="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted/40 ">
-      <Transition
-        name="soft-image"
-        mode="out-in"
-      >
-        <NuxtPicture
+  <div class="stack-sm w-full items-center">
+    <div class="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted/40">
+      <Transition name="soft-fade">
+        <div
           :key="activeSlide.src"
-          :src="activeSlide.src"
-          :alt="activeSlide.alt"
-          class="absolute inset-0 block size-full"
-          :preload="{ fetchPriority: 'high' }"
-          loading="eager"
-          :img-attrs="{ class: 'size-full object-cover' }"
-          sizes="100vw lg:448px"
-        />
+          class="absolute inset-0 overflow-hidden"
+        >
+          <NuxtPicture
+            :src="activeSlide.src"
+            :alt="activeSlide.alt"
+            class="block size-full"
+            :preload="{ fetchPriority: 'high' }"
+            loading="eager"
+            :img-attrs="{ class: 'size-full object-cover' }"
+            sizes="100vw lg:448px"
+          />
+        </div>
       </Transition>
     </div>
 
-    <Transition
-      name="soft-caption"
-      mode="out-in"
-    >
-      <p
-        :key="activeSlide.caption"
-        class="caption text-center"
-      >
-        {{ activeSlide.caption }}
-      </p>
-    </Transition>
+    <p class="caption text-center">
+      {{ activeSlide.caption }}
+    </p>
 
     <div
       class="flex justify-center gap-0.5"

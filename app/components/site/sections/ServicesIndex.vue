@@ -4,7 +4,10 @@ import type { ServiceSummary } from '@/shared/types/site'
 const { services, title } = defineProps<{ services: ServiceSummary[], title: string }>()
 
 const activeSlug = ref(services[0]?.slug ?? '')
-const setActive = (slug: string) => activeSlug.value = slug
+const setActive = (slug: string) => {
+  activeSlug.value = slug
+}
+const setActiveHover = useDebounceFn(setActive, 140)
 const isActive = (slug: string) => activeSlug.value === slug
 const activeService = computed(() => services.find(service => service.slug === activeSlug.value) ?? services[0])
 const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlighted' : 'text-muted hover:bg-muted/25 hover:text-highlighted'
@@ -29,7 +32,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
             :to="`/services/${service.slug}`"
             class="group flex items-start gap-4 rounded-lg px-3 py-6 transition-colors focus-ring"
             :class="linkClass(service.slug)"
-            @mouseenter="setActive(service.slug)"
+            @mouseenter="setActiveHover(service.slug)"
             @focus="setActive(service.slug)"
           >
             <span class="mt-1 w-8 shrink-0 mono-nums text-primary/80">
@@ -62,21 +65,22 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
 
     <div class="sticky top-28 lg:col-span-5 ">
       <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
-        <Transition
-          name="slide-image"
-          mode="out-in"
-        >
-          <NuxtPicture
+        <Transition name="soft-fade">
+          <div
             v-if="activeService"
             :key="activeService.slug"
-            :src="activeService.image"
-            :alt="activeService.imageAlt"
-            class="absolute inset-0 block size-full"
-            preload
-            loading="eager"
-            :img-attrs="{ class: 'size-full object-cover' }"
-            sizes="480px lg:560px"
-          />
+            class="absolute inset-0"
+          >
+            <NuxtPicture
+              :src="activeService.image"
+              :alt="activeService.imageAlt"
+              class="block size-full"
+              preload
+              loading="eager"
+              :img-attrs="{ class: 'size-full object-cover' }"
+              sizes="480px lg:560px"
+            />
+          </div>
         </Transition>
       </div>
     </div>
