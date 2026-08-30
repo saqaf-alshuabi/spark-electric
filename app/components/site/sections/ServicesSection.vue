@@ -3,28 +3,27 @@ import { homeServices } from '@/shared/data'
 </script>
 
 <template>
-  <section class="section-y bg-muted">
+  <section class="section-y">
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
         <h2 class="reveal">
           خدمات
         </h2>
-        <p class="reveal">
-          من التأسيس لين العطل، للبيت والمحل
+        <p>
+          للبيت والمحل
         </p>
       </div>
 
-      <ul class="grid w-full grid-cols-2 gap-2 md:grid-cols-3 md:gap-3">
+      <ul class="grid w-full grid-cols-2 grid-gap md:grid-cols-3">
         <li
           v-for="service in homeServices"
           :key="service.title"
-          class="reveal"
         >
           <SharedServiceCard v-bind="service" />
         </li>
       </ul>
 
-      <div class="reveal">
+      <div>
         <UButton
           to="/services"
           label="كل الخدمات"

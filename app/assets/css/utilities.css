@@ -18,6 +18,18 @@
     @apply flex flex-col gap-6 md:gap-8
   }
 
+  @utility grid-gap {
+    @apply gap-3 md:gap-4
+  }
+
+  @utility split-gap {
+    @apply gap-6 md:gap-8 lg:gap-12
+  }
+
+  @utility card-p {
+    @apply p-4 md:p-5
+  }
+
   @utility caption {
     @apply text-sm font-medium text-highlighted leading-snug text-pretty
   }

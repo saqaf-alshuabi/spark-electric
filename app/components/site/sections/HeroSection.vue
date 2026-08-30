@@ -4,7 +4,7 @@ import { site } from '@/shared/data'
 
 <template>
   <section class="section-y">
-    <UContainer class="grid grid-cols-1 items-center gap-6 md:grid-cols-2 lg:gap-12">
+    <UContainer class="grid grid-cols-1 items-center split-gap md:grid-cols-2">
       <div class=" mx-auto stack-md items-center md:mx-0 md:items-start">
         <h1 class="flex w-full flex-col items-center gap-1 text-wrap-normal md:items-start">
           <span>{{ site.name }}</span>

@@ -14,10 +14,10 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
 </script>
 
 <template>
-  <div class="hidden items-start gap-10 lg:grid lg:grid-cols-12 xl:gap-12 ">
+  <div class="hidden items-start split-gap lg:grid lg:grid-cols-12">
     <div class="stack-lg min-w-0 lg:col-span-7">
       <div class="stack-sm ">
-        <h1>
+        <h1 class="reveal">
           {{ title }}
         </h1>
       </div>
@@ -26,11 +26,10 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
         <li
           v-for="(service, index) in services"
           :key="service.slug"
-          class="reveal"
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
-            class="group flex items-start gap-4 rounded-lg px-3 py-6 transition-colors focus-ring"
+            class="group flex items-start gap-4 rounded-lg p-4 transition-colors focus-ring"
             :class="linkClass(service.slug)"
             @mouseenter="setActiveHover(service.slug)"
             @focus="setActive(service.slug)"

@@ -9,16 +9,16 @@ import { whyChooseUs } from '@/shared/data'
         <h2 class="reveal">
           اللي يهمك
         </h2>
-        <p class="reveal">
+        <p>
           قبل لا نبدأ الشغل
         </p>
       </div>
 
-      <ul class="grid w-full grid-cols-1 gap-3 md:grid-cols-2 md:gap-4">
+      <ul class="grid w-full grid-cols-1 grid-gap md:grid-cols-2">
         <li
           v-for="item in whyChooseUs"
           :key="item.title"
-          class="reveal stack-sm rounded-lg bg-muted/50 px-4 py-5 md:px-5"
+          class="stack-sm card-p rounded-lg bg-muted/50"
         >
           <h3>
             {{ item.title }}

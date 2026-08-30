@@ -14,17 +14,16 @@ useSeoMeta({
     <UContainer class="stack-md">
       <!-- Mobile / tablet header -->
       <div class="mx-auto stack-sm text-center lg:hidden">
-        <h1>
+        <h1 class="reveal">
           {{ title }}
         </h1>
       </div>
 
       <!-- Mobile / tablet: photo cards -->
-      <ul class="grid w-full grid-cols-1 gap-3 md:grid-cols-2 md:gap-5 lg:hidden">
+      <ul class="grid w-full grid-cols-1 grid-gap md:grid-cols-2 lg:hidden">
         <li
           v-for="(service, index) in serviceSummaries"
           :key="service.slug"
-          class="reveal"
         >
           <SharedServiceListCard
             :title="service.title"

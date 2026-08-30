@@ -35,7 +35,7 @@
   }
 
   h1 {
-    @apply text-2xl md:text-3xl font-semibold leading-snug text-pretty;
+    @apply text-3xl md:text-4xl font-semibold leading-snug text-pretty;
   }
 
   h2 {
@@ -68,12 +68,7 @@
   }
 }
 
-/* Overlapping fade — 0.35s ease-out */
-.soft-fade-enter-active,
-.soft-fade-leave-active {
-  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
+/* Overlapping fade — 0.35s ease-out (motion gated in @media below) */
 .soft-fade-leave-active {
   z-index: 1;
 }
@@ -86,7 +81,7 @@
 @keyframes reveal-up {
   from {
     opacity: 0;
-    translate: 0 1.25rem;
+    translate: 0 0.75rem;
   }
 
   to {
@@ -95,20 +90,23 @@
   }
 }
 
-.reveal {
-  animation-name: reveal-up;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-fill-mode: both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 25%;
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation-name: reveal-up;
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+  }
+
+  .soft-fade-enter-active,
+  .soft-fade-leave-active {
+    transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    animation: none;
-  }
-
   .soft-fade-enter-active,
   .soft-fade-leave-active {
     animation: none;

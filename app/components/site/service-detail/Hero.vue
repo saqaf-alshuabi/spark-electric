@@ -23,7 +23,7 @@ const selectImage = (index: number) => {
 
 <template>
   <section class="section-y">
-    <UContainer class="grid grid-cols-1 items-start md:items-center gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
+    <UContainer class="grid grid-cols-1 items-start split-gap md:items-center md:grid-cols-2">
       <div class="stack-sm order-1 md:order-2">
         <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40 ">
           <Transition name="soft-fade">

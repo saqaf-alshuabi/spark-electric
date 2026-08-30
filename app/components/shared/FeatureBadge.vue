@@ -11,7 +11,7 @@ const {
 </script>
 
 <template>
-  <div class="flex w-full items-center gap-1.5 rounded-lg bg-muted/50 px-2.5 py-2">
+  <div class="flex w-full items-center gap-2 rounded-lg bg-muted/50 px-3 py-2">
     <UIcon
       :name="icon"
       class="shrink-0 text-primary"

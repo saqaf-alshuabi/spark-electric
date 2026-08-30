@@ -33,7 +33,7 @@ const {
       />
     </div>
 
-    <div class="flex items-start justify-between gap-3 p-2.5 md:p-4">
+    <div class="flex items-start justify-between gap-3 p-4">
       <div class="stack-sm min-w-0">
         <h3>
           {{ title }}

@@ -3,7 +3,7 @@ import { serviceBadges } from '@/shared/data'
 </script>
 
 <template>
-  <ul class="grid w-full grid-cols-2 gap-2">
+  <ul class="grid w-full grid-cols-2 grid-gap">
     <li
       v-for="badge in serviceBadges"
       :key="badge.title"
