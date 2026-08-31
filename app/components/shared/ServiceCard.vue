@@ -44,12 +44,20 @@ const layout = computed(() =>
       class="flex min-w-0 items-center gap-2"
       :class="layout.content"
     >
-      <h3
-        class="text-start"
-        :class="layout.title"
-      >
-        {{ title }}
-      </h3>
+      <div class="min-w-0">
+        <h3
+          class="text-start"
+          :class="layout.title"
+        >
+          {{ title }}
+        </h3>
+        <p
+          v-if="wide"
+          class="mt-1 text-start caption-sm"
+        >
+          {{ description }}
+        </p>
+      </div>
       <SharedLinkArrow reveal="hover" />
     </div>
   </NuxtLink>

@@ -43,6 +43,7 @@ export type ServiceDraft = Omit<ServiceDetail, 'image' | 'imageAlt'>
 export interface HomeServiceItem {
   icon: string
   title: string
+  description: string
   to: string
 }
 

@@ -165,9 +165,10 @@ export const serviceSummaries: ServiceSummary[] = services.map(
   }),
 )
 
-export const homeServices: HomeServiceItem[] = services.map(({ icon, title, slug }) => ({
+export const homeServices: HomeServiceItem[] = services.map(({ icon, title, description, slug }) => ({
   icon,
   title,
+  description,
   to: `/services/${slug}`,
 }))
 
