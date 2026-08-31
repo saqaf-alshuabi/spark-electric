@@ -18,7 +18,7 @@ import { whyChooseUs } from '@/shared/data'
         <li
           v-for="item in whyChooseUs"
           :key="item.title"
-          class="stack-sm card-p rounded-lg bg-muted/50"
+          class="stack-sm rounded-lg bg-muted/50 card-p"
         >
           <h3>
             {{ item.title }}

@@ -6,7 +6,7 @@ import { site } from '@/shared/data'
   <section class="section-y">
     <UContainer class="grid grid-cols-1 items-center split-gap md:grid-cols-2">
       <div class="mx-auto stack-md items-center md:mx-0 md:items-start">
-        <h1 class="flex w-full flex-col items-center gap-2 text-wrap-normal md:items-start">
+        <h1 class="text-wrap-normal flex w-full flex-col items-center gap-2 md:items-start">
           <span>{{ site.name }}</span>
           <span class="text-base font-medium text-muted md:text-xl">
             في

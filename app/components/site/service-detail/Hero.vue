@@ -23,9 +23,9 @@ const selectImage = (index: number) => {
 
 <template>
   <section class="section-y">
-    <UContainer class="grid grid-cols-1 items-start split-gap md:items-center md:grid-cols-2">
-      <div class="stack-sm order-1 md:order-2">
-        <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40 ">
+    <UContainer class="grid grid-cols-1 items-start split-gap md:grid-cols-2 md:items-center">
+      <div class="order-1 stack-sm md:order-2">
+        <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40">
           <Transition name="soft-fade">
             <div
               :key="images[0]?.src"
@@ -51,7 +51,7 @@ const selectImage = (index: number) => {
           <li
             v-for="(shot, index) in images.slice(1)"
             :key="shot.src"
-            class="aspect-square overflow-hidden rounded-md bg-muted/40 cursor-pointer focus-ring"
+            class="aspect-square cursor-pointer overflow-hidden rounded-md bg-muted/40 focus-ring"
             @click="selectImage(index + 1)"
           >
             <NuxtPicture
@@ -66,7 +66,7 @@ const selectImage = (index: number) => {
         </ul>
       </div>
 
-      <div class="stack-md order-2 md:order-1 ">
+      <div class="order-2 stack-md md:order-1">
         <div class="stack-sm">
           <h1>
             {{ service.title }}
@@ -76,7 +76,7 @@ const selectImage = (index: number) => {
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-3 ">
+        <div class="flex flex-wrap gap-3">
           <UButton
             :to="whatsappUrl"
             target="_blank"

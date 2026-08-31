@@ -41,7 +41,7 @@ const goToSlide = (index: number) => {
       </Transition>
     </div>
 
-    <p class="caption text-center">
+    <p class="text-center caption">
       {{ activeSlide.caption }}
     </p>
 

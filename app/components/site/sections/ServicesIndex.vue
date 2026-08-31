@@ -16,7 +16,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
 <template>
   <div class="hidden items-start split-gap lg:grid lg:grid-cols-12">
     <div class="stack-lg min-w-0 lg:col-span-7">
-      <div class="stack-sm ">
+      <div class="stack-sm">
         <h1 class="reveal">
           {{ title }}
         </h1>
@@ -29,7 +29,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
-            class="group flex items-start gap-5 rounded-lg card-p transition-colors focus-ring"
+            class="group flex items-start gap-5 rounded-lg card-p focus-ring transition-colors"
             :class="linkClass(service.slug)"
             @mouseenter="setActiveHover(service.slug)"
             @focus="setActive(service.slug)"
@@ -38,7 +38,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
               {{ String(index + 1).padStart(2, '0') }}
             </span>
 
-            <div class="min-w-0 flex-1 stack-sm">
+            <div class="stack-sm min-w-0 flex-1">
               <div class="flex items-center justify-between gap-3">
                 <h3
                   :class="{ 'text-muted': !isActive(service.slug) }"
@@ -62,7 +62,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
       </ol>
     </div>
 
-    <div class="sticky top-28 lg:col-span-5 ">
+    <div class="sticky top-28 lg:col-span-5">
       <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
         <Transition name="soft-fade">
           <div

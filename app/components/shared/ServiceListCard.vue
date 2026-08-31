@@ -19,7 +19,7 @@ const {
 <template>
   <NuxtLink
     :to="to"
-    class="group focus-ring flex h-full flex-col overflow-hidden rounded-lg bg-muted/50 transition-colors hover:bg-muted active:bg-accented"
+    class="group flex h-full flex-col overflow-hidden rounded-lg bg-muted/50 focus-ring transition-colors hover:bg-muted active:bg-accented"
   >
     <div class="relative aspect-16/10 overflow-hidden bg-muted/40">
       <NuxtPicture
