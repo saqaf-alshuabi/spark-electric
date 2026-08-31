@@ -1,12 +1,6 @@
 <script setup lang="ts">
-const {
-  title,
-  description,
-  image,
-  imageAlt,
-  to,
-  priority,
-} = defineProps<{
+const { priority = false } = defineProps<{
+  icon: string
   title: string
   description: string
   image: string
@@ -19,31 +13,44 @@ const {
 <template>
   <NuxtLink
     :to="to"
-    class="group flex h-full flex-col overflow-hidden rounded-2xl bg-muted/50 focus-ring transition-colors hover:bg-muted active:bg-accented"
+    class="group relative block overflow-hidden rounded-3xl bg-muted/40 focus-ring transition duration-300 ease-out active:scale-[0.99] can-hover:hover:-translate-y-1 can-hover:hover:shadow-2xl can-hover:hover:shadow-primary/10"
   >
-    <div class="relative aspect-16/10 overflow-hidden bg-muted/40">
+    <div class="aspect-4/3 w-full">
       <NuxtPicture
         :src="image"
         :alt="imageAlt"
-        class="absolute inset-0 block size-full"
+        class="block size-full"
         :preload="priority ? { fetchPriority: 'high' } : false"
         :loading="priority ? 'eager' : 'lazy'"
-        :img-attrs="{ class: 'size-full object-cover' }"
-        sizes="100vw md:50vw"
+        :img-attrs="{ class: 'size-full object-cover transition-transform duration-700 ease-out can-hover:group-hover:scale-105' }"
+        sizes="100vw md:50vw lg:420px"
       />
     </div>
 
-    <div class="flex items-start justify-between gap-3 card-p">
-      <div class="stack-sm min-w-0">
-        <h3>
-          {{ title }}
-        </h3>
-        <p class="text-sm">
-          {{ description }}
-        </p>
-      </div>
+    <!-- Literal black/white below: this chrome sits on a photo, not on the theme -->
+    <div
+      class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent"
+      aria-hidden="true"
+    />
+    <div
+      class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/10 ring-inset transition-colors duration-300 can-hover:group-hover:ring-primary/40"
+      aria-hidden="true"
+    />
 
-      <SharedLinkArrow class="mt-1" />
+    <span class="absolute start-4 top-4 flex size-10 items-center justify-center rounded-full border border-white/15 bg-black/30 backdrop-blur-md transition-colors duration-300 group-active:bg-primary can-hover:group-hover:bg-primary">
+      <UIcon
+        :name="icon"
+        class="size-5 text-primary transition-colors duration-300 group-active:text-inverted can-hover:group-hover:text-inverted"
+      />
+    </span>
+
+    <div class="absolute inset-x-0 bottom-0 stack-xs card-p">
+      <h3 class="text-white">
+        {{ title }}
+      </h3>
+      <p class="text-sm/relaxed text-white/75">
+        {{ description }}
+      </p>
     </div>
   </NuxtLink>
 </template>

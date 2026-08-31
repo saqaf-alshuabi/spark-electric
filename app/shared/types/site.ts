@@ -25,6 +25,7 @@ export interface ServiceSlide {
 /** Listing card / index preview (cover derived from gallery[0]) */
 export interface ServiceSummary {
   slug: string
+  icon: string
   title: string
   description: string
   image: string
@@ -33,7 +34,6 @@ export interface ServiceSummary {
 
 /** Full service — gallery[0] is the cover image */
 export interface ServiceDetail extends ServiceSummary {
-  icon: string
   gallery: ServiceSlide[]
 }
 

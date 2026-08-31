@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { serviceSummaries, site } from '@/shared/data'
 
-const title = 'خدمات'
-
 useSeoMeta({
   title: `كهربائي في ${site.city}`,
   description: 'تأسيس، ثريا وسبوت، تكييف، انتركوم، وأعطال، للبيت والمحل في مكة',
@@ -10,22 +8,39 @@ useSeoMeta({
 </script>
 
 <template>
-  <section class="section-y">
-    <UContainer class="stack-md">
-      <!-- Mobile / tablet header -->
-      <div class="mx-auto stack-sm text-center lg:hidden">
-        <h1 class="reveal">
-          {{ title }}
+  <section class="relative isolate overflow-hidden hero-y">
+    <div
+      class="pointer-events-none absolute inset-0 -z-10 hero-aura"
+      aria-hidden="true"
+    />
+    <div
+      class="pointer-events-none absolute inset-0 -z-10 hero-grid"
+      aria-hidden="true"
+    />
+
+    <UContainer class="stack-lg">
+      <div class="stack-sm items-center text-center md:items-start md:text-start">
+        <p class="rise pill caption-sm">
+          من التأسيس لين آخر لمبة
+        </p>
+
+        <h1 class="rise heading-gradient [animation-delay:80ms]">
+          كل اللي نسويه
         </h1>
+
+        <p class="rise max-w-md [animation-delay:160ms]">
+          اختر الخدمة وشوف الشغل بنفسك
+        </p>
       </div>
 
-      <!-- Mobile / tablet: photo cards -->
-      <ul class="grid w-full grid-cols-1 grid-gap md:grid-cols-2 lg:hidden">
+      <ul class="grid grid-cols-1 grid-gap md:grid-cols-2 lg:grid-cols-3">
         <li
           v-for="(service, index) in serviceSummaries"
           :key="service.slug"
+          class="reveal"
         >
           <SharedServiceListCard
+            :icon="service.icon"
             :title="service.title"
             :description="service.description"
             :image="service.image"
@@ -35,12 +50,6 @@ useSeoMeta({
           />
         </li>
       </ul>
-
-      <!-- Desktop: title + index + preview as one composition -->
-      <SiteSectionsServicesIndex
-        :services="serviceSummaries"
-        :title="title"
-      />
     </UContainer>
   </section>
 </template>

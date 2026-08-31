@@ -16,7 +16,7 @@ import { site } from '@/shared/data'
     <UContainer class="grid grid-cols-1 items-center split-gap md:grid-cols-2">
       <div class="stack-md items-center text-center md:items-start md:text-start">
         <div class="stack-sm items-center md:items-start">
-          <p class="rise inline-flex items-center gap-2 rounded-full border border-default bg-default/40 py-1.5 ps-2.5 pe-3.5 caption-sm backdrop-blur-sm">
+          <p class="rise pill caption-sm">
             <span class="relative flex size-2">
               <span class="absolute inline-flex size-full animate-ping rounded-full bg-primary/60 motion-reduce:animate-none" />
               <span class="relative inline-flex size-2 rounded-full bg-primary" />

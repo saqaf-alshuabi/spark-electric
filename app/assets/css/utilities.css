@@ -76,6 +76,10 @@
   padding: var(--space-card);
 }
 
+@utility pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-default bg-default/40 py-1.5 ps-2.5 pe-3.5 backdrop-blur-sm;
+}
+
 @utility caption {
   line-height: 1.5;
   @apply text-base font-medium text-highlighted text-pretty;
