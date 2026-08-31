@@ -1,10 +1,14 @@
 export interface SiteSettings {
   name: string
   city: string
+  /** One-line pitch under the hero headline */
+  tagline: string
   logo: string
   /** International digits only, no + (e.g. 9665XXXXXXXX) */
   phone: string
 }
+
+export type ContactChannel = 'whatsapp' | 'phone'
 
 export interface NavItem {
   label: string

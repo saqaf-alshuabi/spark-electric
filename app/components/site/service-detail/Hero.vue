@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import type { ServiceDetail } from '~/shared/types/site'
 
-const { whatsappUrl } = useContact()
 const { service } = defineProps<{ service: ServiceDetail }>()
-const { ui } = useAppConfig()
 const images = ref([...service.gallery])
 
 const canSwap = (index: number) =>
@@ -77,13 +75,7 @@ const selectImage = (index: number) => {
         </div>
 
         <div class="flex flex-wrap gap-3">
-          <UButton
-            :to="whatsappUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            label="واتساب"
-            :icon="ui.icons.whatsapp"
-          />
+          <SharedContactButton channel="whatsapp" />
           <UButton
             to="/services"
             label="خدمات"

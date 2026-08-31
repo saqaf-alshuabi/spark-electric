@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { site } from '@/shared/data'
 
-const { ui } = useAppConfig()
-const { whatsappUrl } = useContact()
 const year = new Date().getFullYear()
 </script>
 
@@ -15,16 +13,13 @@ const year = new Date().getFullYear()
     </template>
 
     <template #right>
-      <UButton
-        :icon="ui.icons.whatsapp"
-        aria-label="واتساب"
+      <SharedContactButton
+        channel="whatsapp"
+        icon-only
         color="neutral"
         variant="link"
         size="xs"
         class="hidden lg:inline-flex"
-        :to="whatsappUrl"
-        target="_blank"
-        rel="noopener noreferrer"
       />
     </template>
   </UFooter>

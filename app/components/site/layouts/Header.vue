@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { navItems, site } from '@/shared/data'
-
-const { ui } = useAppConfig()
-const { whatsappUrl } = useContact()
 </script>
 
 <template>
@@ -16,14 +13,10 @@ const { whatsappUrl } = useContact()
 
     <UNavigationMenu :items="navItems" />
     <template #right>
-      <UButton
-        :icon="ui.icons.whatsapp"
-        label="واتساب"
+      <SharedContactButton
+        channel="whatsapp"
         variant="ghost"
         class="hidden lg:inline-flex"
-        :to="whatsappUrl"
-        target="_blank"
-        rel="noopener noreferrer"
       />
     </template>
 

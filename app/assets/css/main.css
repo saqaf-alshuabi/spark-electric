@@ -13,14 +13,14 @@
     --ui-header-height: 4rem;
     --ui-radius: 0.5rem;
 
-    --size-h1: clamp(2.5rem, 6vw, 3.5rem);
+    /* 6vw only takes over past ~666px, so the floor is what every phone gets. */
+    --size-h1: clamp(2rem, 7vw, 3.5rem);
     --size-h2: clamp(1.75rem, 4vw, 2.5rem);
     --size-h3: clamp(1.125rem, 2vw, 1.375rem);
     --size-h4: clamp(1.0625rem, 1.6vw, 1.25rem);
     --size-body: clamp(1rem, 1.2vw, 1.0625rem);
 
     --space-section: clamp(4rem, 8vw, 7rem);
-    --space-2xs: clamp(0.5rem, 1.5vw, 0.75rem);
     --space-xs: clamp(0.75rem, 2vw, 1rem);
     --space-sm: clamp(1rem, 2.5vw, 1.5rem);
     --space-md: clamp(1.5rem, 4vw, 2rem);
@@ -119,7 +119,33 @@
   }
 }
 
+/* Autoplay countdown under the active gallery dot */
+@keyframes slide-progress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.slide-progress {
+  width: 100%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation-name: reveal-up;
+    animation-duration: 0.55s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: both;
+  }
+
+  .slide-progress {
+    animation: slide-progress var(--slide-ms, 5500ms) linear both;
+  }
+
   .reveal {
     animation-name: reveal-up;
     animation-duration: 0.45s;

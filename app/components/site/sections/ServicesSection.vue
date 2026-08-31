@@ -5,12 +5,9 @@ import { homeServices } from '@/shared/data'
 <template>
   <section class="section-y">
     <UContainer class="stack-md items-center">
-      <div class="stack-sm items-center text-center">
-        <h2 class="reveal">
-          خدمات
-        </h2>
-        <p>للبيت والمحل</p>
-      </div>
+      <h2 class="reveal">
+        خدمات
+      </h2>
 
       <ul class="grid w-full grid-cols-2 grid-gap md:grid-cols-3">
         <li

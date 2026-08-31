@@ -5,11 +5,9 @@ import { whyChooseUs } from '@/shared/data'
 <template>
   <section class="section-y">
     <UContainer class="stack-md items-center">
-      <div class="stack-sm items-center text-center">
-        <h2 class="reveal">
-          كذا نشتغل
-        </h2>
-      </div>
+      <h2 class="reveal">
+        كذا نشتغل
+      </h2>
 
       <ul class="grid w-full grid-cols-1 grid-gap md:grid-cols-3">
         <li
