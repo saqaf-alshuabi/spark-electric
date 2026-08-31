@@ -35,6 +35,8 @@ const { ui } = useAppConfig()
           :trailing-icon="ui.icons.arrowLeft"
           color="neutral"
           variant="link"
+          class="group"
+          :ui="{ trailingIcon: 'transition-transform duration-300 can-hover:group-hover:-translate-x-1' }"
         />
       </div>
     </UContainer>

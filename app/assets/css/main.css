@@ -7,6 +7,13 @@
   --font-heading: 'IBM Plex Sans Arabic', sans-serif;
 }
 
+/* Hover effects only on real pointers. Phones get the resting state, plus :active. */
+@custom-variant can-hover {
+  @media (hover: hover) and (pointer: fine) {
+    @slot;
+  }
+}
+
 @layer base {
   :root {
     --ui-container: 80rem;

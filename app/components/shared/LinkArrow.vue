@@ -29,7 +29,7 @@ const {
 const revealClass = computed(() =>
   reveal === 'always' || active
     ? 'opacity-100'
-    : 'opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100',
+    : 'opacity-100 can-hover:opacity-0 can-hover:group-hover:opacity-100 can-hover:group-focus-visible:opacity-100',
 )
 
 const icon = iconName ?? ui.icons.arrowLeft
