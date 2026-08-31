@@ -46,7 +46,7 @@ const selectImage = (index: number) => {
 
         <ul
           v-if="images.length > 1"
-          class="grid grid-cols-3 gap-2"
+          class="grid grid-cols-3 gap-3"
         >
           <li
             v-for="(shot, index) in images.slice(1)"

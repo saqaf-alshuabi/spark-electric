@@ -29,7 +29,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
-            class="group flex items-start gap-4 rounded-lg p-4 transition-colors focus-ring"
+            class="group flex items-start gap-5 rounded-lg card-p transition-colors focus-ring"
             :class="linkClass(service.slug)"
             @mouseenter="setActiveHover(service.slug)"
             @focus="setActive(service.slug)"

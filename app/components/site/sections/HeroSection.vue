@@ -5,10 +5,10 @@ import { site } from '@/shared/data'
 <template>
   <section class="section-y">
     <UContainer class="grid grid-cols-1 items-center split-gap md:grid-cols-2">
-      <div class=" mx-auto stack-md items-center md:mx-0 md:items-start">
-        <h1 class="flex w-full flex-col items-center gap-1 text-wrap-normal md:items-start">
+      <div class="mx-auto stack-md items-center md:mx-0 md:items-start">
+        <h1 class="flex w-full flex-col items-center gap-2 text-wrap-normal md:items-start">
           <span>{{ site.name }}</span>
-          <span class="text-sm font-medium text-muted md:text-lg">
+          <span class="text-base font-medium text-muted md:text-xl">
             في
             <span class="text-primary">{{ site.city }}</span>
             وضواحيها

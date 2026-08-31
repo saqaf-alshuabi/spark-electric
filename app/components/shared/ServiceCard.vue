@@ -7,14 +7,14 @@ defineProps<HomeServiceItem>()
 <template>
   <NuxtLink
     :to="to"
-    class="stack-sm focus-ring items-center rounded-lg bg-default/60 p-4 text-center transition-colors hover:bg-default active:bg-accented"
+    class="stack-sm card-p focus-ring items-center rounded-lg bg-default/60 text-center transition-colors hover:bg-default active:bg-accented"
   >
     <UIcon
       :name="icon"
-      class="size-6 text-primary md:size-7"
+      class="size-7 text-primary md:size-8"
     />
-    <span class="text-base font-medium text-highlighted">
+    <h3>
       {{ title }}
-    </span>
+    </h3>
   </NuxtLink>
 </template>
