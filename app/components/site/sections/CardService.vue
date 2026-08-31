@@ -22,7 +22,7 @@ const goToSlide = (index: number) => {
 
 <template>
   <div class="stack-sm w-full items-center">
-    <div class="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-muted/40">
+    <div class="relative aspect-16/10 w-full overflow-hidden rounded-2xl bg-muted/40">
       <Transition name="soft-fade">
         <div
           :key="activeSlide.src"
@@ -46,7 +46,7 @@ const goToSlide = (index: number) => {
     </p>
 
     <div
-      class="flex justify-center gap-0.5"
+      class="flex justify-center"
       role="tablist"
       aria-label="معرض أعمال الكهرباء"
     >
@@ -55,7 +55,7 @@ const goToSlide = (index: number) => {
         :key="slide.src"
         type="button"
         role="tab"
-        class="flex size-6 items-center justify-center"
+        class="flex size-11 items-center justify-center"
         :aria-selected="index === activeIndex"
         :aria-label="slide.caption"
         @click="goToSlide(index)"

@@ -11,6 +11,22 @@
   :root {
     --ui-container: 80rem;
     --ui-header-height: 4rem;
+    --ui-radius: 0.5rem;
+
+    --size-h1: clamp(2.5rem, 6vw, 3.5rem);
+    --size-h2: clamp(1.75rem, 4vw, 2.5rem);
+    --size-h3: clamp(1.125rem, 2vw, 1.375rem);
+    --size-h4: clamp(1.0625rem, 1.6vw, 1.25rem);
+    --size-body: clamp(1rem, 1.2vw, 1.0625rem);
+
+    --space-section: clamp(4rem, 8vw, 7rem);
+    --space-2xs: clamp(0.5rem, 1.5vw, 0.75rem);
+    --space-xs: clamp(0.75rem, 2vw, 1rem);
+    --space-sm: clamp(1rem, 2.5vw, 1.5rem);
+    --space-md: clamp(1.5rem, 4vw, 2rem);
+    --space-lg: clamp(2rem, 5vw, 3rem);
+    --space-xl: clamp(2rem, 6vw, 4rem);
+    --space-card: clamp(1.25rem, 3vw, 1.75rem);
   }
 
   html {
@@ -19,39 +35,52 @@
   }
 
   body {
-    @apply font-sans text-base text-default antialiased;
+    font-size: var(--size-body);
+    @apply font-sans text-default antialiased;
   }
 
   ::selection {
     @apply bg-primary/25 text-highlighted;
   }
 
+  /* No letter-spacing on headings: Arabic is cursive and tracking breaks the
+     joins between letters. Line heights also run looser than a Latin scale. */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-heading);
-    @apply text-highlighted tracking-tight text-balance;
+    @apply text-highlighted text-balance;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-semibold leading-snug text-pretty;
+    font-size: var(--size-h1);
+    line-height: 1.3;
+    @apply font-semibold text-pretty;
   }
 
   h2 {
-    @apply text-2xl md:text-3xl font-semibold leading-snug;
+    font-size: var(--size-h2);
+    line-height: 1.35;
+    @apply font-semibold;
   }
 
   h3 {
-    @apply text-lg md:text-xl font-medium leading-snug;
+    font-size: var(--size-h3);
+    line-height: 1.45;
+    @apply font-medium;
   }
 
   h4 {
-    @apply text-base md:text-lg font-medium leading-snug;
+    font-size: var(--size-h4);
+    line-height: 1.5;
+    @apply font-medium;
   }
 
   p {
-    @apply text-base font-normal text-muted leading-relaxed text-pretty;
+    font-size: var(--size-body);
+    line-height: 1.8;
+    @apply font-normal text-muted text-pretty;
   }
 
   strong {
@@ -59,7 +88,7 @@
   }
 
   small {
-    @apply text-xs text-muted;
+    @apply text-sm text-muted;
   }
 
   ul,

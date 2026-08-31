@@ -1,37 +1,47 @@
 @utility section-y {
-  @apply py-10 md:py-20;
+  padding-block: var(--space-section);
+}
+
+@utility stack-xs {
+  @apply flex flex-col;
+  gap: var(--space-2xs);
 }
 
 @utility stack-sm {
-  @apply flex flex-col gap-2 md:gap-3;
+  @apply flex flex-col;
+  gap: var(--space-xs);
 }
 
 @utility stack-md {
-  @apply flex flex-col gap-6 md:gap-8;
+  @apply flex flex-col;
+  gap: var(--space-md);
 }
 
 @utility stack-lg {
-  @apply flex flex-col gap-8 md:gap-12;
+  @apply flex flex-col;
+  gap: var(--space-lg);
 }
 
 @utility grid-gap {
-  @apply gap-4 md:gap-5;
+  gap: var(--space-sm);
 }
 
 @utility split-gap {
-  @apply gap-8 md:gap-12 lg:gap-16;
+  gap: var(--space-xl);
 }
 
 @utility card-p {
-  @apply p-5 md:p-6;
+  padding: var(--space-card);
 }
 
 @utility caption {
-  @apply text-sm font-medium text-highlighted leading-snug text-pretty;
+  line-height: 1.5;
+  @apply text-base font-medium text-highlighted text-pretty;
 }
 
 @utility caption-sm {
-  @apply text-xs font-normal text-muted leading-snug text-pretty;
+  line-height: 1.5;
+  @apply text-sm font-normal text-muted text-pretty;
 }
 
 @utility focus-ring {

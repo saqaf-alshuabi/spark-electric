@@ -7,25 +7,28 @@ import { whyChooseUs } from '@/shared/data'
     <UContainer class="stack-md items-center">
       <div class="stack-sm items-center text-center">
         <h2 class="reveal">
-          اللي يهمك
+          كذا نشتغل
         </h2>
-        <p>
-          قبل لا نبدأ الشغل
-        </p>
       </div>
 
-      <ul class="grid w-full grid-cols-1 grid-gap md:grid-cols-2">
+      <ul class="grid w-full grid-cols-1 grid-gap md:grid-cols-3">
         <li
           v-for="item in whyChooseUs"
           :key="item.title"
-          class="stack-sm rounded-lg bg-muted/50 card-p"
+          class="flex items-start gap-4"
         >
-          <h3>
-            {{ item.title }}
-          </h3>
-          <p>
-            {{ item.description }}
-          </p>
+          <UIcon
+            :name="item.icon"
+            class="mt-1 size-6 shrink-0 text-primary"
+          />
+          <div class="stack-sm">
+            <h3>
+              {{ item.title }}
+            </h3>
+            <p>
+              {{ item.description }}
+            </p>
+          </div>
         </li>
       </ul>
     </UContainer>

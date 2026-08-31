@@ -18,7 +18,8 @@ const { whatsappUrl, phoneUrl } = useContact()
           label="واتساب"
           :icon="ui.icons.whatsapp"
           block
-          size="sm"
+          size="xl"
+          class="min-h-11"
         />
         <UButton
           :to="phoneUrl"
@@ -26,13 +27,14 @@ const { whatsappUrl, phoneUrl } = useContact()
           :icon="ui.icons.phone"
           variant="outline"
           block
-          size="sm"
+          size="xl"
+          class="min-h-11"
         />
       </div>
     </nav>
     <div
       class="lg:hidden"
-      :style="{ height: 'calc(3.5rem + env(safe-area-inset-bottom, 0px))' }"
+      :style="{ height: 'calc(3.75rem + 1px + env(safe-area-inset-bottom, 0px))' }"
       aria-hidden="true"
     />
   </template>

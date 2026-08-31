@@ -12,12 +12,6 @@ export interface NavItem {
   icon?: string
 }
 
-export interface FeatureBadgeItem {
-  icon: string
-  title: string
-  iconClass?: string
-}
-
 export interface ServiceSlide {
   src: string
   alt: string
@@ -49,6 +43,7 @@ export interface HomeServiceItem {
 }
 
 export interface WhyChooseUsItem {
+  icon: string
   title: string
   description: string
 }

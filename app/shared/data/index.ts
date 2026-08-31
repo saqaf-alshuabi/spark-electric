@@ -1,6 +1,5 @@
 export { site } from './site'
 export { navItems } from './nav'
-export { serviceBadges } from './badges'
 export { whyChooseUs } from './why-choose-us'
 export { services, serviceSummaries, homeServices, getServiceBySlug } from './services'
 export { serviceSlides } from './services/slides'

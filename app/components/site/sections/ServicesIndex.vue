@@ -29,7 +29,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
-            class="group flex items-start gap-5 rounded-lg card-p focus-ring transition-colors"
+            class="group flex items-start gap-5 rounded-xl card-p focus-ring transition-colors"
             :class="linkClass(service.slug)"
             @mouseenter="setActiveHover(service.slug)"
             @focus="setActive(service.slug)"
@@ -63,7 +63,7 @@ const linkClass = (slug: string) => isActive(slug) ? 'bg-muted/40 text-highlight
     </div>
 
     <div class="sticky top-28 lg:col-span-5">
-      <div class="relative aspect-4/3 overflow-hidden rounded-lg bg-muted/40">
+      <div class="relative aspect-4/3 overflow-hidden rounded-2xl bg-muted/40">
         <Transition name="soft-fade">
           <div
             v-if="activeService"

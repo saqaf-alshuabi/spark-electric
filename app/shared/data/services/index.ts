@@ -21,7 +21,7 @@ function withCover(draft: ServiceDraft): ServiceDetail {
 const serviceDrafts: ServiceDraft[] = [
   {
     slug: 'electrical-networks',
-    icon: 'i-heroicons-bolt',
+    icon: 'i-ph-lightning-duotone',
     title: 'تأسيس كهرباء',
     description: 'التمديد مع البناء، قبل الدهان',
     gallery: [
@@ -45,7 +45,7 @@ const serviceDrafts: ServiceDraft[] = [
   },
   {
     slug: 'lighting',
-    icon: 'i-heroicons-light-bulb',
+    icon: 'i-ph-lightbulb-duotone',
     title: 'ثريا وسبوت',
     description: 'نركّبها ونوزع النور',
     gallery: [
@@ -69,7 +69,7 @@ const serviceDrafts: ServiceDraft[] = [
   },
   {
     slug: 'decorative-led',
-    icon: 'i-heroicons-sparkles',
+    icon: 'i-ph-sparkle-duotone',
     title: 'ليد مخفي',
     description: 'النور باين، والشريط ما يبان',
     gallery: [
@@ -93,7 +93,7 @@ const serviceDrafts: ServiceDraft[] = [
   },
   {
     slug: 'intercom',
-    icon: 'i-heroicons-video-camera',
+    icon: 'i-ph-security-camera-duotone',
     title: 'انتركوم',
     description: 'تشوف مين عند الباب، من جوا',
     gallery: [
@@ -113,7 +113,7 @@ const serviceDrafts: ServiceDraft[] = [
   },
   {
     slug: 'air-conditioning',
-    icon: 'i-heroicons-home-modern',
+    icon: 'i-ph-snowflake-duotone',
     title: 'تأسيس تكييف',
     description: 'النحاس والدكت مع البناء',
     gallery: [
@@ -137,7 +137,7 @@ const serviceDrafts: ServiceDraft[] = [
   },
   {
     slug: 'fault-diagnosis',
-    icon: 'i-heroicons-wrench-screwdriver',
+    icon: 'i-ph-wrench-duotone',
     title: 'أعطال',
     description: 'نفحص ونقولك السبب والسعر، بعدين نصلح',
     gallery: [

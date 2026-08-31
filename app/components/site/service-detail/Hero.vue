@@ -25,7 +25,7 @@ const selectImage = (index: number) => {
   <section class="section-y">
     <UContainer class="grid grid-cols-1 items-start split-gap md:grid-cols-2 md:items-center">
       <div class="order-1 stack-sm md:order-2">
-        <div class="relative aspect-16/10 overflow-hidden rounded-lg bg-muted/40">
+        <div class="relative aspect-16/10 overflow-hidden rounded-2xl bg-muted/40">
           <Transition name="soft-fade">
             <div
               :key="images[0]?.src"
@@ -51,7 +51,7 @@ const selectImage = (index: number) => {
           <li
             v-for="(shot, index) in images.slice(1)"
             :key="shot.src"
-            class="aspect-square cursor-pointer overflow-hidden rounded-md bg-muted/40 focus-ring"
+            class="aspect-square cursor-pointer overflow-hidden rounded-xl bg-muted/40 focus-ring"
             @click="selectImage(index + 1)"
           >
             <NuxtPicture
