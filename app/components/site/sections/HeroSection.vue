@@ -12,19 +12,7 @@ import { site } from '@/shared/data'
         :body="site.tagline"
       />
 
-      <div class="rise flex w-full flex-wrap items-center justify-center gap-3 [animation-delay:240ms] md:justify-start">
-        <SharedContactButton
-          channel="whatsapp"
-          size="xl"
-          class="min-h-11"
-        />
-        <SharedContactButton
-          channel="phone"
-          variant="outline"
-          size="xl"
-          class="min-h-11"
-        />
-      </div>
+      <SharedContactActions class="rise w-full justify-center [animation-delay:240ms] md:justify-start" />
     </div>
 
     <SiteSectionsCardService />

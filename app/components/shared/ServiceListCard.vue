@@ -33,7 +33,7 @@ const { priority = false } = defineProps<{
       aria-hidden="true"
     />
     <div
-      class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/10 ring-inset transition-colors duration-300 can-hover:group-hover:ring-primary/40"
+      class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/10 transition-colors duration-300 ring-inset can-hover:group-hover:ring-primary/40"
       aria-hidden="true"
     />
 
