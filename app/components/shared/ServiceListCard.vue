@@ -37,7 +37,7 @@ const { priority = false } = defineProps<{
       aria-hidden="true"
     />
 
-    <span class="absolute start-4 top-4 flex size-10 items-center justify-center rounded-full border border-white/15 bg-black/30 backdrop-blur-md transition-colors duration-300 group-active:bg-primary can-hover:group-hover:bg-primary">
+    <span class="absolute inset-s-4 top-4 flex size-10 items-center justify-center rounded-full border border-white/15 bg-black/30 backdrop-blur-md transition-colors duration-300 group-active:bg-primary can-hover:group-hover:bg-primary">
       <UIcon
         :name="icon"
         class="size-5 text-primary transition-colors duration-300 group-active:text-inverted can-hover:group-hover:text-inverted"
