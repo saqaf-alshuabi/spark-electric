@@ -3,16 +3,27 @@ import type { NuxtError } from '#app'
 
 const { error } = defineProps<{ error: NuxtError }>()
 const { ui } = useAppConfig()
+
 const status = computed(() => error.status ?? error.statusCode ?? 500)
 
 const message = computed(() => {
   const msg = error.message || ''
 
   if (status.value === 404)
-    return (!msg || msg.startsWith('Page not found')) ? 'الصفحة غير موجودة' : msg
+    return (!msg || msg.startsWith('Page not found')) ? 'الصفحة مو موجودة' : msg
 
-  return msg || 'حدث خطأ'
+  return msg || 'صار خطأ'
 })
+
+const hint = computed(() =>
+  status.value === 404
+    ? 'يمكن الرابط غلط، أو الصفحة مو هنا'
+    : 'ارجع للرئيسية، أو كلمنا على واتساب',
+)
+
+const icon = computed(() =>
+  status.value === 404 ? 'ph:plug-duotone' : 'ph:warning-duotone',
+)
 
 useSeoMeta({ title: () => `${status.value} - ${message.value}` })
 </script>
@@ -22,21 +33,51 @@ useSeoMeta({ title: () => `${status.value} - ${message.value}` })
     dir="rtl"
     lang="ar"
   >
-    <div class="flex min-h-dvh items-center">
-      <UContainer class="stack-md max-w-xl items-center text-center">
-        <p class="mono-nums text-primary">
+    <div class="relative isolate flex min-h-dvh items-center overflow-hidden">
+      <div
+        class="pointer-events-none absolute inset-0 hero-aura"
+        aria-hidden="true"
+      />
+      <div
+        class="pointer-events-none absolute inset-0 hero-grid"
+        aria-hidden="true"
+      />
+
+      <UContainer class="relative stack-md max-w-xl items-center text-center">
+        <div class="rise flex size-16 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
+          <UIcon
+            :name="icon"
+            class="size-8 text-primary"
+          />
+        </div>
+
+        <p class="rise heading-gradient text-7xl font-semibold tabular-nums [animation-delay:80ms]">
           {{ status }}
         </p>
 
-        <h1>
+        <h1 class="rise [animation-delay:160ms]">
           {{ message }}
         </h1>
 
-        <UButton
-          label="العودة للرئيسية"
-          :trailing-icon="ui.icons.arrowLeft"
-          @click="clearError({ redirect: '/' })"
-        />
+        <p class="rise caption-sm [animation-delay:200ms]">
+          {{ hint }}
+        </p>
+
+        <div class="rise flex flex-wrap justify-center gap-3 [animation-delay:240ms]">
+          <UButton
+            label="العودة للرئيسية"
+            size="xl"
+            :trailing-icon="ui.icons.arrowLeft"
+            class="min-h-11"
+            @click="clearError({ redirect: '/' })"
+          />
+          <ContactButton
+            channel="whatsapp"
+            variant="outline"
+            size="xl"
+            class="min-h-11"
+          />
+        </div>
       </UContainer>
     </div>
   </UApp>

@@ -104,6 +104,8 @@ export default defineNuxtConfig({
         'ph:arrow-right',
         'ph:phone',
         'ph:check',
+        'ph:plug-duotone',
+        'ph:warning-duotone',
         'simple-icons:whatsapp',
       ],
 

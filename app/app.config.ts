@@ -14,6 +14,7 @@ export default defineAppConfig({
       check: 'i-ph-check',
       whatsapp: 'i-simple-icons-whatsapp',
       phone: 'i-ph-phone',
+
     },
     header: {
       slots: {
