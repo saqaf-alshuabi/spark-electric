@@ -46,9 +46,3 @@ export interface HomeServiceItem {
   description: string
   to: string
 }
-
-export interface WhyChooseUsItem {
-  icon: string
-  title: string
-  description: string
-}
