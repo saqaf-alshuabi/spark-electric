@@ -12,11 +12,8 @@ const { live = false } = defineProps<{
     <p class="rise pill caption-sm">
       <span
         v-if="live"
-        class="relative flex size-2"
-      >
-        <span class="absolute inline-flex size-full animate-ping rounded-full bg-primary/60 motion-reduce:animate-none" />
-        <span class="relative inline-flex size-2 rounded-full bg-primary" />
-      </span>
+        class="inline-flex size-2 rounded-full bg-primary"
+      />
       {{ badge }}
     </p>
 
