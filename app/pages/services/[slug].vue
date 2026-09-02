@@ -10,19 +10,19 @@ useSeoMeta({
 </script>
 
 <template>
-  <SharedHeroFrame class="stack-lg">
+  <HeroFrame class="stack-lg">
     <div class="stack-md items-center md:items-start">
-      <SharedHeroIntro
+      <HeroIntro
         :badge="`من شغلنا في ${site.city}`"
         :heading="service.title"
         :body="service.description"
       />
 
-      <SharedContactActions class="rise [animation-delay:240ms]" />
+      <ContactActions class="rise [animation-delay:240ms]" />
     </div>
 
-    <SiteServiceDetailGallery :gallery="service.gallery" />
+    <ServiceGallery :gallery="service.gallery" />
 
-    <SiteServiceDetailRelated :services="others" />
-  </SharedHeroFrame>
+    <ServiceRelated :services="others" />
+  </HeroFrame>
 </template>

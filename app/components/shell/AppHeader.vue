@@ -8,12 +8,12 @@ import { navItems, site } from '@/shared/data'
     to="/"
   >
     <template #title>
-      <SharedLogo />
+      <Logo />
     </template>
 
     <UNavigationMenu :items="navItems" />
     <template #right>
-      <SharedContactButton
+      <ContactButton
         channel="whatsapp"
         variant="ghost"
         class="hidden lg:inline-flex"

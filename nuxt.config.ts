@@ -10,6 +10,14 @@ export default defineNuxtConfig({
     '@nuxt/hints',
     '@nuxtjs/seo',
   ],
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        pathPrefix: false,
+      },
+    ],
+  },
   devtools: {
     enabled: false,
   },

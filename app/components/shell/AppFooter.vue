@@ -13,7 +13,7 @@ const year = new Date().getFullYear()
     </template>
 
     <template #right>
-      <SharedContactButton
+      <ContactButton
         channel="whatsapp"
         icon-only
         color="neutral"

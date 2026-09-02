@@ -17,13 +17,13 @@ const isVisible = computed(() => y.value > HERO_CTA_SCROLL_END)
       aria-label="تواصل"
     >
       <div class="grid grid-cols-2 gap-2 p-2 ps-[max(0.5rem,env(safe-area-inset-left,0px))] pe-[max(0.5rem,env(safe-area-inset-right,0px))] pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]">
-        <SharedContactButton
+        <ContactButton
           channel="whatsapp"
           block
           size="xl"
           class="min-h-11"
         />
-        <SharedContactButton
+        <ContactButton
           channel="phone"
           variant="outline"
           block

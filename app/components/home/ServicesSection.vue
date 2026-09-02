@@ -21,7 +21,7 @@ const { ui } = useAppConfig()
             'col-span-2 md:col-span-3': index === homeServices.length - 1,
           }"
         >
-          <SharedServiceCard
+          <ServiceCard
             v-bind="service"
             :wide="index === 0 || index === homeServices.length - 1"
           />

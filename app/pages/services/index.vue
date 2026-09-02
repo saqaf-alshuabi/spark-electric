@@ -8,8 +8,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <SharedHeroFrame class="stack-lg">
-    <SharedHeroIntro
+  <HeroFrame class="stack-lg">
+    <HeroIntro
       badge="من التأسيس لين آخر لمبة"
       heading="كل اللي نسويه"
       body="اختر الخدمة وشوف الشغل بنفسك"
@@ -21,7 +21,7 @@ useSeoMeta({
         :key="service.slug"
         class="reveal"
       >
-        <SharedServiceListCard
+        <ServiceMediaCard
           :icon="service.icon"
           :title="service.title"
           :description="service.description"
@@ -32,5 +32,5 @@ useSeoMeta({
         />
       </li>
     </ul>
-  </SharedHeroFrame>
+  </HeroFrame>
 </template>

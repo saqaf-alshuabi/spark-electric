@@ -1,10 +1,10 @@
 <template>
   <div class="flex min-h-dvh flex-col">
-    <SiteLayoutsHeader />
+    <AppHeader />
     <UMain class="flex-1">
       <slot />
     </UMain>
-    <SiteLayoutsFooter />
-    <SiteLayoutsMobileActionBar />
+    <AppFooter />
+    <AppMobileBar />
   </div>
 </template>

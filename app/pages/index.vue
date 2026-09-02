@@ -1,5 +1,5 @@
 <template>
-  <SiteSectionsHeroSection />
-  <SiteSectionsServicesSection />
-  <SiteSectionsWhyChooseUsSection />
+  <HeroSection />
+  <ServicesSection />
+  <WhyChooseUsSection />
 </template>
