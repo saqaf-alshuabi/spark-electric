@@ -67,10 +67,4 @@ export default defineNuxtPlugin(() => {
   }
 
   window.addEventListener('pagehide', cleanup)
-
-  return {
-    provide: {
-      lenis,
-    },
-  }
 })

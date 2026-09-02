@@ -91,8 +91,6 @@ export default defineNuxtConfig({
       // Icons from shared/data can be missed after HMR — keep them explicit
       icons: [
         'ph:lightning-duotone',
-        'ph:money-duotone',
-        'ph:shield-check-duotone',
         'ph:lightbulb-duotone',
         'ph:sparkle-duotone',
         'ph:security-camera-duotone',
@@ -101,14 +99,11 @@ export default defineNuxtConfig({
         'ph:equals',
         'ph:x',
         'ph:arrow-left',
-        'ph:arrow-right',
         'ph:phone',
-        'ph:check',
         'ph:plug-duotone',
         'ph:warning-duotone',
         'simple-icons:whatsapp',
       ],
-
     },
   },
   image: {

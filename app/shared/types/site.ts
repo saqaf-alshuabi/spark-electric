@@ -13,7 +13,6 @@ export type ContactChannel = 'whatsapp' | 'phone'
 export interface NavItem {
   label: string
   to: string
-  icon?: string
 }
 
 export interface ServiceSlide {

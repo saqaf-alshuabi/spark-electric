@@ -3,9 +3,8 @@ import type { ContactChannel } from '~/shared/types/site'
 
 defineOptions({ inheritAttrs: false })
 
-const { channel, iconOnly = false } = defineProps<{
+const { channel } = defineProps<{
   channel: ContactChannel
-  iconOnly?: boolean
 }>()
 
 const { ui } = useAppConfig()
@@ -27,11 +26,7 @@ const contact = computed(() => {
         to: phoneUrl,
       }
 
-  return {
-    ...config,
-    'label': iconOnly ? undefined : config.label,
-    'aria-label': iconOnly ? config.label : undefined,
-  }
+  return config
 })
 </script>
 

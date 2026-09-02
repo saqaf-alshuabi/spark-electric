@@ -15,4 +15,4 @@ export function useMobileCtaAnchor() {
   return anchor
 }
 
-export { MOBILE_CTA_ANCHOR_KEY, useMobileCtaAnchorState }
+export { useMobileCtaAnchorState }

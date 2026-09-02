@@ -37,7 +37,6 @@
   }
 
   html {
-    @apply antialiased;
     scroll-behavior: auto;
   }
 
@@ -92,10 +91,6 @@
 
   strong {
     @apply font-semibold text-highlighted;
-  }
-
-  small {
-    @apply text-sm text-muted;
   }
 
   ul,

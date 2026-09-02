@@ -153,7 +153,7 @@ const serviceDrafts: ServiceDraft[] = [
   },
 ]
 
-export const services: ServiceDetail[] = serviceDrafts.map(withCover)
+const services: ServiceDetail[] = serviceDrafts.map(withCover)
 
 export const serviceSummaries: ServiceSummary[] = services.map(
   ({ slug, icon, title, description, image, imageAlt }) => ({
