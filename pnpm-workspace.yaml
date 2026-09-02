@@ -1,8 +1,22 @@
+packages:
+  - '.'
+
 allowBuilds:
   esbuild: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: true
 minimumReleaseAgeExclude:
   - '@nuxt/kit@4.5.1'
   - '@nuxt/nitro-server@4.5.1'
   - '@nuxt/schema@4.5.1'
   - '@nuxt/vite-builder@4.5.1'
   - nuxt@4.5.1
+  - '@nuxtjs/seo@5.3.7'
+  - nuxtseo-shared@5.3.7
+overrides:
+  '@emnapi/core': ^2.0.0-alpha.3
+  '@emnapi/runtime': ^2.0.0-alpha.3
+  '@tiptap/core': 3.29.2
+  '@tiptap/pm': 3.29.2
+  cac: ^6.7.14
