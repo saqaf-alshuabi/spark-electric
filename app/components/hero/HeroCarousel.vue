@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { serviceSlides } from '@/shared/data'
 
-const SLIDE_MS = 5500
+const SLIDE_MS = 3500
 
 const activeIndex = ref(0)
 const prefersReducedMotion = usePreferredReducedMotion()

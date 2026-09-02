@@ -4,26 +4,26 @@ export const serviceSlides: ServiceSlide[] = [
   {
     src: '/images/services/networks-breaker-panel.jpg',
     alt: 'لوحة قواطع بعد التأسيس',
-    caption: 'ولا سلك ضايع',
+    caption: 'تأسيس كهرباء',
   },
   {
     src: '/images/services/lighting-crystal-chandelier.jpg',
     alt: 'ثريا وسبوت في السقف',
-    caption: 'ضيفك يرفع راسه',
+    caption: 'ثريا وسبوت',
   },
   {
     src: '/images/services/led-cross-tracks.jpg',
     alt: 'خطوط ليد وتراك إنارة في سقف جبس',
-    caption: 'النور نفسه صار ديكور',
+    caption: 'ليد مخفي',
   },
   {
     src: '/images/services/intercom-outdoor-panel.jpg',
     alt: 'انتركوم بكاميرا على الجدار عند الباب',
-    caption: 'تشوف قبل ما تفتح',
+    caption: 'انتركوم',
   },
   {
     src: '/images/services/ac-outdoor-rough-in.jpg',
     alt: 'مواسير المكيف وقت التأسيس',
-    caption: 'ما تكسر جدار بعدين',
+    caption: 'تأسيس تكييف',
   },
 ]
