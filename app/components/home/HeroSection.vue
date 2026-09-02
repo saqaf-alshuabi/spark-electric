@@ -12,7 +12,9 @@ import { site } from '@/shared/data'
         :body="site.tagline"
       />
 
-      <ContactActions class="rise w-full justify-center [animation-delay:240ms] md:justify-start" />
+      <ContactActions
+        class="rise w-full justify-center [animation-delay:240ms] md:justify-start"
+      />
     </div>
 
     <HeroCarousel />

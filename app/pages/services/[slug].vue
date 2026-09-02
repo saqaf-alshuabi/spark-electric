@@ -18,7 +18,9 @@ useSeoMeta({
         :body="service.description"
       />
 
-      <ContactActions class="rise [animation-delay:240ms]" />
+      <ContactActions
+        class="rise [animation-delay:240ms]"
+      />
     </div>
 
     <ServiceGallery :gallery="service.gallery" />

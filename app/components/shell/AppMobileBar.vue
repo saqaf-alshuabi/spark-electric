@@ -1,22 +1,28 @@
 <script setup lang="ts">
 const route = useRoute()
+const { isVisible } = useMobileBarVisibility()
 
-/** Past the hero's own buttons on a phone — below this the bar would duplicate them */
-const HERO_CTA_SCROLL_END = 320
-
-const { y } = useWindowScroll()
-const isVisible = computed(() => y.value > HERO_CTA_SCROLL_END)
+const spacerHeight = computed(() =>
+  isVisible.value
+    ? 'calc(3.75rem + max(0.75rem, env(safe-area-inset-bottom, 0px)) + 0.75rem)'
+    : '0px',
+)
 </script>
 
 <template>
   <template v-if="!route.meta.hideMobileActionBar">
     <nav
-      class="fixed inset-x-0 bottom-0 z-50 border-t border-default bg-default/75 backdrop-blur-sm transition-transform duration-300 ease-out motion-reduce:transition-none lg:hidden"
-      :class="isVisible ? 'translate-y-0' : 'translate-y-full'"
+      class="fixed inset-x-3 z-50 rounded-2xl border border-default/60 bg-default/80 shadow-2xl shadow-black/25 backdrop-blur-md transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none lg:hidden"
+      :class="[
+        isVisible
+          ? 'pointer-events-auto translate-y-0 opacity-100'
+          : 'pointer-events-none translate-y-4 opacity-0',
+      ]"
+      :style="{ bottom: 'max(0.75rem, env(safe-area-inset-bottom, 0px))' }"
       :inert="!isVisible"
       aria-label="تواصل"
     >
-      <div class="grid grid-cols-2 gap-2 p-2 ps-[max(0.5rem,env(safe-area-inset-left,0px))] pe-[max(0.5rem,env(safe-area-inset-right,0px))] pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]">
+      <div class="grid grid-cols-2 gap-2 p-2">
         <ContactButton
           channel="whatsapp"
           block
@@ -32,9 +38,10 @@ const isVisible = computed(() => y.value > HERO_CTA_SCROLL_END)
         />
       </div>
     </nav>
+
     <div
-      class="lg:hidden"
-      :style="{ height: 'calc(3.75rem + 1px + env(safe-area-inset-bottom, 0px))' }"
+      class="transition-[height] duration-300 ease-out motion-reduce:transition-none lg:hidden"
+      :style="{ height: spacerHeight }"
       aria-hidden="true"
     />
   </template>

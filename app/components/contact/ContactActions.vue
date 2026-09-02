@@ -1,5 +1,12 @@
+<script setup lang="ts">
+const anchorRef = useMobileCtaAnchor()
+</script>
+
 <template>
-  <div class="flex flex-wrap items-center gap-3">
+  <div
+    ref="anchorRef"
+    class="flex flex-wrap items-center gap-3"
+  >
     <ContactButton
       channel="whatsapp"
       size="xl"
