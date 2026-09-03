@@ -126,6 +126,12 @@ export default defineNuxtConfig({
     // Cloudflare already compresses at the edge. Local gzip/brotli can leave
     // worker handles open and stall `pnpm generate` after success.
   },
+  // Allow Cloudflare quick tunnels (preview links change each run)
+  vite: {
+    server: {
+      allowedHosts: ['.trycloudflare.com'],
+    },
+  },
   hooks: {
     close() {
       // Pages waits for the Node process to exit. After a clean generate some
@@ -133,12 +139,6 @@ export default defineNuxtConfig({
       if (process.env.CF_PAGES === '1') {
         process.exit(0)
       }
-    },
-  },
-  // Allow Cloudflare quick tunnels (preview links change each run)
-  vite: {
-    server: {
-      allowedHosts: ['.trycloudflare.com'],
     },
   },
   eslint: {
