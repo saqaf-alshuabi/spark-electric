@@ -109,6 +109,8 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-08-19',
   nitro: {
+    // HTML on disk. Cloudflare Pages serves files — no Node / Worker needed.
+    preset: 'static',
     prerender: {
       crawlLinks: true,
       // robots.txt and sitemap.xml are server routes, so a static host only
