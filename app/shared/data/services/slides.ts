@@ -12,17 +12,17 @@ export const serviceSlides: ServiceSlide[] = [
     caption: 'ثريا وسبوت',
   },
   {
-    src: '/images/services/led-ceiling-frame.jpg',
-    alt: 'ليد مخفي في سقف جبس',
+    src: '/images/services/led-cross-tracks.jpg',
+    alt: 'خطوط ليد وتراك إنارة في سقف جبس',
     caption: 'ليد مخفي',
   },
   {
-    src: '/images/services/intercom-indoor-panel.jpg',
-    alt: 'شاشة انتركوم داخل البيت',
+    src: '/images/services/intercom-outdoor-panel.jpg',
+    alt: 'انتركوم بكاميرا على الجدار عند الباب',
     caption: 'انتركوم',
   },
   {
-    src: '/images/services/ac-wall-piping.jpg',
+    src: '/images/services/ac-outdoor-rough-in.jpg',
     alt: 'مواسير المكيف وقت التأسيس',
     caption: 'تأسيس تكييف',
   },

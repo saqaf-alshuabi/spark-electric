@@ -19,11 +19,11 @@ const { priority = false } = defineProps<{
       <NuxtPicture
         :src="image"
         :alt="imageAlt"
-        class="photo-fill"
+        class="block size-full"
         :preload="priority ? { fetchPriority: 'high' } : false"
         :loading="priority ? 'eager' : 'lazy'"
-        :img-attrs="{ class: 'transition-transform duration-700 ease-out can-hover:group-hover:scale-105' }"
-        sizes="100vw md:50vw lg:640px"
+        :img-attrs="{ class: 'size-full object-cover transition-transform duration-700 ease-out can-hover:group-hover:scale-105' }"
+        sizes="100vw md:50vw lg:420px"
       />
     </div>
 

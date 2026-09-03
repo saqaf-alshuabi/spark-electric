@@ -183,16 +183,16 @@ const serviceDrafts: ServiceDraft[] = [
     ],
     gallery: [
       {
+        src: '/images/services/intercom-outdoor-panel.jpg',
+        alt: 'وحدة انتركوم على جدار الباب',
+      },
+      {
         src: '/images/services/intercom-indoor-panel.jpg',
         alt: 'شاشة انتركوم داخل البيت',
       },
       {
         src: '/images/services/intercom-button-panel.jpg',
         alt: 'وحدة انتركوم بأزرار على الجدار',
-      },
-      {
-        src: '/images/services/intercom-outdoor-panel.jpg',
-        alt: 'وحدة انتركوم على جدار الباب',
       },
     ],
   },
@@ -224,20 +224,20 @@ const serviceDrafts: ServiceDraft[] = [
     ],
     gallery: [
       {
-        src: '/images/services/ac-wall-piping.jpg',
-        alt: 'مواسير المكيف في الجدار',
+        src: '/images/services/ac-outdoor-rough-in.jpg',
+        alt: 'مواسير المكيف خارجة من الجدار',
       },
       {
         src: '/images/services/ac-copper-lines.jpg',
         alt: 'مواسير المكيف داخل جدار الطوب',
       },
       {
-        src: '/images/services/ac-ceiling-pipes.jpg',
-        alt: 'مواسير المكيف في السقف والجدار',
+        src: '/images/services/ac-wall-piping.jpg',
+        alt: 'مواسير المكيف في الجدار',
       },
       {
-        src: '/images/services/ac-outdoor-rough-in.jpg',
-        alt: 'مواسير المكيف خارجة من الجدار',
+        src: '/images/services/ac-ceiling-pipes.jpg',
+        alt: 'مواسير المكيف في السقف والجدار',
       },
     ],
   },

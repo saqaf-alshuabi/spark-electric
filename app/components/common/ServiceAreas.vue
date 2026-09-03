@@ -11,7 +11,7 @@ import { site } from '@/shared/data'
 
       <p class="reveal max-w-2xl">
         نغطي {{ site.city }} وضواحيها، ونوصلك في نفس اليوم داخل النطاق.
-        لو حيّك مو مكتوب تحت، كلّمنا وقول لنا موقعك.
+        لو حيّك مو مكتوب تحت، كلّمنا وقول لنا موقعك
       </p>
 
       <ul class="reveal flex flex-wrap justify-center gap-2">

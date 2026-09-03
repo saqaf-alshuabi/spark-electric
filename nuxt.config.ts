@@ -94,6 +94,7 @@ export default defineNuxtConfig({
     name: site.name,
     description: site.description,
     defaultLocale: site.locale,
+    trailingSlash: false,
     indexable: true,
   },
   colorMode: {
@@ -192,9 +193,6 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 90,
-    densities: [1, 2],
-    // AVIF first: smaller and sharper than webp. JPEG stays on <img>
-    // so old browsers still get a photo.
     format: ['avif', 'webp'],
   },
   linkChecker: {
@@ -220,6 +218,25 @@ export default defineNuxtConfig({
     mergeWithRobotsTxtPath: false,
     // Google's current robots extras: large image preview + no snippet cap.
     robotsEnabledValue: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+    groups: [
+      {
+        userAgent: '*',
+        allow: '/',
+        // 2026 AI prefs: IETF Content-Usage + Cloudflare Content-Signal.
+        // Search + AI answers stay on so ChatGPT / Perplexity can cite us.
+        contentUsage: {
+          'bots': 'y',
+          'search': 'y',
+          'ai-output': 'y',
+          'train-ai': 'y',
+        },
+        contentSignal: {
+          'search': 'yes',
+          'ai-input': 'yes',
+          'ai-train': 'yes',
+        },
+      },
+    ],
   },
   // No shop address: Google calls this a service-area business, so the address
   // stays at city level and areaServed carries the districts.
@@ -228,8 +245,9 @@ export default defineNuxtConfig({
       '@type': BUSINESS_TYPE,
       'name': site.name,
       'description': site.description,
+      // String path: the module turns this into #logo ImageObject (current API).
       'logo': site.logo,
-      'image': site.logo,
+      'image': [site.logo, ...services.map(service => service.image)],
       'telephone': formattedPhone,
       'contactPoint': contactPoint,
       'sameAs': sameAs,
@@ -290,5 +308,10 @@ export default defineNuxtConfig({
       changefreq: 'monthly',
       priority: 0.8,
     },
+    urls: [
+      '/',
+      '/services',
+      ...services.map(service => `/services/${service.slug}`),
+    ],
   },
 })
