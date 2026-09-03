@@ -114,8 +114,10 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-08-19',
   nitro: {
-    // `nuxt generate` already writes HTML to disk. Do not set preset: 'static' —
-    // OG Image treats it as unknown and the process can hang on Cloudflare.
+    // Force static HTML. Without this, CF_PAGES makes Nitro pick
+    // `cloudflare-pages-static` (output → dist/, Vite then misses .nuxt tsconfigs).
+    // Hang-after-success is handled by `pnpm pages:build`, not by skipping this.
+    preset: 'static',
     prerender: {
       crawlLinks: true,
       // robots.txt and sitemap.xml are server routes, so a static host only
@@ -123,8 +125,6 @@ export default defineNuxtConfig({
       routes: ['/', '/404.html', '/robots.txt', '/sitemap.xml'],
       failOnError: true,
     },
-    // Cloudflare already compresses at the edge. Local gzip/brotli can leave
-    // worker handles open and stall `pnpm generate` after success.
   },
   // Allow Cloudflare quick tunnels (preview links change each run)
   vite: {
