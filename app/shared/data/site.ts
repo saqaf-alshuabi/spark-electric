@@ -78,12 +78,12 @@ export const openingHours = {
 /** Shared by LocalBusiness and the Organization stub Schema.org emits. */
 export const contactPoint = {
   '@type': 'ContactPoint' as const,
-  telephone: formattedPhone,
-  contactType: 'customer service',
-  availableLanguage: ['ar'],
-  areaServed: site.address.country,
-  url: whatsappUrl,
-  hoursAvailable: {
+  'telephone': formattedPhone,
+  'contactType': 'customer service',
+  'availableLanguage': ['ar'],
+  'areaServed': site.address.country,
+  'url': whatsappUrl,
+  'hoursAvailable': {
     '@type': 'OpeningHoursSpecification' as const,
     ...openingHours,
   },

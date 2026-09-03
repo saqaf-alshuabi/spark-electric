@@ -10,7 +10,9 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "pages:build": "node scripts/pages-generate.mjs",
+    "generate:ci": "node scripts/generate.mjs",
+    "pages:build": "node scripts/generate.mjs",
+    "deploy": "node scripts/generate.mjs && wrangler deploy",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --fix"
@@ -38,6 +40,7 @@
     "nuxtseo-layer-devtools": "^5.3.14",
     "tailwindcss": "4.3.3",
     "typescript": "^5.9.0",
-    "typescript-eslint": "^8.67.0"
+    "typescript-eslint": "^8.67.0",
+    "wrangler": "^4.128.0"
   }
 }

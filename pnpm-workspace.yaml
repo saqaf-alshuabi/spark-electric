@@ -3,6 +3,7 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
   vue-demi: true
+  workerd: true
 minimumReleaseAgeExclude:
   - '@nuxt/kit@4.5.1'
   - '@nuxt/nitro-server@4.5.1'

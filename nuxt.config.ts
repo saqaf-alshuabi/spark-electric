@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { defineLocalBusiness } from 'nuxt-schema-org/schema'
+import { localBusinessIdentity } from './app/shared/data/identity'
 import { services } from './app/shared/data/services'
-import { contactPoint, formattedPhone, openingHours, sameAs, site } from './app/shared/data/site'
+import { site } from './app/shared/data/site'
 
-const PAGES_URL = 'https://aboteem.pages.dev'
+const FALLBACK_SITE_URL = 'https://aboteem.pages.dev'
 
 /**
  * A fake host (the .env.example placeholder) poisons canonicals, sitemap
@@ -27,28 +27,11 @@ function productionSiteUrl(raw: string | undefined) {
   }
 }
 
-const fromEnv = productionSiteUrl(process.env.NUXT_PUBLIC_SITE_URL)
-
 const siteUrl = process.env.NODE_ENV === 'production'
-  ? (fromEnv ?? PAGES_URL)
+  ? (productionSiteUrl(process.env.NUXT_PUBLIC_SITE_URL) ?? FALLBACK_SITE_URL)
   : undefined
 
-/** Structured data is only valid with absolute URLs. */
-const absolute = (path: string) => siteUrl ? new URL(path, siteUrl).toString() : path
-
-/**
- * Google asks for the most specific LocalBusiness subtype, and 'Electrician'
- * is one (LocalBusiness > HomeAndConstructionBusiness > Electrician). The
- * module's union only enumerates first-level children, hence the cast.
- */
-const BUSINESS_TYPE = [
-  'Organization',
-  'LocalBusiness',
-  'Electrician',
-] as unknown as 'HomeAndConstructionBusiness'
-
 export default defineNuxtConfig({
-
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
@@ -87,8 +70,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  // Canonicals, sitemap and OG URLs are all built from this.
-  // Production falls back to aboteem.pages.dev until a custom domain exists.
   site: {
     ...(siteUrl ? { url: siteUrl } : {}),
     name: site.name,
@@ -103,8 +84,6 @@ export default defineNuxtConfig({
     classSuffix: '',
     storageKey: 'spark-theme',
   },
-  // Fully static output: every route is HTML on disk, so there is no TTFB
-  // penalty and no server needed.
   routeRules: {
     '/': { prerender: true },
     '/services': { prerender: true },
@@ -115,31 +94,18 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-08-19',
   nitro: {
-    // Force static HTML. Without this, CF_PAGES makes Nitro pick
-    // `cloudflare-pages-static` (output → dist/, Vite then misses .nuxt tsconfigs).
-    // Hang-after-success is handled by `pnpm pages:build`, not by skipping this.
+    // Fully static HTML for Workers Static Assets.
     preset: 'static',
     prerender: {
       crawlLinks: true,
-      // robots.txt and sitemap.xml are server routes, so a static host only
-      // gets them if they are written to disk here.
+      autoSubfolderIndex: false,
       routes: ['/', '/404.html', '/robots.txt', '/sitemap.xml'],
       failOnError: true,
     },
   },
-  // Allow Cloudflare quick tunnels (preview links change each run)
   vite: {
     server: {
       allowedHosts: ['.trycloudflare.com'],
-    },
-  },
-  hooks: {
-    close() {
-      // Pages waits for the Node process to exit. After a clean generate some
-      // modules keep the event loop awake — force exit only on CF.
-      if (process.env.CF_PAGES === '1') {
-        process.exit(0)
-      }
     },
   },
   eslint: {
@@ -193,15 +159,17 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 90,
+    densities: [1, 2],
     format: ['avif', 'webp'],
   },
   linkChecker: {
     failOnError: true,
   },
   ogImage: {
-    // Cards are rendered during prerender, so nothing ships to the runtime and
-    // no signing secret is needed.
     zeroRuntime: true,
+    security: {
+      renderTimeout: 60_000,
+    },
     defaults: {
       width: 1200,
       height: 630,
@@ -211,19 +179,15 @@ export default defineNuxtConfig({
   },
   robots: {
     // AI assistants are a lead source for local trades, so they stay allowed.
-    // Only SEO-tool scrapers get turned away.
     blockAiBots: false,
     blockNonSeoBots: true,
     credits: false,
     mergeWithRobotsTxtPath: false,
-    // Google's current robots extras: large image preview + no snippet cap.
     robotsEnabledValue: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     groups: [
       {
         userAgent: '*',
         allow: '/',
-        // 2026 AI prefs: IETF Content-Usage + Cloudflare Content-Signal.
-        // Search + AI answers stay on so ChatGPT / Perplexity can cite us.
         contentUsage: {
           'bots': 'y',
           'search': 'y',
@@ -238,69 +202,11 @@ export default defineNuxtConfig({
       },
     ],
   },
-  // No shop address: Google calls this a service-area business, so the address
-  // stays at city level and areaServed carries the districts.
   schemaOrg: {
-    identity: defineLocalBusiness({
-      '@type': BUSINESS_TYPE,
-      'name': site.name,
-      'description': site.description,
-      // String path: the module turns this into #logo ImageObject (current API).
-      'logo': site.logo,
-      'image': [site.logo, ...services.map(service => service.image)],
-      'telephone': formattedPhone,
-      'contactPoint': contactPoint,
-      'sameAs': sameAs,
-      'currenciesAccepted': 'SAR',
-      'availableLanguage': ['ar'],
-      'address': {
-        '@type': 'PostalAddress',
-        'addressLocality': site.address.locality,
-        'addressRegion': site.address.region,
-        'addressCountry': site.address.country,
-      },
-      'geo': {
-        '@type': 'GeoCoordinates',
-        'latitude': site.geo.latitude,
-        'longitude': site.geo.longitude,
-      },
-      'areaServed': site.areasServed.map(name => ({
-        '@type': 'Place',
-        'name': name,
-      })),
-      'serviceArea': {
-        '@type': 'GeoCircle',
-        'geoMidpoint': {
-          '@type': 'GeoCoordinates',
-          'latitude': site.geo.latitude,
-          'longitude': site.geo.longitude,
-        },
-        'geoRadius': site.serviceRadiusKm * 1000,
-      },
-      'openingHoursSpecification': [
-        {
-          '@type': 'OpeningHoursSpecification',
-          ...openingHours,
-        },
-      ],
-      'hasOfferCatalog': {
-        '@type': 'OfferCatalog',
-        'name': `خدمات الكهرباء في ${site.city}`,
-        'itemListElement': services.map(service => ({
-          '@type': 'Offer',
-          'itemOffered': {
-            '@type': 'Service',
-            'name': `${service.serviceType} في ${site.city}`,
-            'description': service.seoDescription,
-            'serviceType': service.serviceType,
-            'url': absolute(`/services/${service.slug}`),
-          },
-        })),
-      },
-    }),
+    // Service-area business: city-level address, districts live on areaServed.
+    identity: localBusinessIdentity(siteUrl),
   },
   sitemap: {
-    // Images are picked up from the prerendered HTML automatically.
     discoverImages: true,
     credits: false,
     zeroRuntime: true,
