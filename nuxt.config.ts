@@ -3,6 +3,8 @@ import { defineLocalBusiness } from 'nuxt-schema-org/schema'
 import { services } from './app/shared/data/services'
 import { contactPoint, formattedPhone, openingHours, sameAs, site } from './app/shared/data/site'
 
+const PAGES_URL = 'https://aboteem.pages.dev'
+
 /**
  * A fake host (the .env.example placeholder) poisons canonicals, sitemap
  * and Schema.org. Treat it as unset so DevTools uses the request origin.
@@ -25,7 +27,11 @@ function productionSiteUrl(raw: string | undefined) {
   }
 }
 
-const siteUrl = productionSiteUrl(process.env.NUXT_PUBLIC_SITE_URL)
+const fromEnv = productionSiteUrl(process.env.NUXT_PUBLIC_SITE_URL)
+
+const siteUrl = process.env.NODE_ENV === 'production'
+  ? (fromEnv ?? PAGES_URL)
+  : undefined
 
 /** Structured data is only valid with absolute URLs. */
 const absolute = (path: string) => siteUrl ? new URL(path, siteUrl).toString() : path
@@ -80,10 +86,8 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  // Canonicals, sitemap and OG URLs are all built from this. Leave the env
-  // unset until the real domain exists — a placeholder splits the tags.
-  // indexable is on even in `nuxt dev`, so DevTools shows the live robots
-  // value instead of the module's localhost noindex.
+  // Canonicals, sitemap and OG URLs are all built from this.
+  // Production falls back to aboteem.pages.dev until a custom domain exists.
   site: {
     ...(siteUrl ? { url: siteUrl } : {}),
     name: site.name,
