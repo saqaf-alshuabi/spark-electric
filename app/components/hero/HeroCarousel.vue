@@ -38,25 +38,40 @@ const goToSlide = (index: number) => {
   >
     <div class="w-full rounded-3xl card-ring p-px shadow-2xl shadow-black/40">
       <div class="relative aspect-16/10 w-full overflow-hidden rounded-[calc(1.5rem-1px)] bg-muted/40">
-        <!-- Keep every slide mounted. Swapping NuxtPicture with Transition
-             kills slides 2+ — the new <picture> never finishes loading. -->
+        <!-- Warm the cache. soft-fade remounts the visible picture; without
+             this, slides 2+ often never finish loading. -->
         <div
-          v-for="(slide, index) in serviceSlides"
-          :key="slide.src"
-          class="absolute inset-0 overflow-hidden transition-opacity duration-[0.35s]"
-          :class="index === activeIndex ? 'opacity-100' : 'pointer-events-none opacity-0'"
-          :aria-hidden="index !== activeIndex"
+          class="pointer-events-none absolute inset-0 -z-10 overflow-hidden opacity-0"
+          aria-hidden="true"
         >
           <NuxtPicture
+            v-for="slide in serviceSlides"
+            :key="`preload-${slide.src}`"
             :src="slide.src"
             :alt="slide.alt"
             class="block size-full"
-            :preload="index === 0 ? { fetchPriority: 'high' } : false"
             loading="eager"
             :img-attrs="{ class: 'size-full object-cover' }"
             sizes="100vw md:50vw lg:640px"
           />
         </div>
+
+        <Transition name="soft-fade">
+          <div
+            :key="activeSlide.src"
+            class="absolute inset-0 overflow-hidden"
+          >
+            <NuxtPicture
+              :src="activeSlide.src"
+              :alt="activeSlide.alt"
+              class="block size-full"
+              :preload="{ fetchPriority: 'high' }"
+              loading="eager"
+              :img-attrs="{ class: 'size-full object-cover' }"
+              sizes="100vw md:50vw lg:640px"
+            />
+          </div>
+        </Transition>
 
         <div
           class="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/80 via-black/40 to-transparent"
