@@ -1,4 +1,4 @@
-export { site } from './site'
+export { site, formattedPhone, openingHours, contactPoint } from './site'
 export { navItems } from './nav'
-export { serviceSummaries, homeServices, getServiceBySlug } from './services'
+export { services, serviceSummaries, homeServices, getServiceBySlug } from './services'
 export { serviceSlides } from './services/slides'

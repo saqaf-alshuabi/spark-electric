@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import { serviceSummaries, site } from '@/shared/data'
 
-useSeoMeta({
-  title: `كهربائي في ${site.city}`,
-  description: 'تأسيس، ثريا وسبوت، تكييف، انتركوم، وأعطال، للبيت والمحل في مكة',
+usePageSeo({
+  title: `خدمات الكهرباء في ${site.city}`,
+  description: `تأسيس كهرباء، ثريا وسبوت، ليد مخفي، انتركوم، تأسيس تكييف، وكشف أعطال في ${site.city} وضواحيها. شوف شغلنا بالصور واختر الخدمة اللي تحتاجها.`,
+  breadcrumb: [{ label: 'خدمات', to: '/services' }],
 })
+
+useSchemaOrg([
+  defineItemList({
+    name: `خدمات الكهرباء في ${site.city}`,
+    itemListElement: serviceSummaries.map(service => ({
+      name: service.title,
+      item: `/services/${service.slug}`,
+    })),
+  }),
+])
 </script>
 
 <template>

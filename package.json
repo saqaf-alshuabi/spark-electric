@@ -8,8 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint --fix",
-    "og-image:secret": "node scripts/generate-og-secret.mjs"
+    "lint": "eslint --fix"
   },
   "dependencies": {
     "@nuxt/eslint": "1.17.0",
@@ -30,6 +29,7 @@
     "@iconify-json/simple-icons": "^1.2.93",
     "eslint": "^10.8.1",
     "eslint-plugin-better-tailwindcss": "^4.7.0",
+    "nuxt-schema-org": "6.2.8",
     "nuxtseo-layer-devtools": "^5.3.14",
     "tailwindcss": "4.3.3",
     "typescript": "^5.9.0",

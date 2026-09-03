@@ -5,30 +5,29 @@ const { services } = defineProps<{ services: ServiceSummary[] }>()
 </script>
 
 <template>
-  <nav
-    class="stack-sm"
-    aria-label="خدمات ثانية"
-  >
-    <p class="caption">
-      نسوي كمان
-    </p>
+  <section class="section-y">
+    <UContainer class="stack-md items-center">
+      <h2 class="reveal">
+        نسوي كمان
+      </h2>
 
-    <ul class="flex flex-wrap gap-2">
-      <li
-        v-for="service in services"
-        :key="service.slug"
-      >
-        <NuxtLink
-          :to="`/services/${service.slug}`"
-          class="pill caption-sm focus-ring transition duration-300 ease-out active:scale-[0.98] can-hover:hover:border-primary/40 can-hover:hover:text-highlighted"
+      <ul class="reveal flex flex-wrap justify-center gap-2">
+        <li
+          v-for="service in services"
+          :key="service.slug"
         >
-          <UIcon
-            :name="service.icon"
-            class="size-4 text-primary"
-          />
-          {{ service.title }}
-        </NuxtLink>
-      </li>
-    </ul>
-  </nav>
+          <NuxtLink
+            :to="`/services/${service.slug}`"
+            class="pill caption-sm focus-ring transition duration-300 ease-out active:scale-[0.98] can-hover:hover:border-primary/40 can-hover:hover:text-highlighted"
+          >
+            <UIcon
+              :name="service.icon"
+              class="size-4 text-primary"
+            />
+            {{ service.title }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </UContainer>
+  </section>
 </template>

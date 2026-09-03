@@ -26,6 +26,9 @@ const icon = computed(() =>
 )
 
 useSeoMeta({ title: () => `${status.value} - ${message.value}` })
+
+// Error pages carry no content worth ranking, but their links are still worth crawling.
+useRobotsRule('noindex, follow')
 </script>
 
 <template>

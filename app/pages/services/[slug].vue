@@ -2,11 +2,38 @@
 import { site } from '@/shared/data'
 
 const { service, others } = useServiceDetail()
+const { url: siteUrl } = useSiteConfig()
 
-useSeoMeta({
-  title: `${service.title} في ${site.city}`,
-  description: `${service.description} — كهربائي في ${site.city} وضواحيها`,
+usePageSeo({
+  title: `${service.serviceType} في ${site.city}`,
+  description: service.seoDescription,
+  ogTitle: `${service.title} في ${site.city}`,
+  breadcrumb: [
+    { label: 'خدمات', to: '/services' },
+    { label: service.title, to: `/services/${service.slug}` },
+  ],
 })
+
+useSchemaOrg([
+  // provider and brand are linked to the site identity automatically.
+  defineService({
+    name: `${service.serviceType} في ${site.city}`,
+    serviceType: service.serviceType,
+    description: service.intro,
+    // Schema.org images must be absolute; the Service resolver leaves them as given.
+    image: service.gallery.map(slide => new URL(slide.src, siteUrl).toString()),
+    areaServed: {
+      '@type': 'City',
+      'name': site.address.locality,
+    },
+  }),
+  // The page carries an FAQ block, so the questions below attach to it.
+  defineWebPage({ '@type': ['WebPage', 'FAQPage'] }),
+  ...service.faqs.map(faq => defineQuestion({
+    question: faq.question,
+    answer: faq.answer,
+  })),
+])
 </script>
 
 <template>
@@ -14,9 +41,13 @@ useSeoMeta({
     <div class="stack-md items-center md:items-start">
       <HeroIntro
         :badge="`من شغلنا في ${site.city}`"
-        :heading="service.title"
+        :heading="`${service.title} في ${site.city}`"
         :body="service.description"
       />
+
+      <p class="rise max-w-2xl text-center [animation-delay:200ms] md:text-start">
+        {{ service.intro }}
+      </p>
 
       <ContactActions
         class="rise [animation-delay:240ms]"
@@ -24,7 +55,12 @@ useSeoMeta({
     </div>
 
     <ServiceGallery :gallery="service.gallery" />
-
-    <ServiceRelated :services="others" />
   </HeroFrame>
+
+  <ServiceFaq
+    :faqs="service.faqs"
+    :heading="`أسئلة عن ${service.title}`"
+  />
+
+  <ServiceRelated :services="others" />
 </template>
