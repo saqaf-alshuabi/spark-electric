@@ -66,8 +66,9 @@ export default defineNuxtConfig({
       },
     ],
   },
+  // Devtools keep the process alive in CI after generate finishes.
   devtools: {
-    enabled: true,
+    enabled: process.env.NODE_ENV !== 'production',
   },
   app: {
     head: {
@@ -113,8 +114,8 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-08-19',
   nitro: {
-    // HTML on disk. Cloudflare Pages serves files — no Node / Worker needed.
-    preset: 'static',
+    // `nuxt generate` already writes HTML to disk. Do not set preset: 'static' —
+    // OG Image treats it as unknown and the process can hang on Cloudflare.
     prerender: {
       crawlLinks: true,
       // robots.txt and sitemap.xml are server routes, so a static host only
@@ -122,9 +123,16 @@ export default defineNuxtConfig({
       routes: ['/', '/404.html', '/robots.txt', '/sitemap.xml'],
       failOnError: true,
     },
-    compressPublicAssets: {
-      gzip: true,
-      brotli: true,
+    // Cloudflare already compresses at the edge. Local gzip/brotli can leave
+    // worker handles open and stall `pnpm generate` after success.
+  },
+  hooks: {
+    close() {
+      // Pages waits for the Node process to exit. After a clean generate some
+      // modules keep the event loop awake — force exit only on CF.
+      if (process.env.CF_PAGES === '1') {
+        process.exit(0)
+      }
     },
   },
   // Allow Cloudflare quick tunnels (preview links change each run)
