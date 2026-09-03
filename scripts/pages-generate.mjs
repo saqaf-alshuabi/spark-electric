@@ -20,6 +20,10 @@ const env = {
   NITRO_PRESET: 'static',
 }
 
+// If preset is unset, std-env maps CF_PAGES → cloudflare-pages-static
+// (output → dist/, Vite then misses .nuxt tsconfigs).
+delete env.CF_PAGES
+
 function run(command, args) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
