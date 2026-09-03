@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineLocalBusiness } from 'nuxt-schema-org/schema'
 import { services } from './app/shared/data/services'
-import { contactPoint, formattedPhone, openingHours, site } from './app/shared/data/site'
+import { contactPoint, formattedPhone, openingHours, sameAs, site } from './app/shared/data/site'
 
 /**
  * A fake host (the .env.example placeholder) poisons canonicals, sitemap
@@ -180,6 +180,30 @@ export default defineNuxtConfig({
     quality: 90,
     format: ['avif', 'webp'],
   },
+  linkChecker: {
+    failOnError: true,
+  },
+  ogImage: {
+    // Cards are rendered during prerender, so nothing ships to the runtime and
+    // no signing secret is needed.
+    zeroRuntime: true,
+    defaults: {
+      width: 1200,
+      height: 630,
+      extension: 'png',
+      emojis: false,
+    },
+  },
+  robots: {
+    // AI assistants are a lead source for local trades, so they stay allowed.
+    // Only SEO-tool scrapers get turned away.
+    blockAiBots: false,
+    blockNonSeoBots: true,
+    credits: false,
+    mergeWithRobotsTxtPath: false,
+    // Google's current robots extras: large image preview + no snippet cap.
+    robotsEnabledValue: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  },
   // No shop address: Google calls this a service-area business, so the address
   // stays at city level and areaServed carries the districts.
   schemaOrg: {
@@ -191,6 +215,7 @@ export default defineNuxtConfig({
       'image': site.logo,
       'telephone': formattedPhone,
       'contactPoint': contactPoint,
+      'sameAs': sameAs,
       'currenciesAccepted': 'SAR',
       'availableLanguage': ['ar'],
       'address': {
@@ -237,20 +262,7 @@ export default defineNuxtConfig({
           },
         })),
       },
-      // Omitted until the client creates the listing and you paste the URL
-      // into site.googleBusinessUrl. An empty sameAs is worse than no sameAs.
-      ...(site.googleBusinessUrl ? { sameAs: [site.googleBusinessUrl] } : {}),
     }),
-  },
-  robots: {
-    // AI assistants are a lead source for local trades, so they stay allowed.
-    // Only SEO-tool scrapers get turned away.
-    blockAiBots: false,
-    blockNonSeoBots: true,
-    credits: false,
-    mergeWithRobotsTxtPath: false,
-    // Google's current robots extras: large image preview + no snippet cap.
-    robotsEnabledValue: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   },
   sitemap: {
     // Images are picked up from the prerendered HTML automatically.
@@ -260,20 +272,6 @@ export default defineNuxtConfig({
     defaults: {
       changefreq: 'monthly',
       priority: 0.8,
-    },
-  },
-  linkChecker: {
-    failOnError: true,
-  },
-  ogImage: {
-    // Cards are rendered during prerender, so nothing ships to the runtime and
-    // no signing secret is needed.
-    zeroRuntime: true,
-    defaults: {
-      width: 1200,
-      height: 630,
-      extension: 'png',
-      emojis: false,
     },
   },
 })

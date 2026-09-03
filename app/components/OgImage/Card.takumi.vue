@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formattedPhone, site } from '@/shared/data'
+import { displayPhone, site } from '@/shared/data'
 
 defineProps<{
   title?: string
@@ -83,7 +83,7 @@ defineProps<{
         {{ site.name }}
       </div>
       <div style="display: flex; font-size: 30px; color: #f59e0b; direction: ltr;">
-        {{ formattedPhone }}
+        {{ displayPhone }}
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@ export const site = {
   tagline: 'تدق، نجي، ونخلّصها',
   description: 'كهربائي في مكة وضواحيها. تأسيس كهرباء، ثريا وسبوت، ليد مخفي، انتركوم، تأسيس تكييف، وكشف أعطال — للبيت والمحل، على مدار الساعة.',
   logo: '/images/logos/logo.png',
-  phone: '966576301886',
+  phone: '576301886',
   locale: 'ar-SA',
   address: {
     locality: 'مكة المكرمة',
@@ -43,8 +43,21 @@ export const site = {
   googleBusinessUrl: '',
 } satisfies SiteSettings
 
-/** Digits-only numbers can't be dialled or matched against a listing. */
-export const formattedPhone = `+${site.phone}`
+const SAUDI_CALLING_CODE = '966'
+
+/** Shown on the site: 0576 301 886 */
+export const displayPhone = `0${site.phone.slice(0, 3)} ${site.phone.slice(3, 6)} ${site.phone.slice(6)}`
+
+/** E.164 for Schema.org and tel: links */
+export const formattedPhone = `+${SAUDI_CALLING_CODE}${site.phone}`
+
+/** Official public URL. sameAs until the Google Business listing exists. */
+export const whatsappUrl = `https://wa.me/${SAUDI_CALLING_CODE}${site.phone}`
+
+export const sameAs = [
+  whatsappUrl,
+  ...(site.googleBusinessUrl ? [site.googleBusinessUrl] : []),
+]
 
 const ALL_DAYS = [
   'Saturday',
@@ -58,8 +71,8 @@ const ALL_DAYS = [
 
 export const openingHours = {
   dayOfWeek: [...ALL_DAYS],
-  opens: '00:00',
-  closes: '23:59',
+  opens: '00:00' as const,
+  closes: '23:59' as const,
 }
 
 /** Shared by LocalBusiness and the Organization stub Schema.org emits. */
@@ -69,7 +82,7 @@ export const contactPoint = {
   contactType: 'customer service',
   availableLanguage: ['ar'],
   areaServed: site.address.country,
-  url: `https://wa.me/${site.phone}`,
+  url: whatsappUrl,
   hoursAvailable: {
     '@type': 'OpeningHoursSpecification' as const,
     ...openingHours,

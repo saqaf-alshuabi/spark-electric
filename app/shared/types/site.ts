@@ -19,7 +19,7 @@ export interface SiteSettings {
   /** Default meta description and Schema.org description */
   description: string
   logo: string
-  /** International digits only, no + (e.g. 9665XXXXXXXX) */
+  /** Saudi mobile national digits, no leading 0 (e.g. 5XXXXXXXX) */
   phone: string
   /** BCP 47, drives html[lang], og:locale and sitemap hreflang */
   locale: string
