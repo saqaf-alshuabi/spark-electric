@@ -11,15 +11,15 @@ defineProps<{ gallery: ServiceSlide[] }>()
       :key="shot.src"
       class="reveal"
     >
-      <div class="relative aspect-4/3 overflow-hidden rounded-3xl bg-muted/40">
+      <div class="relative flex min-h-48 items-center justify-center overflow-hidden rounded-3xl bg-muted/40">
         <NuxtPicture
           :src="shot.src"
           :alt="shot.alt"
-          class="block size-full"
+          class="block w-full"
           :preload="index === 0 ? { fetchPriority: 'high' } : false"
           :loading="index === 0 ? 'eager' : 'lazy'"
-          :img-attrs="{ class: 'size-full object-cover' }"
-          sizes="100vw md:50vw"
+          :img-attrs="{ class: 'max-h-[28rem] w-full object-contain' }"
+          sizes="100vw md:640px"
         />
 
         <!-- Literal white below: this edge sits on a photo, not on the theme -->

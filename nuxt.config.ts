@@ -192,6 +192,9 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 90,
+    densities: [1, 2],
+    // AVIF first: smaller and sharper than webp. JPEG stays on <img>
+    // so old browsers still get a photo.
     format: ['avif', 'webp'],
   },
   linkChecker: {

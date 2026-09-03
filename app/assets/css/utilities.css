@@ -93,3 +93,22 @@
 @utility focus-ring {
   @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60;
 }
+
+/* NuxtPicture's <picture> is inline by default, so size-full on the
+   component often never reaches the <img>. Force both to fill the frame. */
+@utility photo-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  picture,
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

@@ -46,11 +46,10 @@ const goToSlide = (index: number) => {
             <NuxtPicture
               :src="activeSlide.src"
               :alt="activeSlide.alt"
-              class="block size-full"
+              class="photo-fill"
               :preload="{ fetchPriority: 'high' }"
               loading="eager"
-              :img-attrs="{ class: 'size-full object-cover' }"
-              sizes="100vw lg:448px"
+              sizes="100vw lg:896px"
             />
           </div>
         </Transition>
