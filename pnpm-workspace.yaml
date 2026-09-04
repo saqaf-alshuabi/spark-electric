@@ -9,3 +9,4 @@ overrides:
   '@tiptap/core': 3.29.2
   '@tiptap/pm': 3.29.2
   cac: ^6.7.14
+  typescript: ~6.0.3

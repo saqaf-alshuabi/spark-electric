@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { localBusinessIdentity } from './app/shared/data/identity'
-import { services } from './app/shared/data/services'
 import { site } from './app/shared/data/site'
 
 function productionSiteUrl(raw: string | undefined) {
@@ -191,10 +190,5 @@ export default defineNuxtConfig({
       changefreq: 'monthly',
       priority: 0.8,
     },
-    urls: [
-      '/',
-      '/services',
-      ...services.map(service => `/services/${service.slug}`),
-    ],
   },
 })
