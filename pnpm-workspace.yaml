@@ -3,7 +3,7 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
   vue-demi: true
-  workerd: set this to true or false
+  workerd: true
 overrides:
   '@emnapi/core': ^2.0.0-alpha.3
   '@emnapi/runtime': ^2.0.0-alpha.3
