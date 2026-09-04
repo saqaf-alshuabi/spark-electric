@@ -35,9 +35,11 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   site: {
+    url: 'https://aboteem.saqaf-alshuabi.workers.dev',
     name: site.name,
     description: site.description,
     defaultLocale: site.locale,
+    trailingSlash: false,
   },
   colorMode: {
     preference: 'dark',
@@ -112,7 +114,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    quality: 90,
+    quality: 80,
     densities: [1, 2],
     format: ['avif', 'webp'],
   },
