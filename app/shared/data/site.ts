@@ -71,8 +71,8 @@ const ALL_DAYS = [
 
 export const openingHours = {
   dayOfWeek: [...ALL_DAYS],
-  opens: '00:00' as const,
-  closes: '23:59' as const,
+  opens: '00:00:00' as const,
+  closes: '23:59:00' as const,
 }
 
 /** Shared by LocalBusiness and the Organization stub Schema.org emits. */

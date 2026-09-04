@@ -3,12 +3,6 @@ import { localBusinessIdentity } from './app/shared/data/identity'
 import { services } from './app/shared/data/services'
 import { site } from './app/shared/data/site'
 
-const FALLBACK_SITE_URL = 'https://aboteem.pages.dev'
-
-/**
- * A fake host (the .env.example placeholder) poisons canonicals, sitemap
- * and Schema.org. Treat it as unset so DevTools uses the request origin.
- */
 function productionSiteUrl(raw: string | undefined) {
   const value = raw?.trim()
   if (!value) {
@@ -16,11 +10,7 @@ function productionSiteUrl(raw: string | undefined) {
   }
 
   try {
-    const url = new URL(value)
-    if (url.hostname === 'your-domain.com') {
-      return undefined
-    }
-    return url.origin
+    return new URL(value).origin
   }
   catch {
     return undefined
@@ -28,7 +18,7 @@ function productionSiteUrl(raw: string | undefined) {
 }
 
 const siteUrl = process.env.NODE_ENV === 'production'
-  ? (productionSiteUrl(process.env.NUXT_PUBLIC_SITE_URL) ?? FALLBACK_SITE_URL)
+  ? productionSiteUrl(process.env.NUXT_PUBLIC_SITE_URL)
   : undefined
 
 export default defineNuxtConfig({
@@ -36,7 +26,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/image',
-    '@nuxt/fonts',
     '@vueuse/nuxt',
     '@nuxt/hints',
     '@nuxtjs/seo',
@@ -48,10 +37,6 @@ export default defineNuxtConfig({
         pathPrefix: false,
       },
     ],
-  },
-  // Devtools keep the process alive in CI after generate finishes.
-  devtools: {
-    enabled: process.env.NODE_ENV !== 'production',
   },
   app: {
     head: {
@@ -92,20 +77,13 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true,
   },
-  compatibilityDate: '2026-08-19',
+  compatibilityDate: '2026-09-04',
   nitro: {
-    // Fully static HTML for Workers Static Assets.
-    preset: 'static',
     prerender: {
       crawlLinks: true,
       autoSubfolderIndex: false,
       routes: ['/', '/404.html', '/robots.txt', '/sitemap.xml'],
       failOnError: true,
-    },
-  },
-  vite: {
-    server: {
-      allowedHosts: ['.trycloudflare.com'],
     },
   },
   eslint: {
@@ -183,7 +161,6 @@ export default defineNuxtConfig({
     blockNonSeoBots: true,
     credits: false,
     mergeWithRobotsTxtPath: false,
-    robotsEnabledValue: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     groups: [
       {
         userAgent: '*',
