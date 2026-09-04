@@ -2,7 +2,7 @@
 // resolvable there.
 import type { SiteSettings } from '../types/site'
 
-export const site = {
+export const site: SiteSettings = {
   name: 'أبو تيم الكهربائي',
   city: 'مكة',
   tagline: 'تدق، نجي، ونخلّصها',
@@ -38,53 +38,14 @@ export const site = {
     'الجموم',
     'بحرة',
   ],
-  // Paste the Maps URL the client sends you after they create the listing.
-  // Example: 'https://maps.app.goo.gl/xxxx' or the full business.google.com URL.
-  googleBusinessUrl: '',
-} satisfies SiteSettings
+}
 
 const SAUDI_CALLING_CODE = '966'
 
-/** Shown on the site: 0576 301 886 */
+/** 0576 301 886 */
 export const displayPhone = `0${site.phone.slice(0, 3)} ${site.phone.slice(3, 6)} ${site.phone.slice(6)}`
 
-/** E.164 for Schema.org and tel: links */
+/** +966576301886 — Schema.org and tel: links */
 export const formattedPhone = `+${SAUDI_CALLING_CODE}${site.phone}`
 
-/** Official public URL. sameAs until the Google Business listing exists. */
 export const whatsappUrl = `https://wa.me/${SAUDI_CALLING_CODE}${site.phone}`
-
-export const sameAs = [
-  whatsappUrl,
-  ...(site.googleBusinessUrl ? [site.googleBusinessUrl] : []),
-]
-
-const ALL_DAYS = [
-  'Saturday',
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-] as const
-
-export const openingHours = {
-  dayOfWeek: [...ALL_DAYS],
-  opens: '00:00:00' as const,
-  closes: '23:59:00' as const,
-}
-
-/** Shared by LocalBusiness and the Organization stub Schema.org emits. */
-export const contactPoint = {
-  '@type': 'ContactPoint' as const,
-  'telephone': formattedPhone,
-  'contactType': 'customer service',
-  'availableLanguage': ['ar'],
-  'areaServed': site.address.country,
-  'url': whatsappUrl,
-  'hoursAvailable': {
-    '@type': 'OpeningHoursSpecification' as const,
-    ...openingHours,
-  },
-}

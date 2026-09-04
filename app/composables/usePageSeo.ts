@@ -1,47 +1,34 @@
-import type { NavItem, PageSeo } from '~/shared/types/site'
-import { site } from '@/shared/data'
-
-const HOME: NavItem[] = [{ label: 'الرئيسية', to: '/' }]
+import type { PageSeo } from '~/shared/types/site'
 
 /**
- * Everything a page owes a crawler, in one call: meta tags, the social card,
- * and the breadcrumb trail. The canonical URL, WebSite and WebPage nodes are
- * already handled by Nuxt SEO, so they are deliberately not repeated here.
+ * Page title, description, social card, and breadcrumb.
+ * Canonical, og:type, og:locale, twitter tags, WebSite and WebPage come from Nuxt SEO.
  */
 export function usePageSeo(page: PageSeo) {
   const cardTitle = page.ogTitle ?? page.title
+  const { description: siteDescription } = useSiteConfig()
 
   useSeoMeta({
     title: page.title,
-    description: page.description,
+    ...(page.description ? { description: page.description } : {}),
     // Set explicitly so the shared card doesn't inherit the title template and
     // repeat the brand that og:site_name already carries.
     ogTitle: cardTitle,
-    ogType: 'website',
-    ogLocale: site.locale.replace('-', '_'),
-    twitterTitle: cardTitle,
-    twitterDescription: page.description,
-    twitterCard: 'summary_large_image',
   })
 
   defineOgImage('Card', {
     title: cardTitle,
-    description: page.description,
+    description: page.description ?? siteDescription,
   })
 
-  const trail = [...HOME, ...(page.breadcrumb ?? [])]
-
-  // A single-item trail is just the homepage linking to itself.
-  if (trail.length < 2) {
+  if (!page.breadcrumb?.length) {
     return
   }
 
-  useSchemaOrg([
-    defineBreadcrumb({
-      itemListElement: trail.map(({ label, to }) => ({
-        name: label,
-        item: to,
-      })),
-    }),
-  ])
+  useBreadcrumbItems({
+    overrides: [
+      { label: 'الرئيسية' },
+      ...page.breadcrumb.map(({ label }) => ({ label })),
+    ],
+  })
 }

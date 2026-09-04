@@ -2,24 +2,6 @@
 import { localBusinessIdentity } from './app/shared/data/identity'
 import { site } from './app/shared/data/site'
 
-function productionSiteUrl(raw: string | undefined) {
-  const value = raw?.trim()
-  if (!value) {
-    return undefined
-  }
-
-  try {
-    return new URL(value).origin
-  }
-  catch {
-    return undefined
-  }
-}
-
-const siteUrl = process.env.NODE_ENV === 'production'
-  ? productionSiteUrl(process.env.NUXT_PUBLIC_SITE_URL)
-  : undefined
-
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -40,11 +22,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: {
-        lang: site.locale,
         dir: 'rtl',
         class: 'dark',
       },
-      titleTemplate: `%s %separator ${site.name}`,
       viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/images/logos/favicon.svg?v=4' },
@@ -55,12 +35,9 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   site: {
-    ...(siteUrl ? { url: siteUrl } : {}),
     name: site.name,
     description: site.description,
     defaultLocale: site.locale,
-    trailingSlash: false,
-    indexable: true,
   },
   colorMode: {
     preference: 'dark',
@@ -81,7 +58,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       autoSubfolderIndex: false,
-      routes: ['/', '/404.html', '/robots.txt', '/sitemap.xml'],
+      routes: ['/', '/404.html'],
       failOnError: true,
     },
   },
@@ -144,26 +121,22 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
+    fontSubsets: ['arabic', 'latin'],
     security: {
       renderTimeout: 60_000,
     },
     defaults: {
-      width: 1200,
       height: 630,
-      extension: 'png',
       emojis: false,
     },
   },
   robots: {
     // AI assistants are a lead source for local trades, so they stay allowed.
-    blockAiBots: false,
     blockNonSeoBots: true,
     credits: false,
-    mergeWithRobotsTxtPath: false,
     groups: [
       {
         userAgent: '*',
-        allow: '/',
         contentUsage: {
           'bots': 'y',
           'search': 'y',
@@ -180,15 +153,11 @@ export default defineNuxtConfig({
   },
   schemaOrg: {
     // Service-area business: city-level address, districts live on areaServed.
-    identity: localBusinessIdentity(siteUrl),
+    identity: localBusinessIdentity(),
   },
   sitemap: {
     discoverImages: true,
     credits: false,
     zeroRuntime: true,
-    defaults: {
-      changefreq: 'monthly',
-      priority: 0.8,
-    },
   },
 })

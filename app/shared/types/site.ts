@@ -29,12 +29,8 @@ export interface SiteSettings {
   serviceRadiusKm: number
   /** Districts named on-page and in Schema.org areaServed */
   areasServed: string[]
-  /**
-   * Google Business / Maps URL. Empty until the client creates the listing
-   * (they own the Saudi number and have to verify it themselves). Blank
-   * values are dropped — an empty sameAs is worse than no sameAs.
-   */
-  googleBusinessUrl: string
+  /** Maps / Google Business URL. Omit until the listing exists. */
+  googleBusinessUrl?: string
 }
 
 export type ContactChannel = 'whatsapp' | 'phone'
@@ -90,8 +86,9 @@ export interface HomeServiceItem {
 /** Everything a page needs to describe itself to crawlers and social cards */
 export interface PageSeo {
   title: string
-  description: string
-  /** Trail shown to crawlers as BreadcrumbList. Home is prepended for you. */
+  /** Omit to use site.description */
+  description?: string
+  /** Extra crumbs after Home. Labels only — the path comes from the route. */
   breadcrumb?: NavItem[]
   /** Overrides the OG card heading when the page title is too long */
   ogTitle?: string

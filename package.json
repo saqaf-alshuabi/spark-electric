@@ -33,7 +33,6 @@
     "eslint": "^10.9.1",
     "eslint-plugin-better-tailwindcss": "^4.7.0",
     "nuxt-schema-org": "6.3.1",
-    "nuxtseo-layer-devtools": "^5.3.14",
     "tailwindcss": "4.3.3",
     "typescript": "~6.0.3"
   }
