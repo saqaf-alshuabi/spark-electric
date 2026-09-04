@@ -57,6 +57,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-09-04',
   nitro: {
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true,
+      wrangler: {
+        name: 'spark-electric',
+      },
+    },
     prerender: {
       crawlLinks: true,
       autoSubfolderIndex: false,
