@@ -35,7 +35,7 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   site: {
-    url: 'https://aboteem.saqaf-alshuabi.workers.dev',
+    url: 'https://spark-electric.saqaf-alshuabi.workers.dev',
     name: site.name,
     description: site.description,
     defaultLocale: site.locale,
