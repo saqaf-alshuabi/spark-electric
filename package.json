@@ -11,7 +11,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy": "wrangler --cwd .output deploy",
+    "deploy": "wrangler deploy --config .output/server/wrangler.json",
     "postinstall": "nuxt prepare",
     "lint": "eslint --fix"
   },
