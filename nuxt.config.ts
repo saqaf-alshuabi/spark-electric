@@ -73,6 +73,9 @@ export default defineNuxtConfig({
   },
   hooks: {
     close: () => {
+      if (process.env.npm_lifecycle_event !== 'build') {
+        return
+      }
       process.exit(process.exitCode ?? 0)
     },
   },
