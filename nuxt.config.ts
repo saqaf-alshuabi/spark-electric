@@ -71,6 +71,11 @@ export default defineNuxtConfig({
       failOnError: true,
     },
   },
+  hooks: {
+    close: () => {
+      process.exit(process.exitCode ?? 0)
+    },
+  },
   eslint: {
     config: {
       stylistic: {
