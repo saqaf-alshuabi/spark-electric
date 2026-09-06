@@ -130,7 +130,6 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 80,
-    densities: [1, 2],
     format: ['avif', 'webp'],
   },
   linkChecker: {

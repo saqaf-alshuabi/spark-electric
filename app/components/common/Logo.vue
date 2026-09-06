@@ -9,8 +9,6 @@ import { site } from '@/shared/data'
     width="71"
     height="28"
     sizes="71px"
-    preload
-    loading="eager"
     class="h-7 w-auto shrink-0"
     :img-attrs="{ class: 'h-7 w-auto', draggable: 'false' }"
   />

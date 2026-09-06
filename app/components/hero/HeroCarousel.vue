@@ -38,24 +38,6 @@ const goToSlide = (index: number) => {
   >
     <div class="w-full rounded-3xl card-ring p-px shadow-2xl shadow-black/40">
       <div class="relative aspect-16/10 w-full overflow-hidden rounded-[calc(1.5rem-1px)] bg-muted/40">
-        <!-- Warm the cache. soft-fade remounts the visible picture; without
-             this, slides 2+ often never finish loading. -->
-        <div
-          class="pointer-events-none absolute inset-0 -z-10 overflow-hidden opacity-0"
-          aria-hidden="true"
-        >
-          <NuxtPicture
-            v-for="slide in serviceSlides"
-            :key="`preload-${slide.src}`"
-            :src="slide.src"
-            :alt="slide.alt"
-            class="block size-full"
-            loading="eager"
-            :img-attrs="{ class: 'size-full object-cover' }"
-            sizes="100vw md:50vw lg:640px"
-          />
-        </div>
-
         <Transition name="soft-fade">
           <div
             :key="activeSlide.src"
@@ -65,7 +47,7 @@ const goToSlide = (index: number) => {
               :src="activeSlide.src"
               :alt="activeSlide.alt"
               class="block size-full"
-              :preload="{ fetchPriority: 'high' }"
+              :preload="activeIndex === 0 ? { fetchPriority: 'high' } : false"
               loading="eager"
               :img-attrs="{ class: 'size-full object-cover' }"
               sizes="100vw md:50vw lg:640px"
