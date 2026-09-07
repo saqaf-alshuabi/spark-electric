@@ -1,7 +1,8 @@
 export default defineNuxtPlugin(() => {
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+  const desktopQuery = window.matchMedia('(hover: hover) and (pointer: fine)')
 
-  if (motionQuery.matches) {
+  if (motionQuery.matches || !desktopQuery.matches) {
     return
   }
 
@@ -15,6 +16,7 @@ export default defineNuxtPlugin(() => {
 
     destroyed = true
     motionQuery.removeEventListener('change', onMotionPreferenceChange)
+    desktopQuery.removeEventListener('change', onDesktopChange)
     window.removeEventListener('pagehide', onPageHide)
     stopLenis?.()
   }
@@ -25,12 +27,20 @@ export default defineNuxtPlugin(() => {
     }
   }
 
+  const onDesktopChange = (event: MediaQueryListEvent) => {
+    if (!event.matches) {
+      cleanup()
+    }
+  }
+
   const onPageHide = () => {
     cleanup()
   }
 
+  const shouldSkip = () => destroyed || motionQuery.matches || !desktopQuery.matches
+
   onNuxtReady(async () => {
-    if (destroyed || motionQuery.matches) {
+    if (shouldSkip()) {
       return
     }
 
@@ -39,7 +49,7 @@ export default defineNuxtPlugin(() => {
       import('lenis/dist/lenis.css'),
     ])
 
-    if (destroyed || motionQuery.matches) {
+    if (shouldSkip()) {
       return
     }
 
@@ -82,6 +92,7 @@ export default defineNuxtPlugin(() => {
   })
 
   motionQuery.addEventListener('change', onMotionPreferenceChange)
+  desktopQuery.addEventListener('change', onDesktopChange)
   window.addEventListener('pagehide', onPageHide)
 
   if (import.meta.hot) {

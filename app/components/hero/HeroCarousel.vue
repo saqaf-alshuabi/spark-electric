@@ -67,7 +67,7 @@ const goToSlide = (index: number) => {
                 class: 'size-full object-cover',
                 fetchpriority: activeIndex === 0 ? 'high' : 'auto',
               }"
-              sizes="100vw md:50vw lg:640px"
+              sizes="sm:92vw md:45vw lg:640px"
             />
           </div>
         </Transition>

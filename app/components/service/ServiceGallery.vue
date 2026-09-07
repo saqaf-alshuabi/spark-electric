@@ -22,7 +22,7 @@ defineProps<{ gallery: ServiceSlide[] }>()
             class: 'size-full object-cover',
             fetchpriority: index === 0 ? 'high' : 'auto',
           }"
-          sizes="100vw md:50vw"
+          sizes="sm:92vw md:45vw"
         />
 
         <!-- Literal white below: this edge sits on a photo, not on the theme -->

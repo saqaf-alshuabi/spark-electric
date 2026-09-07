@@ -23,7 +23,7 @@ const { priority = false } = defineProps<{
         :preload="priority ? { fetchPriority: 'high' } : false"
         :loading="priority ? 'eager' : 'lazy'"
         :img-attrs="{ class: 'size-full object-cover transition-transform duration-700 ease-out can-hover:group-hover:scale-105' }"
-        sizes="100vw md:50vw lg:420px"
+        sizes="sm:92vw md:45vw lg:420px"
       />
     </div>
 
