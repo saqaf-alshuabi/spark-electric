@@ -83,6 +83,11 @@ export default defineNuxtConfig({
       nodeCompat: true,
       wrangler: {
         name: 'spark-electric',
+        // Static assets win first; &_ipx files keep a .jpg name so MIME is wrong.
+        // Run the Worker on those URLs so the content-type plugin can fix it.
+        assets: {
+          run_worker_first: ['/_ipx/*'],
+        },
       },
     },
     prerender: {
