@@ -5,16 +5,9 @@ const SLIDE_MS = 3500
 
 const activeIndex = ref(0)
 const prefersReducedMotion = usePreferredReducedMotion()
-const img = useImage()
 
 const activeSlide = computed(() => serviceSlides[activeIndex.value]!)
-
-if (import.meta.prerender) {
-  for (const slide of serviceSlides.slice(1)) {
-    img.getSizes(slide.src, { sizes: HERO_IMAGE_SIZES, modifiers: { format: 'avif' } })
-    img.getSizes(slide.src, { sizes: HERO_IMAGE_SIZES, modifiers: { format: 'webp' } })
-  }
-}
+const extraSlides = serviceSlides.slice(1)
 
 const { pause, resume } = useIntervalFn(() => {
   activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
@@ -79,6 +72,23 @@ const goToSlide = (index: number) => {
             />
           </div>
         </Transition>
+
+        <!-- Hidden so Nitro still bakes the other /_ipx files. -->
+        <div
+          class="hidden"
+          aria-hidden="true"
+        >
+          <NuxtPicture
+            v-for="slide in extraSlides"
+            :key="slide.src"
+            :src="slide.src"
+            alt=""
+            class="block size-full"
+            legacy-format="webp"
+            loading="lazy"
+            :sizes="HERO_IMAGE_SIZES"
+          />
+        </div>
 
         <div
           class="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/80 via-black/40 to-transparent"
