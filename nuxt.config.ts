@@ -175,12 +175,11 @@ export default defineNuxtConfig({
   },
   image: {
     // Static files at build — works in `pnpm preview` and on Cloudflare (no Sharp in the Worker).
-    provider: 'ipxCf',
+    // Keep the name `ipxStatic` so Nuxt still runs the prerender IPX handler.
+    // The custom file only changes modifiers to commas (Cloudflare Assets 307s on &).
+    provider: 'ipxStatic',
     providers: {
-      // ipxStatic with commas instead of & so Cloudflare Assets don't 307.
-      // name: 'ipxStatic' keeps the static prerender setup (no Sharp in the Worker).
-      ipxCf: {
-        name: 'ipxStatic',
+      ipxStatic: {
         provider: '~/providers/ipx-cf',
       },
     },
