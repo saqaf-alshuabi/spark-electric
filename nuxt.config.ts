@@ -58,6 +58,16 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/services': { prerender: true },
     '/services/**': { prerender: true },
+    // Hashed build files — safe to cache forever. Filename changes on rebuild.
+    '/_nuxt/**': {
+      headers: { 'cache-control': 'public, max-age=31536000, immutable' },
+    },
+    '/_fonts/**': {
+      headers: { 'cache-control': 'public, max-age=31536000, immutable' },
+    },
+    '/_ipx/**': {
+      headers: { 'cache-control': 'public, max-age=31536000, immutable' },
+    },
   },
   experimental: {
     viewTransition: true,
