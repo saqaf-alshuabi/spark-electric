@@ -186,25 +186,10 @@ export default defineNuxtConfig({
     },
   },
   robots: {
-    // AI assistants are a lead source for local trades, so they stay allowed.
+    // AI assistants stay allowed by default (no Disallow). Skip Content-Usage /
+    // Content-Signal — Lighthouse treats them as unknown and drops SEO to 92.
     blockNonSeoBots: true,
     credits: false,
-    groups: [
-      {
-        userAgent: '*',
-        contentUsage: {
-          'bots': 'y',
-          'search': 'y',
-          'ai-output': 'y',
-          'train-ai': 'y',
-        },
-        contentSignal: {
-          'search': 'yes',
-          'ai-input': 'yes',
-          'ai-train': 'yes',
-        },
-      },
-    ],
   },
   schemaOrg: {
     // Service-area business: city-level address, districts live on areaServed.
