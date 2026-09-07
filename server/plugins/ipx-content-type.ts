@@ -1,6 +1,6 @@
 export default defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook('beforeResponse', (event) => {
-    const path = event.path
+    const path = decodeURIComponent(event.path.split('?')[0] ?? '')
     if (!path.startsWith('/_ipx/')) {
       return
     }

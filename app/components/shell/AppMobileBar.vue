@@ -38,7 +38,7 @@ const spacerHeight = computed(() =>
   </nav>
 
   <div
-    class="transition-[height] duration-300 ease-out motion-reduce:transition-none lg:hidden"
+    class="lg:hidden"
     :style="{ height: spacerHeight }"
     aria-hidden="true"
   />

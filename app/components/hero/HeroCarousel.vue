@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import { serviceSlides } from '@/shared/data'
+import { HERO_IMAGE_SIZES, serviceSlides } from '@/shared/data'
 
 const SLIDE_MS = 3500
-const HERO_SIZES = 'sm:92vw md:45vw lg:640px'
 
 const activeIndex = ref(0)
 const prefersReducedMotion = usePreferredReducedMotion()
+const img = useImage()
 
 const activeSlide = computed(() => serviceSlides[activeIndex.value]!)
+
+if (import.meta.prerender) {
+  for (const slide of serviceSlides.slice(1)) {
+    img.getSizes(slide.src, { sizes: HERO_IMAGE_SIZES, modifiers: { format: 'avif' } })
+    img.getSizes(slide.src, { sizes: HERO_IMAGE_SIZES, modifiers: { format: 'webp' } })
+  }
+}
 
 const { pause, resume } = useIntervalFn(() => {
   activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
@@ -63,13 +70,12 @@ const goToSlide = (index: number) => {
               :alt="activeSlide.alt"
               class="block size-full"
               legacy-format="webp"
-              :preload="activeIndex === 0 ? { fetchPriority: 'high' } : false"
               :loading="activeIndex === 0 ? 'eager' : 'lazy'"
               :img-attrs="{
                 class: 'size-full object-cover',
                 fetchpriority: activeIndex === 0 ? 'high' : 'auto',
               }"
-              :sizes="HERO_SIZES"
+              :sizes="HERO_IMAGE_SIZES"
             />
           </div>
         </Transition>
@@ -104,33 +110,18 @@ const goToSlide = (index: number) => {
         :aria-label="slide.alt"
         @click="goToSlide(index)"
       >
-        <span
-          class="h-1 overflow-hidden rounded-full bg-muted/60 transition-all duration-300"
-          :class="index === activeIndex ? 'w-7' : 'w-1.5 group-hover:bg-muted'"
-        >
+        <span class="relative h-1 w-7">
+          <span
+            class="block h-full origin-[inline-start] rounded-full bg-muted/60 transition-transform duration-300 group-hover:bg-muted"
+            :class="index === activeIndex ? 'scale-x-100' : 'scale-x-[0.214]'"
+          />
           <span
             v-if="index === activeIndex"
             :key="activeIndex"
-            class="slide-progress block h-full rounded-full bg-primary"
+            class="slide-progress pointer-events-none absolute inset-0 rounded-full bg-primary"
           />
         </span>
       </button>
-    </div>
-
-    <!-- Only the active slide is on-screen, so the rest would 404 with ipxStatic. Keep them in HTML for prerender; hidden so they don't steal LCP. -->
-    <div
-      class="hidden"
-      aria-hidden="true"
-    >
-      <NuxtPicture
-        v-for="slide in serviceSlides.slice(1)"
-        :key="slide.src"
-        :src="slide.src"
-        :alt="slide.alt"
-        legacy-format="webp"
-        loading="lazy"
-        :sizes="HERO_SIZES"
-      />
     </div>
   </div>
 </template>

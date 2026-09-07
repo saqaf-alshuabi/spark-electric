@@ -70,7 +70,7 @@ export default defineNuxtConfig({
     },
   },
   experimental: {
-    viewTransition: true,
+    payloadExtraction: 'client',
   },
   compatibilityDate: '2026-09-04',
   nitro: {
@@ -83,6 +83,10 @@ export default defineNuxtConfig({
       nodeCompat: true,
       wrangler: {
         name: 'spark-electric',
+        assets: {
+          // Static assets sniff .jpg from the source path. The Worker sets avif/webp.
+          run_worker_first: ['/_ipx/*'],
+        },
       },
     },
     prerender: {
@@ -93,7 +97,7 @@ export default defineNuxtConfig({
     },
     hooks: {
       'prerender:generate'(route) {
-        const path = route.route
+        const path = decodeURIComponent(route.route.split('?')[0] ?? '')
         if (!path.startsWith('/_ipx/')) {
           return
         }
@@ -132,10 +136,18 @@ export default defineNuxtConfig({
         name: 'IBM Plex Sans Arabic',
         provider: 'google',
         subsets: ['arabic'],
-        weights: [400, 500, 600],
+        weights: [400],
         display: 'swap',
         // Arabic subsets skip auto-preload unless this is set.
         preload: true,
+      },
+      {
+        name: 'IBM Plex Sans Arabic',
+        provider: 'google',
+        subsets: ['arabic'],
+        weights: [500, 600],
+        display: 'swap',
+        preload: false,
       },
     ],
   },
@@ -168,7 +180,13 @@ export default defineNuxtConfig({
   image: {
     // Static files at build — works in `pnpm preview` and on Cloudflare (no Sharp in the Worker).
     provider: 'ipxStatic',
-    quality: 80,
+    providers: {
+      // Same as ipxStatic, commas instead of & so Cloudflare Assets don't 307.
+      ipxStatic: {
+        provider: '~/providers/ipx-cf',
+      },
+    },
+    quality: 70,
     format: ['avif', 'webp'],
   },
   linkChecker: {
@@ -186,8 +204,8 @@ export default defineNuxtConfig({
     },
   },
   robots: {
-    // AI assistants stay allowed by default (no Disallow). Skip Content-Usage /
-    // Content-Signal — Lighthouse treats them as unknown and drops SEO to 92.
+    // AI assistants stay allowed by default (no Disallow). Content-Usage is
+    // stripped in server/plugins/robots-lighthouse.ts — Lighthouse flags it.
     blockNonSeoBots: true,
     credits: false,
   },
