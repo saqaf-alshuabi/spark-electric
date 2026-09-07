@@ -83,10 +83,6 @@ export default defineNuxtConfig({
       nodeCompat: true,
       wrangler: {
         name: 'spark-electric',
-        assets: {
-          // Static assets sniff .jpg from the source path. The Worker sets avif/webp.
-          run_worker_first: ['/_ipx/*'],
-        },
       },
     },
     prerender: {
@@ -179,10 +175,12 @@ export default defineNuxtConfig({
   },
   image: {
     // Static files at build — works in `pnpm preview` and on Cloudflare (no Sharp in the Worker).
-    provider: 'ipxStatic',
+    provider: 'ipxCf',
     providers: {
-      // Same as ipxStatic, commas instead of & so Cloudflare Assets don't 307.
-      ipxStatic: {
+      // ipxStatic with commas instead of & so Cloudflare Assets don't 307.
+      // name: 'ipxStatic' keeps the static prerender setup (no Sharp in the Worker).
+      ipxCf: {
+        name: 'ipxStatic',
         provider: '~/providers/ipx-cf',
       },
     },
