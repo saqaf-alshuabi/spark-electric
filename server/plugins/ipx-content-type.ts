@@ -1,13 +1,6 @@
 export default defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook('beforeResponse', (event) => {
-    let path = event.path
-    try {
-      path = decodeURIComponent(path)
-    }
-    catch {
-      // Keep the raw path if Cloudflare already decoded it.
-    }
-
+    const path = event.path
     if (!path.startsWith('/_ipx/')) {
       return
     }
