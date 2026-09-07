@@ -2,6 +2,7 @@
 import { serviceSlides } from '@/shared/data'
 
 const SLIDE_MS = 3500
+const HERO_SIZES = 'sm:92vw md:45vw lg:640px'
 
 const activeIndex = ref(0)
 const prefersReducedMotion = usePreferredReducedMotion()
@@ -61,13 +62,14 @@ const goToSlide = (index: number) => {
               :src="activeSlide.src"
               :alt="activeSlide.alt"
               class="block size-full"
+              legacy-format="webp"
               :preload="activeIndex === 0 ? { fetchPriority: 'high' } : false"
               :loading="activeIndex === 0 ? 'eager' : 'lazy'"
               :img-attrs="{
                 class: 'size-full object-cover',
                 fetchpriority: activeIndex === 0 ? 'high' : 'auto',
               }"
-              sizes="sm:92vw md:45vw lg:640px"
+              :sizes="HERO_SIZES"
             />
           </div>
         </Transition>
@@ -113,6 +115,22 @@ const goToSlide = (index: number) => {
           />
         </span>
       </button>
+    </div>
+
+    <!-- Only the active slide is on-screen, so the rest would 404 with ipxStatic. Keep them in HTML for prerender; hidden so they don't steal LCP. -->
+    <div
+      class="hidden"
+      aria-hidden="true"
+    >
+      <NuxtPicture
+        v-for="slide in serviceSlides.slice(1)"
+        :key="slide.src"
+        :src="slide.src"
+        :alt="slide.alt"
+        legacy-format="webp"
+        loading="lazy"
+        :sizes="HERO_SIZES"
+      />
     </div>
   </div>
 </template>

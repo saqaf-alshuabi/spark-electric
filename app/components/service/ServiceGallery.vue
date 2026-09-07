@@ -16,6 +16,7 @@ defineProps<{ gallery: ServiceSlide[] }>()
           :src="shot.src"
           :alt="shot.alt"
           class="block size-full"
+          legacy-format="webp"
           :preload="index === 0 ? { fetchPriority: 'high' } : false"
           :loading="index === 0 ? 'eager' : 'lazy'"
           :img-attrs="{

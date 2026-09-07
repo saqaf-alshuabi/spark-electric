@@ -8,3 +8,17 @@
 
 /_ipx/*
   Cache-Control: public, max-age=31536000, immutable
+
+# IPX keeps the original .jpg/.png in the URL. Without this, Cloudflare
+# would send image/jpeg for files that are actually AVIF or WebP.
+/_ipx/*f_avif*
+  Content-Type: image/avif
+
+/_ipx/*f_avif*/*
+  Content-Type: image/avif
+
+/_ipx/*f_webp*
+  Content-Type: image/webp
+
+/_ipx/*f_webp*/*
+  Content-Type: image/webp

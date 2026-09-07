@@ -91,6 +91,20 @@ export default defineNuxtConfig({
       routes: ['/', '/404.html'],
       failOnError: true,
     },
+    hooks: {
+      'prerender:generate'(route) {
+        const path = route.route
+        if (!path.startsWith('/_ipx/')) {
+          return
+        }
+        if (path.includes('f_avif')) {
+          route.contentType = 'image/avif'
+        }
+        else if (path.includes('f_webp')) {
+          route.contentType = 'image/webp'
+        }
+      },
+    },
   },
   hooks: {
     close: () => {
@@ -152,6 +166,8 @@ export default defineNuxtConfig({
     },
   },
   image: {
+    // Static files at build — works in `pnpm preview` and on Cloudflare (no Sharp in the Worker).
+    provider: 'ipxStatic',
     quality: 80,
     format: ['avif', 'webp'],
   },
