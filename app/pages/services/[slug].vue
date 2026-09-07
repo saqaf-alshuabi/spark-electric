@@ -57,10 +57,14 @@ useSchemaOrg([
     <ServiceGallery :gallery="service.gallery" />
   </HeroFrame>
 
-  <ServiceFaq
+  <LazyServiceFaq
+    hydrate-on-visible
     :faqs="service.faqs"
     :heading="`أسئلة عن ${service.title}`"
   />
 
-  <ServiceRelated :services="others" />
+  <LazyServiceRelated
+    hydrate-on-visible
+    :services="others"
+  />
 </template>

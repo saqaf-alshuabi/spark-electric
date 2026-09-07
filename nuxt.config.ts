@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxt/hints',
     '@nuxtjs/seo',
   ],
   components: {
@@ -47,6 +46,14 @@ export default defineNuxtConfig({
     classSuffix: '',
     storageKey: 'spark-theme',
   },
+  ui: {
+    experimental: {
+      componentDetection: true,
+    },
+    theme: {
+      colors: ['primary', 'error'],
+    },
+  },
   routeRules: {
     '/': { prerender: true },
     '/services': { prerender: true },
@@ -57,6 +64,10 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-09-04',
   nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true,
+    },
     cloudflare: {
       deployConfig: true,
       nodeCompat: true,
@@ -98,7 +109,9 @@ export default defineNuxtConfig({
         provider: 'google',
         subsets: ['arabic'],
         weights: [400, 500, 600],
-        global: true,
+        display: 'swap',
+        // Arabic subsets skip auto-preload unless this is set.
+        preload: true,
       },
     ],
   },

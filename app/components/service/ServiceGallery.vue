@@ -18,7 +18,10 @@ defineProps<{ gallery: ServiceSlide[] }>()
           class="block size-full"
           :preload="index === 0 ? { fetchPriority: 'high' } : false"
           :loading="index === 0 ? 'eager' : 'lazy'"
-          :img-attrs="{ class: 'size-full object-cover' }"
+          :img-attrs="{
+            class: 'size-full object-cover',
+            fetchpriority: index === 0 ? 'high' : 'auto',
+          }"
           sizes="100vw md:50vw"
         />
 

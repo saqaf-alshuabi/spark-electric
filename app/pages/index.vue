@@ -9,6 +9,6 @@ usePageSeo({
 
 <template>
   <HeroSection />
-  <ServicesSection />
-  <ServiceAreas />
+  <LazyServicesSection hydrate-on-visible />
+  <LazyServiceAreas hydrate-on-visible />
 </template>

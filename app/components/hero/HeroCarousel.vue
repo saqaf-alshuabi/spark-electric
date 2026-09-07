@@ -10,11 +10,25 @@ const activeSlide = computed(() => serviceSlides[activeIndex.value]!)
 
 const { pause, resume } = useIntervalFn(() => {
   activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
-}, SLIDE_MS)
+}, SLIDE_MS, { immediate: false })
 
 watchImmediate(prefersReducedMotion, (value) => {
   if (value === 'reduce') pause()
-  else resume()
+})
+
+onMounted(() => {
+  if (prefersReducedMotion.value === 'reduce') {
+    return
+  }
+
+  const start = () => resume()
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(start, { timeout: 2500 })
+    return
+  }
+
+  setTimeout(start, 1)
 })
 
 // Restart the countdown so a tapped slide gets its full turn
@@ -48,8 +62,11 @@ const goToSlide = (index: number) => {
               :alt="activeSlide.alt"
               class="block size-full"
               :preload="activeIndex === 0 ? { fetchPriority: 'high' } : false"
-              loading="eager"
-              :img-attrs="{ class: 'size-full object-cover' }"
+              :loading="activeIndex === 0 ? 'eager' : 'lazy'"
+              :img-attrs="{
+                class: 'size-full object-cover',
+                fetchpriority: activeIndex === 0 ? 'high' : 'auto',
+              }"
               sizes="100vw md:50vw lg:640px"
             />
           </div>
