@@ -10,6 +10,7 @@ defineProps<{
 <!--
   Native <details> on purpose: the answers stay in the prerendered HTML, so
   crawlers read them even while collapsed, and it costs no JavaScript.
+  Shared `name` keeps only one item open at a time.
 -->
 <template>
   <section class="section-y">
@@ -25,7 +26,8 @@ defineProps<{
           class="reveal"
         >
           <details
-            class="group overflow-hidden rounded-2xl border border-default/60 bg-default/40 transition duration-300 ease-out open:border-primary/30 open:bg-default open:shadow-xl open:shadow-primary/10 can-hover:hover:border-primary/30 can-hover:hover:bg-default"
+            name="service-faq"
+            class="group details-reveal rounded-2xl border border-default/60 bg-default/40 transition-colors duration-300 ease-out open:bg-default can-hover:hover:bg-default"
           >
             <summary
               class="flex cursor-pointer list-none items-center justify-between gap-4 card-p focus-ring [&::-webkit-details-marker]:hidden"

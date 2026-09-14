@@ -162,6 +162,25 @@
   .soft-fade-leave-active {
     transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
+
+  /* Native <details> snaps open/shut. Animate ::details-content instead of
+     fighting the UA with content-visibility, so close can ease too. */
+  .details-reveal::details-content {
+    interpolate-size: allow-keywords;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      content-visibility 0.45s allow-discrete;
+  }
+
+  .details-reveal[open]::details-content {
+    height: auto;
+    height: calc-size(auto, size);
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
