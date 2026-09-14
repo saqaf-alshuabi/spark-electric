@@ -55,6 +55,12 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-09-04',
   nitro: {
+    cloudflare: {
+      // Workers Builds auto-enables this and redirects `wrangler deploy`
+      // to `.output/server/wrangler.json` (a Worker entry). This site is
+      // assets-only — keep the root wrangler.jsonc.
+      deployConfig: false,
+    },
     compressPublicAssets: {
       gzip: true,
       brotli: true,
