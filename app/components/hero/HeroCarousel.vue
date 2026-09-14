@@ -63,6 +63,7 @@ const goToSlide = (index: number) => {
               :alt="activeSlide.alt"
               class="block size-full"
               legacy-format="webp"
+              :preload="activeIndex === 0 ? { fetchPriority: 'high' } : false"
               :loading="activeIndex === 0 ? 'eager' : 'lazy'"
               :img-attrs="{
                 class: 'size-full object-cover',

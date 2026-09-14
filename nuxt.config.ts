@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { localBusinessIdentity } from './app/shared/data/identity'
+import { services } from './app/shared/data/services'
 import { site } from './app/shared/data/site'
 
 export default defineNuxtConfig({
@@ -40,33 +41,13 @@ export default defineNuxtConfig({
     defaultLocale: site.locale,
     trailingSlash: false,
   },
-  colorMode: {
-    preference: 'dark',
-    fallback: 'dark',
-    classSuffix: '',
-    storageKey: 'spark-theme',
-  },
   ui: {
+    colorMode: false,
     experimental: {
       componentDetection: true,
     },
     theme: {
       colors: ['primary', 'error'],
-    },
-  },
-  routeRules: {
-    '/': { prerender: true },
-    '/services': { prerender: true },
-    '/services/**': { prerender: true },
-    // Hashed build files — safe to cache forever. Filename changes on rebuild.
-    '/_nuxt/**': {
-      headers: { 'cache-control': 'public, max-age=31536000, immutable' },
-    },
-    '/_fonts/**': {
-      headers: { 'cache-control': 'public, max-age=31536000, immutable' },
-    },
-    '/_ipx/**': {
-      headers: { 'cache-control': 'public, max-age=31536000, immutable' },
     },
   },
   experimental: {
@@ -78,17 +59,17 @@ export default defineNuxtConfig({
       gzip: true,
       brotli: true,
     },
-    cloudflare: {
-      deployConfig: true,
-      nodeCompat: true,
-      wrangler: {
-        name: 'spark-electric',
-      },
-    },
     prerender: {
       crawlLinks: true,
       autoSubfolderIndex: false,
-      routes: ['/', '/404.html'],
+      routes: [
+        '/',
+        '/services',
+        ...services.map(service => `/services/${service.slug}`),
+        '/404.html',
+        '/robots.txt',
+        '/sitemap.xml',
+      ],
       failOnError: true,
     },
     hooks: {
@@ -108,7 +89,7 @@ export default defineNuxtConfig({
   },
   hooks: {
     close: () => {
-      if (process.env.npm_lifecycle_event !== 'build') {
+      if (process.env.npm_lifecycle_event !== 'build' && process.env.npm_lifecycle_event !== 'generate') {
         return
       }
       process.exit(process.exitCode ?? 0)
@@ -174,7 +155,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    // Static files at build — works in `pnpm preview` and on Cloudflare (no Sharp in the Worker).
+    // Static files at build — works in `pnpm preview` and on Cloudflare Assets.
     // Keep the name `ipxStatic` so Nuxt still runs the prerender IPX handler.
     // The custom file only changes modifiers to commas (Cloudflare Assets 307s on &).
     provider: 'ipxStatic',

@@ -1,26 +1,5 @@
 <script setup lang="ts">
-import { HERO_IMAGE_SIZES, serviceSlides, site } from '@/shared/data'
-
-const hero = serviceSlides[0]!
-const img = useImage()
-const lcp = img.getSizes(hero.src, {
-  sizes: HERO_IMAGE_SIZES,
-  modifiers: { format: 'webp' },
-})
-
-useHead({
-  link: [
-    {
-      rel: 'preload',
-      as: 'image',
-      type: 'image/webp',
-      fetchpriority: 'high',
-      href: lcp.src,
-      imagesrcset: lcp.srcset,
-      imagesizes: lcp.sizes,
-    },
-  ],
-})
+import { site } from '@/shared/data'
 </script>
 
 <template>

@@ -32,7 +32,8 @@ useSchemaOrg([
         :key="service.slug"
         class="reveal"
       >
-        <ServiceMediaCard
+        <LazyServiceMediaCard
+          hydrate-on-visible
           :icon="service.icon"
           :title="service.title"
           :description="service.description"

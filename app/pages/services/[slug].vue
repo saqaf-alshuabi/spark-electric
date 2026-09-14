@@ -58,13 +58,13 @@ useSchemaOrg([
   </HeroFrame>
 
   <LazyServiceFaq
-    hydrate-on-visible
+    hydrate-never
     :faqs="service.faqs"
     :heading="`أسئلة عن ${service.title}`"
   />
 
   <LazyServiceRelated
-    hydrate-on-visible
+    hydrate-never
     :services="others"
   />
 </template>
