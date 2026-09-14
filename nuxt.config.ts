@@ -194,7 +194,7 @@ export default defineNuxtConfig({
     credits: false,
   },
   schemaOrg: {
-    // Service-area business: city-level address, districts live on areaServed.
+    // Service-area business: city-level address, coverage is the GeoCircle.
     identity: localBusinessIdentity(),
   },
   sitemap: {

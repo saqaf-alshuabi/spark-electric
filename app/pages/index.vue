@@ -11,5 +11,4 @@ usePageSeo({
 <template>
   <HeroSection />
   <LazyServicesSection hydrate-never />
-  <LazyServiceAreas hydrate-never />
 </template>

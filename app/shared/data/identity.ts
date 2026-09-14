@@ -59,10 +59,10 @@ export function localBusinessIdentity() {
       'latitude': site.geo.latitude,
       'longitude': site.geo.longitude,
     },
-    'areaServed': site.areasServed.map(name => ({
-      '@type': 'Place',
-      'name': name,
-    })),
+    'areaServed': {
+      '@type': 'City',
+      'name': site.address.locality,
+    },
     'serviceArea': {
       '@type': 'GeoCircle',
       'geoMidpoint': {

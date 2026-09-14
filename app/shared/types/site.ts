@@ -27,8 +27,6 @@ export interface SiteSettings {
   /** Centre of the service radius, not a shop location */
   geo: GeoPoint
   serviceRadiusKm: number
-  /** Districts named on-page and in Schema.org areaServed */
-  areasServed: string[]
   /** Maps / Google Business URL. Omit until the listing exists. */
   googleBusinessUrl?: string
 }
