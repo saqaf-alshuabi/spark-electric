@@ -9,13 +9,13 @@ const anchorRef = useMobileCtaAnchor()
   >
     <ContactButton
       channel="whatsapp"
-      size="xl"
+      size="lg"
       class="min-h-11"
     />
     <ContactButton
       channel="phone"
       variant="outline"
-      size="xl"
+      size="lg"
       class="min-h-11"
     />
   </div>

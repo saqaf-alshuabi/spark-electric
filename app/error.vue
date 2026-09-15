@@ -69,7 +69,7 @@ useRobotsRule('noindex, follow')
         <div class="rise flex flex-wrap justify-center gap-3 [animation-delay:240ms]">
           <UButton
             label="العودة للرئيسية"
-            size="xl"
+            size="lg"
             :trailing-icon="ui.icons.arrowLeft"
             class="min-h-11"
             @click="clearError({ redirect: '/' })"
@@ -77,7 +77,7 @@ useRobotsRule('noindex, follow')
           <ContactButton
             channel="whatsapp"
             variant="outline"
-            size="xl"
+            size="lg"
             class="min-h-11"
           />
         </div>

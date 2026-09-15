@@ -4,8 +4,6 @@ export default defineAppConfig({
       primary: 'amber',
       neutral: 'zinc',
     },
-    // One stroke weight sitewide: Phosphor duotone is drawn on the regular
-    // skeleton, so interface icons stay regular to match the content icons.
     icons: {
       menu: 'i-ph-equals',
       close: 'i-ph-x',

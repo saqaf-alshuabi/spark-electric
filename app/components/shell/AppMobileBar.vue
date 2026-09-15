@@ -3,20 +3,19 @@ const { isVisible } = useMobileBarVisibility()
 
 const spacerHeight = computed(() =>
   isVisible.value
-    ? 'calc(3.75rem + max(0.75rem, env(safe-area-inset-bottom, 0px)) + 0.75rem)'
+    ? 'calc(3.75rem + env(safe-area-inset-bottom, 0px))'
     : '0px',
 )
 </script>
 
 <template>
   <nav
-    class="fixed inset-x-3 z-50 rounded-xl border border-default/60 bg-default/80 shadow-2xl shadow-black/25 backdrop-blur-md transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none lg:hidden"
+    class="fixed inset-x-0 bottom-0 z-50 border-t border-default/60 bg-default/80 pb-[env(safe-area-inset-bottom,0px)] backdrop-blur-md transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none lg:hidden"
     :class="[
       isVisible
         ? 'pointer-events-auto translate-y-0 opacity-100'
-        : 'pointer-events-none translate-y-4 opacity-0',
+        : 'pointer-events-none translate-y-full opacity-0',
     ]"
-    :style="{ bottom: 'max(0.75rem, env(safe-area-inset-bottom, 0px))' }"
     :inert="!isVisible"
     aria-label="تواصل"
   >
@@ -24,14 +23,14 @@ const spacerHeight = computed(() =>
       <ContactButton
         channel="whatsapp"
         block
-        size="xl"
+        size="lg"
         class="min-h-11"
       />
       <ContactButton
         channel="phone"
         variant="outline"
         block
-        size="xl"
+        size="lg"
         class="min-h-11"
       />
     </div>
