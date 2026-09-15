@@ -32,7 +32,6 @@ onMounted(() => {
   setTimeout(start, 1)
 })
 
-// Restart the countdown so a tapped slide gets its full turn
 const goToSlide = (index: number) => {
   activeIndex.value = index
 

@@ -10,7 +10,6 @@ const { channel } = defineProps<{
 const { ui } = useAppConfig()
 const { whatsappUrl, phoneUrl } = useContact()
 
-/** Single source for both channels, so call sites only pick a style. */
 const contact = computed(() => {
   const config = channel === 'whatsapp'
     ? {

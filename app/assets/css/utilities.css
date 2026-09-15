@@ -26,7 +26,6 @@
   @apply bg-clip-text text-transparent;
 }
 
-/* Hairline lit edge along the top of a card */
 @utility card-ring {
   background-image: linear-gradient(
     to bottom,

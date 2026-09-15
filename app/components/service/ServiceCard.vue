@@ -3,7 +3,6 @@ import type { HomeServiceItem } from '@/shared/types/site'
 
 const { wide = false } = defineProps<HomeServiceItem & { wide?: boolean }>()
 
-/** Single source of truth for the two layout variants, instead of a ternary per element. */
 const layout = computed(() =>
   wide
     ? {

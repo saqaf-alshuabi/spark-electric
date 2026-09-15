@@ -24,10 +24,9 @@ export const site: SiteSettings = {
 
 const SAUDI_CALLING_CODE = '966'
 
-/** 0576 301 886 */
 export const displayPhone = `0${site.phone.slice(0, 3)} ${site.phone.slice(3, 6)} ${site.phone.slice(6)}`
 
-/** +966576301886 — Schema.org and tel: links */
+/** E.164 for Schema.org and tel: links */
 export const formattedPhone = `+${SAUDI_CALLING_CODE}${site.phone}`
 
 export const whatsappUrl = `https://wa.me/${SAUDI_CALLING_CODE}${site.phone}`

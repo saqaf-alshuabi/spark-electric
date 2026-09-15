@@ -1,9 +1,6 @@
 import type { PageSeo } from '~/shared/types/site'
 
-/**
- * Page title, description, social card, and breadcrumb.
- * Canonical, og:type, og:locale, twitter tags, WebSite and WebPage come from Nuxt SEO.
- */
+/** Title, description, social card, breadcrumb. Canonical / og defaults come from Nuxt SEO. */
 export function usePageSeo(page: PageSeo) {
   const cardTitle = page.ogTitle ?? page.title
   const { description: siteDescription } = useSiteConfig()
@@ -11,8 +8,7 @@ export function usePageSeo(page: PageSeo) {
   useSeoMeta({
     title: page.title,
     ...(page.description ? { description: page.description } : {}),
-    // Set explicitly so the shared card doesn't inherit the title template and
-    // repeat the brand that og:site_name already carries.
+    // Avoid the title template repeating the brand that og:site_name already carries.
     ogTitle: cardTitle,
   })
 

@@ -14,14 +14,12 @@ export interface GeoPoint {
 export interface SiteSettings {
   name: string
   city: string
-  /** One-line pitch under the hero headline */
   tagline: string
-  /** Default meta description and Schema.org description */
   description: string
   logo: string
   /** Saudi mobile national digits, no leading 0 (e.g. 5XXXXXXXX) */
   phone: string
-  /** BCP 47, drives html[lang], og:locale and sitemap hreflang */
+  /** BCP 47 */
   locale: string
   address: BusinessAddress
   /** Centre of the service radius, not a shop location */
@@ -49,7 +47,7 @@ export interface FaqItem {
   answer: string
 }
 
-/** Listing card / index preview (cover derived from gallery[0]) */
+/** Listing card — cover derived from gallery[0] */
 export interface ServiceSummary {
   slug: string
   icon: string
@@ -59,19 +57,15 @@ export interface ServiceSummary {
   imageAlt: string
 }
 
-/** Full service — gallery[0] is the cover image */
 export interface ServiceDetail extends ServiceSummary {
-  /** Schema.org Service.serviceType, and the keyword the page title is built on */
+  /** Schema.org Service.serviceType + page-title keyword */
   serviceType: string
-  /** Meta description. Written for the search result, not for the page. */
   seoDescription: string
-  /** Body copy above the gallery. Real text is what search engines rank. */
   intro: string
   faqs: FaqItem[]
   gallery: ServiceSlide[]
 }
 
-/** Draft before cover fields are derived */
 export type ServiceDraft = Omit<ServiceDetail, 'image' | 'imageAlt'>
 
 export interface HomeServiceItem {
@@ -81,13 +75,10 @@ export interface HomeServiceItem {
   to: string
 }
 
-/** Everything a page needs to describe itself to crawlers and social cards */
 export interface PageSeo {
   title: string
-  /** Omit to use site.description */
   description?: string
-  /** Extra crumbs after Home. Labels only — the path comes from the route. */
   breadcrumb?: NavItem[]
-  /** Overrides the OG card heading when the page title is too long */
+  /** Overrides OG heading when the page title is too long */
   ogTitle?: string
 }

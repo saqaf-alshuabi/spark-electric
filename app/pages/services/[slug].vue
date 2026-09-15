@@ -15,7 +15,6 @@ usePageSeo({
 })
 
 useSchemaOrg([
-  // provider and brand are linked to the site identity automatically.
   defineService({
     name: `${service.serviceType} في ${site.city}`,
     serviceType: service.serviceType,
@@ -27,7 +26,6 @@ useSchemaOrg([
       'name': site.address.locality,
     },
   }),
-  // The page carries an FAQ block, so the questions below attach to it.
   defineWebPage({ '@type': ['WebPage', 'FAQPage'] }),
   ...service.faqs.map(faq => defineQuestion({
     question: faq.question,
