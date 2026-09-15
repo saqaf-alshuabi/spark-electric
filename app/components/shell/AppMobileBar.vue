@@ -10,7 +10,7 @@ const spacerHeight = computed(() =>
 
 <template>
   <nav
-    class="fixed inset-x-3 z-50 rounded-2xl border border-default/60 bg-default/80 shadow-2xl shadow-black/25 backdrop-blur-md transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none lg:hidden"
+    class="fixed inset-x-3 z-50 rounded-xl border border-default/60 bg-default/80 shadow-2xl shadow-black/25 backdrop-blur-md transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none lg:hidden"
     :class="[
       isVisible
         ? 'pointer-events-auto translate-y-0 opacity-100'

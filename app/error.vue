@@ -47,7 +47,7 @@ useRobotsRule('noindex, follow')
       />
 
       <UContainer class="relative stack-md max-w-xl items-center text-center">
-        <div class="rise flex size-16 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
+        <div class="rise flex size-16 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/20">
           <UIcon
             :name="icon"
             class="size-8 text-primary"

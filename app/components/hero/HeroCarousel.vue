@@ -51,8 +51,8 @@ const goToSlide = (index: number) => {
     aria-roledescription="carousel"
     aria-label="معرض أعمال الكهرباء"
   >
-    <div class="w-full rounded-3xl card-ring p-px shadow-2xl shadow-black/40">
-      <div class="relative aspect-16/10 w-full overflow-hidden rounded-[calc(1.5rem-1px)] bg-muted/40">
+    <div class="w-full rounded-xl card-ring p-px shadow-2xl shadow-black/40">
+      <div class="relative aspect-16/10 w-full overflow-hidden rounded-xl bg-muted/40">
         <Transition name="soft-fade">
           <div
             :key="activeSlide.src"

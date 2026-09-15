@@ -7,6 +7,14 @@
   --font-heading: 'IBM Plex Sans Arabic', sans-serif;
 }
 
+/* Nuxt UI tokens stay unlayered so they beat the 0.25rem default after
+   client navigation. https://ui.nuxt.com/docs/getting-started/theme/css-variables */
+:root {
+  --ui-container: 80rem;
+  --ui-header-height: 4rem;
+  --ui-radius: 0.5rem;
+}
+
 /* Hover effects only on real pointers. Phones get the resting state, plus :active. */
 @custom-variant can-hover {
   @media (hover: hover) and (pointer: fine) {
@@ -16,10 +24,6 @@
 
 @layer base {
   :root {
-    --ui-container: 80rem;
-    --ui-header-height: 4rem;
-    --ui-radius: 0.5rem;
-
     /* 6vw only takes over past ~666px, so the floor is what every phone gets. */
     --size-h1: clamp(2rem, 7vw, 3.5rem);
     --size-h2: clamp(1.75rem, 4vw, 2.5rem);

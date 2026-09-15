@@ -7,11 +7,6 @@ defineProps<{
 }>()
 </script>
 
-<!--
-  Native <details> on purpose: the answers stay in the prerendered HTML, so
-  crawlers read them even while collapsed, and it costs no JavaScript.
-  Shared `name` keeps only one item open at a time.
--->
 <template>
   <section class="section-y">
     <UContainer class="stack-md items-center">
@@ -27,7 +22,7 @@ defineProps<{
         >
           <details
             name="service-faq"
-            class="group details-reveal rounded-2xl border border-default/60 bg-default/40 transition-colors duration-300 ease-out open:bg-default can-hover:hover:bg-default"
+            class="group details-reveal rounded-xl border border-default/60 bg-default/40 transition-colors duration-300 ease-out open:bg-default can-hover:hover:bg-default"
           >
             <summary
               class="flex cursor-pointer list-none items-center justify-between gap-4 card-p focus-ring [&::-webkit-details-marker]:hidden"
@@ -36,7 +31,7 @@ defineProps<{
                 {{ faq.question }}
               </h3>
               <span
-                class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-open:bg-primary"
+                class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 transition-colors duration-300 group-open:bg-primary"
               >
                 <UIcon
                   name="i-ph-plus"

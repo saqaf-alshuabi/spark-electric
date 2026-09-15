@@ -11,7 +11,7 @@ defineProps<{ gallery: ServiceSlide[] }>()
       :key="shot.src"
       class="reveal"
     >
-      <div class="relative aspect-4/3 overflow-hidden rounded-3xl bg-muted/40">
+      <div class="relative aspect-4/3 overflow-hidden rounded-xl bg-muted/40">
         <NuxtPicture
           :src="shot.src"
           :alt="shot.alt"
@@ -28,7 +28,7 @@ defineProps<{ gallery: ServiceSlide[] }>()
 
         <!-- Literal white below: this edge sits on a photo, not on the theme -->
         <div
-          class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/10 ring-inset"
+          class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/10 ring-inset"
           aria-hidden="true"
         />
       </div>
