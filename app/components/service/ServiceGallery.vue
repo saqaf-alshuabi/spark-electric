@@ -5,7 +5,7 @@ defineProps<{ gallery: ServiceSlide[] }>()
 </script>
 
 <template>
-  <ul class="grid grid-cols-1 grid-gap md:grid-cols-2">
+  <ul class="mx-auto grid w-full max-w-4xl grid-cols-1 grid-gap md:grid-cols-2">
     <li
       v-for="(shot, index) in gallery"
       :key="shot.src"

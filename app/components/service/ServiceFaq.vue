@@ -14,7 +14,7 @@ defineProps<{
         {{ heading }}
       </h2>
 
-      <ul class="stack-xs w-full">
+      <ul class="mx-auto stack-xs w-full max-w-3xl">
         <li
           v-for="faq in faqs"
           :key="faq.question"
