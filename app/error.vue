@@ -22,7 +22,7 @@ const hint = computed(() =>
 )
 
 const icon = computed(() =>
-  status.value === 404 ? 'ph:plug-duotone' : 'ph:warning-duotone',
+  status.value === 404 ? 'i-ph-plug-duotone' : 'i-ph-warning-duotone',
 )
 
 useSeoMeta({ title: () => `${status.value} - ${message.value}` })
@@ -47,22 +47,18 @@ useRobotsRule('noindex, follow')
       />
 
       <UContainer class="relative stack-md max-w-xl items-center text-center">
-        <div class="rise flex size-16 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/20">
+        <div class="rise flex size-16 items-center justify-center rounded-lg bg-primary/10">
           <UIcon
             :name="icon"
             class="size-8 text-primary"
           />
         </div>
 
-        <p class="rise heading-gradient text-7xl font-semibold tabular-nums [animation-delay:80ms]">
-          {{ status }}
-        </p>
-
-        <h1 class="rise [animation-delay:160ms]">
+        <h1 class="rise [animation-delay:80ms]">
           {{ message }}
         </h1>
 
-        <p class="rise caption-sm [animation-delay:200ms]">
+        <p class="rise caption-sm [animation-delay:160ms]">
           {{ hint }}
         </p>
 
