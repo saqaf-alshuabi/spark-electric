@@ -9,6 +9,8 @@ usePageSeo({
 </script>
 
 <template>
-  <HeroSection />
-  <LazyServicesSection hydrate-never />
+  <div>
+    <HeroSection />
+    <LazyServicesSection hydrate-never />
+  </div>
 </template>

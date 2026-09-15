@@ -35,34 +35,36 @@ useSchemaOrg([
 </script>
 
 <template>
-  <HeroFrame class="stack-lg">
-    <div class="stack-md items-center md:items-start">
-      <HeroIntro
-        :badge="`من شغلنا في ${site.city}`"
-        :heading="`${service.title} في ${site.city}`"
-        :body="service.description"
-      />
+  <div>
+    <HeroFrame class="stack-lg">
+      <div class="stack-md items-center md:items-start">
+        <HeroIntro
+          :badge="`من شغلنا في ${site.city}`"
+          :heading="`${service.title} في ${site.city}`"
+          :body="service.description"
+        />
 
-      <p class="rise max-w-2xl text-center [animation-delay:200ms] md:text-start">
-        {{ service.intro }}
-      </p>
+        <p class="rise max-w-2xl text-center [animation-delay:200ms] md:text-start">
+          {{ service.intro }}
+        </p>
 
-      <ContactActions
-        class="rise [animation-delay:240ms]"
-      />
-    </div>
+        <ContactActions
+          class="rise [animation-delay:240ms]"
+        />
+      </div>
 
-    <ServiceGallery :gallery="service.gallery" />
-  </HeroFrame>
+      <ServiceGallery :gallery="service.gallery" />
+    </HeroFrame>
 
-  <LazyServiceFaq
-    hydrate-never
-    :faqs="service.faqs"
-    :heading="`أسئلة عن ${service.title}`"
-  />
+    <LazyServiceFaq
+      hydrate-never
+      :faqs="service.faqs"
+      :heading="`أسئلة عن ${service.title}`"
+    />
 
-  <LazyServiceRelated
-    hydrate-never
-    :services="others"
-  />
+    <LazyServiceRelated
+      hydrate-never
+      :services="others"
+    />
+  </div>
 </template>
