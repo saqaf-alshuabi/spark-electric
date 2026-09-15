@@ -1,4 +1,4 @@
-export const notFound = (message: string = 'الصفحة غير موجودة') => {
+export const notFound = (message: string = 'الصفحة مو موجودة') => {
   throw createError({
     status: 404,
     statusText: 'Not Found',

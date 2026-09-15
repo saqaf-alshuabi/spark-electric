@@ -64,7 +64,7 @@ useRobotsRule('noindex, follow')
 
         <div class="rise flex flex-wrap justify-center gap-3 [animation-delay:240ms]">
           <UButton
-            label="العودة للرئيسية"
+            label="ارجع للرئيسية"
             size="lg"
             :trailing-icon="ui.icons.arrowLeft"
             class="min-h-11"
