@@ -11,7 +11,7 @@ defineProps<{ gallery: ServiceSlide[] }>()
       :key="shot.src"
       class="reveal"
     >
-      <div class="relative aspect-4/3 overflow-hidden rounded-xl bg-muted/40">
+      <div class="relative aspect-16/10 overflow-hidden rounded-xl bg-muted/40">
         <NuxtPicture
           :src="shot.src"
           :alt="shot.alt"

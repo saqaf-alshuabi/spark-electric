@@ -20,17 +20,21 @@ const operationsGenerator = createOperationsGenerator({
   formatter: (key, val) => `${encodeParam(key)}_${encodeParam(val.toString())}`,
 })
 
-export default defineProvider({
+type IpxModifiers = Parameters<typeof operationsGenerator>[0]
+
+export default defineProvider<{ baseURL?: string }>({
   validateDomains: true,
   supportsAlias: true,
   getImage(src, { modifiers, baseURL }, ctx) {
-    if (modifiers.width && modifiers.height) {
-      modifiers.resize = `${modifiers.width}x${modifiers.height}`
-      delete modifiers.width
-      delete modifiers.height
+    const ops = modifiers as IpxModifiers
+
+    if (ops.width && ops.height) {
+      ops.resize = `${ops.width}x${ops.height}`
+      delete ops.width
+      delete ops.height
     }
 
-    const params = operationsGenerator(modifiers) || '_'
+    const params = operationsGenerator(ops) || '_'
 
     if (!baseURL) {
       baseURL = joinURL(ctx.options.nuxt.baseURL, '/_ipx')
