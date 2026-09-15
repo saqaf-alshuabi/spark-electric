@@ -18,7 +18,7 @@ const { services } = defineProps<{ services: ServiceSummary[] }>()
         >
           <NuxtLink
             :to="`/services/${service.slug}`"
-            class="pill caption-sm min-h-11 focus-ring transition duration-300 ease-out active:scale-[0.98] active:border-primary/40 active:text-highlighted can-hover:hover:border-primary/40 can-hover:hover:text-highlighted"
+            class="pill caption-sm min-h-11 focus-ring transition duration-75 ease-out active:scale-[0.98] active:border-primary/40 active:text-highlighted can-hover:duration-300 can-hover:hover:border-primary/40 can-hover:hover:text-highlighted"
           >
             <UIcon
               :name="service.icon"
