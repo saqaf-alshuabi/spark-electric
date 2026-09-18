@@ -111,11 +111,6 @@
   opacity: 0;
 }
 
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}
-
 @keyframes reveal-up {
   from {
     opacity: 0;
@@ -169,11 +164,6 @@
     transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .page-enter-active,
-  .page-leave-active {
-    transition: opacity 0.18s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
   /* Native <details> snaps open/shut. Animate ::details-content instead of
      fighting the UA with content-visibility, so close can ease too. */
   .details-reveal::details-content {
@@ -196,15 +186,12 @@
 
 @media (prefers-reduced-motion: reduce) {
   .soft-fade-enter-active,
-  .soft-fade-leave-active,
-  .page-enter-active,
-  .page-leave-active {
+  .soft-fade-leave-active {
     animation: none;
     transition: none;
   }
 
-  .soft-fade-enter-from,
-  .page-enter-from {
+  .soft-fade-enter-from {
     opacity: 1;
   }
 }
