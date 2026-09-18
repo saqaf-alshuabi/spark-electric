@@ -63,7 +63,7 @@ useSchemaOrg([
     />
 
     <LazyServiceRelated
-      hydrate-never
+      hydrate-on-visible
       :services="others"
     />
   </div>
