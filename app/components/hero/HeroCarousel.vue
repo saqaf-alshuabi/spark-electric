@@ -48,7 +48,7 @@ const goToSlide = (index: number) => {
     :style="{ '--slide-ms': `${SLIDE_MS}ms` }"
     role="group"
     aria-roledescription="carousel"
-    aria-label="معرض أعمال الكهرباء"
+    aria-label="صور من شغلنا"
   >
     <div class="w-full rounded-xl card-ring p-px shadow-2xl shadow-black/40">
       <div class="relative aspect-16/10 w-full overflow-hidden rounded-xl bg-muted/40">

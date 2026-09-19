@@ -6,7 +6,7 @@ export const HERO_IMAGE_SIZES = 'sm:92vw md:45vw lg:640px'
 export const serviceSlides: ServiceSlide[] = [
   {
     src: '/images/services/networks-breaker-panel.jpg',
-    alt: 'لوحة قواطع بعد التأسيس',
+    alt: 'لوحة قواطع جاهزة',
     caption: 'تأسيس كهرباء',
   },
   {
@@ -16,12 +16,12 @@ export const serviceSlides: ServiceSlide[] = [
   },
   {
     src: '/images/services/led-cross-tracks.jpg',
-    alt: 'خطوط ليد وتراك إنارة في سقف جبس',
+    alt: 'ليد وتراك في سقف جبس',
     caption: 'ليد مخفي',
   },
   {
     src: '/images/services/intercom-outdoor-panel.jpg',
-    alt: 'انتركوم بكاميرا على الجدار عند الباب',
+    alt: 'انتركوم بكاميرا عند الباب',
     caption: 'انتركوم',
   },
   {
