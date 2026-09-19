@@ -7,9 +7,8 @@
     "node": "24.20.0"
   },
   "scripts": {
-    "build": "nuxt generate",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "build": "nuxt generate",
     "preview": "nuxt preview",
     "deploy": "wrangler deploy",
     "postinstall": "nuxt prepare",

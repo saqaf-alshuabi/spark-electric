@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HomeServiceItem } from '@/shared/types/site'
+import type { HomeServiceItem } from '~/shared/types/site'
 
 const { wide = false } = defineProps<HomeServiceItem & { wide?: boolean }>()
 

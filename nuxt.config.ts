@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { localBusinessIdentity } from './app/shared/data/identity'
-import { services } from './app/shared/data/services'
 import { site } from './app/shared/data/site'
 
 export default defineNuxtConfig({
@@ -35,7 +34,8 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   site: {
-    url: 'https://spark-electric.saqaf-alshuabi.workers.dev',
+    // Override per env with NUXT_SITE_URL (see .env.example).
+    url: process.env.NUXT_SITE_URL || 'https://spark-electric.saqaf-alshuabi.workers.dev',
     name: site.name,
     description: site.description,
     defaultLocale: site.locale,
@@ -68,14 +68,8 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       autoSubfolderIndex: false,
-      routes: [
-        '/',
-        '/services',
-        ...services.map(service => `/services/${service.slug}`),
-        '/404.html',
-        '/robots.txt',
-        '/sitemap.xml',
-      ],
+      // `/` seeds the crawler; `/404.html` is not linked from the site.
+      routes: ['/', '/404.html'],
       failOnError: true,
     },
     hooks: {

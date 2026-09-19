@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { site } from '@/shared/data'
+import { site } from '~/shared/data/site'
 
 const { service, others } = useServiceDetail()
 const { url: siteUrl } = useSiteConfig()

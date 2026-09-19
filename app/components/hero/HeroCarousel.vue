@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { HERO_IMAGE_SIZES, serviceSlides } from '@/shared/data'
+import { HERO_IMAGE_SIZES, serviceSlides } from '~/shared/data/services/slides'
 
 const SLIDE_MS = 3500
 

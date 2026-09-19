@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { navItems, site } from '@/shared/data'
+import { navItems } from '~/shared/data/nav'
+import { site } from '~/shared/data/site'
 </script>
 
 <template>

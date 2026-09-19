@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { homeServices } from '@/shared/data'
+import { homeServices } from '~/shared/data/services'
 
 const { ui } = useAppConfig()
 </script>

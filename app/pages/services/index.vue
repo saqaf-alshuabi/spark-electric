@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { serviceSummaries, site } from '@/shared/data'
+import { serviceSummaries } from '~/shared/data/services'
+import { site } from '~/shared/data/site'
 
 usePageSeo({
   title: `خدمات الكهرباء في ${site.city}`,

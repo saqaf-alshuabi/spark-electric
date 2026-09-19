@@ -1,4 +1,4 @@
-import { formattedPhone, whatsappUrl } from '@/shared/data'
+import { formattedPhone, whatsappUrl } from '~/shared/data/site'
 
 export const useContact = () => {
   return {

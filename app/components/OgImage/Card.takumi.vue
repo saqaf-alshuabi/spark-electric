@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { displayPhone, site } from '@/shared/data'
+import { displayPhone, site } from '~/shared/data/site'
 
 defineProps<{
   title?: string
