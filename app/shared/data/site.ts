@@ -30,3 +30,8 @@ export const displayPhone = `0${site.phone.slice(0, 3)} ${site.phone.slice(3, 6)
 export const formattedPhone = `+${SAUDI_CALLING_CODE}${site.phone}`
 
 export const whatsappUrl = `https://wa.me/${SAUDI_CALLING_CODE}${site.phone}`
+
+/** Prefills the chat. Schema.org / sameAs should keep the bare `whatsappUrl`. */
+export function whatsappChatUrl(text: string) {
+  return `${whatsappUrl}?text=${encodeURIComponent(text)}`
+}

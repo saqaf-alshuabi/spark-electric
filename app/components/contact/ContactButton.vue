@@ -15,7 +15,7 @@ const contact = computed(() => {
     ? {
         label: 'واتساب',
         icon: ui.icons.whatsapp,
-        to: whatsappUrl,
+        to: whatsappUrl.value,
         target: '_blank',
         rel: 'noopener noreferrer',
       }
