@@ -16,19 +16,18 @@ const { priority = false } = defineProps<{
     class="group relative block overflow-hidden rounded-xl bg-muted/40 focus-ring transition duration-75 ease-out active:scale-[0.99] can-hover:duration-300 can-hover:hover:-translate-y-1"
   >
     <div class="aspect-4/3 w-full">
-      <NuxtPicture
+      <SitePicture
+        preset="card"
         :src="image"
         :alt="imageAlt"
         class="block size-full"
-        legacy-format="webp"
         :preload="priority ? { fetchPriority: 'high' } : false"
         :loading="priority ? 'eager' : 'lazy'"
         :img-attrs="{ class: 'size-full object-cover transition-transform duration-700 ease-out can-hover:group-hover:scale-105' }"
-        sizes="sm:92vw md:45vw lg:420px"
       />
     </div>
 
-    <!-- Literal black/white below: this chrome sits on a photo, not on the theme -->
+    <!-- Literal black/white: sits on a photo, not theme tokens. -->
     <div
       class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-transparent"
       aria-hidden="true"

@@ -27,14 +27,12 @@ const contactPoint = {
 }
 
 /**
- * Google wants the most specific LocalBusiness subtype.
- * https://nuxtseo.com/docs/schema-org/guides/setup-identity
- *
- * Relative URLs are resolved against site.url by Nuxt Schema.org.
+ * Electrician is the Schema.org type Google wants; module types stop at
+ * HomeAndConstructionBusiness. Relative URLs resolve against site.url.
+ * @see https://nuxtseo.com/docs/schema-org/guides/setup-identity
  */
 export function localBusinessIdentity() {
   return defineLocalBusiness({
-    // Electrician is the specific Schema.org type. Module types stop at HomeAndConstructionBusiness.
     '@type': 'Electrician' as 'HomeAndConstructionBusiness',
     'name': site.name,
     'description': site.description,

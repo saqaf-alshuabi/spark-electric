@@ -17,6 +17,6 @@ import { site } from '~/shared/data/site'
       />
     </div>
 
-    <LazyHeroCarousel hydrate-on-idle />
+    <HeroCarousel />
   </HeroFrame>
 </template>

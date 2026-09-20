@@ -31,9 +31,20 @@ useSchemaOrg([
       <li
         v-for="(service, index) in serviceSummaries"
         :key="service.slug"
-        class="reveal"
       >
+        <!-- First card with the page (LCP); rest hydrate when visible. -->
+        <ServiceMediaCard
+          v-if="index === 0"
+          :icon="service.icon"
+          :title="service.title"
+          :description="service.description"
+          :image="service.image"
+          :image-alt="service.imageAlt"
+          :to="`/services/${service.slug}`"
+          priority
+        />
         <LazyServiceMediaCard
+          v-else
           hydrate-on-visible
           :icon="service.icon"
           :title="service.title"
@@ -41,7 +52,6 @@ useSchemaOrg([
           :image="service.image"
           :image-alt="service.imageAlt"
           :to="`/services/${service.slug}`"
-          :priority="index === 0"
         />
       </li>
     </ul>

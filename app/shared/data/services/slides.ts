@@ -1,8 +1,5 @@
 import type { ServiceSlide } from '../../types/site'
 
-/** Keep carousel + homepage LCP preload on the same srcset. */
-export const HERO_IMAGE_SIZES = 'sm:92vw md:45vw lg:640px'
-
 export const serviceSlides: ServiceSlide[] = [
   {
     src: '/images/services/networks-breaker-panel.jpg',

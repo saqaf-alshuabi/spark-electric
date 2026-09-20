@@ -9,24 +9,22 @@ defineProps<{ gallery: ServiceSlide[] }>()
     <li
       v-for="(shot, index) in gallery"
       :key="shot.src"
-      class="reveal"
     >
       <div class="relative aspect-16/10 overflow-hidden rounded-xl bg-muted/40">
-        <NuxtPicture
+        <SitePicture
+          preset="gallery"
           :src="shot.src"
           :alt="shot.alt"
           class="block size-full"
-          legacy-format="webp"
           :preload="index === 0 ? { fetchPriority: 'high' } : false"
           :loading="index === 0 ? 'eager' : 'lazy'"
           :img-attrs="{
             class: 'size-full object-cover',
             fetchpriority: index === 0 ? 'high' : 'auto',
           }"
-          sizes="sm:92vw md:45vw"
         />
 
-        <!-- Literal white below: this edge sits on a photo, not on the theme -->
+        <!-- Literal white: sits on a photo, not a theme token. -->
         <div
           class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/10 ring-inset"
           aria-hidden="true"

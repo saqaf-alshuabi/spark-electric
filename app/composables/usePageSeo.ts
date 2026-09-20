@@ -1,6 +1,5 @@
 import type { PageSeo } from '~/shared/types/site'
 
-/** Title, description, social card, breadcrumb. Canonical / og defaults come from Nuxt SEO. */
 export function usePageSeo(page: PageSeo) {
   const cardTitle = page.ogTitle ?? page.title
   const { description: siteDescription } = useSiteConfig()

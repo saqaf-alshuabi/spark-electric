@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import { localBusinessIdentity } from './app/shared/data/identity'
 import { site } from './app/shared/data/site'
 
@@ -56,9 +55,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-09-04',
   nitro: {
     cloudflare: {
-      // Workers Builds auto-enables this and redirects `wrangler deploy`
-      // to `.output/server/wrangler.json` (a Worker entry). This site is
-      // assets-only — keep the root wrangler.jsonc.
+      // Workers Builds would emit a Worker entry; this site is assets-only.
       deployConfig: false,
     },
     compressPublicAssets: {
@@ -130,11 +127,10 @@ export default defineNuxtConfig({
   },
   icon: {
     clientBundle: {
-      // Auto-scan templates + TS data files
       scan: {
         globInclude: ['app/**/*.{vue,ts}'],
       },
-      // Icons from shared/data can be missed after HMR — keep them explicit
+      // Icons from shared/data can be missed after HMR — keep them explicit.
       icons: [
         'ph:lightning-duotone',
         'ph:lightbulb-duotone',
@@ -155,17 +151,35 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    // Static files at build — works in `pnpm preview` and on Cloudflare Assets.
-    // Keep the name `ipxStatic` so Nuxt still runs the prerender IPX handler.
-    // The custom file only changes modifiers to commas (Cloudflare Assets 307s on &).
+    // Name must stay `ipxStatic` for prerender; provider file uses commas (CF Assets 307s on &).
     provider: 'ipxStatic',
     providers: {
       ipxStatic: {
         provider: '~/providers/ipx-cf',
       },
     },
+    // Order matters for <NuxtPicture>. Legacy WebP (no JPEG bake) is in <SitePicture>.
     quality: 70,
     format: ['avif', 'webp'],
+    presets: {
+      hero: {
+        sizes: 'sm:92vw md:45vw lg:640px',
+      },
+      gallery: {
+        sizes: 'sm:92vw md:45vw',
+      },
+      card: {
+        sizes: 'sm:92vw md:45vw lg:420px',
+      },
+      logo: {
+        sizes: '71px',
+        modifiers: {
+          format: 'webp',
+          width: 71,
+          height: 28,
+        },
+      },
+    },
   },
   linkChecker: {
     failOnError: true,
@@ -182,8 +196,7 @@ export default defineNuxtConfig({
     },
   },
   robots: {
-    // AI assistants stay allowed by default (no Disallow). Content-Usage is
-    // stripped in server/plugins/robots-lighthouse.ts — Lighthouse flags it.
+    // Content-Usage is stripped in server/plugins/robots-lighthouse.ts (Lighthouse).
     blockNonSeoBots: true,
     credits: false,
   },

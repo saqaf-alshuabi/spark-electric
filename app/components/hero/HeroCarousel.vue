@@ -1,35 +1,30 @@
 <script setup lang="ts">
-import { HERO_IMAGE_SIZES, serviceSlides } from '~/shared/data/services/slides'
+import { serviceSlides } from '~/shared/data/services/slides'
 
 const SLIDE_MS = 3500
+const FADE_MS = 400
 
 const activeIndex = ref(0)
+/** Progress + autoplay after mount so CSS does not run ahead of JS. */
+const ready = ref(false)
 const prefersReducedMotion = usePreferredReducedMotion()
 
 const activeSlide = computed(() => serviceSlides[activeIndex.value]!)
-const extraSlides = serviceSlides.slice(1)
 
 const { pause, resume } = useIntervalFn(() => {
   activeIndex.value = (activeIndex.value + 1) % serviceSlides.length
 }, SLIDE_MS, { immediate: false })
 
 watchImmediate(prefersReducedMotion, (value) => {
-  if (value === 'reduce') pause()
+  if (value === 'reduce')
+    pause()
 })
 
 onMounted(() => {
-  if (prefersReducedMotion.value === 'reduce') {
-    return
-  }
+  ready.value = true
 
-  const start = () => resume()
-
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(start, { timeout: 2500 })
-    return
-  }
-
-  setTimeout(start, 1)
+  if (prefersReducedMotion.value !== 'reduce')
+    resume()
 })
 
 const goToSlide = (index: number) => {
@@ -45,64 +40,48 @@ const goToSlide = (index: number) => {
 <template>
   <div
     class="stack-sm w-full items-center"
-    :style="{ '--slide-ms': `${SLIDE_MS}ms` }"
+    :style="{ '--slide-ms': `${SLIDE_MS}ms`, '--fade-ms': `${FADE_MS}ms` }"
     role="group"
     aria-roledescription="carousel"
     aria-label="صور من شغلنا"
   >
     <div class="w-full rounded-xl card-ring p-px shadow-2xl shadow-black/40">
       <div class="relative aspect-16/10 w-full overflow-hidden rounded-xl bg-muted/40">
-        <Transition name="soft-fade">
-          <div
-            :key="activeSlide.src"
-            class="absolute inset-0 overflow-hidden"
-          >
-            <NuxtPicture
-              :src="activeSlide.src"
-              :alt="activeSlide.alt"
-              class="block size-full"
-              legacy-format="webp"
-              :preload="activeIndex === 0 ? { fetchPriority: 'high' } : false"
-              :loading="activeIndex === 0 ? 'eager' : 'lazy'"
-              :img-attrs="{
-                class: 'size-full object-cover',
-                fetchpriority: activeIndex === 0 ? 'high' : 'auto',
-              }"
-              :sizes="HERO_IMAGE_SIZES"
-            />
-          </div>
-        </Transition>
-
-        <!-- Hidden so Nitro still bakes the other /_ipx files. -->
+        <!-- Stacked so preload works (display:none would skip downloads). -->
         <div
-          class="hidden"
-          aria-hidden="true"
+          v-for="(slide, index) in serviceSlides"
+          :key="slide.src"
+          class="absolute inset-0 overflow-hidden transition-opacity ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+          :class="index === activeIndex ? 'z-10 opacity-100' : 'z-0 opacity-0'"
+          :style="{ transitionDuration: `var(--fade-ms)` }"
+          :aria-hidden="index !== activeIndex"
         >
-          <NuxtPicture
-            v-for="slide in extraSlides"
-            :key="slide.src"
+          <SitePicture
+            preset="hero"
             :src="slide.src"
-            alt=""
+            :alt="index === activeIndex ? slide.alt : ''"
             class="block size-full"
-            legacy-format="webp"
-            loading="lazy"
-            :sizes="HERO_IMAGE_SIZES"
+            :preload="index === 0
+              ? { fetchPriority: 'high' }
+              : { fetchPriority: 'low' }"
+            :loading="index === 0 ? 'eager' : 'lazy'"
+            :img-attrs="{
+              class: 'size-full object-cover',
+              fetchpriority: index === 0 ? 'high' : 'low',
+            }"
           />
         </div>
 
         <div
-          class="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/80 via-black/40 to-transparent"
+          class="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-2/5 bg-linear-to-t from-black/80 via-black/40 to-transparent"
           aria-hidden="true"
         />
 
-        <Transition
-          name="soft-fade"
-          mode="out-in"
-        >
-          <!-- White on the scrim, not a theme token: this sits on a photo -->
+        <Transition name="soft-fade">
+          <!-- Literal white: sits on a photo, not a theme token. -->
           <p
             :key="activeSlide.src"
-            class="absolute inset-x-0 bottom-0 p-4 caption text-white"
+            class="absolute inset-x-0 bottom-0 z-20 p-4 caption text-white"
           >
             {{ activeSlide.caption }}
           </p>
@@ -126,7 +105,7 @@ const goToSlide = (index: number) => {
             :class="index === activeIndex ? 'scale-x-100' : 'scale-x-[0.214]'"
           />
           <span
-            v-if="index === activeIndex"
+            v-if="ready && index === activeIndex"
             :key="activeIndex"
             class="slide-progress pointer-events-none absolute inset-0 rounded-full bg-primary"
           />

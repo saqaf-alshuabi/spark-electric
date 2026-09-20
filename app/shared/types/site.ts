@@ -47,7 +47,7 @@ export interface FaqItem {
   answer: string
 }
 
-/** Listing card — cover derived from gallery[0] */
+/** Listing card; cover comes from gallery[0]. */
 export interface ServiceSummary {
   slug: string
   icon: string
@@ -58,7 +58,7 @@ export interface ServiceSummary {
 }
 
 export interface ServiceDetail extends ServiceSummary {
-  /** Schema.org Service.serviceType + page-title keyword */
+  /** Schema.org serviceType + page-title keyword. */
   serviceType: string
   seoDescription: string
   intro: string
