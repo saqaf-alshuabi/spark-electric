@@ -21,17 +21,10 @@ const layout = computed(() =>
 <template>
   <NuxtLink
     :to="to"
-    class="group flex h-full gap-4 overflow-hidden rounded-xl border border-default/60 bg-default/40 card-p focus-ring transition-[transform,background-color] duration-75 ease-out active:scale-[0.98] active:bg-default can-hover:duration-300 can-hover:hover:bg-default"
+    class="group card-surface motion-press flex h-full gap-4 overflow-hidden card-p focus-ring transition-[transform,background-color] active:scale-[0.98] active:bg-default can-hover:hover:bg-default"
     :class="layout.card"
   >
-    <span
-      class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 transition-colors duration-75 group-active:bg-primary can-hover:duration-300 can-hover:group-hover:bg-primary"
-    >
-      <UIcon
-        :name="icon"
-        class="size-5 text-primary transition-colors duration-75 group-active:text-inverted can-hover:duration-300 can-hover:group-hover:text-inverted"
-      />
-    </span>
+    <ServiceIconBadge :name="icon" />
 
     <div
       class="min-w-0"

@@ -94,14 +94,14 @@ const goToSlide = (index: number) => {
         v-for="(slide, index) in serviceSlides"
         :key="slide.src"
         type="button"
-        class="group flex size-11 items-center justify-center focus-ring transition duration-75 ease-out active:scale-[0.96] can-hover:duration-300"
+        class="group flex size-11 items-center justify-center focus-ring transition motion-press active:scale-[0.96]"
         :aria-current="index === activeIndex"
         :aria-label="slide.alt"
         @click="goToSlide(index)"
       >
         <span class="relative h-1 w-7">
           <span
-            class="block h-full origin-[inline-start] rounded-full bg-muted/60 transition-[transform,background-color] duration-75 group-active:bg-muted can-hover:duration-300 can-hover:group-hover:bg-muted"
+            class="block h-full origin-[inline-start] rounded-full bg-muted/60 transition-[transform,background-color] motion-press group-active:bg-muted can-hover:group-hover:bg-muted"
             :class="index === activeIndex ? 'scale-x-100' : 'scale-x-[0.214]'"
           />
           <span

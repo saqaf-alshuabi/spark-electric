@@ -10,5 +10,6 @@ usePageSeo({
 
 <template>
   <HeroSection />
+  <!-- Below the fold: hydrate when scrolled into view. -->
   <LazyServicesSection hydrate-on-visible />
 </template>

@@ -36,7 +36,7 @@ const { ui } = useAppConfig()
           color="neutral"
           variant="link"
           class="group active:opacity-70"
-          :ui="{ trailingIcon: 'transition-transform duration-75 group-active:-translate-x-1 can-hover:duration-300 can-hover:group-hover:-translate-x-1' }"
+          :ui="{ trailingIcon: 'transition-transform motion-press group-active:-translate-x-1 can-hover:group-hover:-translate-x-1' }"
         />
       </div>
     </UContainer>

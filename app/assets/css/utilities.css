@@ -92,3 +92,12 @@
 @utility focus-ring {
   @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60;
 }
+
+/* Fast on tap, slower on real hover. Pair with transition / transition-colors. */
+@utility motion-press {
+  @apply duration-75 ease-out can-hover:duration-300;
+}
+
+@utility card-surface {
+  @apply rounded-xl border border-default/60 bg-default/40;
+}

@@ -55,12 +55,14 @@ useSchemaOrg([
     <ServiceGallery :gallery="service.gallery" />
   </HeroFrame>
 
+  <!-- Native <details>: no client JS needed. -->
   <LazyServiceFaq
     hydrate-never
     :faqs="service.faqs"
     :heading="`أسئلة عن ${service.title}`"
   />
 
+  <!-- Secondary links: hydrate when scrolled into view. -->
   <LazyServiceRelated
     hydrate-on-visible
     :services="others"
