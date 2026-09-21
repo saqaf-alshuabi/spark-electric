@@ -13,7 +13,7 @@ const { priority = false } = defineProps<{
 <template>
   <NuxtLink
     :to="to"
-    class="group motion-press relative block overflow-hidden rounded-xl bg-muted/40 focus-ring transition active:scale-[0.99] can-hover:hover:-translate-y-1"
+    class="group relative block overflow-hidden rounded-xl bg-muted/40 focus-ring transition motion-press active:scale-[0.99] can-hover:hover:-translate-y-1"
   >
     <div class="aspect-4/3 w-full">
       <SitePicture
@@ -33,7 +33,7 @@ const { priority = false } = defineProps<{
       aria-hidden="true"
     />
     <div
-      class="motion-press pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/10 transition-colors ring-inset group-active:ring-primary/40 can-hover:group-hover:ring-primary/40"
+      class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/10 transition-colors motion-press ring-inset group-active:ring-primary/40 can-hover:group-hover:ring-primary/40"
       aria-hidden="true"
     />
 
@@ -44,9 +44,9 @@ const { priority = false } = defineProps<{
     />
 
     <div class="absolute inset-x-0 bottom-0 stack-xs card-p">
-      <h3 class="text-white">
+      <h2 class="text-white">
         {{ title }}
-      </h3>
+      </h2>
       <p class="text-sm/relaxed text-white/75">
         {{ description }}
       </p>

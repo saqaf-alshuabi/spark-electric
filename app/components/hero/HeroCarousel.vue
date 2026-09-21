@@ -47,7 +47,7 @@ const goToSlide = (index: number) => {
   >
     <div class="w-full rounded-xl card-ring p-px shadow-2xl shadow-black/40">
       <div class="relative aspect-16/10 w-full overflow-hidden rounded-xl bg-muted/40">
-        <!-- Stacked so preload works (display:none would skip downloads). -->
+        <!-- Stacked so hidden slides still fetch (display:none would skip). -->
         <div
           v-for="(slide, index) in serviceSlides"
           :key="slide.src"
@@ -61,9 +61,7 @@ const goToSlide = (index: number) => {
             :src="slide.src"
             :alt="index === activeIndex ? slide.alt : ''"
             class="block size-full"
-            :preload="index === 0
-              ? { fetchPriority: 'high' }
-              : { fetchPriority: 'low' }"
+            :preload="index === 0 ? { fetchPriority: 'high' } : false"
             :loading="index === 0 ? 'eager' : 'lazy'"
             :img-attrs="{
               class: 'size-full object-cover',

@@ -162,14 +162,15 @@ export default defineNuxtConfig({
     quality: 70,
     format: ['avif', 'webp'],
     presets: {
+      // Nuxt Image sizes: only vw/px + sm/md/lg/xl (no calc / raw media queries).
       hero: {
-        sizes: 'sm:92vw md:45vw lg:640px',
+        sizes: 'sm:92vw md:44vw lg:450px xl:576px',
       },
       gallery: {
-        sizes: 'sm:92vw md:45vw',
+        sizes: 'sm:92vw md:45vw lg:448px',
       },
       card: {
-        sizes: 'sm:92vw md:45vw lg:420px',
+        sizes: 'sm:92vw md:45vw lg:310px xl:390px',
       },
       logo: {
         sizes: '71px',
