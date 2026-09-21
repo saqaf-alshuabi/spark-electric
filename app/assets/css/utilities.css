@@ -93,9 +93,9 @@
   @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60;
 }
 
-/* Fast on tap, slower on real hover. Pair with transition / transition-colors. */
+/* Fast on tap, snappy hover (Nuxt UI / Tailwind hover default). Pair with transition. */
 @utility motion-press {
-  @apply duration-75 ease-out can-hover:duration-300;
+  @apply duration-75 ease-out can-hover:duration-150;
 }
 
 @utility card-surface {

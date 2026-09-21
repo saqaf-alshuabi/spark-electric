@@ -2,7 +2,7 @@
 import { serviceSlides } from '~/shared/data/services/slides'
 
 const SLIDE_MS = 3500
-const FADE_MS = 400
+const FADE_MS = 300
 
 const activeIndex = ref(0)
 /** Progress + autoplay after mount so CSS does not run ahead of JS. */
@@ -51,7 +51,7 @@ const goToSlide = (index: number) => {
         <div
           v-for="(slide, index) in serviceSlides"
           :key="slide.src"
-          class="absolute inset-0 overflow-hidden transition-opacity ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+          class="absolute inset-0 overflow-hidden transition-opacity ease-out motion-reduce:transition-none"
           :class="index === activeIndex ? 'z-10 opacity-100' : 'z-0 opacity-0'"
           :style="{ transitionDuration: `var(--fade-ms)` }"
           :aria-hidden="index !== activeIndex"
@@ -99,7 +99,7 @@ const goToSlide = (index: number) => {
       >
         <span class="relative h-1 w-7">
           <span
-            class="block h-full origin-[inline-start] rounded-full bg-muted/60 transition-[transform,background-color] motion-press group-active:bg-muted can-hover:group-hover:bg-muted"
+            class="block h-full origin-[inline-start] rounded-full bg-muted/60 transition-[transform,background-color] duration-200 ease-out motion-reduce:transition-none group-active:bg-muted can-hover:group-hover:bg-muted"
             :class="index === activeIndex ? 'scale-x-100' : 'scale-x-[0.214]'"
           />
           <span

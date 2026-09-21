@@ -5,6 +5,8 @@
 @theme {
   --font-sans: 'IBM Plex Sans Arabic', sans-serif;
   --font-heading: 'IBM Plex Sans Arabic', sans-serif;
+  /* Nuxt UI 4.11 snappy motion — one curve for UI + custom fades */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Nuxt UI tokens stay unlayered so they beat the 0.25rem default after
@@ -142,7 +144,7 @@
   .rise {
     animation-name: reveal-up;
     animation-duration: 0.55s;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-timing-function: var(--ease-out);
     animation-fill-mode: both;
   }
 
@@ -153,7 +155,7 @@
   .reveal {
     animation-name: reveal-up;
     animation-duration: 0.45s;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-timing-function: var(--ease-out);
     animation-fill-mode: both;
     animation-timeline: view();
     animation-range: entry 0% cover 20%;
@@ -161,7 +163,7 @@
 
   .soft-fade-enter-active,
   .soft-fade-leave-active {
-    transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.3s var(--ease-out);
   }
 
   /* Native <details> snaps open/shut. Animate ::details-content instead of
@@ -172,8 +174,8 @@
     overflow: hidden;
     opacity: 0;
     transition:
-      height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      height 0.45s var(--ease-out),
+      opacity 0.35s var(--ease-out),
       content-visibility 0.45s allow-discrete;
   }
 
