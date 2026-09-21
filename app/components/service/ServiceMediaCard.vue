@@ -44,7 +44,7 @@ const { priority = false } = defineProps<{
     />
 
     <div class="absolute inset-x-0 bottom-0 stack-xs card-p">
-      <h2 class="text-white">
+      <h2 class="text-(length:--size-h3) leading-[1.45] font-medium text-white">
         {{ title }}
       </h2>
       <p class="text-sm/relaxed text-white/75">
