@@ -4,6 +4,7 @@
 .nuxt
 .nitro
 .cache
+.wrangler
 dist
 
 # Node dependencies
@@ -17,6 +18,10 @@ logs
 .DS_Store
 .fleet
 .idea
+
+# Windows reserved device name (created accidentally by shell redirects)
+/nul
+/NUL
 
 # Local env files
 .env

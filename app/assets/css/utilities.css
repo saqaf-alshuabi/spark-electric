@@ -1,0 +1,103 @@
+@utility section-y {
+  padding-block: var(--space-section);
+}
+
+/* The header already sits above the hero, so the top gap stays short and the
+   headline lands inside the first screen on a phone. */
+@utility hero-y {
+  padding-block-start: var(--space-sm);
+  padding-block-end: var(--space-section);
+}
+
+@utility hero-aura {
+  background-image: radial-gradient(
+    42rem 26rem at 50% -8rem,
+    color-mix(in oklab, var(--ui-primary) 22%, transparent),
+    transparent 70%
+  );
+}
+
+@utility heading-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    var(--ui-text-highlighted),
+    color-mix(in oklab, var(--ui-text-highlighted) 55%, transparent)
+  );
+  @apply bg-clip-text text-transparent;
+}
+
+@utility card-ring {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--ui-text-highlighted) 15%, transparent),
+    transparent
+  );
+}
+
+/* Dark is forced sitewide, so the grid lines are a fixed white alpha. */
+@utility hero-grid {
+  background-image:
+    linear-gradient(to left, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  mask-image: radial-gradient(30rem 22rem at 50% 0%, #000, transparent 72%);
+}
+
+@utility stack-xs {
+  @apply flex flex-col;
+  gap: var(--space-xs);
+}
+
+@utility stack-sm {
+  @apply flex flex-col;
+  gap: var(--space-sm);
+}
+
+@utility stack-md {
+  @apply flex flex-col;
+  gap: var(--space-md);
+}
+
+@utility stack-lg {
+  @apply flex flex-col;
+  gap: var(--space-lg);
+}
+
+@utility grid-gap {
+  gap: var(--space-sm);
+}
+
+@utility split-gap {
+  gap: var(--space-xl);
+}
+
+@utility card-p {
+  padding: var(--space-card);
+}
+
+@utility pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-default bg-default/40 py-1.5 ps-2.5 pe-3.5 backdrop-blur-sm;
+}
+
+@utility caption {
+  line-height: 1.5;
+  @apply text-base font-medium text-highlighted text-pretty;
+}
+
+@utility caption-sm {
+  line-height: 1.5;
+  @apply text-sm font-normal text-muted text-pretty;
+}
+
+@utility focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60;
+}
+
+/* Fast on tap, snappy hover (Nuxt UI / Tailwind hover default). Pair with transition. */
+@utility motion-press {
+  @apply duration-75 ease-out can-hover:duration-150;
+}
+
+@utility card-surface {
+  @apply rounded-xl border border-default/60 bg-default/40;
+}

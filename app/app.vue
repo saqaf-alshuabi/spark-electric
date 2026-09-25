@@ -1,6 +1,11 @@
 <template>
-  <div>
+  <UApp
+    dir="rtl"
+    lang="ar"
+  >
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UApp>
 </template>

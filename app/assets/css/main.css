@@ -1,0 +1,199 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@import './utilities.css';
+
+@theme {
+  --font-sans: 'IBM Plex Sans Arabic', sans-serif;
+  --font-heading: 'IBM Plex Sans Arabic', sans-serif;
+  /* Nuxt UI 4.11 snappy motion — one curve for UI + custom fades */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Nuxt UI tokens stay unlayered so they beat the 0.25rem default after
+   client navigation. https://ui.nuxt.com/docs/getting-started/theme/css-variables */
+:root {
+  --ui-container: 80rem;
+  --ui-header-height: 4rem;
+  --ui-radius: 0.5rem;
+}
+
+/* Hover effects only on real pointers. Phones get the resting state, plus :active. */
+@custom-variant can-hover {
+  @media (hover: hover) and (pointer: fine) {
+    @slot;
+  }
+}
+
+@layer base {
+  :root {
+    --size-h1: clamp(2rem, 7vw, 3.5rem);
+    --size-h2: clamp(1.75rem, 4vw, 2.5rem);
+    --size-h3: clamp(1.125rem, 2vw, 1.375rem);
+    --size-h4: clamp(1.0625rem, 1.6vw, 1.25rem);
+    --size-body: clamp(1rem, 1.2vw, 1.0625rem);
+
+    --space-section: clamp(4rem, 8vw, 7rem);
+    --space-xs: clamp(0.75rem, 2vw, 1rem);
+    --space-sm: clamp(1rem, 2.5vw, 1.5rem);
+    --space-md: clamp(1.5rem, 4vw, 2rem);
+    --space-lg: clamp(2rem, 5vw, 3rem);
+    --space-xl: clamp(2rem, 6vw, 4rem);
+    --space-card: clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-size: var(--size-body);
+    @apply font-sans text-default antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-highlighted;
+  }
+
+  /* No letter-spacing on headings: Arabic is cursive and tracking breaks the
+     joins between letters. Line heights also run looser than a Latin scale. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    @apply text-highlighted text-balance;
+  }
+
+  h1 {
+    font-size: var(--size-h1);
+    line-height: 1.3;
+    @apply font-semibold text-pretty;
+  }
+
+  h2 {
+    font-size: var(--size-h2);
+    line-height: 1.35;
+    @apply font-semibold;
+  }
+
+  h3 {
+    font-size: var(--size-h3);
+    line-height: 1.45;
+    @apply font-medium;
+  }
+
+  h4 {
+    font-size: var(--size-h4);
+    line-height: 1.5;
+    @apply font-medium;
+  }
+
+  p {
+    font-size: var(--size-body);
+    line-height: 1.8;
+    @apply font-normal text-muted text-pretty;
+  }
+
+  strong {
+    @apply font-semibold text-highlighted;
+  }
+
+  ul,
+  ol {
+    @apply list-none;
+  }
+}
+
+.soft-fade-leave-active {
+  z-index: 1;
+}
+
+.soft-fade-enter-from,
+.soft-fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.slide-progress {
+  transform-origin: inline-start;
+  transform: scaleX(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation-name: reveal-up;
+    animation-duration: 0.55s;
+    animation-timing-function: var(--ease-out);
+    animation-fill-mode: both;
+  }
+
+  .slide-progress {
+    animation: slide-progress var(--slide-ms, 5500ms) linear both;
+  }
+
+  .reveal {
+    animation-name: reveal-up;
+    animation-duration: 0.45s;
+    animation-timing-function: var(--ease-out);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+  }
+
+  .soft-fade-enter-active,
+  .soft-fade-leave-active {
+    transition: opacity 0.3s var(--ease-out);
+  }
+
+  /* Native <details> snaps open/shut. Animate ::details-content instead of
+     fighting the UA with content-visibility, so close can ease too. */
+  .details-reveal::details-content {
+    interpolate-size: allow-keywords;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      height 0.45s var(--ease-out),
+      opacity 0.35s var(--ease-out),
+      content-visibility 0.45s allow-discrete;
+  }
+
+  .details-reveal[open]::details-content {
+    height: auto;
+    height: calc-size(auto, size);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soft-fade-enter-active,
+  .soft-fade-leave-active {
+    animation: none;
+    transition: none;
+  }
+
+  .soft-fade-enter-from {
+    opacity: 1;
+  }
+}
