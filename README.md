@@ -1,7 +1,24 @@
-# أبو تيم الكهربائي
+# Spark Electric — أبو تيم الكهربائي
 
-Static Nuxt site for an electrician in Makkah. Deployed to Cloudflare Assets.
+Business website for an electrician in Makkah.
 
+**Live:** https://spark-electric.saqaf-alshuabi.workers.dev
+
+## Stack
+- Nuxt 4
+- Vue 3
+- TypeScript
+- Tailwind CSS
+- Cloudflare Workers
+
+## Features
+- Full-bleed hero and services pages
+- Arabic RTL
+- Contact CTAs (call / WhatsApp)
+- SEO and performance focused
+- Deployed on Cloudflare Assets
+
+## Setup
 ```bash
 pnpm install
 pnpm dev
